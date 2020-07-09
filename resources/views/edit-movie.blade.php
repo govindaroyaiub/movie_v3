@@ -110,35 +110,62 @@
                                                 rows="6" cols="50">{{ $movie_details['google_pixel'] }}</textarea>
                                         </div>
 
+                                        <br>
+
                                         <div class="row">
                                             <div class="col">
                                                 <label for="d_id">Distributor</label>
-                                                <select class="form-control select2" id="d_id" name="d_id" style="width: 100%;" required>
+                                                <select class="form-control select2" id="d_id" name="d_id"
+                                                    style="width: 100%;" required>
                                                     <option value="">Select Distributor</option>
-                                                    <option value="0" @if($movie_details['d_id'] == 0) selected @endif>None</option>
+                                                    <option value="0" @if($movie_details['d_id']==0) selected @endif>
+                                                        None</option>
                                                     @foreach($d_list as $row)
-                                                    <option value="{{$row->id}}" @if($row->id == $movie_details['d_id']) selected @endif>{{$row->name}}</option>
+                                                    <option value="{{$row->id}}" @if($row->id == $movie_details['d_id'])
+                                                        selected @endif>{{$row->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="col">
                                                 <label for="mp_id">Media Partner</label>
-                                                <select class="form-control select2" id="mp_id" name="mp_id" style="width: 100%;" required>
+                                                <select class="form-control select2" id="mp_id" name="mp_id"
+                                                    style="width: 100%;" required>
                                                     <option value="">Select Movie Partner</option>
-                                                    <option value="0" @if($movie_details['mp_id'] == 0) selected @endif>None</option>
+                                                    <option value="0" @if($movie_details['mp_id']==0) selected @endif>
+                                                        None</option>
                                                     @foreach($mp_list as $row)
-                                                    <option value="{{$row->id}}" @if($row->id == $movie_details['mp_id']) selected @endif>{{$row->name}}</option>
+                                                    <option value="{{$row->id}}" @if($row->id ==
+                                                        $movie_details['mp_id']) selected @endif>{{$row->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <br>
-                                        <div class="form-group">
-                                            <label for="color">Color</label>
-                                            <input type="color" class="form-control" name="color" id="color"
-                                                value="{{ $movie_details['color'] }}" style="width:30%;" required>
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="primary_light">Primary Light</label>
+                                                <input type="color" class="form-control" value="#353B48"
+                                                    name="primary_light" id="primary_light" required>
+                                            </div>
+                                            <div class="col">
+                                                <label for="primary_dark">Primary Dark</label>
+                                                <input type="color" class="form-control" value="#353B48"
+                                                    name="primary_dark" id="primary_dark" required>
+                                            </div>
                                         </div>
-
+                                        <br>
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="secondary_light">Secondary Light</label>
+                                                <input type="color" class="form-control" value="#353B48"
+                                                    name="secondary_light" id="secondary_light" required>
+                                            </div>
+                                            <div class="col">
+                                                <label for="secondary_dark">Secondary Dark</label>
+                                                <input type="color" class="form-control" value="#353B48"
+                                                    name="secondary_dark" id="secondary_dark" required>
+                                            </div>
+                                        </div>
                                         <br>
                                         <div class="modal-footer">
                                             <button type="submit"

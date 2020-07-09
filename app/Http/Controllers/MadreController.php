@@ -56,15 +56,31 @@ class MadreController extends Controller
                             ->where('movie_details.base_url', '=', $app_url)
                             ->first();
 
-            $movie_details_color = Movie::select('color')->where('base_url', '=', $app_url)->first();
-            $color = $movie_details_color['color'];
+            $movie_details_color = Movie::select('primary_light', 'primary_dark', 'secondary_light', 'secondary_dark')->where('base_url', '=', $app_url)->first();
+            $primary_light = $movie_details_color['primary_light'];
+            $primary_dark = $movie_details_color['primary_dark'];
+            $secondary_light = $movie_details_color['secondary_light'];
+            $secondary_dark = $movie_details_color['secondary_dark'];
 
             $reviews = Review::join('movie_details', 'movie_details.id', 'reviews.movie_id')
                             ->select('reviews.id', 'reviews.movie_id', 'movie_details.movie_title', 'reviews.review_en', 'reviews.review_nl', 'reviews.source', 'reviews.date', 'reviews.ratings')
                             ->where('base_url', '=', $app_url)
                             ->get();
 
-            return view('madre.index', compact('movie_details', 'youtube_url', 'poster', 'showtime', 'city', 'rating', 'd_details', 'mp_details', 'color', 'reviews'));
+            return view('madre.index', compact(
+                'movie_details', 
+                'youtube_url', 
+                'poster', 'showtime', 
+                'city', 
+                'rating', 
+                'd_details', 
+                'mp_details', 
+                'reviews', 
+                'primary_light',
+                'primary_dark',
+                'secondary_light',
+                'secondary_dark'
+            ));
         }
     }
 
@@ -115,15 +131,31 @@ class MadreController extends Controller
                                 ->where('movie_details.base_url', '=', $app_url)
                                 ->first();
 
-            $movie_details_color = Movie::select('color')->where('base_url', '=', $app_url)->first();
-            $color = $movie_details_color['color'];
+            $movie_details_color = Movie::select('primary_light', 'primary_dark', 'secondary_light', 'secondary_dark')->where('base_url', '=', $app_url)->first();
+            $primary_light = $movie_details_color['primary_light'];
+            $primary_dark = $movie_details_color['primary_dark'];
+            $secondary_light = $movie_details_color['secondary_light'];
+            $secondary_dark = $movie_details_color['secondary_dark'];
 
             $reviews = Review::join('movie_details', 'movie_details.id', 'reviews.movie_id')
                             ->select('reviews.id', 'reviews.movie_id', 'movie_details.movie_title', 'reviews.review_en', 'reviews.review_nl', 'reviews.source', 'reviews.date', 'reviews.ratings')
                             ->where('base_url', '=', $app_url)
                             ->get();
 
-            return view('madre.index-en', compact('movie_details', 'youtube_url', 'poster', 'showtime', 'city', 'rating', 'd_details', 'mp_details', 'color', 'reviews'));
+            return view('madre.index-en', compact(
+                'movie_details', 
+                'youtube_url', 
+                'poster', 'showtime', 
+                'city', 
+                'rating', 
+                'd_details', 
+                'mp_details', 
+                'reviews', 
+                'primary_light',
+                'primary_dark',
+                'secondary_light',
+                'secondary_dark'
+            ));
         }
     }
 

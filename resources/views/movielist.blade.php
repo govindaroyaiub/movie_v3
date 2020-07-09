@@ -86,10 +86,7 @@
                         <label for="google_sheet">Google Sheet URL</label>
                         <input type="text" class="form-control" name="google_sheet" id="google_sheet" required>
                     </div>
-                    <div class="form-group">
-                        <label for="color">Color</label>
-                        <input type="color" class="form-control" name="color" id="color" style="width:30%;" required>
-                    </div>
+                    
                     <div class="form-group">
                         <select class="form-control select2" id="client_id" name="client_id" style="width: 100%;"
                             required>
@@ -99,6 +96,29 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <div class="row">
+                            <div class="col">
+                                <label for="primary_light">Primary Light</label>
+                                <input type="color" class="form-control" value="#353B48" name="primary_light" id="primary_light" required>
+                            </div>
+                            <div class="col">
+                                <label for="primary_dark">Primary Dark</label>
+                                <input type="color" class="form-control" value="#353B48" name="primary_dark" id="primary_dark" required>
+                            </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                            <div class="col">
+                                <label for="secondary_light">Secondary Light</label>
+                                <input type="color" class="form-control" value="#353B48" name="secondary_light" id="secondary_light" required>
+                            </div>
+                            <div class="col">
+                                <label for="secondary_dark">Secondary Dark</label>
+                                <input type="color" class="form-control" value="#353B48" name="secondary_dark" id="secondary_dark" required>
+                            </div>
+                    </div>
+                    <br>
                     <div class="modal-footer">
                         <button type="submit" class="form-control-user btn btn-primary">Create</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

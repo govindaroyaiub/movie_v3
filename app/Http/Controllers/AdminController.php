@@ -169,7 +169,10 @@ class AdminController extends Controller
             'hashtag' => $request->hashtag,
             'fb_pixel' => $request->fb_pixel,
             'google_pixel' => $request->google_pixel,
-            'color' => $request->color,
+            'primary_light' => $request->primary_light,
+            'primary_dark' => $request->primary_dark,
+            'secondary_light' => $request->secondary_light,
+            'secondary_light' => $request->secondary_light,
             'd_id' => $request->d_id,
             'mp_id' => $request->mp_id
         ];
