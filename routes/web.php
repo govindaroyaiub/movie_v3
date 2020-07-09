@@ -8,7 +8,7 @@ Route::post('/get_google_sheet', 'DataController@get_google_sheet')->name('googl
 
 //routes for movie:Madre
 Route::get('/madre', 'MadreController@nl_landing');
-Route::get('/madre/en', 'MadreController@en_landing');
+Route::get('/madre_en', 'MadreController@en_landing');
 Route::get('/madre/api/shows', 'MadreController@showsApi');
 
 Auth::routes();

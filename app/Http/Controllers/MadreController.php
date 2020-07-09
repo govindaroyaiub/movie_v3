@@ -123,7 +123,7 @@ class MadreController extends Controller
                             ->where('base_url', '=', $app_url)
                             ->get();
 
-            return view('movie.index-en', compact('movie_details', 'youtube_url', 'poster', 'showtime', 'city', 'rating', 'd_details', 'mp_details', 'color', 'reviews'));
+            return view('madre.index-en', compact('movie_details', 'youtube_url', 'poster', 'showtime', 'city', 'rating', 'd_details', 'mp_details', 'color', 'reviews'));
         }
     }
 

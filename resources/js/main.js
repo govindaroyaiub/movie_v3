@@ -49,25 +49,22 @@ if (menuToggle) {
     });
 }
 
+
 // language picker
 const nl = document.querySelector('[data-lang="nl"]');
 const en = document.querySelector('[data-lang="en"]');
 
-if (nl || en) {
-    if (location.pathname === '/') {
-        en.classList.add('d-block');
-        moment.locale('nl');
-        en.addEventListener('click', function () {
-            location.href = '/en';
-        })
-    } else {
-        nl.classList.add('d-block');
-        moment.locale('en');
-        nl.addEventListener('click', function () {
-            location.href = '/';
-        })
-    }
+const urlNl = `${location.pathname}`;
+const urlEn = `${location.pathname}_en`;
+const isUrlNl = urlNl.includes('_');
+
+if (isUrlNl) {
+    let slicedUrl = urlEn.substr(0, urlEn.indexOf(('_')));
+    nl.addEventListener('click', () => location.href = slicedUrl);
+} else {
+    en.addEventListener('click', () => location.href = urlEn);
 }
+
 
 //
 const mapDiv = document.querySelector('.map');
@@ -101,16 +98,17 @@ var stores = {
     features: [],
 }
 
-let endpint = `${location.href}/api/shows`;
+let endPoint = `${location.href}/api/shows`;
+const matchEn = location.pathname.slice(-2);
+let endPointEn = endPoint.replace('_en', '');
 
-if (location.pathname === '/en') {
-    const enUrl = `${location.href}api/shows`;
-    endpint = enUrl.replace(/\/en/g, '/');
+if (matchEn === 'en') {
+    endPoint = endPointEn;
 } else {
-    endpint = `${location.href}api/shows`;
+    endPoint = `${location.href}/api/shows`;
 }
 
-axios.get(endpint)
+axios.get(endPoint)
     .then(res => showtime.push(...res.data))
     .then(() => {
         for (i = 0; i < showtime.length; i++) {
@@ -211,7 +209,7 @@ function buildLocationList(data) {
                                   <div class="d-flex justify-content-between mt-2 ml-md-5 text-white">
                                     <p class="m-0">${m.address}, ${m.city}</p>
                                     <p class="m-0 ml-3">
-                                        ${location.pathname === '/' ? moment(m.date).locale('nl').format("LL") : + moment(m.date).locale('en').format("LL")}
+                                        ${location.pathname === '/' ? moment(m.date).locale('nl').format("LL") : +moment(m.date).locale('en').format("LL")}
                                     </p>
                                   </div>
 

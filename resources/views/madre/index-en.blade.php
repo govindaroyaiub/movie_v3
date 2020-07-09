@@ -20,7 +20,10 @@
         <h1 class="text-center m-0">{{ $movie_details->movie_title }}
             - {{ $movie_details->movie_description_short }}</h1>
 
-        @include('movie._flag')
+        <div class="flags">
+            <img data-lang="en" src="{{ asset('images/us.svg') }}" class="d-none" alt="">
+            <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-block" alt="">
+        </div>
     </header>
 
     <div class="menu-toggler">
@@ -244,6 +247,7 @@
 
     document.getElementById("defaultOpen").click();
 </script>
+
 </body>
 </html>
 
