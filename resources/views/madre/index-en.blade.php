@@ -180,24 +180,27 @@
                 <div class="slider single-item">
                     @foreach($reviews as $review)
                         <div class="text-center">
-
                             @php $rating = $review->ratings; @endphp
-                            @foreach(range(1, 5) as $i)
-                                <span class="fa-stack">
-                                        <i class="far fa-star fa-stack-1x"></i>
-                                    @if($rating >0)
-                                        @if($rating >0.5)
-                                            <i class="fas fa-star fa-stack-1x"></i>
-                                        @else
-                                            <i class="fas fa-star-half fa-stack-1x"></i>
+                            @if($rating > 0)
+                                @foreach(range(1, 5) as $i)
+                                    <span class="fa-stack">
+                                            <i class="far fa-star fa-stack-1x"></i>
+                                        @if($rating >0)
+                                            @if($rating >0.5)
+                                                <i class="fas fa-star fa-stack-1x"></i>
+                                            @else
+                                                <i class="fas fa-star-half fa-stack-1x"></i>
+                                            @endif
                                         @endif
-                                    @endif
-                                    @php $rating--; @endphp
-                                     </span>
-                            @endforeach
+                                        @php $rating--; @endphp
+                                        </span>
+                                @endforeach
+                            @else
 
-                            <small class="">({{ $review->ratings }})</small>
-                            <h3>{{ $review->review_nl }}</h3>
+                            @endif
+
+                            <small style="opacity:0;">({{ $review->ratings }})</small>
+                            <h3>{{ $review->review_en }}</h3>
                             <p>{{ $review->source }},  {{date('d F Y', strtotime($review->date))}}</p>
                         </div>
                     @endforeach
