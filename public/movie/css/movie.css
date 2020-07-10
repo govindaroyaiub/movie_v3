@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
 
 body {
     font-family: 'Inter', sans-serif;
@@ -528,4 +529,5 @@ img {
     padding: 3rem 0;
     background: var(--secondary-light);
     color: #fff;
+    font-family: 'Antic Didone', serif;
 }
