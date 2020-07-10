@@ -201,14 +201,14 @@ function buildLocationList(data) {
                                   <div class="d-flex justify-content-between">
                                     <div class="d-flex">
                                         <i class="fas fa-film fa-3x"></i>
-                                        <h3 class="ml-3">${m.name}</h3>
+                                        <h3 class="ml-3">${m.name.toLowerCase()}</h3>
                                     </div>
                                     <span class="d-inline-block arrow-indicator"><i class="fas fa-chevron-down"></i></span>
                                   </div>
                                   <div class="d-flex justify-content-between mt-2 ml-md-5 text-white">
                                     <p class="m-0">${m.address}, ${m.city}</p>
                                     <p class="m-0 ml-3">
-                                        ${urlNl === m.name.toLowerCase() ? moment(m.date).locale('nl').format("LL") : moment(m.date).locale('en').format("LL")}
+                                        ${urlNl === "madre" ? moment(m.date).locale('nl').format("LL") : moment(m.date).locale('en').format("LL")}
                                     </p>
                                   </div>
 
@@ -285,7 +285,6 @@ function buildLocationList(data) {
             const cityQuery = this.textContent;
             const filter = showtime.filter(el => el.city === cityQuery);
 
-            console.log(urlNl);
 
             const cHtml = filter.map(m => {
                 return `
@@ -304,7 +303,7 @@ function buildLocationList(data) {
                                   <div class="d-flex justify-content-between mt-2 ml-md-5 text-white">
                                     <p class="m-0">${m.address}, ${m.city}</p>
                                     <p class="m-0 ml-3">
-                                    ${urlNl === m.name.toLowerCase() ? moment(m.date).locale('nl').format("LL") : moment(m.date).locale('en').format("LL")}
+                                    ${urlNl === "madre" ? moment(m.date).locale('nl').format("LL") : moment(m.date).locale('en').format("LL")}
                                     </p>
                                   </div>
 
