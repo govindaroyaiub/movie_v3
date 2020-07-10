@@ -412,7 +412,7 @@ class AdminController extends Controller
     public function reviews_list()
     {
         $reviews = Review::join('movie_details', 'movie_details.id', '=', 'reviews.movie_id')
-                            ->select('reviews.id', 'movie_details.movie_title', 'reviews.review_en', 'reviews.review_nl', 'reviews.source', 'reviews.date', 'reviews.ratings')
+                            ->select('reviews.id', 'movie_details.movie_title', 'reviews.review_text', 'reviews.language', 'reviews.source', 'reviews.source_link', 'reviews.ratings')
                             ->get();
 
         $movie_list = Movie::where('is_delete', 0)->get();
@@ -425,10 +425,10 @@ class AdminController extends Controller
         $movie_details = Movie::where('id', '=', $request->movie_id)->first();
         $review_details = [
             'movie_id' => $request->movie_id,
-            'review_nl' => $request->review_nl,
-            'review_en' => $request->review_en,
+            'review_text' => $request->review_text,
+            'language' => $request->language,
             'source' => $request->source,
-            'date' => $request->date,
+            'source_link' => $request->source_link,
             'ratings' => $request->rating
         ];
         Review::insert($review_details);
@@ -445,7 +445,7 @@ class AdminController extends Controller
     {
         $movie_list = Movie::where('is_delete', 0)->get();
         $review_details = Review::join('movie_details', 'movie_details.id', '=', 'reviews.movie_id')
-                                ->select('reviews.id', 'reviews.movie_id', 'movie_details.movie_title', 'reviews.review_en', 'reviews.review_nl', 'reviews.source', 'reviews.date', 'reviews.ratings')
+                                ->select('reviews.id', 'reviews.movie_id', 'movie_details.movie_title', 'reviews.review_text', 'reviews.language', 'reviews.source', 'reviews.source_link', 'reviews.ratings')
                                 ->where('reviews.id', '=', $id)
                                 ->first();
 
@@ -457,10 +457,10 @@ class AdminController extends Controller
         $movie_details = Movie::where('id', '=', $request->movie_id)->first();
         $review_details = [
             'movie_id' => $request->movie_id,
-            'review_nl' => $request->review_nl,
-            'review_en' => $request->review_en,
+            'review_text' => $request->review_text,
+            'language' => $request->language,
             'source' => $request->source,
-            'date' => $request->date,
+            'source_link' => $request->source_link,
             'ratings' => $request->rating
         ];
         Review::where('id', '=', $id)->update($review_details);

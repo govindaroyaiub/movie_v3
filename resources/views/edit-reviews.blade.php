@@ -22,31 +22,34 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="review_nl">Review (NL)</label>
-                                <input type="text" class="form-control" name="review_nl" value="{{ $review_details['review_nl'] }}" id="review_nl" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="review_en">Review (EN)</label>
-                                <input type="text" class="form-control" name="review_en" value="{{ $review_details['review_en'] }}" id="review_en" required>
+                                <label for="review_text">Review</label>
+                                <input type="text" class="form-control" name="review_text" value="{{$review_details['review_text']}}" id="review_text" required>
                             </div>
                             <div class="form-group">
                                 <label for="source">Source</label>
-                                <input type="text" class="form-control" name="source" value="{{ $review_details['source'] }}" id="source" required>
+                                <input type="text" class="form-control" name="source" value="{{$review_details['source']}}" id="source" required>
                             </div>
                             <div class="form-group">
-                                <label for="date">Date</label>
-                                <input type="date" class="form-control" name="date" value="{{ $review_details['date'] }}" id="date" required>
+                                <label for="source_link">Source Link</label>
+                                <input type="text" class="form-control" name="source_link" value="{{$review_details['source_link']}}" id="source_link">
                             </div>
                             <div class="form-group">
                             <select class="form-control" name="rating" required>
                                 <option value="">Select Ratings</option>
-                                <option value="3" @if($review_details['ratings'] == 3) selected @endif)>3</option>
-                                <option value="3.5" @if($review_details['ratings'] == 3.5) selected @endif)>3.5</option>
-                                <option value="4" @if($review_details['ratings'] == 4) selected @endif)>4</option>
-                                <option value="4.5" @if($review_details['ratings'] == 4.5)  selected @endif)>4.5</option>
-                                <option value="5" @if($review_details['ratings'] == 5) selected @endif)>5</option>
-                                <option value="0" @if($review_details['ratings'] == 0) selected @endif)>None</option>
+                                <option value="3" @if($review_details['ratings'] == 3) selected @endif>3</option>
+                                <option value="3.5" @if($review_details['ratings'] == 3.5) selected @endif>3.5</option>
+                                <option value="4" @if($review_details['ratings'] == 4) selected @endif>4</option>
+                                <option value="4.5" @if($review_details['ratings'] == 4.5)  selected @endif>4.5</option>
+                                <option value="5" @if($review_details['ratings'] == 5) selected @endif>5</option>
+                                <option value="0" @if($review_details['ratings'] == 0) selected @endif>None</option>
                             </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="language" required>
+                                    <option value="">Select Language</option>
+                                    <option value="nl" @if($review_details['language'] == 'nl') selected @endif>NL</option>
+                                    <option value="en" @if($review_details['language'] == 'en') selected @endif>EN</option>
+                                </select>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="form-control-user btn btn-primary">Update</button>

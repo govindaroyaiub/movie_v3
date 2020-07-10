@@ -16,10 +16,10 @@ class ReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->integer('movie_id')->nullable();
-            $table->string('review_en')->nullable();
-            $table->string('review_nl')->nullable();
+            $table->text('review_text')->nullable();
+            $table->string('language')->nullable();
             $table->string('source')->nullable();
-            $table->date('date')->nullable();
+            $table->text('source_link')->nullable();
             $table->string('ratings')->nullable();
             $table->timestamps();
         });

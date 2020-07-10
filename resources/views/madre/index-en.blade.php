@@ -123,7 +123,7 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 ">
-                    @include('movie._map')
+                    @include('madre._map')
                 </div>
             </div>
         </div>
@@ -200,8 +200,9 @@
                             @endif
 
                             <small style="opacity:0;">({{ $review->ratings }})</small>
-                            <h3>{{ $review->review_en }}</h3>
-                            <p>{{ $review->source }},  <label style="text-transform: uppercase;">{{date('d F Y', strtotime($review->date))}}</label></p>
+                                <h3>{{ $review->review_text }}</h3>
+
+                                <p><a href="{{$review->source_link}}">{{ $review->source }}</a></p>
                         </div>
                     @endforeach
                 </div>
