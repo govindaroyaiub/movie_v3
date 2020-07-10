@@ -63,7 +63,7 @@ class MadreController extends Controller
             $secondary_dark = $movie_details_color['secondary_dark'];
 
             $reviews = Review::join('movie_details', 'movie_details.id', 'reviews.movie_id')
-                            ->select('reviews.id', 'reviews.movie_id', 'movie_details.movie_title', 'reviews.review_en', 'reviews.review_nl', 'reviews.source', 'reviews.date', 'reviews.ratings')
+                            ->select('reviews.id', 'reviews.movie_id', 'movie_details.movie_title', 'reviews.review_text', 'reviews.language', 'reviews.source', 'reviews.source_link', 'reviews.ratings')
                             ->where('base_url', '=', $app_url)
                             ->get();
 
@@ -139,8 +139,9 @@ class MadreController extends Controller
             $secondary_dark = $movie_details_color['secondary_dark'];
 
             $reviews = Review::join('movie_details', 'movie_details.id', 'reviews.movie_id')
-                            ->select('reviews.id', 'reviews.movie_id', 'movie_details.movie_title', 'reviews.review_en', 'reviews.review_nl', 'reviews.source', 'reviews.date', 'reviews.ratings')
-                            ->where('base_url', '=', $app_url)
+                            ->select('reviews.id', 'reviews.movie_id', 'movie_details.movie_title', 'reviews.review_text', 'reviews.language', 'reviews.source', 'reviews.source_link', 'reviews.ratings')
+                            ->where('movie_details.base_url', '=', $app_url)
+                            ->where('reviews.language', '=', 'en')
                             ->get();
 
             return view('madre.index-en', compact(

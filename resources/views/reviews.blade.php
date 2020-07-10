@@ -15,10 +15,10 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Movie</th>
-                                    <th>NL Review</th>
-                                    <th>EN Review</th>
+                                    <th>Review</th>
+                                    <th>Lanuage</th>
                                     <th>Source</th>
-                                    <th>Date</th>
+                                    <th>Source Link</th>
                                     <th>Ratings</th>
                                     <th style="text-align: center">Action</th>
                                 </tr>
@@ -30,10 +30,16 @@
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$row->movie_title}}</td>
-                                    <td>{{$row->review_en}}</td>
-                                    <td>{{$row->review_nl}}</td>
+                                    <td>{{$row->review_text}}</td>
+                                    <td>
+                                    @if($row->language == 'nl') 
+                                    NL
+                                    @else
+                                    EN
+                                    @endif
+                                    </td>
                                     <td>{{$row->source}}</td>
-                                    <td>{{$row->date}}</td>
+                                    <td>{{$row->source_link}}</td>
                                     <td>{{$row->ratings}}</td>
                                     <td>
                                         <a href="/reviews/edit/{{$row->id}}"><button class="btn btn-primary text-white custom">Edit</button></a>
@@ -59,7 +65,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="/reviews/create">
+                        <form method="post" action="/reviews/create" autocomplete="off">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label>Select movie from the drop down list</label>
@@ -71,31 +77,34 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="review_nl">Review (NL)</label>
-                                <input type="text" class="form-control" name="review_nl" id="review_nl" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="review_en">Review (EN)</label>
-                                <input type="text" class="form-control" name="review_en" id="review_en" required>
+                                <label for="review_text">Review</label>
+                                <input type="text" class="form-control" name="review_text" id="review_text" required>
                             </div>
                             <div class="form-group">
                                 <label for="source">Source</label>
                                 <input type="text" class="form-control" name="source" id="source" required>
                             </div>
                             <div class="form-group">
-                                <label for="date">Date</label>
-                                <input type="date" class="form-control" name="date" id="date" required>
+                                <label for="source_link">Source Link</label>
+                                <input type="text" class="form-control" name="source_link" id="source_link">
                             </div>
                             <div class="form-group">
-                            <select class="form-control" name="rating" required>
-                                <option value="">Select Ratings</option>
-                                <option value="3">3</option>
-                                <option value="3.5">3.5</option>
-                                <option value="4">4</option>
-                                <option value="4.5">4.5</option>
-                                <option value="5">5</option>
-                                <option value="0">None</option>
-                            </select>
+                                <select class="form-control" name="rating" required>
+                                    <option value="">Select Ratings</option>
+                                    <option value="3">3</option>
+                                    <option value="3.5">3.5</option>
+                                    <option value="4">4</option>
+                                    <option value="4.5">4.5</option>
+                                    <option value="5">5</option>
+                                    <option value="0">None</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="language" required>
+                                    <option value="">Select Language</option>
+                                    <option value="nl">NL</option>
+                                    <option value="en">EN</option>
+                                </select>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="form-control-user btn btn-primary">Create</button>
