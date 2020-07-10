@@ -208,7 +208,7 @@ function buildLocationList(data) {
                                   <div class="d-flex justify-content-between mt-2 ml-md-5 text-white">
                                     <p class="m-0">${m.address}, ${m.city}</p>
                                     <p class="m-0 ml-3">
-                                        ${urlNl === "madre" ? moment(m.date).locale('nl').format("LL") : moment(m.date).locale('en').format("LL")}
+                                    ${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}
                                     </p>
                                   </div>
 
@@ -218,7 +218,7 @@ function buildLocationList(data) {
                           <div id="collapse${m.id}" class="collapse" aria-labelledby="heading${m.id}" data-parent="#mainAccordionId">
                             <div class="accordion-expand-js d-flex flex-column align-items-start mt-2">
                               <h4 class="text-white">${m.movie_title}</h4>
-                              <a class="get-ticket-btn" href="http://${m.url}" target="_blank"><i class="fab fa-ticket"></i> ${location.pathname === '/' ? 'Bekijk Bioscooppagina' : 'Go to Cinema page'}</a>
+                              <a class="get-ticket-btn" href="http://${m.url}" target="_blank"><i class="fab fa-ticket"></i> ${isUrlNl ? 'Go to Cinema page' : 'Bekijk Bioscooppagina'}</a>
                             </div>
                           </div>
                         </div>
@@ -303,7 +303,7 @@ function buildLocationList(data) {
                                   <div class="d-flex justify-content-between mt-2 ml-md-5 text-white">
                                     <p class="m-0">${m.address}, ${m.city}</p>
                                     <p class="m-0 ml-3">
-                                    ${urlNl === "madre" ? moment(m.date).locale('nl').format("LL") : moment(m.date).locale('en').format("LL")}
+                                    ${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}
                                     </p>
                                   </div>
 
@@ -313,7 +313,7 @@ function buildLocationList(data) {
                           <div id="collapse-${m.id}" class="collapse" aria-labelledby="heading-${m.id}" data-parent="#cityAccordionId">
                             <div class="accordion-expand-js d-flex flex-column align-items-start mt-2">
                               <h4 class="text-white">${m.movie_title}</h4>
-                              <a class="get-ticket-btn" href="http://${m.url}" target="_blank"><i class="fab fa-ticket"></i> ${location.pathname === '/' ? 'Bekijk Bioscooppagina' : 'Go to Cinema page'}</a>
+                              <a class="get-ticket-btn" href="http://${m.url}" target="_blank"><i class="fab fa-ticket"></i> ${isUrlNl ? 'Go to Cinema page' : 'Bekijk Bioscooppagina'}</a>
                             </div>
                           </div>
                         </div>
