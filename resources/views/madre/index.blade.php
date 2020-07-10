@@ -197,7 +197,7 @@
 
                                 <small class="">({{ $review->ratings }})</small>
                                 <h3>{{ $review->review_en }}</h3>
-                                <p>{{ $review->source }}, {{ $review->date }}</p>
+                                <p>{{ $review->source }},  {{date('d F Y', strtotime($review->date))}}</p>
                             </div>
                         @endforeach
                     </div>
