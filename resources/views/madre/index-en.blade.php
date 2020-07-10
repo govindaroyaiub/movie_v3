@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $movie_details->movie_title }}</title>
+    <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <style>
         :root {
             --primary-light: {{ $primary_light }};
@@ -14,8 +16,9 @@
             --extend: #353b48;
         }
     </style>
-    <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
-    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
+    <script defer src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
     {!! $movie_details->fb_pixel !!}
     {!! $movie_details->google_pixel !!}
@@ -171,6 +174,39 @@
     </div>
 
 
+    <section class="review-area">
+        <div class="container">
+            <div class="reviews-slider">
+                <div class="slider single-item">
+                    @foreach($reviews as $review)
+                        <div class="text-center">
+
+                            @php $rating = $review->ratings; @endphp
+                            @foreach(range(1, 5) as $i)
+                                <span class="fa-stack">
+                                        <i class="far fa-star fa-stack-1x"></i>
+                                    @if($rating >0)
+                                        @if($rating >0.5)
+                                            <i class="fas fa-star fa-stack-1x"></i>
+                                        @else
+                                            <i class="fas fa-star-half fa-stack-1x"></i>
+                                        @endif
+                                    @endif
+                                    @php $rating--; @endphp
+                                     </span>
+                            @endforeach
+
+                            <small class="">({{ $review->ratings }})</small>
+                            <h3>{{ $review->review_nl }}</h3>
+                            <p>{{ $review->source }},  {{date('d F Y', strtotime($review->date))}}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <footer class="movie-footer text-white text-center">
         <div class="container">
             <ul class="nav nav-tabs">
@@ -260,6 +296,41 @@
     }
 
     document.getElementById("defaultOpen").click();
+
+    $(document).ready(function () {
+        $('.single-item').slick({
+            dots: false,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    });
 </script>
 
 </body>

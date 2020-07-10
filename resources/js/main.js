@@ -65,7 +65,6 @@ if (isUrlNl) {
     en.addEventListener('click', () => location.href = urlEn);
 }
 
-
 //
 const mapDiv = document.querySelector('.map');
 const mapmarker = document.querySelector('.mapmarker');

@@ -179,25 +179,23 @@
                     <div class="slider single-item">
                         @foreach($reviews as $review)
                             <div class="text-center">
-
                                 @php $rating = $review->ratings; @endphp
                                 @foreach(range(1, 5) as $i)
                                     <span class="fa-stack">
                                         <i class="far fa-star fa-stack-1x"></i>
-                                    @if($rating >0)
-                                            @if($rating >0.5)
+                                    @if($rating > 0)
+                                            @if($rating > 0.5)
                                                 <i class="fas fa-star fa-stack-1x"></i>
                                             @else
                                                 <i class="fas fa-star-half fa-stack-1x"></i>
                                             @endif
                                         @endif
                                         @php $rating--; @endphp
-                                     </span>
+                                    </span>
                                 @endforeach
 
-                                <small class="">({{ $review->ratings }})</small>
                                 <h3>{{ $review->review_en }}</h3>
-                                <p>{{ $review->source }},  {{date('d F Y', strtotime($review->date))}}</p>
+                                <p>{{ $review->source }}, {{date('d F Y', strtotime($review->date))}}</p>
                             </div>
                         @endforeach
                     </div>
@@ -298,8 +296,38 @@
     document.getElementById("defaultOpen").click();
 
     $(document).ready(function () {
-        console.log("ready!");
-        $('.single-item').slick();
+        $('.single-item').slick({
+            dots: false,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
     });
 </script>
 </body>

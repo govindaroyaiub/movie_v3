@@ -526,8 +526,6 @@ img {
 
 .review-area {
     padding: 3rem 0;
-}
-
-.checked {
-    color: orange;
+    background: var(--secondary-light);
+    color: #fff;
 }
