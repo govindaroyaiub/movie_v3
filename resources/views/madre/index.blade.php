@@ -199,8 +199,10 @@
                                 @endif
 
                                 <small style="opacity:0;">({{ $review->ratings }})</small>
-                                <h3>{{ $review->review_en }}</h3>
-                                <p>{{ $review->source }}, {{date('d F Y', strtotime($review->date))}}</p>
+                                <h3>{{ $review->review_nl }}</h3>
+
+                                <p>{{ $review->source }}, <label style="text-transform: uppercase;"><?php setlocale(LC_TIME, "NL_nl");  echo strftime("%e %B %Y", strtotime($review->date));?></label></p>
+    
                             </div>
                         @endforeach
                     </div>
