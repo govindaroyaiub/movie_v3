@@ -144,12 +144,12 @@
                                         <div class="row">
                                             <div class="col">
                                                 <label for="primary_light">Primary Light</label>
-                                                <input type="color" class="form-control" value="#353B48"
+                                                <input type="color" class="form-control" value="{{ $movie_details['primary_light'] }}"
                                                     name="primary_light" id="primary_light" required>
                                             </div>
                                             <div class="col">
                                                 <label for="primary_dark">Primary Dark</label>
-                                                <input type="color" class="form-control" value="#353B48"
+                                                <input type="color" class="form-control" value="{{ $movie_details['primary_dark'] }}"
                                                     name="primary_dark" id="primary_dark" required>
                                             </div>
                                         </div>
@@ -157,12 +157,12 @@
                                         <div class="row">
                                             <div class="col">
                                                 <label for="secondary_light">Secondary Light</label>
-                                                <input type="color" class="form-control" value="#353B48"
+                                                <input type="color" class="form-control" value="{{ $movie_details['secondary_light'] }}"
                                                     name="secondary_light" id="secondary_light" required>
                                             </div>
                                             <div class="col">
                                                 <label for="secondary_dark">Secondary Dark</label>
-                                                <input type="color" class="form-control" value="#353B48"
+                                                <input type="color" class="form-control" value="{{ $movie_details['secondary_dark'] }}"
                                                     name="secondary_dark" id="secondary_dark" required>
                                             </div>
                                         </div>
