@@ -9,30 +9,16 @@
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <style>
         :root {
-            --primary-light: lightgreen;
-            --primary-dark: green;
-            --secondary-light: #282c34;
-            --secondary-dark: #20232a;
+            --primary-light: {{ $primary_light }};
+            --primary-dark: {{ $primary_dark }};;
+            --secondary-light: {{ $secondary_light }};;
+            --secondary-dark: {{ $secondary_dark }};;
             --extend: #353b48;
         }
     </style>
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
     {!! $movie_details->fb_pixel !!}
     {!! $movie_details->google_pixel !!}
-    <style>
-        .panel-heading a:before {
-            font-family: 'Glyphicons Halflings';
-            content: "\e114";
-            float: right;
-            transition: all 0.5s;
-        }
-
-        .panel-heading.active a:before {
-            -webkit-transform: rotate(180deg);
-            -moz-transform: rotate(180deg);
-            transform: rotate(180deg);
-        }
-    </style>
 </head>
 <body>
 
@@ -67,7 +53,8 @@
                             </li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('vdo', this)">Videos</a></li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('sy', this)">Synopsis</a></li>
-                            <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li>
+                            <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
+                                        class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li>
                             <li class="hastag">{{ $movie_details->hashtag }}</li>
                         </ul>
                     </nav>

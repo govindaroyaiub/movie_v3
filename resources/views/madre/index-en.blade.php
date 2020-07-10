@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $movie_details->movie_title }}</title>
+    <style>
+        :root {
+            --primary-light: {{ $primary_light }};
+            --primary-dark: {{ $primary_dark }};;
+            --secondary-light: {{ $secondary_light }};;
+            --secondary-dark: {{ $secondary_dark }};;
+            --extend: #353b48;
+        }
+    </style>
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
@@ -39,10 +48,12 @@
                     <a href="javascript:void(0)" class="closebtn">&times;</a>
                     <nav class="nav-menu">
                         <ul>
-                            <li><a href="#" class="menu-link tablink" onclick="openPage('bp', this)" id="defaultOpen">Cinemas</a></li>
+                            <li><a href="#" class="menu-link tablink" onclick="openPage('bp', this)" id="defaultOpen">Cinemas</a>
+                            </li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('vdo', this)">Videos</a></li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('sy', this)">Synopsis</a></li>
-                            <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li>
+                            <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
+                                        class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li>
                             <li class="hastag">{{ $movie_details->hashtag }}</li>
                         </ul>
                     </nav>
@@ -219,9 +230,12 @@
 
         <div class="container">
             <div class="footer-dist-logos">
-                <a href="{{ $d_details['email'] }}" target="_blank"><img src="/distributors/{{ $d_details['logo'] }}" alt=""></a>
-                <a href="https://www.planetnine.com/" target="_blank"><img src="{{ asset('images/p9.png') }}" alt=""></a>
-                <a href="{{ $mp_details['email'] }}" target="_blank"><img src="/media_partners/{{ $mp_details['logo'] }}" alt=""></a>
+                <a href="{{ $d_details['email'] }}" target="_blank"><img src="/distributors/{{ $d_details['logo'] }}"
+                                                                         alt=""></a>
+                <a href="https://www.planetnine.com/" target="_blank"><img src="{{ asset('images/p9.png') }}"
+                                                                           alt=""></a>
+                <a href="{{ $mp_details['email'] }}" target="_blank"><img
+                        src="/media_partners/{{ $mp_details['logo'] }}" alt=""></a>
             </div>
         </div>
     </footer>
