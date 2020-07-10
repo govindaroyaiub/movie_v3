@@ -16,6 +16,9 @@
             --extend: #353b48;
         }
     </style>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
+    <script defer src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
     {!! $movie_details->fb_pixel !!}
     {!! $movie_details->google_pixel !!}
@@ -170,6 +173,38 @@
             </div>
         </div>
 
+        <section class="review-area">
+            <div class="container">
+                <div class="reviews-slider">
+                    <div class="slider single-item">
+                        @foreach($reviews as $review)
+                            <div class="text-center">
+
+                                @php $rating = $review->ratings; @endphp
+                                @foreach(range(1, 5) as $i)
+                                    <span class="fa-stack">
+                                        <i class="far fa-star fa-stack-1x"></i>
+                                    @if($rating >0)
+                                            @if($rating >0.5)
+                                                <i class="fas fa-star fa-stack-1x"></i>
+                                            @else
+                                                <i class="fas fa-star-half fa-stack-1x"></i>
+                                            @endif
+                                        @endif
+                                        @php $rating--; @endphp
+                                     </span>
+                                @endforeach
+
+                                <small class="">({{ $review->ratings }})</small>
+                                <h3>{{ $review->review_en }}</h3>
+                                <p>{{ $review->source }}, {{ $review->date }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <footer class="movie-footer text-white text-center">
             <div class="container">
@@ -261,6 +296,11 @@
     }
 
     document.getElementById("defaultOpen").click();
+
+    $(document).ready(function () {
+        console.log("ready!");
+        $('.single-item').slick();
+    });
 </script>
 </body>
 </html>

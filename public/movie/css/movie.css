@@ -524,3 +524,10 @@ img {
     margin-right: 1rem;
 }
 
+.review-area {
+    padding: 3rem 0;
+}
+
+.checked {
+    color: orange;
+}

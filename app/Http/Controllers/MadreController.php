@@ -68,19 +68,20 @@ class MadreController extends Controller
                             ->get();
 
             return view('madre.index', compact(
-                'movie_details', 
-                'youtube_url', 
-                'poster', 'showtime', 
-                'city', 
-                'rating', 
-                'd_details', 
-                'mp_details', 
-                'reviews', 
+                'movie_details',
+                'youtube_url',
+                'poster', 'showtime',
+                'city',
+                'rating',
+                'd_details',
+                'mp_details',
+                'reviews',
                 'primary_light',
                 'primary_dark',
                 'secondary_light',
                 'secondary_dark'
             ));
+
         }
     }
 
@@ -143,14 +144,14 @@ class MadreController extends Controller
                             ->get();
 
             return view('madre.index-en', compact(
-                'movie_details', 
-                'youtube_url', 
-                'poster', 'showtime', 
-                'city', 
-                'rating', 
-                'd_details', 
-                'mp_details', 
-                'reviews', 
+                'movie_details',
+                'youtube_url',
+                'poster', 'showtime',
+                'city',
+                'rating',
+                'd_details',
+                'mp_details',
+                'reviews',
                 'primary_light',
                 'primary_dark',
                 'secondary_light',
