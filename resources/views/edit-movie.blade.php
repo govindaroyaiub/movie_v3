@@ -144,26 +144,26 @@
                                         <div class="row">
                                             <div class="col">
                                                 <label for="primary_light">Primary Light</label>
-                                                <input type="color" class="form-control" value="#353B48"
-                                                    name="primary_light" id="primary_light" required>
+                                                <input type="color" class="form-control" name="primary_light"
+                                                    id="primary_light" required>
                                             </div>
                                             <div class="col">
                                                 <label for="primary_dark">Primary Dark</label>
-                                                <input type="color" class="form-control" value="#353B48"
-                                                    name="primary_dark" id="primary_dark" required>
+                                                <input type="color" class="form-control" name="primary_dark"
+                                                    id="primary_dark" required>
                                             </div>
                                         </div>
                                         <br>
                                         <div class="row">
                                             <div class="col">
                                                 <label for="secondary_light">Secondary Light</label>
-                                                <input type="color" class="form-control" value="#353B48"
-                                                    name="secondary_light" id="secondary_light" required>
+                                                <input type="color" class="form-control" name="secondary_light"
+                                                    id="secondary_light" required>
                                             </div>
                                             <div class="col">
                                                 <label for="secondary_dark">Secondary Dark</label>
-                                                <input type="color" class="form-control" value="#353B48"
-                                                    name="secondary_dark" id="secondary_dark" required>
+                                                <input type="color" class="form-control" name="secondary_dark"
+                                                    id="secondary_dark" required>
                                             </div>
                                         </div>
                                         <br>
