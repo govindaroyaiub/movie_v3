@@ -208,7 +208,7 @@ function buildLocationList(data) {
                                   <div class="d-flex justify-content-between mt-2 ml-md-5 text-white">
                                     <p class="m-0">${m.address}, ${m.city}</p>
                                     <p class="m-0 ml-3">
-                                        ${location.pathname === '/' ? moment(m.date).locale('nl').format("LL") : +moment(m.date).locale('en').format("LL")}
+                                        ${urlNl === m.name.toLowerCase() ? moment(m.date).locale('nl').format("LL") : moment(m.date).locale('en').format("LL")}
                                     </p>
                                   </div>
 
@@ -285,6 +285,8 @@ function buildLocationList(data) {
             const cityQuery = this.textContent;
             const filter = showtime.filter(el => el.city === cityQuery);
 
+            console.log(urlNl);
+
             const cHtml = filter.map(m => {
                 return `
                         <div class="city-accordion-js">
@@ -302,7 +304,7 @@ function buildLocationList(data) {
                                   <div class="d-flex justify-content-between mt-2 ml-md-5 text-white">
                                     <p class="m-0">${m.address}, ${m.city}</p>
                                     <p class="m-0 ml-3">
-                                    ${location.pathname === '/' ? moment(m.date).locale('nl').format("LL") : moment(m.date).locale('en').format("LL")}
+                                    ${urlNl === m.name.toLowerCase() ? moment(m.date).locale('nl').format("LL") : moment(m.date).locale('en').format("LL")}
                                     </p>
                                   </div>
 
