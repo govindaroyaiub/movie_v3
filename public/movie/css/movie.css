@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 
-:root {
-    --primary-light: #de6817;
-    --primary-dark: #d04e44;
-    --extend: #353b48;
-    --secondary-light: #282c34;
-    --secondary-dark: #20232a;
-}
-
 body {
     font-family: 'Inter', sans-serif;
 }

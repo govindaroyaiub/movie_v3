@@ -7,6 +7,15 @@
     <title>{{ $movie_details->movie_title }}</title>
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
+    <style>
+        :root {
+            --primary-light: lightgreen;
+            --primary-dark: green;
+            --secondary-light: #282c34;
+            --secondary-dark: #20232a;
+            --extend: #353b48;
+        }
+    </style>
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
     {!! $movie_details->fb_pixel !!}
     {!! $movie_details->google_pixel !!}
