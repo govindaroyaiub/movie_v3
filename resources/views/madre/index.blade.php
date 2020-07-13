@@ -195,14 +195,14 @@
                                         </span>
                                     @endforeach
                                 @else
-                                
+
                                 @endif
 
                                 <small style="opacity:0;">({{ $review->ratings }})</small>
                                 <h3>{{ $review->review_text }}</h3>
 
                                 <p><a href="{{$review->source_link}}" target="_blank" style="color:white;">{{ $review->source }}</a></p>
-    
+
                             </div>
                         @endforeach
                     </div>
@@ -307,6 +307,8 @@
             dots: false,
             infinite: false,
             speed: 300,
+            autoplay: true,
+            autoplaySpeed: 5000,
             slidesToShow: 1,
             slidesToScroll: 1,
             responsive: [
