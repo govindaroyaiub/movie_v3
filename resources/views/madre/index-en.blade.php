@@ -165,7 +165,7 @@
                             <p><span>Produced by:</span> {{ $movie_details->producer }}</p>
                             <p><span>Casts:</span> {{ $movie_details->actors }}</p>
                             <p><span>Duration:</span> {{ $movie_details->duration }}</p>
-{{--                            <p><span>Ratings:</span> {{ $rating }}</p>--}}
+                            {{--                            <p><span>Ratings:</span> {{ $rating }}</p>--}}
                         </div>
                     </div>
                 </div>
@@ -176,35 +176,41 @@
 
     <section class="review-area">
         <div class="container">
-            <div class="reviews-slider">
-                <div class="slider single-item">
-                    @foreach($reviews as $review)
-                        <div class="text-center">
-                            @php $rating = $review->ratings; @endphp
-                            @if($rating > 0)
-                                @foreach(range(1, 5) as $i)
-                                    <span class="fa-stack">
+            <div class="col-md-10 mx-auto">
+                <div class="reviews-slider">
+                    <div class="slider single-item">
+                        @foreach($reviews as $review)
+                            <div class="text-center">
+                                @php $rating = $review->ratings; @endphp
+                                @if($rating > 0)
+                                    @foreach(range(1, 5) as $i)
+                                        <span class="fa-stack">
                                             <i class="far fa-star fa-stack-1x"></i>
                                         @if($rating >0)
-                                            @if($rating >0.5)
-                                                <i class="fas fa-star fa-stack-1x"></i>
-                                            @else
-                                                <i class="fas fa-star-half fa-stack-1x"></i>
+                                                @if($rating >0.5)
+                                                    <i class="fas fa-star fa-stack-1x"></i>
+                                                @else
+                                                    <i class="fas fa-star-half fa-stack-1x"></i>
+                                                @endif
                                             @endif
-                                        @endif
-                                        @php $rating--; @endphp
+                                            @php $rating--; @endphp
                                         </span>
-                                @endforeach
-                            @else
+                                    @endforeach
+                                @else
 
-                            @endif
+                                @endif
 
-                            <small style="opacity:0;">({{ $review->ratings }})</small>
-                                <h3>{{ $review->review_text }}</h3>
+                                {{-- <small>({{ $review->ratings }})</small>--}}
 
-                                <p><a href="{{$review->source_link}}" target="_blank" style="color:white;">{{ $review->source }}</a></p>
-                        </div>
-                    @endforeach
+                                <h3><i class="fa fa-quote-left"></i> {{ $review->review_text }} <i
+                                        class="fa fa-quote-right"></i></h3>
+
+                                <p><a href="{{$review->source_link}}" target="_blank">{{ $review->source }}</a>
+                                </p>
+
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
@@ -213,131 +219,135 @@
 
     <footer class="movie-footer text-white text-center">
         <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#cookies">Cookies</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#Gebruiksvoorwaarden">Terms of Use</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#privacy-policy">Privacy Policy</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#credits">Credits</a>
-                </li>
-            </ul>
-
-            <div class="tab-content pt-3">
-                <div id="cookies" class="container tab-pane">
-                    <p>
-                        {{ $movie_details->cookies }}
-                    </p>
-                </div>
-                <div id="Gebruiksvoorwaarden" class="container tab-pane fade">
-                    <p>
-                        {{ $movie_details->terms_of_use }}
-                    </p>
-                </div>
-                <div id="privacy-policy" class="container tab-pane fade">
-                    <p>
-                        {{ $movie_details->privacy_policy }}
-                    </p>
-                </div>
-                <div id="credits" class="container tab-pane fade">
-                    <p>
-                        {{ $movie_details->credits }}
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
             <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <ul class="footer-social">
-                        <li class="mr-2"><a target="_blank" href="{{ $movie_details->fb_link }}">
-                                <img width="35" src="{{ asset('images/facebook.svg') }}" alt="">
-                            </a>
-                        <li><a target="_blank" href="{{ $movie_details->twitter_link }}">
-                                <img width="35" src="{{ asset('images/twitter.svg') }}" alt="">
-                            </a>
+                <div class="col-md-8 mx-auto">
+
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#cookies">Cookies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab"
+                               href="#Gebruiksvoorwaarden">Gebruiksvoorwaarden</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#privacy-policy">Privacy Policy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#credits">Credits</a>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </div>
+                    <hr class="bg-secondary">
 
-        <div class="container">
-            <div class="footer-dist-logos">
-                <a href="{{ $d_details['email'] }}" target="_blank"><img src="/distributors/{{ $d_details['logo'] }}"
-                                                                         alt=""></a>
-                <a href="https://www.planetnine.com/" target="_blank"><img src="{{ asset('images/p9.png') }}"
-                                                                           alt=""></a>
-                <a href="{{ $mp_details['email'] }}" target="_blank"><img
-                        src="/media_partners/{{ $mp_details['logo'] }}" alt=""></a>
+                    <div class="tab-content pt-3">
+                        <div id="cookies" class="container tab-pane">
+                            <p>
+                                {{ $movie_details->cookies_en }}
+                            </p>
+                        </div>
+                        <div id="Gebruiksvoorwaarden" class="container tab-pane fade">
+                            <p>
+                                {{ $movie_details->terms_of_use_en }}
+                            </p>
+                        </div>
+                        <div id="privacy-policy" class="container tab-pane fade">
+                            <p>
+                                {{ $movie_details->privacy_policy_en }}
+                            </p>
+                        </div>
+                        <div id="credits" class="container tab-pane fade">
+                            <p>
+                                {{ $movie_details->credits_en }}
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="footer-dist-logos d-flex justify-content-between align-items-center">
+                        <a href="{{ $d_details['email'] }}" target="_blank"><img
+                                src="/distributors/{{ $d_details['logo'] }}" alt=""></a>
+                        <a href="https://www.planetnine.com/" target="_blank"><img
+                                src="{{ asset('images/p9.png') }}"
+                                alt=""></a>
+                        <a href="{{ $mp_details['email'] }}" target="_blank"><img
+                                src="/media_partners/{{ $mp_details['logo'] }}" alt=""></a>
+                    </div>
+
+
+                    <hr class="bg-secondary">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p>&copy; All right reserved. Planetnine - <?= Date('Y') ?></p>
+                        <ul class="footer-social">
+                            <li class="mr-2"><a target="_blank" href="{{ $movie_details->fb_link }}">
+                                    <img src="{{ asset('images/facebook.svg') }}" alt="">
+                                </a>
+                            <li><a target="_blank" href="{{ $movie_details->twitter_link }}">
+                                    <img src="{{ asset('images/twitter.svg') }}" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-</section>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone.min.js"></script>
+    <script src='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+    <script src="{{ mix('js/main.js') }}"></script>
+    <script>
+        document.querySelectorAll('.tablink').forEach(navTabLink => navTabLink.addEventListener('click', e => e.preventDefault()));
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone.min.js"></script>
-<script src='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
-<script src="{{ mix('js/main.js') }}"></script>
-<script>
-    document.querySelectorAll('.tablink').forEach(navTabLink => navTabLink.addEventListener('click', e => e.preventDefault()));
-
-    function openPage(pageName, element) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+        function openPage(pageName, element) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            document.getElementById(pageName).style.display = "block";
         }
-        tablinks = document.getElementsByClassName("tablink");
-        document.getElementById(pageName).style.display = "block";
-    }
 
-    document.getElementById("defaultOpen").click();
+        document.getElementById("defaultOpen").click();
 
-    $(document).ready(function () {
-        $('.single-item').slick({
-            dots: false,
-            infinite: false,
-            autoplay: true,
-            autoplaySpeed: 5000,
-            speed: 300,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: true
+        $(document).ready(function () {
+            $('.single-item').slick({
+                dots: false,
+                infinite: false,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                speed: 300,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
                     }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
+                ]
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 </html>

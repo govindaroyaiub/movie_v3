@@ -531,3 +531,35 @@ img {
     color: #fff;
     font-family: 'Antic Didone', serif;
 }
+
+.reviews-slider {
+    background: #fff;
+    color: #222;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.single-item {
+
+}
+
+.reviews-slider h3 {
+    font-size: 2.6rem;
+    padding-top: 2rem;
+}
+
+.reviews-slider p a {
+    font-size: 1.8rem;
+    color: #222;
+    border-top: solid 2px #ddd;
+    padding-top: 0.6rem;
+    margin-top: 2rem;
+}
+
+.slick-prev {
+    left: -80px;
+}
+
+.slick-next {
+    right: -80px;
+}
