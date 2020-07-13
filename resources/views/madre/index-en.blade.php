@@ -165,7 +165,7 @@
                             <p><span>Produced by:</span> {{ $movie_details->producer }}</p>
                             <p><span>Casts:</span> {{ $movie_details->actors }}</p>
                             <p><span>Duration:</span> {{ $movie_details->duration }}</p>
-                            <p><span>Ratings:</span> {{ $rating }}</p>
+{{--                            <p><span>Ratings:</span> {{ $rating }}</p>--}}
                         </div>
                     </div>
                 </div>
@@ -305,7 +305,7 @@
         $('.single-item').slick({
             dots: false,
             infinite: false,
-            autoplay: true, 
+            autoplay: true,
             autoplaySpeed: 5000,
             speed: 300,
             slidesToShow: 1,
