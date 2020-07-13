@@ -173,7 +173,7 @@
         </div>
     </div>
 
-
+    @if(count($reviews) > 0)
     <section class="review-area">
         <div class="container">
             <div class="col-md-10 mx-auto">
@@ -215,7 +215,7 @@
             </div>
         </div>
     </section>
-
+    @endif
 
     <footer class="movie-footer text-white text-center">
         <div class="container">
