@@ -39,7 +39,7 @@
                                     @endif
                                     </td>
                                     <td>{{$row->source}}</td>
-                                    <td>{{$row->source_link}}</td>
+                                    <td><a href="{{$row->source_link}}" target="_blank">{{$row->source_link}}</a></td>
                                     <td>{{$row->ratings}}</td>
                                     <td>
                                         <a href="/reviews/edit/{{$row->id}}"><button class="btn btn-primary text-white custom">Edit</button></a>
