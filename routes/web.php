@@ -2,16 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'DataController@index');
+// Route::get('/', 'DataController@index');
 Route::post('/get_google_sheet', 'DataController@get_google_sheet')->name('google_sheet.check');
 
+Route::domain('madre-defilm.nl')->group(function(){
+    Route::get('/', 'MadreController@nl_landing');
+    Route::get('/_en', 'MadreController@en_landing');
+    Route::get('madre/api/shows', 'MadreController@showsApi');
+});
 
 //routes for movie:Madre
 Route::get('/madre', 'MadreController@nl_landing');
 Route::get('/madre_en', 'MadreController@en_landing');
 Route::get('/madre/api/shows', 'MadreController@showsApi');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
