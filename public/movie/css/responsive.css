@@ -180,6 +180,19 @@
         width: 80px;
     }
 
+    .reviews-slider h3 {
+        font-size: 1.4rem;
+        padding-top: 1rem;
+    }
+
+    .reviews-slider p a {
+        font-size: 1.1rem;
+        color: #222;
+        border-top: solid 2px #ddd;
+        padding-top: 0.6rem;
+        margin-top: 0.6rem;
+    }
+
 }
 
 /*Small devices (landscape phones, 576px and up)*/

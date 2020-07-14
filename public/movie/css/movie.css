@@ -563,3 +563,10 @@ img {
 .slick-next {
     right: -80px;
 }
+
+.slick-track {
+    margin: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
