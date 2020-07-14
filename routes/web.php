@@ -20,6 +20,10 @@ Route::get('/madre', 'MadreController@nl_landing');
 Route::get('/madre_en', 'MadreController@en_landing');
 Route::get('/madre/api/shows', 'MadreController@showsApi');
 
+Route::get('/', 'MadreController@nl_landing');
+Route::get('/en', 'MadreController@en_landing');
+Route::get('/api/shows', 'MadreController@showsApi');
+
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
