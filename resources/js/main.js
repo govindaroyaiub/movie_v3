@@ -97,17 +97,36 @@ var stores = {
     features: [],
 }
 
-let endPoint = `${location.href}/api/shows`;
-const matchEn = location.pathname.slice(-2);
-let endPointEn = endPoint.replace('_en', '');
 
-if (matchEn === 'en') {
-    endPoint = endPointEn;
-} else {
-    endPoint = `${location.href}/api/shows`;
+// IF ROOT URL
+var endpoint;
+
+if (location.pathname === '/' || location.pathname === '/_en') {
+    endpoint = `/api/shows`;
+
+    // if (location.pathname === '/en') {
+    //     const enUrl = `${location.href}api/shows`;
+    //     endpoint = enUrl.replace(/\/en/g, '/');
+    // } else {
+    //     endpoint = `${location.href}api/shows`;
+    // }
+
+} else if (location.pathname === '/madre' || location.pathname === '/madre_en') {
+    endpoint = `/madre/api/shows`;
 }
 
-axios.get(endPoint)
+// let endPoint = `${location.href}/api/shows`;
+// const matchEn = location.pathname.slice(-2);
+// let endPointEn = endPoint.replace('_en', '');
+//
+// if (matchEn === 'en') {
+//     endPoint = endPointEn;
+// } else {
+//     endPoint = `${location.href}/api/shows`;
+// }
+
+
+axios.get(endpoint)
     .then(res => showtime.push(...res.data))
     .then(() => {
         for (i = 0; i < showtime.length; i++) {
