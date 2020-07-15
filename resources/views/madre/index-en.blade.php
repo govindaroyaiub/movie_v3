@@ -227,7 +227,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab"
-                               href="#Gebruiksvoorwaarden">Gebruiksvoorwaarden</a>
+                               href="#Gebruiksvoorwaarden">Terms of Use</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#privacy-policy">Privacy Policy</a>
