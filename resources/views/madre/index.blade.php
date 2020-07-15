@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ $movie_details->movie_title }}</title>
+    <title>{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short_nl }}</title>
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <style>
@@ -279,7 +279,7 @@
 
                         <hr class="bg-secondary">
                         <div class="d-flex justify-content-between align-items-center">
-                            <p>&copy; All right reserved. Planetnine - <?= Date('Y') ?></p>
+                            <p>&copy; Alle rechten voorbehouden {{$d_details['name']}}, Planetnine - <?= Date('Y') ?></p>
                             <ul class="footer-social">
                                 <li class="mr-2"><a target="_blank" href="{{ $movie_details->fb_link }}">
                                         <img src="{{ asset('images/facebook.svg') }}" alt="">

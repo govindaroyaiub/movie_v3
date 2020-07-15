@@ -40,7 +40,7 @@
                     </a>
                     <div class="dropdown show">
                         <a class="navbar dropdown-toggle" href="#" @if(request()->is('partnerlist') || request()->is('partnerlist/*')) style="background-color: #badefb;" @endif id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            The Partners
+                            Partners
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -50,7 +50,7 @@
                     </div>
                     @else
                     <a class="navbar" href="{{ url('/home') }}" @if(request()->is('home')) style="background-color: #badefb;" @endif>
-                    Showtime
+                    Showtimes
                     </a>
                     <a class="navbar" href="{{ url('/movielist') }}" @if(request()->is('movielist') || request()->is('movielist/*')) style="background-color: #badefb;" @endif>
                     Movies

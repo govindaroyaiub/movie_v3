@@ -47,12 +47,12 @@ class MadreController extends Controller
                             ->get();
 
             $d_details = Movie::join('distributors', 'distributors.id', 'movie_details.d_id')
-                            ->select('distributors.logo', 'distributors.email')
+                            ->select('distributors.logo', 'distributors.name', 'distributors.email')
                             ->where('movie_details.base_url', '=', $app_url)
                             ->first();
 
             $mp_details = Movie::join('media_partners', 'media_partners.id', 'movie_details.mp_id')
-                            ->select('media_partners.logo', 'media_partners.email')
+                            ->select('media_partners.logo', 'media_partners.name', 'media_partners.email')
                             ->where('movie_details.base_url', '=', $app_url)
                             ->first();
 
@@ -122,13 +122,13 @@ class MadreController extends Controller
                                 ->get();
 
 
-            $d_details = Movie::join('distributors', 'distributors.id', 'movie_details.d_id')
-                                ->select('distributors.logo', 'distributors.email')
+                $d_details = Movie::join('distributors', 'distributors.id', 'movie_details.d_id')
+                                ->select('distributors.logo', 'distributors.name', 'distributors.email')
                                 ->where('movie_details.base_url', '=', $app_url)
                                 ->first();
-
-            $mp_details = Movie::join('media_partners', 'media_partners.id', 'movie_details.mp_id')
-                                ->select('media_partners.logo', 'media_partners.email')
+    
+                $mp_details = Movie::join('media_partners', 'media_partners.id', 'movie_details.mp_id')
+                                ->select('media_partners.logo', 'media_partners.name', 'media_partners.email')
                                 ->where('movie_details.base_url', '=', $app_url)
                                 ->first();
 
