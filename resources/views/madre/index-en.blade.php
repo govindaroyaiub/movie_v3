@@ -221,7 +221,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
-
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#cookies">Cookies</a>
@@ -242,22 +241,22 @@
                     <div class="tab-content pt-3">
                         <div id="cookies" class="container tab-pane">
                             <p>
-                                {{ $movie_details->cookies_en }}
+                                {{ $movie_details->cookies }}
                             </p>
                         </div>
                         <div id="Gebruiksvoorwaarden" class="container tab-pane fade">
                             <p>
-                                {{ $movie_details->terms_of_use_en }}
+                                {{ $movie_details->terms_of_use }}
                             </p>
                         </div>
                         <div id="privacy-policy" class="container tab-pane fade">
                             <p>
-                                {{ $movie_details->privacy_policy_en }}
+                                {{ $movie_details->privacy_policy }}
                             </p>
                         </div>
                         <div id="credits" class="container tab-pane fade">
                             <p>
-                                {{ $movie_details->credits_en }}
+                                {{ $movie_details->credits }}
                             </p>
                         </div>
                     </div>
@@ -292,6 +291,8 @@
         </div>
     </footer>
 
+</section>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone.min.js"></script>
     <script src='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
@@ -323,6 +324,7 @@
             });
         });
     </script>
+
 
 </body>
 </html>
