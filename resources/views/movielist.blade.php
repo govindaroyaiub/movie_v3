@@ -72,10 +72,27 @@
                         <input type="text" class="form-control" name="movie_title" id="movie_title" required>
                     </div>
                     <div class="form-group">
+                        <label for="director">Director</label>
+                        <input type="text" class="form-control" name="director" id="director" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="actors">Actors</label>
+                        <input type="text" class="form-control" name="actors" id="actors" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="writer">Writer</label>
+                        <input type="text" class="form-control" name="writer" id="writer" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="producer">Producer</label>
+                        <input type="text" class="form-control" name="producer" id="producer" required>
+                    </div>
+                    <div class="form-group">
                         <label for="base_url">Base URL</label>
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" value="https://movie.planetnine.com/" style="width:120%;" readonly>
+                                <input type="text" class="form-control" value="https://movie.planetnine.com/"
+                                    style="width:120%;" readonly>
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" name="base_url" id="base_url" required>
@@ -86,8 +103,9 @@
                         <label for="google_sheet">Google Sheet URL</label>
                         <input type="text" class="form-control" name="google_sheet" id="google_sheet" required>
                     </div>
-                    
+
                     <div class="form-group">
+                        <label for="google_sheet">Select Client</label>
                         <select class="form-control select2" id="client_id" name="client_id" style="width: 100%;"
                             required>
                             <option value="">Select Client</option>
@@ -98,25 +116,26 @@
                     </div>
 
                     <div class="row">
-                            <div class="col">
-                                <label for="primary_light">Primary Light</label>
-                                <input type="color" class="form-control" value="#353B48" name="primary_light" id="primary_light" required>
-                            </div>
-                            <div class="col">
-                                <label for="primary_dark">Primary Dark</label>
-                                <input type="color" class="form-control" value="#353B48" name="primary_dark" id="primary_dark" required>
-                            </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                            <div class="col">
-                                <label for="secondary_light">Secondary Light</label>
-                                <input type="color" class="form-control" value="#353B48" name="secondary_light" id="secondary_light" required>
-                            </div>
-                            <div class="col">
-                                <label for="secondary_dark">Secondary Dark</label>
-                                <input type="color" class="form-control" value="#353B48" name="secondary_dark" id="secondary_dark" required>
-                            </div>
+                        <div class="col">
+                            <label for="d_id">Distributor</label>
+                            <select class="form-control select2" id="d_id" name="d_id" style="width: 100%;" required>
+                                <option value="">Select Distributor</option>
+                                <option value="0">None</option>
+                                @foreach($d_list as $row)
+                                <option value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="mp_id">Media Partner</label>
+                            <select class="form-control select2" id="mp_id" name="mp_id" style="width: 100%;" required>
+                                <option value="">Select Movie Partner</option>
+                                <option value="0">None</option>
+                                @foreach($mp_list as $row)
+                                <option value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <br>
                     <div class="modal-footer">
