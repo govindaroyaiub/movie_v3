@@ -56,6 +56,16 @@ class MadreController extends Controller
                             ->where('movie_details.base_url', '=', $app_url)
                             ->first();
 
+
+            $release_date = Showtime::join('movie_details', 'movie_showtimes.movie_id', 'movie_details.id')
+                            ->select('movie_showtimes.date')
+                            ->where('movie_details.base_url', '=', $app_url)
+                            ->orderBy('movie_showtimes.date', 'ASC')
+                            ->first();
+
+            setlocale(LC_ALL, 'NL-nl');
+            $first_release_date = strtoupper(strftime("%d %B %Y", strtotime($release_date['date'])));
+
             $movie_details_color = Movie::select('primary_light', 'primary_dark', 'secondary_light', 'secondary_dark')->where('base_url', '=', $app_url)->first();
             $primary_light = $movie_details_color['primary_light'];
             $primary_dark = $movie_details_color['primary_dark'];
@@ -79,7 +89,8 @@ class MadreController extends Controller
                 'primary_light',
                 'primary_dark',
                 'secondary_light',
-                'secondary_dark'
+                'secondary_dark',
+                'first_release_date'
             ));
 
         }
@@ -122,15 +133,23 @@ class MadreController extends Controller
                                 ->get();
 
 
-                $d_details = Movie::join('distributors', 'distributors.id', 'movie_details.d_id')
-                                ->select('distributors.logo', 'distributors.name', 'distributors.email')
-                                ->where('movie_details.base_url', '=', $app_url)
-                                ->first();
-    
-                $mp_details = Movie::join('media_partners', 'media_partners.id', 'movie_details.mp_id')
-                                ->select('media_partners.logo', 'media_partners.name', 'media_partners.email')
-                                ->where('movie_details.base_url', '=', $app_url)
-                                ->first();
+            $d_details = Movie::join('distributors', 'distributors.id', 'movie_details.d_id')
+                            ->select('distributors.logo', 'distributors.name', 'distributors.email')
+                            ->where('movie_details.base_url', '=', $app_url)
+                            ->first();
+
+            $mp_details = Movie::join('media_partners', 'media_partners.id', 'movie_details.mp_id')
+                            ->select('media_partners.logo', 'media_partners.name', 'media_partners.email')
+                            ->where('movie_details.base_url', '=', $app_url)
+                            ->first();
+
+            $release_date = Showtime::join('movie_details', 'movie_showtimes.movie_id', 'movie_details.id')
+                            ->select('movie_showtimes.date')
+                            ->where('movie_details.base_url', '=', $app_url)
+                            ->orderBy('movie_showtimes.date', 'ASC')
+                            ->first();
+
+            $first_release_date = strtoupper(date("d F Y", strtotime($release_date['date'])));
 
             $movie_details_color = Movie::select('primary_light', 'primary_dark', 'secondary_light', 'secondary_dark')->where('base_url', '=', $app_url)->first();
             $primary_light = $movie_details_color['primary_light'];
@@ -156,7 +175,8 @@ class MadreController extends Controller
                 'primary_light',
                 'primary_dark',
                 'secondary_light',
-                'secondary_dark'
+                'secondary_dark',
+                'first_release_date'
             ));
         }
     }
