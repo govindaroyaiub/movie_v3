@@ -7,6 +7,7 @@ use App\Movie;
 use App\Showtime;
 use App\Location;
 use App\Review;
+use Carbon\Carbon;
 
 
 class MadreController extends Controller
@@ -59,14 +60,27 @@ class MadreController extends Controller
             
             
             $release_date = Showtime::join('movie_details', 'movie_showtimes.movie_id', 'movie_details.id')
-            ->select('movie_showtimes.date')
-            ->where('movie_details.base_url', '=', $app_url)
-            ->orderBy('movie_showtimes.date', 'ASC')
-            ->first();
-            
-            setlocale(LC_ALL, 'NL-nl');
-            $first_release_date = strtoupper(strftime("%d %B %Y", strtotime($release_date['date'])));
-            
+                            ->select('movie_showtimes.date')
+                            ->where('movie_details.base_url', '=', $app_url)
+                            ->orderBy('movie_showtimes.date', 'ASC')
+                            ->first();
+
+            // setlocale(LC_TIME, 'NL_nl.UTF-8');
+            // $first_release_date = strtoupper(strftime("%d %B %Y", strtotime($release_date['date'])));
+
+            Carbon::setLocale('nl');
+            $date = Carbon::parse($release_date['date'])->locale('nl_NL');
+            if(strlen($date->day) == 1)
+            {
+                $d = '0'.$date->day.' '.$date->monthName.' '.$date->year;
+                $first_release_date = strtoupper($d);
+            }
+            else
+            {
+                $d = $date->day.' '.$date->monthName.' '.$date->year;
+                $first_release_date = strtoupper($d);
+            }        
+
             $movie_details_color = Movie::select('primary_light', 'primary_dark', 'secondary_light', 'secondary_dark')->where('base_url', '=', $app_url)->first();
             $primary_light = $movie_details_color['primary_light'];
             $primary_dark = $movie_details_color['primary_dark'];
