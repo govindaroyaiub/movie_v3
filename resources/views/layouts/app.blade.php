@@ -27,7 +27,6 @@
                     <a class="navbar" href="{{ url('/home') }}" @if(request()->is('movielist') || request()->is('movielist/*') || request()->is('home')) style="background-color: #badefb;" @endif>
                     Movies
                     </a>
-                    <a class="navbar" href="{{ url('/userlist') }}" @if(request()->is('userlist') || request()->is('userlist/*')) style="background-color: #badefb;" @endif>Users</a>
                     <a class="navbar" href="{{ url('/theaterlist') }}" @if(request()->is('theaterlist') || request()->is('theaterlist/*')) style="background-color: #badefb;" @endif>Theaters</a>
         
                     <div class="dropdown show">
@@ -72,6 +71,11 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                @if(Auth::user()->is_admin == 1)
+                                <a class="dropdown-item" href="{{ url('/userlist') }}">
+                                    User Management
+                                </a>    
+                                @endif
                                 <a class="dropdown-item" href="#info_modal" data-toggle="modal"
                                    data-target="#info_modal">Change Info
                                 </a>
