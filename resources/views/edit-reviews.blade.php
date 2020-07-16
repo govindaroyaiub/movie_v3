@@ -53,7 +53,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="form-control-user btn btn-primary">Update</button>
-                                <a href="/reviews"><button type="button" class="btn btn-secondary">Back</button></a>
+                                <button type="button" class="btn btn-secondary" onclick="window.history.back();">Back</button>
                             </div>
                         </form>
                 </div>

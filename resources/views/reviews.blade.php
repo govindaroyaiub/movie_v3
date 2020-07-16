@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Reviews <a href="" style="position:absolute; text-decoration: underline; right:2%;" data-toggle="modal" data-target="#create_user_modal">Create Review +</a></div>
+                <div class="card-header">Reviews of {{$movie_details['movie_title']}} <a href="" style="position:absolute; text-decoration: underline; right:2%;" data-toggle="modal" data-target="#create_user_modal">Create Review +</a></div>
 
                 <div class="card-body">
                     @include('alert')
@@ -65,16 +65,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="/reviews/create" autocomplete="off">
+                        <form method="post" action="/reviews/create/{{$id}}" autocomplete="off">
                             {{ csrf_field() }}
                             <div class="form-group">
-                                <label>Select movie from the drop down list</label>
-                                <select class="form-control select2" id="movie_id" name="movie_id" style="width: 100%;" required>
-                                    <option value="">Select Movie</option>
-                                    @foreach($movie_list as $row)
-                                    <option value="{{$row->id}}">{{$row->movie_title}} ({{$row->base_url}})</option>
-                                    @endforeach
-                                </select>
+                                <label>Enter Review for movie: {{$movie_details['movie_title']}}</label>
                             </div>
                             <div class="form-group">
                                 <label for="review_text">Review</label>

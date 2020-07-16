@@ -11,9 +11,6 @@
     .custom {
         width: 72px !important;
     }
-    #infos{
-        display:none;
-    }
     </style>
 </head>
 <body>
@@ -27,17 +24,12 @@
                     
                 @else
                     @if(Auth::user()->is_admin == 1)
-                    <a class="navbar" href="{{ url('/home') }}" @if(request()->is('home')) style="background-color: #badefb;" @endif>
-                    Showtimes
+                    <a class="navbar" href="{{ url('/home') }}" @if(request()->is('movielist') || request()->is('movielist/*') || request()->is('home')) style="background-color: #badefb;" @endif>
+                    Movies
                     </a>
                     <a class="navbar" href="{{ url('/userlist') }}" @if(request()->is('userlist') || request()->is('userlist/*')) style="background-color: #badefb;" @endif>Users</a>
                     <a class="navbar" href="{{ url('/theaterlist') }}" @if(request()->is('theaterlist') || request()->is('theaterlist/*')) style="background-color: #badefb;" @endif>Theaters</a>
-                    <a class="navbar" href="{{ url('/movielist') }}" @if(request()->is('movielist') || request()->is('movielist/*')) style="background-color: #badefb;" @endif>
-                    Movies
-                    </a>
-                    <a class="navbar" href="{{ url('/reviews') }}" @if(request()->is('reviews') || request()->is('reviews/*')) style="background-color: #badefb;" @endif>
-                    Reviews
-                    </a>
+        
                     <div class="dropdown show">
                         <a class="navbar dropdown-toggle" href="#" @if(request()->is('partnerlist') || request()->is('partnerlist/*')) style="background-color: #badefb;" @endif id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Partners
@@ -49,10 +41,7 @@
                         </div>
                     </div>
                     @else
-                    <a class="navbar" href="{{ url('/home') }}" @if(request()->is('home')) style="background-color: #badefb;" @endif>
-                    Showtimes
-                    </a>
-                    <a class="navbar" href="{{ url('/movielist') }}" @if(request()->is('movielist') || request()->is('movielist/*')) style="background-color: #badefb;" @endif>
+                    <a class="navbar" href="{{ url('/home') }}" @if(request()->is('movielist') || request()->is('movielist/*') || request()->is('home')) style="background-color: #badefb;" @endif>
                     Movies
                     </a>
                     @endif
@@ -239,34 +228,6 @@
         });
 
         $('.select2').select2();
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function()
-    {
-      $('#movie_id').change(function()
-      {
-        var movie_id = $('#movie_id').val();
-        var _token = $('input[name="_token"]').val();
-        $.ajax({
-            url: "{{route('google_sheet.check')}}",
-            method: "POST",
-            data: {movie_id:movie_id, _token:_token},
-            success: function(result)
-            {
-              var google_sheet = result.google_sheet;
-              if(google_sheet)
-              {
-                document.getElementById("infos").style.display = "block";
-                document.getElementById("google_sheet_ajax").href = result.google_sheet;
-              }
-              else
-              {
-                document.getElementById("infos").style.display = "none";
-              }
-            }
-          })
-      });
     });
 </script>
 <script>

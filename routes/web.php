@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::post('/get_google_sheet', 'DataController@get_google_sheet')->name('google_sheet.check');
-
 //if domain is movie.planetnine.com
 Route::domain('movie.planetnine.com')->group(function(){
     Route::get('/', 'DataController@index');
@@ -27,10 +25,8 @@ Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/test-nl/api/shows', 'PagesController@showsApi');
-    Route::post('/upload', 'HomeController@upload');
-    Route::get('/test-en', 'PagesController@landing_en');
-    Route::get('/test-nl', 'PagesController@landing_nl');
+    Route::get('/showtimes/{id}', 'HomeController@movie_showtime');
+    Route::post('/upload/{id}', 'HomeController@upload');
     Route::post('/update-info', 'HomeController@update_info')->name('update_info');
 
     Route::get('/userlist', 'AdminController@userlist');
@@ -53,8 +49,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/movielist/edit/nl/{id}', 'AdminController@nl_edit');
     Route::get('/movielist/delete/{id}', 'AdminController@movie_delete');
 
-    Route::get('/reviews', 'AdminController@reviews_list');
-    Route::post('/reviews/create', 'AdminController@reviews_create');
+    Route::get('/reviews/{id}', 'AdminController@reviews_list');
+    Route::post('/reviews/create/{id}', 'AdminController@reviews_create');
     Route::get('/reviews/delete/{id}', 'AdminController@reviews_delete');
     Route::get('/reviews/edit/{id}', 'AdminController@reviews_edit');
     Route::post('/reviews/edit/{id}', 'AdminController@reviews_edit_post');

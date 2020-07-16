@@ -40,6 +40,10 @@
                                     <td>
                                         <a href="/movielist/edit/{{$row->id}}"><button
                                                 class="btn btn-primary text-white custom">Edit</button></a>
+                                        <a href="/reviews/{{$row->id}}"><button
+                                                class="btn btn-success text-white">Reviews</button></a>
+                                        <a href="/showtimes/{{$row->id}}"><button
+                                                class="btn btn-secondary text-white">Showtimes</button></a>
                                         <a href="/movielist/delete/{{$row->id}}"><button
                                                 class="btn btn-danger text-white custom">Delete</button></a>
                                     </td>

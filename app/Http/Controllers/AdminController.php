@@ -599,22 +599,22 @@ class AdminController extends Controller
         return back()->with('info', 'Media Partner is deleted');
     }
 
-    public function reviews_list()
+    public function reviews_list($id)
     {
+        $movie_details = Movie::where('id', '=', $id)->first();
         $reviews = Review::join('movie_details', 'movie_details.id', '=', 'reviews.movie_id')
                             ->select('reviews.id', 'movie_details.movie_title', 'reviews.review_text', 'reviews.language', 'reviews.source', 'reviews.source_link', 'reviews.ratings')
+                            ->where('movie_details.id', '=', $id)
                             ->get();
 
-        $movie_list = Movie::where('is_delete', 0)->get();
-
-        return view('reviews', compact('reviews', 'movie_list'));
+        return view('reviews', compact('reviews', 'movie_details', 'id'));
     }
 
-    public function reviews_create(Request $request)
+    public function reviews_create(Request $request, $id)
     {
-        $movie_details = Movie::where('id', '=', $request->movie_id)->first();
+        $movie_details = Movie::where('id', '=', $id)->first();
         $review_details = [
-            'movie_id' => $request->movie_id,
+            'movie_id' => $id,
             'review_text' => $request->review_text,
             'language' => $request->language,
             'source' => $request->source,
