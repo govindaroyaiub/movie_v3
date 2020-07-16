@@ -14,10 +14,4 @@ class DataController extends Controller
     {
         return view('coming_soon');
     }
-    
-    public function get_google_sheet(Request $request)
-    {
-        $movie_details = Movie::where('id', $request->movie_id)->first();
-        return $movie_details;
-    }
 }

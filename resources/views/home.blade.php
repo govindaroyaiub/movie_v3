@@ -10,19 +10,13 @@
                 <div class="card-body">
                     @include('alert')
 
-                    <form method="post" action="/upload" enctype="multipart/form-data">
+                    <form method="post" action="/upload/{{$id}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label>Select movie from the drop down list</label>
-                            <select class="form-control select2" id="movie_id" name="movie_id" style="width: 100%;" required>
-                                <option value="">Select Movie</option>
-                                @foreach($movie_list as $row)
-                                <option value="{{$row->id}}">{{$row->movie_title}} ({{$row->base_url}})</option>
-                                @endforeach
-                            </select>
+                            <h2>Upload showtimes for movie: {{$movie_details['movie_title']}}</h2l>
                         </div>
                         <div id="infos">
-                            <label>&#8226; Please use the Google Sheet from <a href="" id="google_sheet_ajax" target="_blank">here.</a></label>
+                            <label>&#8226; Please use the Google Sheet from <a href="{{$movie_details['google_sheet']}}" target="_blank">here.</a></label>
                             <br>
                             <label>&#8226; Download the sheet as Xlsx format and upload.</label>
                             <br>
@@ -33,8 +27,9 @@
                         <div class="form-group">
                             <input type="file" name="file" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group float-right">
                             <button type="submit" class="btn btn-primary text-white">Upload file</button>
+                            <button type="button" class="btn btn-secondary" onclick="window.history.back();">Back</button>
                         </div>
                     </form>
                 </div>

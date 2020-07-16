@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use Hash;
 use App\Movie;
 use App\Showtime;
 use App\Location;
 use App\User;
+use App\Review;
+use App\Distributor;
+use App\MediaPartner;
 use Auth;
 
 class HomeController extends Controller
@@ -30,21 +34,48 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->is_admin == 1)
+        $d_list = Distributor::get();
+        $mp_list = MediaPartner::get();
+        if(Auth::user()->is_admin == 0)
         {
-            $movie_list = Movie::where('is_delete', 0)->get();
+            $movie_list = Movie::join('users', 'users.id', 'movie_details.uploaded_by')
+                                ->select(
+                                    'movie_details.id',
+                                    'users.name',
+                                    'users.is_admin',
+                                    'movie_details.movie_title',
+                                    'movie_details.base_url'
+                                )
+                                ->where('movie_details.is_delete', '0')
+                                ->where('movie_details.uploaded_by', Auth::user()->id)
+                                ->get();
         }
         else
         {
-            $movie_list = Movie::where('uploaded_by', Auth::user()->id)
-                                ->where('movie_details.is_delete', 0)
+            $user_list = User::where('is_admin', 0)->where('is_delete', 1)->get();
+            $movie_list = Movie::join('users', 'users.id', 'movie_details.uploaded_by')
+                                ->select(
+                                    'movie_details.id',
+                                    'users.name',
+                                    'users.is_admin',
+                                    'movie_details.movie_title',
+                                    'movie_details.base_url'
+                                )
+                                ->where('movie_details.is_delete', '0')
                                 ->get();
+
         }
-        
-        return view('home', compact('movie_list'));
+
+        return view('movielist', compact('movie_list', 'user_list', 'd_list', 'mp_list'));
     }
 
-    public function upload(Request $request)
+    public function movie_showtime($id)
+    {
+        $movie_details = Movie::where('id', '=', $id)->first();
+        return view('home', compact('id', 'movie_details'));
+    }
+
+    public function upload(Request $request, $id)
     {
         //validate the xls file
         $this->validate($request, array(
@@ -52,7 +83,7 @@ class HomeController extends Controller
         ));
         if($request->hasFile('file'))
         {
-            $movie_id = $request->movie_id;
+            $movie_id = $id;
 
             $check_location_data = Location::first();
             $check_showtime_data = Showtime::first();
@@ -77,6 +108,7 @@ class HomeController extends Controller
             $rating = $title->rating();
 
             $movie_details = Movie::where('id', '=', $movie_id)->first();
+            dd($movie_details);
 
             // if($worksheet3)
             // {
