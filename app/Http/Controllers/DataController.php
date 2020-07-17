@@ -12,6 +12,6 @@ class DataController extends Controller
 {
     public function index()
     {
-        return view('coming_soon');
+        return view('land');
     }
 }
