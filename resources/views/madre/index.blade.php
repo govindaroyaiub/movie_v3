@@ -77,7 +77,7 @@
                             loading="lazy"
                             class="d-block mx-auto"
                             src="{{ $movie_details->image1 }}"
-                            alt="{{ $movie_details->movie_title }}.{{$movie_details->movie_description_short}}">
+                            alt="{{ $movie_details->movie_title }}.{{$movie_details->movie_description_short_nl}}">
 
                         <p class="d-md-none text-center m-0 mb-2">{{ $movie_details->movie_title }}
                             - {{ $movie_details->movie_description_short_nl }}</p>
