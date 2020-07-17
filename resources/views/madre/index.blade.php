@@ -77,7 +77,7 @@
                             loading="lazy"
                             class="d-block mx-auto"
                             src="{{ $movie_details->image1 }}"
-                            alt="">
+                            alt="{{ $movie_details->movie_title }}.{{$movie_details->movie_description_short_nl}}">
 
                         <p class="d-md-none text-center m-0 mb-2">{{ $movie_details->movie_title }}
                             - {{ $movie_details->movie_description_short_nl }}</p>
@@ -269,12 +269,12 @@
 
                         <div class="footer-dist-logos d-flex justify-content-between align-items-center">
                             <a href="{{ $d_details['email'] }}" target="_blank"><img
-                                    src="/distributors/{{ $d_details['logo'] }}" alt=""></a>
+                                    src="/distributors/{{ $d_details['logo'] }}" alt="{{ $d_details['name'] }}"></a>
                             <a href="https://www.planetnine.com/" target="_blank"><img
                                     src="{{ asset('images/p9.png') }}"
-                                    alt=""></a>
+                                    alt="planetnine.com"></a>
                             <a href="{{ $mp_details['email'] }}" target="_blank"><img
-                                    src="/media_partners/{{ $mp_details['logo'] }}" alt=""></a>
+                                    src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
                         </div>
 
 
