@@ -23,6 +23,7 @@ Route::domain('www.madre-defilm.nl')->group(function(){
 
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
+Route::get('/en', 'DataController@en_index');
 Route::get('/madre', 'MadreController@nl_landing');
 Route::get('/madre_en', 'MadreController@en_landing');
 Route::get('/madre/api/shows', 'MadreController@showsApi');
