@@ -14,6 +14,13 @@ Route::domain('madre-defilm.nl')->group(function(){
     Route::get('/api/shows', 'MadreController@showsApi');
 });
 
+//if domain is other landing page url
+Route::domain('www.madre-defilm.nl')->group(function(){
+    Route::get('/', 'MadreController@nl_landing');
+    Route::get('/_en', 'MadreController@en_landing');
+    Route::get('/api/shows', 'MadreController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/madre', 'MadreController@nl_landing');
