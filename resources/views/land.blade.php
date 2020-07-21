@@ -466,6 +466,7 @@
   
   <section class="p9-movies">
     <div class="container">
+
       <div class="slider movie-slider">
         <div>
           <a href="#"><img src="{{ asset('/images/poster0.jpg') }}" alt="poster"></a>
