@@ -9,15 +9,14 @@ use App\Location;
 use App\Review;
 use Carbon\Carbon;
 
-
-class MadreController extends Controller
+class GliController extends Controller
 {
     public function nl_landing()
     {   
         $title = new \Imdb\Title(2762506);
         $rating = $title->rating();
         
-        $app_url = 'https://movie.planetnine.com/madre';
+        $app_url = 'https://movie.planetnine.com/Gli_Anni_Piu_Belli';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         if ($movie_details == NULL) {
@@ -92,7 +91,7 @@ class MadreController extends Controller
             ->where('base_url', '=', $app_url)
             ->get();
             
-            return view('madre.index', compact(
+            return view('gli.index', compact(
                 'movie_details',
                 'youtube_url',
                 'poster', 'showtime',
@@ -116,7 +115,7 @@ class MadreController extends Controller
         $title = new \Imdb\Title(2762506);
         $rating = $title->rating();
         
-        $app_url = 'https://movie.planetnine.com/madre';
+        $app_url = 'https://movie.planetnine.com/Gli_Anni_Piu_Belli';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         if ($movie_details == NULL) {
@@ -178,7 +177,7 @@ class MadreController extends Controller
             ->where('reviews.language', '=', 'en')
             ->get();
             
-            return view('madre.index-en', compact(
+            return view('gli.index-en', compact(
                 'movie_details',
                 'youtube_url',
                 'poster', 'showtime',
@@ -198,7 +197,7 @@ class MadreController extends Controller
     
     public function showsApi()
     {
-        $app_url = 'https://movie.planetnine.com/madre';
+        $app_url = 'https://movie.planetnine.com/Gli_Anni_Piu_Belli';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         $showtime = Showtime::join('movie_details', 'movie_showtimes.movie_id', 'movie_details.id')
