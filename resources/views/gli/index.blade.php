@@ -267,6 +267,7 @@
                         </div>
 
 
+                        {{-- 
                         <div class="footer-dist-logos d-flex justify-content-between align-items-center">
                             <a href="{{ $d_details['email'] }}" target="_blank"><img
                                     src="/distributors/{{ $d_details['logo'] }}" alt="{{ $d_details['name'] }}"></a>
@@ -276,7 +277,7 @@
                             <a href="{{ $mp_details['email'] }}" target="_blank"><img
                                     src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
                         </div>
-                        
+                        --}}
 
 
                         <hr class="bg-secondary">

@@ -113,6 +113,8 @@ if (location.pathname === '/' || location.pathname === '/_en') {
 
 } else if (location.pathname === '/madre' || location.pathname === '/madre_en') {
     endpoint = `/madre/api/shows`;
+} else if (location.pathname === '/GliAnniPiuBelli' || location.pathname === '/GliAnniPiuBelli_en') {
+    endpoint = `/GliAnniPiuBelli/api/shows`;
 }
 
 // let endPoint = `${location.href}/api/shows`;
