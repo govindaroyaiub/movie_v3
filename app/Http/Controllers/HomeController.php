@@ -108,7 +108,6 @@ class HomeController extends Controller
             $rating = $title->rating();
 
             $movie_details = Movie::where('id', '=', $movie_id)->first();
-            dd($movie_details);
 
             // if($worksheet3)
             // {
