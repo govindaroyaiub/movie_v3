@@ -22,6 +22,19 @@ Route::domain('www.madre-defilm.nl')->group(function(){
     Route::get('/api/shows', 'MadreController@showsApi');
 });
 
+Route::domain('gli-anni-defilm.nl')->group(function(){
+    Route::get('/', 'GliController@nl_landing');
+    Route::get('/_en', 'GliController@en_landing');
+    Route::get('/api/shows', 'GliController@showsApi');
+});
+
+//if domain is other landing page url
+Route::domain('www.gli-anni-defilm.nl')->group(function(){
+    Route::get('/', 'GliController@nl_landing');
+    Route::get('/_en', 'GliController@en_landing');
+    Route::get('/api/shows', 'GliController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');

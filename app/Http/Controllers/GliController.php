@@ -16,7 +16,7 @@ class GliController extends Controller
         $title = new \Imdb\Title(2762506);
         $rating = $title->rating();
         
-        $app_url = 'https://movie.planetnine.com/Gli_Anni_Piu_Belli';
+        $app_url = 'https://movie.planetnine.com/GliAnniPiuBelli';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         if ($movie_details == NULL) {
@@ -55,19 +55,13 @@ class GliController extends Controller
             $mp_details = Movie::join('media_partners', 'media_partners.id', 'movie_details.mp_id')
             ->select('media_partners.logo', 'media_partners.name', 'media_partners.email')
             ->where('movie_details.base_url', '=', $app_url)
-            ->first();
-
-            // dd($mp_details);
-            
+            ->first();         
             
             $release_date = Showtime::join('movie_details', 'movie_showtimes.movie_id', 'movie_details.id')
                             ->select('movie_showtimes.date')
                             ->where('movie_details.base_url', '=', $app_url)
                             ->orderBy('movie_showtimes.date', 'ASC')
                             ->first();
-
-            // setlocale(LC_TIME, 'NL_nl.UTF-8');
-            // $first_release_date = strtoupper(strftime("%d %B %Y", strtotime($release_date['date'])));
 
             Carbon::setLocale('nl');
             $date = Carbon::parse($release_date['date'])->locale('nl_NL');
@@ -117,7 +111,7 @@ class GliController extends Controller
         $title = new \Imdb\Title(2762506);
         $rating = $title->rating();
         
-        $app_url = 'https://movie.planetnine.com/Gli_Anni_Piu_Belli';
+        $app_url = 'https://movie.planetnine.com/GliAnniPiuBelli';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         if ($movie_details == NULL) {
@@ -201,7 +195,7 @@ class GliController extends Controller
     
     public function showsApi()
     {
-        $app_url = 'https://movie.planetnine.com/Gli_Anni_Piu_Belli';
+        $app_url = 'https://movie.planetnine.com/GliAnniPiuBelli';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         $showtime = Showtime::join('movie_details', 'movie_showtimes.movie_id', 'movie_details.id')
