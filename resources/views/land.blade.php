@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Movie Platform | Planetnine.com</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
   <link href="{{ mix('css/main.css') }}" rel="stylesheet">
   <style>
     @font-face {
@@ -473,19 +474,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 mx-auto">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              @foreach ($movie_list as $movie)
-              <div class="swiper-slide">
-                <a target="_blank" href="{{ $movie->base_url }}">
-                  <img class="poster-img" src="{{ $movie->image1 }}" alt="poster" />
-                </a>
-              </div>
-              @endforeach
-            </div>
-            
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+          <div  class="slider movie-slider">
+            @foreach ($movie_list as $movie)
+            <a target="_blank" href="{{ $movie->base_url }}">
+              <img class="poster-img" src="{{ $movie->image1 }}" alt="poster" />
+            </a>
+            @endforeach
           </div>
         </div>
       </div>
@@ -610,51 +604,69 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
   <script>
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 3,
-      spaceBetween: 0,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
+    
+    $(document).ready(function () {
+      $('.movie-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        focusOnSelect: true,
+        margin: 10,
+        prevArrow: '<span class="slide-arrow prev-arrow"><i class="fa fa-chevron-left"></i></span>',
+        nextArrow: '<span class="slide-arrow next-arrow"><i class="fa fa-chevron-right"></i></span>',
+        responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 5,
+            slidesToScroll: 1,
+          }
         },
-        768: {
-          slidesPerView: 2,
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
         },
-        1024: {
-          slidesPerView: 3,
-        },
-      }
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+          }
+        }
+        ]
+      });
+      
+      
+      var p9Toggler = document.querySelector('.p9-toggler');
+      var p9Close = document.querySelector('.p9-menu-close');
+      var p9Menu = document.querySelector('#menu');
+      
+      p9Toggler.addEventListener('click', () => {
+        p9Menu.style.opacity = '1';
+        p9Menu.style.visibility = 'visible';
+        p9Menu.style.transform = 'translateY(0%)';
+      });
+      
+      p9Close.addEventListener('click', () => {
+        p9Menu.style.opacity = '0';
+        p9Menu.style.visibility = 'none';
+        p9Menu.style.transform = 'translateY(100%)';
+      });
+      
+      // flag picker
+      const nlFlag = document.querySelector('[data-flag="nl"]');
+      const usFlag = document.querySelector('[data-flag="us"]');
+
+      nlFlag.addEventListener('click', () => window.location.href = '/');
+      usFlag.addEventListener('click', () => window.location.href = '/en');
+      
     });
-    
-    
-    var p9Toggler = document.querySelector('.p9-toggler');
-    var p9Close = document.querySelector('.p9-menu-close');
-    var p9Menu = document.querySelector('#menu');
-    
-    p9Toggler.addEventListener('click', () => {
-      p9Menu.style.opacity = '1';
-      p9Menu.style.visibility = 'visible';
-      p9Menu.style.transform = 'translateY(0%)';
-    });
-    
-    p9Close.addEventListener('click', () => {
-      p9Menu.style.opacity = '0';
-      p9Menu.style.visibility = 'none';
-      p9Menu.style.transform = 'translateY(100%)';
-    });
-    
-    // flag picker
-    const nlFlag = document.querySelector('[data-flag="nl"]');
-    const usFlag = document.querySelector('[data-flag="us"]');
-    
-    nlFlag.addEventListener('click', () => window.location.href = '/');
-    usFlag.addEventListener('click', () => window.location.href = '/en');
   </script>
 </body>
 </html>
