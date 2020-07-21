@@ -424,7 +424,7 @@
       <div class="p9-header-top">
         <a href=""><img src="{{ asset('/images/logo.png') }}" alt="planetnine"></a>
         <span class="p9-bar">|</span>
-        <span>Movie Platform</span>
+        <span>Planet Nine Film promotie platform</span>
       </div>
       
       <nav class="d-flex">
@@ -460,7 +460,7 @@
   
   <section class="p9-intro">
     <div class="container">
-      <h3 class="text-center">- The easiest platform to promote arthouse cinema -</h3>
+      <h3 class="text-center">Filmpromotie platform. </h3>
     </div>
   </section>
   
@@ -509,7 +509,7 @@
   
   <section class="p9-features">
     <div class="container">
-      <h3 class="text-center">Easy deployment of marketing campaigns featuring</h3>
+      <h3 class="text-center">Functionaliteiten</h3>
       
       <div class="row">
         
@@ -517,8 +517,8 @@
           <div class="p9-feature">
             <div class="p9-icon"><img src="{{ asset('/images/trailer.png') }}" alt="trailer"></div>
             <div class="p9-content">
-              <h4>TRAILER</h4>
-              <p>All-inclusive ticketing available along with showtimes.</p>
+              <h4>Video</h4>
+              <p>Teasers, trailers, eenvoudig toevoegen.</p>
             </div>
           </div>
         </div>
@@ -528,7 +528,7 @@
             <div class="p9-icon"><img src="{{ asset('/images/responsive.png') }}" alt="responsive"></div>
             <div class="p9-content">
               <h4>RESPONSIVE</h4>
-              <p>Watch YouTube trailers at the first glance.</p>
+              <p>Elk platform, mobiel, desktop, ipads</p>
             </div>
           </div>
         </div>
@@ -537,8 +537,8 @@
           <div class="p9-feature">
             <div class="p9-icon"><img src="{{ asset('/images/showtime.png') }}" alt="showtimes"></div>
             <div class="p9-content">
-              <h4>SHOWTIMES</h4>
-              <p>Exclusive content available for higher conversion and interest.</p>
+              <h4>SPEELTIJDEN</h4>
+              <p>Eenvoudig (arthouse-) filmvertoningstijden toevoegen via excel</p>
             </div>
           </div>
         </div>
@@ -547,8 +547,8 @@
           <div class="p9-feature">
             <div class="p9-icon"><img src="{{ asset('/images/multilang.png') }}" alt="multilang"></div>
             <div class="p9-content">
-              <h4>MULTI LANGUAGE</h4>
-              <p>Get all the cinemas along with their location on map.</p>
+              <h4>LOCALISATIE</h4>
+              <p>Direct beschikbaar in Nederlands, Engels, Frans, Duits</p>
             </div>
           </div>
         </div>
@@ -557,8 +557,8 @@
           <div class="p9-feature">
             <div class="p9-icon"><img src="{{ asset('/images/analytics.png') }}" alt="analytics"></div>
             <div class="p9-content">
-              <h4>ANALYTICS</h4>
-              <p>Read what the critics say about the movie.</p>
+              <h4>Reviews en recensies</h4>
+              <p>Beschikbare quotes, recensies toevoegen</p>
             </div>
           </div>
         </div>
@@ -567,8 +567,8 @@
           <div class="p9-feature">
             <div class="p9-icon"><img src="{{ asset('/images/easy.png') }}" alt="easy"></div>
             <div class="p9-content">
-              <h4>EASY</h4>
-              <p>Read what the critics say about the movie.</p>
+              <h4>BEHEER</h4>
+              <p>Direct linken naar PICL en andere distributieplatformen</p>
             </div>
           </div>
         </div>

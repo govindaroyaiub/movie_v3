@@ -460,7 +460,7 @@
   
   <section class="p9-intro">
     <div class="container">
-      <h3 class="text-center">- The easiest platform to promote arthouse cinema -</h3>
+      <h3 class="text-center">The easiest platform to promote (arthouse-) Cinema</h3>
     </div>
   </section>
   
@@ -517,7 +517,7 @@
           <div class="p9-feature">
             <div class="p9-icon"><img src="{{ asset('/images/trailer.png') }}" alt="trailer"></div>
             <div class="p9-content">
-              <h4>TRAILER</h4>
+              <h4>VIDEO</h4>
               <p>All-inclusive ticketing available along with showtimes.</p>
             </div>
           </div>
@@ -528,7 +528,7 @@
             <div class="p9-icon"><img src="{{ asset('/images/responsive.png') }}" alt="responsive"></div>
             <div class="p9-content">
               <h4>RESPONSIVE</h4>
-              <p>Watch YouTube trailers at the first glance.</p>
+              <p>Present your movie on any platfor, web, mobile, tablets</p>
             </div>
           </div>
         </div>
@@ -538,7 +538,7 @@
             <div class="p9-icon"><img src="{{ asset('/images/showtime.png') }}" alt="showtimes"></div>
             <div class="p9-content">
               <h4>SHOWTIMES</h4>
-              <p>Exclusive content available for higher conversion and interest.</p>
+              <p>Add showtimes through a simple excel sheet</p>
             </div>
           </div>
         </div>
@@ -548,7 +548,7 @@
             <div class="p9-icon"><img src="{{ asset('/images/multilang.png') }}" alt="multilang"></div>
             <div class="p9-content">
               <h4>MULTI LANGUAGE</h4>
-              <p>Get all the cinemas along with their location on map.</p>
+              <p>Direct available in English, French, German and Dutch</p>
             </div>
           </div>
         </div>
@@ -557,7 +557,7 @@
           <div class="p9-feature">
             <div class="p9-icon"><img src="{{ asset('/images/analytics.png') }}" alt="analytics"></div>
             <div class="p9-content">
-              <h4>ANALYTICS</h4>
+              <h4>CRITICS</h4>
               <p>Read what the critics say about the movie.</p>
             </div>
           </div>
@@ -567,8 +567,8 @@
           <div class="p9-feature">
             <div class="p9-icon"><img src="{{ asset('/images/easy.png') }}" alt="easy"></div>
             <div class="p9-content">
-              <h4>EASY</h4>
-              <p>Read what the critics say about the movie.</p>
+              <h4>CREATE</h4>
+              <p>Easy creation of new pages, and link to any TVOD platform</p>
             </div>
           </div>
         </div>
@@ -686,6 +686,7 @@
 
       nlFlag.addEventListener('click', () => window.location.href = '/');
       usFlag.addEventListener('click', () => window.location.href = '/en');
+      
     });
   </script>
 </body>
