@@ -686,7 +686,6 @@
 
       nlFlag.addEventListener('click', () => window.location.href = '/');
       usFlag.addEventListener('click', () => window.location.href = '/en');
-      
     });
   </script>
 </body>

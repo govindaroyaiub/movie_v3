@@ -14,4 +14,9 @@ class DataController extends Controller
     {
         return view('land');
     }
+
+    public function en_index()
+    {
+        return view('land-en');
+    }
 }
