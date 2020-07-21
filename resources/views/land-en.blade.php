@@ -314,6 +314,13 @@
       cursor: pointer;
     }
 
+    .poster-img {
+      width: 200px;
+      height: 280px;
+      object-fit: cover
+    }
+    
+
     @media (max-width: 575.98px) { 
       .p9-header > .container {
         flex-direction: column
@@ -466,42 +473,15 @@
   
   <section class="p9-movies">
     <div class="container">
-      <div class="slider movie-slider">
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster0.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster1.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster2.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster3.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster4.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster0.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster1.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster2.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster3.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster4.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster0.jpg') }}" alt="poster"></a>
-        </div>
-        <div>
-          <a href="#"><img src="{{ asset('/images/poster1.jpg') }}" alt="poster"></a>
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div  class="slider movie-slider">
+            @foreach ($movie_list as $movie)
+            <a target="_blank" href="{{ $movie->base_url }}">
+              <img class="poster-img" src="{{ $movie->image1 }}" alt="poster" />
+            </a>
+            @endforeach
+          </div>
         </div>
       </div>
     </div>
@@ -630,7 +610,7 @@
     
     $(document).ready(function () {
       $('.movie-slider').slick({
-        slidesToShow: 5,
+        slidesToShow: 3,
         slidesToScroll: 1,
         dots: false,
         focusOnSelect: true,
