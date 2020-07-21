@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 //if domain is movie.planetnine.com
 Route::domain('movie.planetnine.com')->group(function(){
     Route::get('/', 'DataController@index');
+    Route::get('/en', 'DataController@en_index');
 });
 
 //if domain is other landing page url
