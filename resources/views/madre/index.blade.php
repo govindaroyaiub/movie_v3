@@ -273,14 +273,8 @@
                             <a href="https://www.planetnine.com/" target="_blank"><img
                                     src="{{ asset('images/p9.png') }}"
                                     alt="planetnine.com"></a>
-                            
-                            @if($mp_details != NULL)
                             <a href="{{ $mp_details['email'] }}" target="_blank"><img
                                     src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
-
-                            @elseif
-
-                            @endif
                         </div>
 
 
