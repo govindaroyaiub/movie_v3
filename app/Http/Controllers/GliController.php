@@ -56,6 +56,8 @@ class GliController extends Controller
             ->select('media_partners.logo', 'media_partners.name', 'media_partners.email')
             ->where('movie_details.base_url', '=', $app_url)
             ->first();
+
+            // dd($mp_details);
             
             
             $release_date = Showtime::join('movie_details', 'movie_showtimes.movie_id', 'movie_details.id')
@@ -156,6 +158,8 @@ class GliController extends Controller
             ->select('media_partners.logo', 'media_partners.name', 'media_partners.email')
             ->where('movie_details.base_url', '=', $app_url)
             ->first();
+
+           
             
             $release_date = Showtime::join('movie_details', 'movie_showtimes.movie_id', 'movie_details.id')
             ->select('movie_showtimes.date')

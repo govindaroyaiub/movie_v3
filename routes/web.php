@@ -29,7 +29,7 @@ Route::get('/madre', 'MadreController@nl_landing');
 Route::get('/madre_en', 'MadreController@en_landing');
 Route::get('/madre/api/shows', 'MadreController@showsApi');
 
-Route::get('/Gli_Anni_Piu_Belli', 'GliController@nl_landing');
+Route::get('/GliAnniPiuBelli', 'GliController@nl_landing');
 Route::get('/Gli_Anni_Piu_Belli_en', 'GliController@en_landing');
 Route::get('/Gli_Anni_Piu_Belli/api/shows', 'GliController@showsApi');
 

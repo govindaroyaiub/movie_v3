@@ -276,6 +276,7 @@
                             <a href="{{ $mp_details['email'] }}" target="_blank"><img
                                     src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
                         </div>
+                        
 
 
                         <hr class="bg-secondary">
