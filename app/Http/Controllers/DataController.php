@@ -12,13 +12,13 @@ class DataController extends Controller
 {
     public function index()
     {
-        $movie_list = Movie::where('is_delete', '=', 0)->get();
+        $movie_list = Movie::where('is_delete', '=', 0)->where('image1', '!=', NULL)->get();
         return view('land', compact('movie_list'));
     }
 
     public function en_index()
     {
-        $movie_list = Movie::where('is_delete', '=', 0)->get();
+        $movie_list = Movie::where('is_delete', '=', 0)->where('image1', '!=', NULL)->get();
         return view('land-en', compact('movie_list'));
     }
 }
