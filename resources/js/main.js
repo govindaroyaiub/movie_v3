@@ -103,30 +103,13 @@ var endpoint;
 
 if (location.pathname === '/' || location.pathname === '/_en') {
     endpoint = `/api/shows`;
-
-    // if (location.pathname === '/en') {
-    //     const enUrl = `${location.href}api/shows`;
-    //     endpoint = enUrl.replace(/\/en/g, '/');
-    // } else {
-    //     endpoint = `${location.href}api/shows`;
-    // }
-
 } else if (location.pathname === '/madre' || location.pathname === '/madre_en') {
     endpoint = `/madre/api/shows`;
 } else if (location.pathname === '/GliAnniPiuBelli' || location.pathname === '/GliAnniPiuBelli_en') {
     endpoint = `/GliAnniPiuBelli/api/shows`;
+} else if (location.pathname === '/Sibyl' || location.pathname === '/Sibyl_en') {
+    endpoint = `/Sibyl/api/shows`;
 }
-
-// let endPoint = `${location.href}/api/shows`;
-// const matchEn = location.pathname.slice(-2);
-// let endPointEn = endPoint.replace('_en', '');
-//
-// if (matchEn === 'en') {
-//     endPoint = endPointEn;
-// } else {
-//     endPoint = `${location.href}/api/shows`;
-// }
-
 
 axios.get(endpoint)
     .then(res => showtime.push(...res.data))
