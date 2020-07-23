@@ -8,36 +8,52 @@ Route::domain('movie.planetnine.com')->group(function(){
     Route::get('/en', 'DataController@en_index');
 });
 
-//if domain is other landing page url
+//domain for madre-defilm.nl
 Route::domain('madre-defilm.nl')->group(function(){
     Route::get('/', 'MadreController@nl_landing');
     Route::get('/_en', 'MadreController@en_landing');
     Route::get('/api/shows', 'MadreController@showsApi');
 });
 
-//if domain is other landing page url
+//domain for www.madre-defilm.nl
 Route::domain('www.madre-defilm.nl')->group(function(){
     Route::get('/', 'MadreController@nl_landing');
     Route::get('/_en', 'MadreController@en_landing');
     Route::get('/api/shows', 'MadreController@showsApi');
 });
 
+//domain for gli-anni-defilm.nl
 Route::domain('gli-anni-defilm.nl')->group(function(){
     Route::get('/', 'GliController@nl_landing');
     Route::get('/_en', 'GliController@en_landing');
     Route::get('/api/shows', 'GliController@showsApi');
 });
 
-//if domain is other landing page url
+//domain for www.gli-anni-defilm.nl
 Route::domain('www.gli-anni-defilm.nl')->group(function(){
     Route::get('/', 'GliController@nl_landing');
     Route::get('/_en', 'GliController@en_landing');
     Route::get('/api/shows', 'GliController@showsApi');
 });
 
+//domain for sibyl-defilm.nl
+Route::domain('sibyl-defilm.nl')->group(function(){
+    Route::get('/', 'SibylController@nl_landing');
+    Route::get('/_en', 'SibylController@en_landing');
+    Route::get('/api/shows', 'SibylController@showsApi');
+});
+
+//domain for www.sibyl-defilm.nl
+Route::domain('www.sibyl-defilm.nl')->group(function(){
+    Route::get('/', 'SibylController@nl_landing');
+    Route::get('/_en', 'SibylController@en_landing');
+    Route::get('/api/shows', 'SibylController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
+
 Route::get('/madre', 'MadreController@nl_landing');
 Route::get('/madre_en', 'MadreController@en_landing');
 Route::get('/madre/api/shows', 'MadreController@showsApi');
@@ -45,6 +61,10 @@ Route::get('/madre/api/shows', 'MadreController@showsApi');
 Route::get('/GliAnniPiuBelli', 'GliController@nl_landing');
 Route::get('/GliAnniPiuBelli_en', 'GliController@en_landing');
 Route::get('/GliAnniPiuBelli/api/shows', 'GliController@showsApi');
+
+Route::get('/Sibyl', 'SibylController@nl_landing');
+Route::get('/Sibyl_en', 'SibylController@en_landing');
+Route::get('/Sibyl/api/shows', 'SibylController@showsApi');
 
 Auth::routes(['register' => false]);
 
