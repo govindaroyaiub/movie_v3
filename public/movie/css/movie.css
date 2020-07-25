@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter';
 }
 
 a {
@@ -43,6 +43,7 @@ img {
 .hastag {
     color: var(--primary-dark);
     font-weight: 900 !important;
+    text-transform: uppercase;
 }
 
 .flags img {
@@ -75,7 +76,8 @@ img {
 }
 
 .movie-header h1 {
-    font-size: 1.2rem;
+    margin: 0 4rem !important;
+    font-size: 1.4rem;
 }
 
 .flag {
@@ -177,7 +179,7 @@ img {
 
 .movie-footer {
     background: var(--secondary-light);
-    padding: 1rem 0;
+    padding: 10rem 0 3rem 0;
 }
 
 .movie-footer .nav-tabs {
@@ -510,7 +512,7 @@ img {
 
 
 .footer-dist-logos img {
-    width: 150px;
+    width: 220px;
     margin: 0 1rem;
     filter: grayscale(100%);
     transition: all .2s;
@@ -540,7 +542,7 @@ img {
 }
 
 .single-item {
-
+    
 }
 
 .reviews-slider h3 {
