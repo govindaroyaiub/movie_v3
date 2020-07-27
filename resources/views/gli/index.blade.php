@@ -24,7 +24,6 @@
     {!! $movie_details->fb_pixel !!}
     {!! $movie_details->google_pixel !!}
     <style>
-        
         @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
         
