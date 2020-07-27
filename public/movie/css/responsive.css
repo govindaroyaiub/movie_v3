@@ -5,8 +5,25 @@
         font-size: 14px;
     }
 
+    .footer-dist-logos {
+        padding: 0 !important;
+    }
+
+    .movie-footer .nav-tabs a {
+        margin-right: 12px;
+        font-size: .75rem;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 0 !important;
+    }
+
+    .tab-content p {
+        font-size: 0.8rem;
+    }
+
     .poster img {
-        width: 160px;
+        width: 215px;
         margin-bottom: 1rem;
     }
 
@@ -175,9 +192,34 @@
         font-size: 0.8rem;
     }
 
-    .flags img {
+    .copyright-text {
+        font-size: 0.8rem;
+        margin-right: 10px;
+    }
+
+
+    .menu-toggler {
+        position: relative;
+    }
+
+    .flags {
+        position: static;
+    }
+
+    [data-lang="en"] {
+        position: absolute;
         top: 97px;
+        right: 10px;
         width: 28px;
+        z-index: 10;
+    }
+
+    [data-lang="nl"] {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 28px;
+        z-index: 10;
     }
 
     .footer-social img {
