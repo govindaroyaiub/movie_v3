@@ -23,7 +23,7 @@
     <script defer src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 
         body {
@@ -35,7 +35,7 @@
         }
 
         .movie-header h1 {
-            font-family: 'Limelight', cursive;
+            font-family: 'Baloo Da 2', cursive;
             letter-spacing: 2px;
         }
 
