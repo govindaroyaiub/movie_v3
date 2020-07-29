@@ -50,6 +50,13 @@
         .movie-footer {
             background: #000000;
         }
+
+        .review-area {
+            padding: 3rem 0;
+            background: var(--secondary-light);
+            color: #fff;
+            font-family: 'Recursive', sans-serif;
+        }
     </style>
     {!! $movie_details->fb_pixel !!}
     {!! $movie_details->google_pixel !!}

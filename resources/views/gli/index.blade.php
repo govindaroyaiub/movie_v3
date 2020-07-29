@@ -27,6 +27,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Recursive');
 
         body {
             font-family: 'Jost', sans-serif;
@@ -51,6 +52,13 @@
 
         .movie-footer {
             background: #000000;
+        }
+
+        .review-area {
+            padding: 3rem 0;
+            background: var(--secondary-light);
+            color: #fff;
+            font-family: 'Recursive', sans-serif;
         }
     </style>
 </head>

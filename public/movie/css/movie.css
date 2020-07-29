@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost');
-/*@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');*/
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+
 
 body {
     font-family: 'Jost', sans-serif;
@@ -522,8 +522,10 @@ img {
     padding: 3rem 0;
     background: var(--secondary-light);
     color: #fff;
-    font-family: 'Cinzel', serif;
+    font-family: 'Recursive', sans-serif;
+
 }
+
 
 .reviews-slider {
     background: #fff;
