@@ -46,19 +46,6 @@ img {
     text-transform: uppercase;
 }
 
-.flags {
-    position: absolute;
-    top: 20px;
-    right: 15px;
-}
-
-.flags img {
-    width: 36px;
-    margin: 0 auto;
-    display: none;
-    cursor: pointer;
-}
-
 .iframe-container {
     position: relative;
     width: 100%;
@@ -83,13 +70,13 @@ img {
     font-size: 1.4rem;
 }
 
-.flag {
+.flags {
     position: absolute;
-    top: 0.7rem;
-    right: 0.7rem;
+    top: 10px;
+    right: 15px;
 }
 
-.flag img {
+.flags img {
     width: 32px;
     cursor: pointer;
 }
@@ -574,4 +561,41 @@ img {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+}
+
+
+@media (max-width: 320px) {
+    .flags {
+        position: absolute;
+        top: 98px;
+        right: 15px;
+        z-index: 40;
+    }
+}
+
+@media (max-width: 375px) {
+    .flags {
+        position: absolute;
+        top: 83px;
+        right: 15px;
+        z-index: 40;
+    }
+}
+
+@media (max-width: 425px) {
+    .flags {
+        position: absolute;
+        top: 82px;
+        right: 15px;
+        z-index: 40;
+    }
+}
+
+@media (min-width: 1200px) {
+    .flags {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 40;
+    }
 }

@@ -197,31 +197,6 @@
         margin-right: 10px;
     }
 
-
-    .menu-toggler {
-        position: relative;
-    }
-
-    .flags {
-        position: static;
-    }
-
-    [data-lang="en"] {
-        position: absolute;
-        top: 97px;
-        right: 10px;
-        width: 28px;
-        z-index: 10;
-    }
-
-    [data-lang="nl"] {
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        width: 28px;
-        z-index: 10;
-    }
-
     .footer-social img {
         width: 25px;
     }
