@@ -197,35 +197,22 @@ function buildLocationList(data) {
         const html = matchArr
             .map(m => {
                 return `
-                         <div class="city-accordion-js">
-                          <a id="link-${m.id}" class="title" href="#">
-                            <div id="heading${m.id}">
-                              <div data-toggle="collapse" data-target="#collapse${m.id}" aria-expanded="true" aria-controls="collapse${m.id}">
-
-                                  <div class="d-flex justify-content-between">
-                                    <div class="d-flex">
-                                        <i class="fas fa-film fa-3x"></i>
-                                        <h3 class="ml-3">${m.name.toLowerCase()}</h3>
-                                    </div>
-                                    <span class="d-inline-block arrow-indicator"><i class="fas fa-chevron-down"></i></span>
-                                  </div>
-                                  <div class="d-flex justify-content-between mt-2 ml-md-5 text-white">
-                                    <p class="m-0">${m.address}, ${m.city}</p>
-                                    <p class="m-0 ml-3">
-                                    ${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}
-                                    </p>
-                                  </div>
-
-                              </div>
-                            </div>
-                          </a>
-                          <div id="collapse${m.id}" class="collapse" aria-labelledby="heading${m.id}" data-parent="#mainAccordionId">
-                            <div class="accordion-expand-js d-flex flex-column align-items-start mt-2">
-                              <h4 class="text-white">${m.movie_title}</h4>
-                              <a class="get-ticket-btn" href="http://${m.url}" target="_blank"><i class="fab fa-ticket"></i> ${isUrlNl ? 'Go to Cinema page' : 'Bekijk Bioscooppagina'}</a>
-                            </div>
-                          </div>
-                        </div>
+ <div class="city-accordion-js">
+                    <div class="m-wrapper">
+                      <div class="m-wrap-header">
+                        <i class="fa fa-video"></i>
+                        <h4 class="m-title">${m.name.toLowerCase()}</h4>
+                      </div>
+                      <div class="m-wrap-meta">
+                        <p class="m-address">${m.address}, ${m.city}</p>
+                        <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
+                      </div>
+                      <div class="m-wrap-footer">
+                        <a class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'Go to Cinema page' : 'Bekijk Bioscooppagina'}</a>
+                        <a class="m-map-btn title" id="link-${m.id}" href="#">Show on map</a>
+                      </div>
+                    </div>
+                    </div>
                     `;
             }).join("");
 
@@ -293,33 +280,20 @@ function buildLocationList(data) {
             const cHtml = filter.map(m => {
                 return `
                         <div class="city-accordion-js">
-                          <a id="link-${m.id}" class="title" href="#">
-                            <div id="heading-${m.id}">
-                              <div data-toggle="collapse" data-target="#collapse-${m.id}" aria-expanded="true" aria-controls="collapse-${m.id}">
-
-                                 <div class="d-flex justify-content-between">
-                                    <div class="d-flex">
-                                        <i class="fas fa-film fa-3x"></i>
-                                        <h3 class="ml-3">${m.name}</h3>
-                                    </div>
-                                    <span class="d-inline-block arrow-indicator"><i class="fas fa-chevron-down"></i></span>
-                                  </div>
-                                  <div class="d-flex justify-content-between mt-2 ml-md-5 text-white">
-                                    <p class="m-0">${m.address}, ${m.city}</p>
-                                    <p class="m-0 ml-3">
-                                    ${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}
-                                    </p>
-                                  </div>
-
-                              </div>
-                            </div>
-                          </a>
-                          <div id="collapse-${m.id}" class="collapse" aria-labelledby="heading-${m.id}" data-parent="#cityAccordionId">
-                            <div class="accordion-expand-js d-flex flex-column align-items-start mt-2">
-                              <h4 class="text-white">${m.movie_title}</h4>
-                              <a class="get-ticket-btn" href="http://${m.url}" target="_blank"><i class="fab fa-ticket"></i> ${isUrlNl ? 'Go to Cinema page' : 'Bekijk Bioscooppagina'}</a>
-                            </div>
-                          </div>
+                        <div class="m-wrapper">
+                      <div class="m-wrap-header">
+                        <i class="fa fa-video"></i>
+                        <h4 class="m-title">${m.name.toLowerCase()}</h4>
+                      </div>
+                      <div class="m-wrap-meta">
+                        <p class="m-address">${m.address}, ${m.city}</p>
+                        <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
+                      </div>
+                      <div class="m-wrap-footer">
+                        <a class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'Go to Cinema page' : 'Bekijk Bioscooppagina'}</a>
+                        <a class="m-map-btn title" id="link-${m.id}" href="#">Show on map</a>
+                      </div>
+                    </div>
                         </div>
                     `;
             })
