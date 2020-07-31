@@ -209,7 +209,7 @@ function buildLocationList(data) {
                       </div>
                       <div class="m-wrap-footer">
                         <a class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'To Theatre' : 'Naar theater'}</a>
-                        <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Toon op kaart' : 'Show On Map'}</a>
+                        <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Show On Map' : 'Toon op kaart'}</a>
                       </div>
                     </div>
                     </div>
@@ -291,7 +291,7 @@ function buildLocationList(data) {
                       </div>
                       <div class="m-wrap-footer">
                         <a class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'To Theatre' : 'Naar theater'}</a>
-                        <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Toon op kaart' : 'Show On Map'}</a>
+                        <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Show On Map' : 'Toon op kaart' }</a>
                       </div>
                     </div>
                     </div>
