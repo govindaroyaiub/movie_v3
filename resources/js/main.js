@@ -208,8 +208,8 @@ function buildLocationList(data) {
                         <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
                       </div>
                       <div class="m-wrap-footer">
-                        <a class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'Go to Cinema page' : 'Bekijk Bioscooppagina'}</a>
-                        <a class="m-map-btn title" id="link-${m.id}" href="#">Show on map</a>
+                        <a class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'To Theatre' : 'Naar theater'}</a>
+                        <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Toon op kaart' : 'Show On Map'}</a>
                       </div>
                     </div>
                     </div>
@@ -279,8 +279,8 @@ function buildLocationList(data) {
 
             const cHtml = filter.map(m => {
                 return `
-                        <div class="city-accordion-js">
-                        <div class="m-wrapper">
+                       <div class="city-accordion-js">
+                    <div class="m-wrapper">
                       <div class="m-wrap-header">
                         <i class="fa fa-video"></i>
                         <h4 class="m-title">${m.name.toLowerCase()}</h4>
@@ -290,11 +290,11 @@ function buildLocationList(data) {
                         <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
                       </div>
                       <div class="m-wrap-footer">
-                        <a class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'Go to Cinema page' : 'Bekijk Bioscooppagina'}</a>
-                        <a class="m-map-btn title" id="link-${m.id}" href="#">Show on map</a>
+                        <a class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'To Theatre' : 'Naar theater'}</a>
+                        <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Toon op kaart' : 'Show On Map'}</a>
                       </div>
                     </div>
-                        </div>
+                    </div>
                     `;
             })
                 .join("");

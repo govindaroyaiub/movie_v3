@@ -425,7 +425,7 @@ img {
 }
 
 .city-accordion-js {
-    background: var(--secondary-light);
+    /*background: var(--secondary-light);*/
     color: #fff;
     border-radius: 0.2rem;
     margin: 1rem;

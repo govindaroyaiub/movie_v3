@@ -5,6 +5,22 @@
         font-size: 14px;
     }
 
+    .m-wrap-footer {
+        flex-direction: column;
+
+    }
+
+    .m-book-btn,
+    .p9-btn,
+    .m-map-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .m-map-btn {
+        margin-top: 6px;
+    }
+
     .footer-dist-logos {
         padding: 0 !important;
     }
