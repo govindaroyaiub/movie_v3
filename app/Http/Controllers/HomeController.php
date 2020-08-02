@@ -75,6 +75,24 @@ class HomeController extends Controller
         return view('home', compact('id', 'movie_details'));
     }
 
+    public function showtimes($id)
+    {
+        $md = Movie::where('id', '=', $id)->first();
+        $ms = Showtime::join('show_location_static', 'show_location_static.id', 'movie_showtimes.cinema_id')
+                        ->select(
+                            'movie_showtimes.id', 
+                            'movie_showtimes.date',
+                            'movie_showtimes.url', 
+                            'show_location_static.name', 
+                            'show_location_static.address',
+                            'show_location_static.zip',
+                            'show_location_static.phone',
+                            'show_location_static.city')
+                        ->where('movie_showtimes.movie_id', '=', $id)
+                        ->get();
+        return view('showtime-list', compact('md', 'ms'));
+    }
+
     public function upload(Request $request, $id)
     {
         //validate the xls file

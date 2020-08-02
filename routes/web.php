@@ -71,8 +71,9 @@ Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/showtimes/{id}', 'HomeController@movie_showtime');
-    Route::post('/upload/{id}', 'HomeController@upload');
+    Route::get('/showtimes/{id}', 'HomeController@showtimes');
+    Route::get('/upload/{id}', 'HomeController@movie_showtime');
+    Route::post('/upload_sheet/{id}', 'HomeController@upload');
     Route::post('/update-info', 'HomeController@update_info')->name('update_info');
 
     Route::get('/userlist', 'AdminController@userlist');
