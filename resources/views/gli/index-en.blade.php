@@ -71,8 +71,8 @@
             - {{ $movie_details->movie_description_short }}</h1>
 
         <div class="flags">
-            <img data-lang="en" src="{{ asset('images/us.svg') }}" class="d-none" alt="">
-            <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-block" alt="">
+            <img data-lang="en" src="{{ asset('images/us.svg') }}" class="en-flag d-none" alt="">
+            <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="nl-flag d-block" alt="">
         </div>
     </header>
 
