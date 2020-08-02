@@ -178,11 +178,11 @@ class HomeController extends Controller
 
                 for ($row = 2; $row <= $highestRow; ++$row) {
                     $cinema_details = $worksheet2->getCellByColumnAndRow(2, $row)->getValue();
-                    $date_sheet = $worksheet2->getCellByColumnAndRow(3, $row)->getValue();
+                    $start_date = $request->start_date;
+                    $end_date = $request->end_date;
                     $time_sheet = $worksheet2->getCellByColumnAndRow(4, $row)->getValue();
                     $url = $worksheet2->getCellByColumnAndRow(5, $row)->getValue();
                     $movie_id = $movie_details['id'];
-                    $date = date('Y-m-d',\PhpOffice\PhpSpreadsheet\Shared\Date::excelToTimestamp($date_sheet));
                     if($time_sheet != NULL)
                     {
                         $time = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($time_sheet)->format('H:i');
@@ -198,7 +198,8 @@ class HomeController extends Controller
                     {
                         $showtime = [
                             'cinema_id' => $cinema_id[0],
-                            'date' => $date,
+                            'date' => $start_date,
+                            'end_date' => $end_date,
                             'time' => $time,
                             'url' => $url,
                             'movie_id' => $movie_id

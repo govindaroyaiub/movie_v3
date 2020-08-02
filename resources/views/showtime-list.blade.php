@@ -31,7 +31,7 @@
                                     <td style="width:120px;"><b>Start Date:</b><br>{{$row->date}}
                                     <hr>
                                     @if($row->end_date == NULL)
-                                    <b style="color:red">No End Time!</b>
+                                    <b style="color:red">No End Date!</b>
                                     @else
                                     <b>End Date:</b><br>{{$row->end_date}}
                                     @endif

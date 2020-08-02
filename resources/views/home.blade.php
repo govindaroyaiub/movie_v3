@@ -24,6 +24,17 @@
                             <br>
                         </div>
                         <hr>
+                        <div class="row">
+                            <div class="col">
+                                <label for="start_date">Start Date</label>
+                                <input type="date" class="form-control" name="start_date" id="start_date" required>
+                            </div>
+                            <div class="col">
+                                <label for="end_date">End Date</label>
+                                <input type="date" class="form-control" name="end_date" id="end_date" required>
+                            </div>
+                        </div>
+                        <br>
                         <div class="form-group">
                             <input type="file" name="file" required>
                         </div>
