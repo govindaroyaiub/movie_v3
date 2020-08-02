@@ -9,7 +9,7 @@
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
     <style>
     .custom {
-        width: 72px !important;
+        width: 98px !important;
     }
     </style>
 </head>
@@ -228,6 +228,14 @@
             "lengthMenu": [
                 [10, 25, 50, -1],
                 [10, 25, 50, "All"]
+            ]
+        });
+
+        $('#showtime_list').DataTable({
+            responsive: true,
+            "lengthMenu": [
+                [25, 50, -1],
+                [25, 50, "All"]
             ]
         });
 

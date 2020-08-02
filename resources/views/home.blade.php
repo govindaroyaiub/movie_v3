@@ -10,7 +10,7 @@
                 <div class="card-body">
                     @include('alert')
 
-                    <form method="post" action="/upload/{{$id}}" enctype="multipart/form-data">
+                    <form method="post" action="/upload_sheet/{{$id}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <h2>Upload showtimes for movie: {{$movie_details['movie_title']}}</h2l>

@@ -75,6 +75,66 @@ class HomeController extends Controller
         return view('home', compact('id', 'movie_details'));
     }
 
+    public function showtimes($id)
+    {
+        $md = Movie::where('id', '=', $id)->first();
+        $ms = Showtime::join('show_location_static', 'show_location_static.id', 'movie_showtimes.cinema_id')
+                        ->select(
+                            'movie_showtimes.id', 
+                            'movie_showtimes.date',
+                            'movie_showtimes.end_date',
+                            'movie_showtimes.url', 
+                            'show_location_static.name', 
+                            'show_location_static.address',
+                            'show_location_static.zip',
+                            'show_location_static.phone',
+                            'show_location_static.city')
+                        ->where('movie_showtimes.movie_id', '=', $id)
+                        ->orderBy('movie_showtimes.url', 'ASC')
+                        ->get();
+        return view('showtime-list', compact('md', 'ms'));
+    }
+
+    public function showtimes_edit($id)
+    {
+        $ms = Showtime::join('show_location_static', 'show_location_static.id', 'movie_showtimes.cinema_id')
+                        ->select(
+                            'movie_showtimes.id', 
+                            'movie_showtimes.date',
+                            'movie_showtimes.end_date',
+                            'movie_showtimes.url', 
+                            'show_location_static.name', 
+                            'show_location_static.address',
+                            'show_location_static.zip',
+                            'show_location_static.phone',
+                            'show_location_static.city')
+                        ->where('movie_showtimes.id', '=', $id)
+                        ->first();
+        return view('edit-showtime', compact('ms', 'id'));
+    }
+
+    public function showtimes_edit_post(Request $request, $id)
+    {
+        $movie_id = Showtime::select('movie_id')->where('id', '=', $id)->first();
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+        $url = $request->url;
+
+        $sd = [
+            'url' => $url,
+            'date' => $start_date,
+            'end_date' => $end_date
+        ];
+        Showtime::where('id', '=', $id)->update($sd);
+        return redirect('/showtimes/'.$movie_id['movie_id']);
+    }
+
+    public function showtimes_delete($id)
+    {
+        Showtime::where('id', '=', $id)->delete();
+        return back()->with('info', 'Showtime has been deleted!');
+    }
+
     public function upload(Request $request, $id)
     {
         //validate the xls file
@@ -98,7 +158,6 @@ class HomeController extends Controller
 
             $worksheet1 = $spreadsheet->getSheet(0);
             $worksheet2 = $spreadsheet->getSheet(1);
-            // $worksheet3 = $spreadsheet->getSheet(2);
 
             $location_list = [];
             $showtime_list = [];
@@ -108,151 +167,6 @@ class HomeController extends Controller
             $rating = $title->rating();
 
             $movie_details = Movie::where('id', '=', $movie_id)->first();
-
-            // if($worksheet3)
-            // {
-            //     $highestRow = $worksheet3->getHighestDataRow(); 
-            //     $highestColumn = $worksheet3->getHighestDataColumn();
-            //     $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn); 
-            //     for ($row = 2; $row <= $highestRow; ++$row) {
-            //         $movie_title = $worksheet3->getCellByColumnAndRow(2, $row)->getValue();
-            //         $movie_description_short = $worksheet3->getCellByColumnAndRow(3, $row)->getValue();
-            //         $movie_description_long = $worksheet3->getCellByColumnAndRow(4, $row)->getValue();
-            //         $buy_tickets_text = $worksheet3->getCellByColumnAndRow(5, $row)->getValue();
-            //         $movie_description_short_nl = $worksheet3->getCellByColumnAndRow(6, $row)->getValue();
-            //         $movie_description_long_nl = $worksheet3->getCellByColumnAndRow(7, $row)->getValue();
-            //         $buy_tickets_text_nl = $worksheet3->getCellByColumnAndRow(8, $row)->getValue();
-            //         $cinema_date_sheet = $worksheet3->getCellByColumnAndRow(9, $row)->getValue();
-            //         $director = $worksheet3->getCellByColumnAndRow(10, $row)->getValue();
-            //         $producer = $worksheet3->getCellByColumnAndRow(11, $row)->getValue();
-            //         $writer = $worksheet3->getCellByColumnAndRow(12, $row)->getValue();
-            //         $actors = $worksheet3->getCellByColumnAndRow(13, $row)->getValue();
-            //         $youtube_url = $worksheet3->getCellByColumnAndRow(14, $row)->getValue();
-            //         $image1 = $worksheet3->getCellByColumnAndRow(15, $row)->getValue();
-            //         $image2 = $worksheet3->getCellByColumnAndRow(16, $row)->getValue();
-            //         $image3 = $worksheet3->getCellByColumnAndRow(17, $row)->getValue();
-            //         $duration = $worksheet3->getCellByColumnAndRow(18, $row)->getValue();
-            //         // $rating = $worksheet3->getCellByColumnAndRow(19, $row)->getValue();
-            //         $get_base_url = $worksheet3->getCellByColumnAndRow(20, $row)->getValue();
-            //         $get_ticket_url = $worksheet3->getCellByColumnAndRow(21, $row)->getValue();
-            //         $fb_link = $worksheet3->getCellByColumnAndRow(22, $row)->getValue();
-            //         $twitter_link = $worksheet3->getCellByColumnAndRow(23, $row)->getValue();
-            //         $hashtag = $worksheet3->getCellByColumnAndRow(24, $row)->getValue();
-            //         $cookies = $worksheet3->getCellByColumnAndRow(25, $row)->getValue();
-            //         $cookies_nl = $worksheet3->getCellByColumnAndRow(26, $row)->getValue();
-            //         $terms_of_use = $worksheet3->getCellByColumnAndRow(27, $row)->getValue();
-            //         $terms_of_use_nl = $worksheet3->getCellByColumnAndRow(28, $row)->getValue();
-            //         $privacy_policy = $worksheet3->getCellByColumnAndRow(29, $row)->getValue();
-            //         $privacy_policy_nl = $worksheet3->getCellByColumnAndRow(30, $row)->getValue();
-            //         $credits = $worksheet3->getCellByColumnAndRow(31, $row)->getValue();
-            //         $credits_nl = $worksheet3->getCellByColumnAndRow(32, $row)->getValue();
-            //         $fb_pixel = $worksheet3->getCellByColumnAndRow(33, $row)->getValue();
-            //         $google_pixel = $worksheet3->getCellByColumnAndRow(34, $row)->getValue();
-            //         $cinema_date = date('Y-m-d',\PhpOffice\PhpSpreadsheet\Shared\Date::excelToTimestamp($cinema_date_sheet));
-                    
-            //         if($get_base_url != 'https://bacurau-defilm.nl/')
-            //         {
-            //             return back()->with('info', 'The base_url column is not : https://bacurau-defilm.nl/. Please correct it!');
-            //         }
-                        
-            //         if($movie_title != NULL)
-            //         {
-            //             $movie_details = [
-            //                 'movie_title' => $movie_title,
-            //                 'movie_description_short' => $movie_description_short,
-            //                 'movie_description_long' => $movie_description_long,
-            //                 'buy_tickets' => $buy_tickets_text,
-            //                 'movie_description_short_nl' => $movie_description_short_nl,
-            //                 'movie_description_long_nl' => $movie_description_long_nl,
-            //                 'buy_tickets_nl' => $buy_tickets_text_nl,
-            //                 'cinema_date' => $cinema_date,
-            //                 'director' => $director,
-            //                 'producer' => $producer,
-            //                 'writer' => $writer,
-            //                 'actors' => $actors,
-            //                 'youtube_url' => $youtube_url,
-            //                 'image1' => $image1,
-            //                 'image2' => $image2,
-            //                 'image3' => $image3,
-            //                 'duration' => $duration,
-            //                 'ratings' => $rating,
-            //                 'base_url' => $get_base_url,
-            //                 'ticket_url' => $get_ticket_url,
-            //                 'fb_link' => $fb_link,
-            //                 'twitter_link' => $twitter_link,
-            //                 'hashtag' => $hashtag,
-            //                 'cookies' => $cookies,
-            //                 'cookies_nl' => $cookies_nl,
-            //                 'terms_of_use' => $terms_of_use,
-            //                 'terms_of_use_nl' => $terms_of_use_nl,
-            //                 'privacy_policy' => $privacy_policy,
-            //                 'privacy_policy_nl' => $privacy_policy_nl,
-            //                 'credits' => $credits,
-            //                 'credits_nl' => $credits_nl,
-            //                 'fb_pixel' => $fb_pixel,
-            //                 'google_pixel' => $google_pixel,
-            //                 'is_delete' => '0',
-            //                 'uploaded_by' => $user_id
-            //             ];
-            //             array_push($full_movie_details, $movie_details);
-            //         }
-            //     }
-            //     //if there is no data 
-            //     if($check_movie_details == NULL)
-            //     {
-            //         Movie::insert($full_movie_details);
-            //     }
-            //     else
-            //     {
-            //         //match with uploaded data and existing data where base_url = app_url
-            //         $existing_movie_details = Movie::select(
-            //                                     'movie_title',
-            //                                     'movie_description_short',
-            //                                     'movie_description_long',
-            //                                     'buy_tickets',
-            //                                     'movie_description_short_nl',
-            //                                     'movie_description_long_nl',
-            //                                     'buy_tickets_nl',
-            //                                     'cinema_date',
-            //                                     'director',
-            //                                     'producer',
-            //                                     'writer',
-            //                                     'actors',
-            //                                     'youtube_url',
-            //                                     'image1',
-            //                                     'image2',
-            //                                     'image3',
-            //                                     'duration',
-            //                                     'ratings',
-            //                                     'base_url',
-            //                                     'ticket_url',
-            //                                     'fb_link',
-            //                                     'twitter_link',
-            //                                     'hashtag',
-            //                                     'cookies',
-            //                                     'cookies_nl',
-            //                                     'terms_of_use',
-            //                                     'terms_of_use_nl',
-            //                                     'privacy_policy',
-            //                                     'privacy_policy_nl',
-            //                                     'credits',
-            //                                     'credits_nl',
-            //                                     'fb_pixel',
-            //                                     'google_pixel',
-            //                                     'uploaded_by')
-            //                                     ->where('base_url', '=', $app_url)
-            //                                     ->first();
-                    
-            //         if($existing_movie_details != NULL)
-            //         {
-            //             Movie::where('base_url', '=', $app_url)->update($full_movie_details[0]);
-            //         }
-            //         else
-            //         {
-            //             Movie::insert($full_movie_details);
-            //         }
-            //     }
-            // }
 
             if($worksheet2)
             {   

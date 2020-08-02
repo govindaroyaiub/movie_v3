@@ -38,14 +38,11 @@
                                     <td>{{$row->name}} (@if($row->is_admin == 1) Admin @else Client @endif)</td>
                                     @endif
                                     <td>
-                                        <a href="/movielist/edit/{{$row->id}}"><button
-                                                class="btn btn-primary text-white custom">Edit</button></a>
-                                        <a href="/reviews/{{$row->id}}"><button
-                                                class="btn btn-success text-white">Reviews</button></a>
-                                        <a href="/showtimes/{{$row->id}}"><button
-                                                class="btn btn-secondary text-white">Showtimes</button></a>
-                                        <a href="/movielist/delete/{{$row->id}}"><button
-                                                class="btn btn-danger text-white custom">Delete</button></a>
+                                        <a href="/movielist/edit/{{$row->id}}"><button class="btn btn-primary text-white custom">Edit</button></a><br>
+                                        <a href="/upload/{{$row->id}}"><button class="btn btn-dark text-white custom">Upload</button></a><br>
+                                        <a href="/reviews/{{$row->id}}"><button class="btn btn-success text-white custom">Reviews</button></a><br>
+                                        <a href="/showtimes/{{$row->id}}"><button class="btn btn-secondary text-white custom">Showtimes</button></a><br>
+                                        <a href="/movielist/delete/{{$row->id}}"><button class="btn btn-danger text-white custom">Delete</button></a><br>
                                     </td>
                                 </tr>
                                 @endforeach
