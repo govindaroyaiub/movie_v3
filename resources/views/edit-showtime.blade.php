@@ -25,7 +25,7 @@
 
                             <div class="form-group">
                                 <label for="end_date">End Date</label>
-                                <input type="date" class="form-control" name="end_date" value="{{ $ms['date'] }}" id="url" required>
+                                <input type="date" class="form-control" name="end_date" value="{{ $ms['end_date'] }}" id="url" required>
                             </div>
                             
                             <div class="modal-footer">

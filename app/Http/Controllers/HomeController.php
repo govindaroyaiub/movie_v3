@@ -82,6 +82,7 @@ class HomeController extends Controller
                         ->select(
                             'movie_showtimes.id', 
                             'movie_showtimes.date',
+                            'movie_showtimes.end_date',
                             'movie_showtimes.url', 
                             'show_location_static.name', 
                             'show_location_static.address',
@@ -100,6 +101,7 @@ class HomeController extends Controller
                         ->select(
                             'movie_showtimes.id', 
                             'movie_showtimes.date',
+                            'movie_showtimes.end_date',
                             'movie_showtimes.url', 
                             'show_location_static.name', 
                             'show_location_static.address',

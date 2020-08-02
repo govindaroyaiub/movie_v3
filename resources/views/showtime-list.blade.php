@@ -28,7 +28,14 @@
                                     <td>{{$i++}}</td>
                                     <td>{{$row->name}} <hr>{{$row->address}}, {{$row->zip}}, {{$row->city}} <br> <b>Phone:</b> {{$row->phone}}</td>
                                     <td style="width:90px;"><a href="https://{{$row->url}}" target="_blank">{{$row->url}}</a></td>
-                                    <td style="width:120px;"><b>Start Date:</b><br>{{$row->date}}<hr><b>End Date:</b><br>{{$row->date}}</td>
+                                    <td style="width:120px;"><b>Start Date:</b><br>{{$row->date}}
+                                    <hr>
+                                    @if($row->end_date == NULL)
+                                    <b style="color:red">No End Time!</b>
+                                    @else
+                                    <b>End Date:</b><br>{{$row->end_date}}
+                                    @endif
+                                    </td>
                                     <td>
                                         <a href="/showtimes/edit/{{$row->id}}"><button class="btn btn-primary text-white custom">Edit</button></a><br>
                                         <a href="/showtimes/delete/{{$row->id}}"><button class="btn btn-danger text-white custom">Delete</button></a><br>
