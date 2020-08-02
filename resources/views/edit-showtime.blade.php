@@ -14,7 +14,7 @@
                             {{ csrf_field() }}
                         
                             <div class="form-group">
-                                <label for="url">URL <b style="color:red;">(wihtout https/https)</b></label>
+                                <label for="url">URL <b style="color:red;">(wihtout http/https)</b></label>
                                 <input type="text" class="form-control" name="url" value="{{ $ms['url'] }}" id="url" required>
                             </div>
 
