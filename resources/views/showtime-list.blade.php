@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Showtime List for: <label style="color: red;">{{ $md['movie_title'] }}</label>
                 <a href="" style="position:absolute; text-decoration: underline; right:2%;" data-toggle="modal"
-                        data-target="#date_modal">Upload Altogether +</a>
+                        data-target="#date_modal">Update Date Altogether +</a>
                 </div>
                 <div class="card-body">
                     @include('alert')
