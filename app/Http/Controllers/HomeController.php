@@ -93,6 +93,17 @@ class HomeController extends Controller
         return view('showtime-list', compact('md', 'ms'));
     }
 
+    public function showtimes_edit(Request $request, $id)
+    {
+        dd($id);
+    }
+
+    public function showtimes_delete($id)
+    {
+        Showtime::where('id', '=', $id)->delete();
+        return back()->with('info', 'Showtime has been deleted!');
+    }
+
     public function upload(Request $request, $id)
     {
         //validate the xls file

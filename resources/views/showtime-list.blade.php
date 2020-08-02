@@ -17,7 +17,6 @@
                                     <th>Theatre</th>
                                     <th>URL</th>
                                     <th>Date</th>
-                                    <th>Address & Phone</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -27,12 +26,12 @@
                                 @foreach($ms as $row)
                                 <tr>
                                     <td>{{$i++}}</td>
-                                    <td>{{$row->name}}</td>
+                                    <td>{{$row->name}} <hr> <b>Address</b>{{$row->address}}, {{$row->zip}}, {{$row->city}} <br> <b>Phone:</b> {{$row->phone}}</td>
                                     <td style="width:90px;"><a href="{{$row->url}}" target="_blank">{{$row->url}}</a></td>
                                     <td style="width:120px;"><b>Start Date:</b><br>{{$row->date}}<hr><b>End Date:</b><br>{{$row->date}}</td>
-                                    <td>{{$row->address}}, {{$row->zip}}, {{$row->city}} <hr> <b>Phone:</b> {{$row->phone}}</td>
                                     <td>
-                                        
+                                        <a href="/showtimes/edit/{{$row->id}}"><button class="btn btn-primary text-white custom">Edit</button></a><br>
+                                        <a href="/showtimes/delete/{{$row->id}}"><button class="btn btn-danger text-white custom">Delete</button></a><br>
                                     </td>
                                 </tr>
                                 @endforeach
