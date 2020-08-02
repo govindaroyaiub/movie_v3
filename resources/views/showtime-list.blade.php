@@ -27,7 +27,7 @@
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$row->name}} <hr> <b>Address</b>{{$row->address}}, {{$row->zip}}, {{$row->city}} <br> <b>Phone:</b> {{$row->phone}}</td>
-                                    <td style="width:90px;"><a href="{{$row->url}}" target="_blank">{{$row->url}}</a></td>
+                                    <td style="width:90px;"><a href="https://{{$row->url}}" target="_blank">{{$row->url}}</a></td>
                                     <td style="width:120px;"><b>Start Date:</b><br>{{$row->date}}<hr><b>End Date:</b><br>{{$row->date}}</td>
                                     <td>
                                         <a href="/showtimes/edit/{{$row->id}}"><button class="btn btn-primary text-white custom">Edit</button></a><br>
