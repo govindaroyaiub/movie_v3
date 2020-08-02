@@ -73,6 +73,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/showtimes/{id}', 'HomeController@showtimes');
     Route::get('/showtimes/edit/{id}', 'HomeController@showtimes_edit');
+    Route::post('/showtimes/edit/{id}', 'HomeController@showtimes_edit_post');
     Route::get('/showtimes/delete/{id}', 'HomeController@showtimes_delete');
     Route::get('/upload/{id}', 'HomeController@movie_showtime');
     Route::post('/upload_sheet/{id}', 'HomeController@upload');
