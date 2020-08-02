@@ -92,7 +92,7 @@ class HomeController extends Controller
                         ->where('movie_showtimes.movie_id', '=', $id)
                         ->orderBy('movie_showtimes.url', 'ASC')
                         ->get();
-        return view('showtime-list', compact('md', 'ms'));
+        return view('showtime-list', compact('md', 'ms', 'id'));
     }
 
     public function showtimes_edit($id)
@@ -133,6 +133,16 @@ class HomeController extends Controller
     {
         Showtime::where('id', '=', $id)->delete();
         return back()->with('info', 'Showtime has been deleted!');
+    }
+
+    public function showtimes_update(Request $request, $id)
+    {
+        $data = [
+            'date' => $request->start_date,
+            'end_date' => $request->end_date
+        ];
+        Showtime::where('movie_id', '=', $id)->update($data);
+        return back()->with('info', 'Updated!');
     }
 
     public function upload(Request $request, $id)
