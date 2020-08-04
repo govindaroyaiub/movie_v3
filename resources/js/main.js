@@ -207,7 +207,7 @@ function buildLocationList(data) {
                 // <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
 
                 var logic1 = current_date < api_date && current_date < end_date;
-                var logic2 = current_date >= api_date && current_date <= api_date;
+                var logic2 = current_date >= api_date && current_date <= end_date;
 
                 if (current_date < api_date && current_date < end_date) {
                     var dateTime;
@@ -319,7 +319,7 @@ function buildLocationList(data) {
                 // <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
 
                 var logic1 = current_date < api_date && current_date < end_date;
-                var logic2 = current_date >= api_date && current_date <= api_date;
+                var logic2 = current_date >= api_date && current_date <= end_date;
 
                 if (current_date < api_date && current_date < end_date) {
                     var dateTime;
