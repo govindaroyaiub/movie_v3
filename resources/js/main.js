@@ -219,7 +219,7 @@ function buildLocationList(data) {
                     }
 
                     st1 = dateTime;
-                } else if ( 2 + 2) {
+                } else if (logic2) {
                     st2 = 'In de bioscoop';
                 }
 
@@ -331,7 +331,7 @@ function buildLocationList(data) {
                     }
 
                     st1 = dateTime;
-                } else if ( 2 + 2) {
+                } else if (logic2) {
                     st2 = 'In de bioscoop';
                 }
 
