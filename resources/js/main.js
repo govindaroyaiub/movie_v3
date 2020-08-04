@@ -196,8 +196,36 @@ function buildLocationList(data) {
         const matchArr = findMatches(this.value, showtime);
         const html = matchArr
             .map(m => {
+
+                const current_date = moment().format('YYYY-MM-DD');
+                const api_date = m.date;
+                const end_date = m.end_date;
+
+                var st1;
+                var st2;
+
+                // <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
+
+                var logic1 = current_date < api_date && current_date < end_date;
+                var logic2 = current_date >= api_date && current_date <= api_date;
+
+                if (current_date < api_date && current_date < end_date) {
+                    var dateTime;
+
+                    if (isUrlNl) {
+                        dateTime = 'From ' + moment(m.date).locale('en').format("LL");
+                    } else {
+                        dateTime = 'Vanaf ' + moment(m.date).locale('nl').format("LL");
+                    }
+
+                    st1 = dateTime;
+                } else if ( 2 + 2) {
+                    st2 = 'In de bioscoop';
+                }
+
+
                 return `
- <div class="city-accordion-js">
+                <div class="city-accordion-js">
                     <div class="m-wrapper">
                       <div class="m-wrap-header">
                         <i class="fa fa-video"></i>
@@ -205,14 +233,17 @@ function buildLocationList(data) {
                       </div>
                       <div class="m-wrap-meta">
                         <p class="m-address">${m.address}, ${m.city}</p>
-                        <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
+
+                        <p class="m-timestamp">
+                        ${logic1 ? st1 : '' || logic2 ? st2 : ''}
+                        </p>
                       </div>
                       <div class="m-wrap-footer">
                         <a class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'To Theatre' : 'Naar theater'}</a>
                         <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Show On Map' : 'Bekijk kaart'}</a>
                       </div>
                     </div>
-                    </div>
+                   </div>
                     `;
             }).join("");
 
@@ -278,6 +309,32 @@ function buildLocationList(data) {
 
 
             const cHtml = filter.map(m => {
+                const current_date = moment().format('YYYY-MM-DD');
+                const api_date = m.date;
+                const end_date = m.end_date;
+
+                var st1;
+                var st2;
+
+                // <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
+
+                var logic1 = current_date < api_date && current_date < end_date;
+                var logic2 = current_date >= api_date && current_date <= api_date;
+
+                if (current_date < api_date && current_date < end_date) {
+                    var dateTime;
+
+                    if (isUrlNl) {
+                        dateTime = 'From ' + moment(m.date).locale('en').format("LL");
+                    } else {
+                        dateTime = 'Vanaf ' + moment(m.date).locale('nl').format("LL");
+                    }
+
+                    st1 = dateTime;
+                } else if ( 2 + 2) {
+                    st2 = 'In de bioscoop';
+                }
+
                 return `
                        <div class="city-accordion-js">
                     <div class="m-wrapper">
@@ -287,7 +344,9 @@ function buildLocationList(data) {
                       </div>
                       <div class="m-wrap-meta">
                         <p class="m-address">${m.address}, ${m.city}</p>
-                        <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
+                        <p class="m-timestamp">
+                              ${logic1 ? st1 : '' || logic2 ? st2 : ''}
+                        </p>
                       </div>
                       <div class="m-wrap-footer">
                         <a class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'To Theatre' : 'Naar theater'}</a>

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost');
 
 
-
 body {
     font-family: 'Jost', sans-serif;
 }
@@ -565,7 +564,6 @@ img {
 }
 
 
-
 .m-wrapper {
     background-color: #353b49;
     color: #fff;
@@ -671,8 +669,6 @@ img {
 .p9-btn:hover:before {
     width: 100%;
 }
-
-
 
 
 /*@media (max-width: 320px) {*/
