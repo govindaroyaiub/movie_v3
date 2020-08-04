@@ -220,7 +220,11 @@ function buildLocationList(data) {
 
                     st1 = dateTime;
                 } else if (logic2) {
-                    st2 = 'In de bioscoop';
+                    if (isUrlNl) {
+                        st2 = 'Now Showing In Theatre';
+                    } else {
+                        st2 = 'In de bioscoop';
+                    }
                 }
 
 
@@ -332,7 +336,11 @@ function buildLocationList(data) {
 
                     st1 = dateTime;
                 } else if (logic2) {
-                    st2 = 'In de bioscoop';
+                    if (isUrlNl) {
+                        st2 = 'Now Showing In Theatre';
+                    } else {
+                        st2 = 'In de bioscoop';
+                    }
                 }
 
                 return `
