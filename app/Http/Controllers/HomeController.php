@@ -190,17 +190,8 @@ class HomeController extends Controller
                     $cinema_details = $worksheet2->getCellByColumnAndRow(2, $row)->getValue();
                     $start_date = $request->start_date;
                     $end_date = $request->end_date;
-                    $time_sheet = $worksheet2->getCellByColumnAndRow(4, $row)->getValue();
-                    $url = $worksheet2->getCellByColumnAndRow(5, $row)->getValue();
+                    $url = $worksheet2->getCellByColumnAndRow(3, $row)->getValue();
                     $movie_id = $movie_details['id'];
-                    if($time_sheet != NULL)
-                    {
-                        $time = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($time_sheet)->format('H:i');
-                    }
-                    else
-                    {
-                        $time = 0;
-                    }
                     
                     $cinema_id = explode(" ", $cinema_details);
 
@@ -210,7 +201,7 @@ class HomeController extends Controller
                             'cinema_id' => $cinema_id[0],
                             'date' => $start_date,
                             'end_date' => $end_date,
-                            'time' => $time,
+                            'time' => " ",
                             'url' => $url,
                             'movie_id' => $movie_id
                         ];
@@ -225,7 +216,7 @@ class HomeController extends Controller
                 {
                     //if data exists on the table, check for other data which is not matched with the current one. First save them and insert all together
                     Showtime::where('movie_id', $movie_details['id'])->delete();
-                    $other_showtime_data = Showtime::select('cinema_id', 'date', 'time', 'movie_id')->get()->toArray();
+                    $other_showtime_data = Showtime::select('cinema_id', 'date', 'url', 'end_date', 'time', 'movie_id')->get()->toArray();
                     if($other_showtime_data != NULL)
                     {
                         Showtime::truncate();

@@ -201,30 +201,23 @@ class MadreController extends Controller
         $app_url = 'https://movie.planetnine.com/madre';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
-        $showtime = Showtime::join('movie_details', 'movie_showtimes.movie_id', 'movie_details.id')
-        ->join('show_location_static', 'movie_showtimes.cinema_id', 'show_location_static.id')
-        ->select(
-            'movie_details.movie_title',
-            'movie_details.ticket_url',
-            'movie_details.base_url',
-            'movie_showtimes.id',
-            'movie_showtimes.cinema_id',
-            'movie_showtimes.date',
-            'movie_showtimes.time',
-            'show_location_static.name',
-            'show_location_static.address',
-            'show_location_static.zip',
-            'show_location_static.city',
-            'show_location_static.phone',
-            'movie_showtimes.url',
-            'show_location_static.long',
-            'show_location_static.lat')
-            ->where('movie_details.base_url', '=', $app_url)
-            ->where('movie_showtimes.date', '>=', $current_date)
-            ->orderBy('show_location_static.name', 'ASC')
-            ->orderBy('movie_showtimes.date', 'ASC')
-            ->get();
-            
-            return $showtime;
+        $showtime = Showtime::join('show_location_static', 'movie_showtimes.cinema_id', 'show_location_static.id')
+                            ->select(
+                                'movie_showtimes.id',
+                                'movie_showtimes.cinema_id',
+                                'movie_showtimes.date',
+                                'movie_showtimes.end_date',
+                                'movie_showtimes.time',
+                                'show_location_static.name',
+                                'show_location_static.address',
+                                'show_location_static.city',
+                                'movie_showtimes.url',
+                                'show_location_static.long',
+                                'show_location_static.lat')
+                            ->where('movie_showtimes.movie_id', '=', $movie_details['id'])
+                            ->orderBy('show_location_static.name', 'ASC')
+                            ->get();
+                                
+        return $showtime;
     }
 }
