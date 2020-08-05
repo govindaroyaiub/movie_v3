@@ -33,25 +33,26 @@
             font-family: 'Jost', sans-serif;
         }
 
-        .movie-header {
-            background: #272727;
-        }
+        /*.movie-header {*/
+        /*    background: #272727;*/
+        /*}*/
+
+
+        /*.movie-menu {*/
+        /*    background: #080c0e;*/
+        /*}*/
+
+        /*.movie-content {*/
+        /*    background: #080c0e;*/
+        /*}*/
+
+        /*.movie-footer {*/
+        /*    background: #000000;*/
+        /*}*/
 
         .movie-header h1 {
             font-family: 'Baloo Da 2', cursive;
             letter-spacing: 2px;
-        }
-
-        .movie-menu {
-            background: #080c0e;
-        }
-
-        .movie-content {
-            background: #080c0e;
-        }
-
-        .movie-footer {
-            background: #000000;
         }
 
         .review-area {
