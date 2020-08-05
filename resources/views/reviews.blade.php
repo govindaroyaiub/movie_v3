@@ -71,7 +71,7 @@
                                 <label>Enter Review for movie: {{$movie_details['movie_title']}}</label>
                             </div>
                             <div class="form-group">
-                                <label for="review_text">Review</label>
+                                <label for="review_text">Review <b style="color:red;">(No need for: " ")</b></label>
                                 <textarea rows="4" cols="50" class="form-control" name="review_text" id="review_text" required></textarea>
                             </div>
                             <div class="form-group">
