@@ -10,6 +10,18 @@
 
     }
 
+    [data-lang="en"] {
+        position: absolute;
+        top: 80px;
+        right: 15px;
+    }
+
+    [data-lang="nl"] {
+        position: absolute;
+        top: 59px;
+        right: 15px;
+    }
+
     .m-book-btn,
     .p9-btn,
     .m-map-btn {

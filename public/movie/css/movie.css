@@ -62,6 +62,7 @@ img {
 }
 
 .movie-header {
+    position: relative;
     background: var(--secondary-light);
 }
 
@@ -70,9 +71,22 @@ img {
     font-size: 1.4rem;
 }
 
+[data-lang="en"] {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+[data-lang="nl"] {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+}
+
 .flags img {
     width: 32px;
     cursor: pointer;
+    z-index: 40;
 }
 
 .menu-toggler {

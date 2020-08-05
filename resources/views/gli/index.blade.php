@@ -67,7 +67,7 @@
 <a class="trailer-video d-none" href="{{ $youtube_url }}?autoplay=1&mute=1"></a>
 
 <section id="root" class="mvoie-body">
-    <header class="movie-header position-relative text-white py-3">
+    <header class="movie-header text-white py-3">
         <h1 class="text-center m-0">{{ $movie_details->movie_title }}
             - {{ $movie_details->movie_description_short_nl }}</h1>
 
