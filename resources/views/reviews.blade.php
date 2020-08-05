@@ -72,7 +72,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="review_text">Review</label>
-                                <input type="text" class="form-control" name="review_text" id="review_text" required>
+                                <textarea rows="4" cols="50" class="form-control" name="review_text" id="review_text" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="source">Source</label>

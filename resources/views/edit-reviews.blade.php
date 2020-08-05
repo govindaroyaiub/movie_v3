@@ -22,8 +22,8 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="review_text">Review</label>
-                                <input type="text" class="form-control" name="review_text" value="{{$review_details['review_text']}}" id="review_text" required>
+                                <label for="review_text">Review<b style="color:red;"> (No need for: " ")</b></label>
+                                <textarea rows="4" cols="50" class="form-control" name="review_text" id="review_text" required>{{$review_details['review_text']}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="source">Source</label>
