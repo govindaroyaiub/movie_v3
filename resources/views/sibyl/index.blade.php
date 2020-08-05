@@ -104,7 +104,7 @@
                         <ul class="city-map-js my-3"></ul>
 
                         <div class="synopsis desk-sy">
-                            <h3 class="text-center mb-2 my-3">
+                            <h3 class="text-center mb-2 my-3" style="text-decoration: none">
                                 {{ $movie_details->movie_description_short_nl }}
                             </h3>
                             <p>
@@ -272,7 +272,7 @@
                         </div>
 
 
-                       
+
                         <div class="footer-dist-logos d-flex justify-content-between align-items-center">
                             <a href="{{ $d_details['email'] }}" target="_blank"><img
                                     src="/distributors/{{ $d_details['logo'] }}" alt="{{ $d_details['name'] }}"></a>
@@ -286,7 +286,7 @@
 
                             @endif
                         </div>
-                        
+
 
 
                         <hr class="bg-secondary">
