@@ -142,12 +142,12 @@
                                         <br>
                                         <div class="row">
                                             <div class="col">
-                                                <label for="primary_light">Primary Light</label>
+                                                <label for="primary_light">Color: Border Around City</label>
                                                 <input type="color" class="form-control" value="{{ $movie_details['primary_light'] }}"
                                                     name="primary_light" id="primary_light" required>
                                             </div>
                                             <div class="col">
-                                                <label for="primary_dark">Primary Dark</label>
+                                                <label for="primary_dark">Color: HASHTAG and Submit Button</label>
                                                 <input type="color" class="form-control" value="{{ $movie_details['primary_dark'] }}"
                                                     name="primary_dark" id="primary_dark" required>
                                             </div>
@@ -155,12 +155,12 @@
                                         <br>
                                         <div class="row">
                                             <div class="col">
-                                                <label for="secondary_light">Secondary Light</label>
+                                                <label for="secondary_light">Color: Movie-header, City BG, Review Area</label>
                                                 <input type="color" class="form-control" value="{{ $movie_details['secondary_light'] }}"
                                                     name="secondary_light" id="secondary_light" required>
                                             </div>
                                             <div class="col">
-                                                <label for="secondary_dark">Secondary Dark</label>
+                                                <label for="secondary_dark">Movie Content (dont touch if possible)</label>
                                                 <input type="color" class="form-control" value="{{ $movie_details['secondary_dark'] }}"
                                                     name="secondary_dark" id="secondary_dark" required>
                                             </div>
