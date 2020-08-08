@@ -9,12 +9,31 @@
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Recursive');
+
         :root {
             --primary-light: {{ $primary_light }};
             --primary-dark: {{ $primary_dark }};;
             --secondary-light: {{ $secondary_light }};;
             --secondary-dark: {{ $secondary_dark }};;
             --extend: #353b48;
+        }
+        body {
+            font-family: 'Cormorant', serif;
+        }
+
+        .movie-header h1 {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+
+        .review-area {
+            padding: 3rem 0;
+            background: var(--secondary-light);
+            color: #fff;
+            font-family: 'Recursive', sans-serif;
         }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
