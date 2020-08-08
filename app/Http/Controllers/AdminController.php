@@ -656,4 +656,9 @@ class AdminController extends Controller
         Review::where('id', '=', $id)->update($review_details);
         return back()->with('info', 'Review updated for '.$movie_details['movie_title']);
     }
+
+    public function user_manual()
+    {
+        return view('user_manual');
+    }
 }

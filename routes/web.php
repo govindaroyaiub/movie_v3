@@ -117,4 +117,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/partnerlist/media_partner/edit/{id}', 'AdminController@mp_edit');
     Route::post('/partnerlist/media_partner/edit/{id}', 'AdminController@mp_edit_post');
     Route::get('/partnerlist/media_partner/delete/{id}', 'AdminController@mp_delete');
+
+    Route::get('/manual', 'AdminController@user_manual');
 });

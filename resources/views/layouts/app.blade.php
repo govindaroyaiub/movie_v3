@@ -11,6 +11,26 @@
     .custom {
         width: 98px !important;
     }
+    .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid #f5424e;
+    }
+    .headline_text{
+        display: block;
+        text-align: center;
+        text-decoration: underline;
+        font-weight: bold;
+        color: red;
+    }
+    .center_text{
+        display: block;
+        text-align: center;
+        text-decoration: underline;
+        font-weight: bold;
+        color: #3490dc;
+    }
     </style>
 </head>
 <body>
@@ -75,6 +95,10 @@
                                 <a class="dropdown-item" href="{{ url('/userlist') }}">
                                     User Management
                                 </a>    
+                                <a class="dropdown-item" href="{{ url('/manual') }}">
+                                    User Manual
+                                </a> 
+                                <hr>
                                 @endif
                                 <a class="dropdown-item" href="#info_modal" data-toggle="modal"
                                    data-target="#info_modal">Change Info
@@ -84,7 +108,6 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                       style="display: none;">
                                     @csrf
@@ -232,6 +255,14 @@
         });
 
         $('#showtime_list').DataTable({
+            responsive: true,
+            "lengthMenu": [
+                [25, 50, -1],
+                [25, 50, "All"]
+            ]
+        });
+
+        $('#manual_list').DataTable({
             responsive: true,
             "lengthMenu": [
                 [25, 50, -1],
