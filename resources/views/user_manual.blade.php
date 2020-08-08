@@ -168,13 +168,13 @@
                     <br>
                     <label for="showtimes">If the current date is smaller than the Start Date, then in the Front-End, it
                         will show Vanaf/From.</label>
-                    <img src="{{ asset('user_manual/vanaf.png') }}" class="center" style="width:90%;"></img>
+                    <img src="{{ asset('user_manual/vanaf.png') }}" class="center" style="width:60%;"></img>
                     <label class="center_text">Date Condition 1</label>
                     <br>
                     <label for="showtimes">If the current date is in the middle of Start Date and End Date then, in the
                         Front-End it will show "In de Bioscoop" or "Now Showing in Theatre".</label>
                     <img src="{{ asset('user_manual/in_theatre.png') }}" class="center" class="center"
-                        style="width:90%;">
+                        style="width:60%;">
                     <label class="center_text">Date Condition 2</label>
                 </div>
             </div>
