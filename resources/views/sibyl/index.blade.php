@@ -26,7 +26,6 @@
 
         .movie-header h1 {
             font-family: 'Cinzel', serif;
-            letter-spacing: 2px;
         }
 
         .review-area {
