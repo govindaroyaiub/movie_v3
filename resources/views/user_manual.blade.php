@@ -125,13 +125,13 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <h3 class="headline_text">Create Movies</h3>
-                    <label for="movies">To upload movie click the <b style="color: red;">"Upload"</b> button. Download
+                    <h3 class="headline_text">Upload Showtimes</h3>
+                    <label for="showtimes">To upload movie click the <b style="color: red;">"Upload"</b> button. Download
                         the sheet. Fill the Start Date and End Date. Choose the file and upload.</label>
                     <img src="{{ asset('user_manual/upload_button.png') }}" class="center" style="width:90%;"></img>
                     <label class="center_text">Button For Uploading Movies</label>
                     <br>
-                    <label for="movies">Download the sheet. Fill the Start Date and End Date. Choose the file and
+                    <label for="showtimes">Download the sheet. Fill the Start Date and End Date. Choose the file and
                         upload.</label>
                     <img src="{{ asset('user_manual/upload_page.png') }}" class="center" class="center"
                         style="width:90%;">
@@ -140,13 +140,13 @@
                 <hr>
                 <h3 class="headline_text">Updating Showtimes</h3>
                 <div class="form-group">
-                    <label for="movies">Update the showtimes by clicking <b style="color:red;">"Showtimes"</b>
+                    <label for="showtimes">Update the showtimes by clicking <b style="color:red;">"Showtimes"</b>
                         button.</label>
                     <img src="{{ asset('user_manual/update_showtimes_button.png') }}" class="center"
                         style="width:90%;"></img>
                     <label class="center_text">Showtimes Update Button</label>
                     <br>
-                    <label for="movies">You will see a list of showtimes with the theatre name. While editing the
+                    <label for="showtimes">You will see a list of showtimes with the theatre name. While editing the
                         showtimes, if the URL field needs to be filled out <b style="color:red;">please keep in mind
                             that, the url must be without http or https.</b></label>
                     <img src="{{ asset('user_manual/update_showtimes_page.png') }}" class="center"
@@ -154,7 +154,7 @@
                     <label class="center_text">Showtimes Update Page</label>
                     <br>
                     <h3 class="headline_text">OR</h3>
-                    <label for="movies">Or the dates can be updated altogether by clicking this. It will update all the
+                    <label for="showtimes">Or the dates can be updated altogether by clicking this. It will update all the
                         dates regarding with the movie.</b></label>
                     <img src="{{ asset('user_manual/update_showtimes_together.png') }}" class="center"
                         style="width:90%;"></img>
@@ -163,15 +163,15 @@
                 <hr>
                 <div class="form-group">
                     <h3 class="headline_text">Showtime Scenarios</h3>
-                    <label for="movies">Here we are going to know how Start Date and End Date play role in the Front-End
+                    <label for="showtimes">Here we are going to know how Start Date and End Date play role in the Front-End
                         meaning, in the movie landing pages.</label>
                     <br>
-                    <label for="movies">If the current date is smaller than the Start Date, then in the Front-End, it
+                    <label for="showtimes">If the current date is smaller than the Start Date, then in the Front-End, it
                         will show Vanaf/From.</label>
                     <img src="{{ asset('user_manual/vanaf.png') }}" class="center" style="width:90%;"></img>
                     <label class="center_text">Date Condition 1</label>
                     <br>
-                    <label for="movies">If the current date is in the middle of Start Date and End Date then, in the
+                    <label for="showtimes">If the current date is in the middle of Start Date and End Date then, in the
                         Front-End it will show "In de Bioscoop" or "Now Showing in Theatre".</label>
                     <img src="{{ asset('user_manual/in_theatre.png') }}" class="center" class="center"
                         style="width:90%;">
@@ -196,25 +196,25 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <h3 class="headline_text">Create Movies</h3>
-                    <label for="movies">To create/edit reviews click the <b style="color: red;">"Reviews"</b>
+                    <h3 class="headline_text">Create Reviews</h3>
+                    <label for="reviews">To create/edit reviews click the <b style="color: red;">"Reviews"</b>
                         button.</label>
                     <img src="{{ asset('user_manual/reviews_button.png') }}" class="center" style="width:90%;"></img>
                     <label class="center_text">Button For Reviews</label>
                     <br>
-                    <label for="movies">To add Reviews, click here.</label>
+                    <label for="reviews">To add Reviews, click here.</label>
                     <img src="{{ asset('user_manual/reviews_page.png') }}" class="center" class="center"
                         style="width:90%;">
                     <label class="center_text">Review Page View</label>
                     <br>
-                    <label for="movies">Then fill up the form. Edit page is the same.</label>
+                    <label for="reviews">Then fill up the form. Edit page is the same.</label>
                     <img src="{{ asset('user_manual/reviews_modal.png') }}" class="center" class="center"
                         style="width:70%; height: 50%;">
                     <label class="center_text">Review Modal</label>
                 </div>
                 <div class="form-group">
-                    <h3 class="headline_text">Things to know about Review System</h3>
-                    <label for="movies">To create/edit reviews click the <b style="color: red;">"Reviews"</b>
+                    <h3 class="headline_text">Know more about the Review System</h3>
+                    <label for="reviews">To create/edit reviews click the <b style="color: red;">"Reviews"</b>
                         button.</label>
                     <ul class="list-group">
                         <li class="list-group-item" style="color: #3490dc; font-weight: bold;">The review system is
