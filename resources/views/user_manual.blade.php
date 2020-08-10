@@ -159,6 +159,11 @@
                     <img src="{{ asset('user_manual/update_showtimes_together.png') }}" class="center"
                         style="width:90%;"></img>
                     <label class="center_text">Showtimes Update Page</label>
+                    <h3 class="headline_text">AND</h3>
+                    <label for="showtimes">If there is a theatre missing, then no need to upload the sheet again. Just click <b style="color:red;">"Add Theatre+"</b>, fill up the form and the theatre will be saved.</label>
+                    <img src="{{ asset('user_manual/showtimes_add_theatre.png') }}" class="center"
+                        style="width:90%;"></img>
+                    <label class="center_text">Add Theatre</label>
                 </div>
                 <hr>
                 <div class="form-group">
