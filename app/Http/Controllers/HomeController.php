@@ -92,7 +92,22 @@ class HomeController extends Controller
                         ->where('movie_showtimes.movie_id', '=', $id)
                         ->orderBy('movie_showtimes.url', 'ASC')
                         ->get();
-        return view('showtime-list', compact('md', 'ms', 'id'));
+
+        $theatre_list = Location::orderBy('name', 'ASC')->get();
+        return view('showtime-list', compact('md', 'ms', 'id', 'theatre_list'));
+    }
+
+    public function showtimes_add(Request $request, $id)
+    {
+        $data = [
+            'cinema_id' => $request->theatre_id,
+            'date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'url' => $request->url,
+            'movie_id' => $id
+        ];
+        Showtime::insert($data);
+        return redirect('/showtimes/'.$id)->with('success', 'Theatre Added!');
     }
 
     public function showtimes_edit($id)

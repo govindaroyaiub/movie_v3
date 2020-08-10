@@ -72,6 +72,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/showtimes/{id}', 'HomeController@showtimes');
+    Route::post('/showtimes/add/{id}', 'HomeController@showtimes_add');
     Route::get('/showtimes/edit/{id}', 'HomeController@showtimes_edit');
     Route::post('/showtimes/edit/{id}', 'HomeController@showtimes_edit_post');
     Route::post('/showtimes/update/{id}', 'HomeController@showtimes_update');
