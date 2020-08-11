@@ -210,6 +210,7 @@ class SibylController extends Controller
                                 'show_location_static.name',
                                 'show_location_static.address',
                                 'show_location_static.city',
+                                'show_location_static.zip',
                                 'movie_showtimes.url',
                                 'show_location_static.long',
                                 'show_location_static.lat')
