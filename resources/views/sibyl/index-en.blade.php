@@ -293,7 +293,7 @@
                     </ul>
                     <hr class="bg-secondary">
 
-                    <div class="tab-content pt-3">
+                    <div class="tab-content pt-3" style="color:black;">
                         <div id="cookies" class="container tab-pane">
                             <p>
                                 {{ $movie_details->cookies }}
