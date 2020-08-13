@@ -13,6 +13,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@600&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Recursive');
 
+        @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
         :root {
             --primary-light: {{ $primary_light }};
             --primary-dark: {{ $primary_dark }};;
@@ -20,19 +22,53 @@
             --secondary-dark: {{ $secondary_dark }};;
             --extend: #353b48;
         }
-        body {
-            font-family: 'Cormorant', serif;
-        }
-
-        .movie-header h1 {
-            font-family: 'Cinzel', serif;
-        }
 
         .review-area {
             padding: 3rem 0;
             background: var(--secondary-light);
             color: #fff;
             font-family: 'Recursive', sans-serif;
+        }
+
+        .sibyl-header {
+            background-color: #f1e8d6 !important;
+            color: #2a1b17 !important;
+        }
+
+        .sibyl-header h1 {
+            color: #2a1b17 !important;
+            font-family: 'Prata', serif;
+            font-weight: bold !important;
+        }
+
+
+        .sibyl-review-slider {
+            background-color: #f1e8d6 !important;
+            font-family: 'Prata', serif;
+        }
+
+        .sibyl-review-area {
+            background-color: #2a1b17 !important;
+        }
+
+        .sibyl-movie-footer {
+            background-color: #f1e8d6 !important;
+            color: #52433d !important;
+            padding: 3rem 0 !important;
+        }
+
+        .movie-content {
+            background-color: #2a1b17 !important;
+            padding-top: 1rem !important;
+            padding-bottom: 0 !important;
+        }
+
+        .sibyl-movie-menu {
+            background-color: #1b0f0c !important;
+        }
+
+        .sibyl-copy-text {
+            color: #52433d !important;
         }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -47,7 +83,7 @@
 <a class="trailer-video d-none" href="{{ $youtube_url }}?autoplay=1&mute=1"></a>
 
 <section id="root" class="mvoie-body">
-    <header class="movie-header position-relative text-white py-3">
+    <header class="movie-header sibyl-header position-relative text-white py-3">
         <h1 class="text-center m-0">{{ $movie_details->movie_title }}
             - {{ $movie_details->movie_description_short_nl }}</h1>
 
@@ -64,7 +100,7 @@
         </div>
     </div>
 
-    <section class="movie-menu text-white">
+    <section class="movie-menu sibyl-movie-menu text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 mx-auto">
@@ -198,11 +234,11 @@
         </div>
 
         @if(count($reviews) > 0)
-        <section class="review-area">
+        <section class="sibyl-review-area review-area">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 mx-auto">
-                        <div class="reviews-slider">
+                        <div class="reviews-slider sibyl-review-slider">
                             <div class="slider single-item">
                                 @foreach($reviews as $review)
                                     <div class="text-center">
@@ -243,7 +279,7 @@
         </section>
         @endif
 
-        <footer class="movie-footer text-white text-center">
+        <footer class="movie-footer sibyl-movie-footer text-white text-center">
             <div class="container">
 
                 <div class="row">
@@ -309,7 +345,7 @@
 
                         <hr class="bg-secondary">
                         <div class="d-flex justify-content-between align-items-center">
-                            <p>&copy; Alle rechten voorbehouden {{$d_details['name']}}, Planetnine - <?= Date('Y') ?></p>
+                            <p class="sibyl-copy-text">&copy; Alle rechten voorbehouden {{$d_details['name']}}, Planetnine - <?= Date('Y') ?></p>
                             <ul class="footer-social">
                                 <li class="mr-2"><a target="_blank" href="{{ $movie_details->fb_link }}">
                                         <img src="{{ asset('images/facebook.svg') }}" alt="">
