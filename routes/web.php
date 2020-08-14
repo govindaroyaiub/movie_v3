@@ -50,6 +50,18 @@ Route::domain('www.sibyl-defilm.nl')->group(function(){
     Route::get('/api/shows', 'SibylController@showsApi');
 });
 
+Route::domain('www.cunningham-defilm.nl')->group(function(){
+    Route::get('/', 'CunninghamController@nl_landing');
+    Route::get('/_en', 'CunninghamController@en_landing');
+    Route::get('/api/shows', 'CunninghamController@showsApi');
+});
+
+Route::domain('cunningham-defilm.nl')->group(function(){
+    Route::get('/', 'CunninghamController@nl_landing');
+    Route::get('/_en', 'CunninghamController@en_landing');
+    Route::get('/api/shows', 'CunninghamController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -65,6 +77,10 @@ Route::get('/GliAnniPiuBelli/api/shows', 'GliController@showsApi');
 Route::get('/Sibyl', 'SibylController@nl_landing');
 Route::get('/Sibyl_en', 'SibylController@en_landing');
 Route::get('/Sibyl/api/shows', 'SibylController@showsApi');
+
+Route::get('/cunningham', 'CunninghamController@nl_landing');
+Route::get('/cunningham_en', 'CunninghamController@en_landing');
+Route::get('/cunningham/api/shows', 'CunninghamController@showsApi');
 
 Auth::routes(['register' => false]);
 
