@@ -109,7 +109,12 @@ if (location.pathname === '/' || location.pathname === '/_en') {
     endpoint = `/GliAnniPiuBelli/api/shows`;
 } else if (location.pathname === '/Sibyl' || location.pathname === '/Sibyl_en') {
     endpoint = `/Sibyl/api/shows`;
+} else if (location.pathname === '/cunningham' || location.pathname === '/cunningham_en') {
+    endpoint = `/cunningham/api/shows`;
 }
+
+
+
 
 axios.get(endpoint)
     .then(res => showtime.push(...res.data))
