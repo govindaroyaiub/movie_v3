@@ -94,7 +94,7 @@
             - {{ $movie_details->movie_description_short_nl }}</h1>
 
         <div class="flags">
-            <img data-lang="en" src="{{ asset('images/us.svg') }}" class="d-block" alt="">
+            <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-block" alt="">
             <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-none" alt="">
         </div>
 
