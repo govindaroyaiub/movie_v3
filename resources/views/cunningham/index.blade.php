@@ -76,10 +76,6 @@
             color: var(--gray1) !important;
         }
 
-        .city-map-js li {
-            background: var(--color1) !important;
-            border: solid 1px var(--gray1) !important;
-        }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
