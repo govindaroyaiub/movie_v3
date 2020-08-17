@@ -21,6 +21,10 @@
             --secondary-light: {{ $secondary_light }};;
             --secondary-dark: {{ $secondary_dark }};;
             --extend: #353b48;
+
+            --color1: #353b48;
+            --color2: #171e2b;
+            --gray1: #f1e8d6;
         }
 
         .review-area {
@@ -31,12 +35,12 @@
         }
 
         .sibyl-header {
-            background-color: #f1e8d6 !important;
-            color: #2a1b17 !important;
+            background-color: var(--color1) !important;
+            color: #fff !important;
         }
 
         .sibyl-header h1 {
-            color: #2a1b17 !important;
+            color: inherit !important;
             font-family: 'Prata', serif;
             font-weight: bold !important;
         }
@@ -48,27 +52,33 @@
         }
 
         .sibyl-review-area {
-            background-color: #2a1b17 !important;
+            background-color: #353b48 !important;
         }
 
         .sibyl-movie-footer {
-            background-color: #f1e8d6 !important;
+            background-color: var(--color1) !important;
             color: #52433d !important;
             padding: 3rem 0 !important;
         }
 
         .movie-content {
-            background-color: #2a1b17 !important;
+            background-color: var(--color1) !important;
             padding-top: 1rem !important;
             padding-bottom: 0 !important;
         }
 
         .sibyl-movie-menu {
-            background-color: #1b0f0c !important;
+            background-color: var(--color2) !important;
         }
 
+        .movie-footer .tab-pane,
         .sibyl-copy-text {
-            color: #52433d !important;
+            color: var(--gray1) !important;
+        }
+
+        .city-map-js li {
+            background: var(--color1) !important;
+            border: solid 1px var(--gray1) !important;
         }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
