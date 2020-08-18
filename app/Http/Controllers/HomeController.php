@@ -88,7 +88,8 @@ class HomeController extends Controller
                             'show_location_static.address',
                             'show_location_static.zip',
                             'show_location_static.phone',
-                            'show_location_static.city')
+                            'show_location_static.city',
+                            'movie_showtimes.is_active')
                         ->where('movie_showtimes.movie_id', '=', $id)
                         ->orderBy('movie_showtimes.url', 'ASC')
                         ->get();

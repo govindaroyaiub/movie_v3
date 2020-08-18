@@ -661,4 +661,22 @@ class AdminController extends Controller
     {
         return view('user_manual');
     }
+
+    public function is_active(Request $request)
+    {
+        $id = $request->id;
+        $status = $request->status;
+
+        Showtime::where('id', '=', $id)->update(['is_active' => 1]);
+        return 'true';
+    }
+
+    public function not_active(Request $request)
+    {
+        $id = $request->id;
+        $status = $request->status;  
+
+        Showtime::where('id', '=', $id)->update(['is_active' => 0]);
+        return 'false';
+    }
 }

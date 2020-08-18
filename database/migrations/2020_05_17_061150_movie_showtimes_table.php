@@ -20,6 +20,7 @@ class MovieShowtimesTable extends Migration
             $table->date('end_date')->nullable();
             $table->string('time')->nullable();
             $table->string('url')->nullable();
+            $table->integer('is_active')->nullable();
             $table->bigInteger('movie_id')->nullable();
             $table->timestamps();
         });

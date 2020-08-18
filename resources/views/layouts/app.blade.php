@@ -7,6 +7,8 @@
     <title>Admin</title>
     <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1557232134/toasty.css" rel="stylesheet" />
     <style>
     .custom {
         width: 98px !important;
@@ -30,6 +32,31 @@
         text-decoration: underline;
         font-weight: bold;
         color: #3490dc;
+    }
+
+    .toast {
+        transition: 0.20s all ease-in-out;
+    }
+
+    .toast-container--fade {
+        right: 0;
+        bottom: 0;
+    }
+
+    .toast-container--fade .toast-wrapper {
+        display: inline-block;
+    }
+
+    .toast.fade-init {
+        opacity: 0;
+    }
+
+    .toast.fade-show {
+        opacity: 1;
+    }
+
+    .toast.fade-hide {
+        opacity: 0;
     }
     </style>
 </head>
@@ -180,6 +207,7 @@
         @yield('content')
     </main>
 </div>
+
 {{--<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>--}}
 {{--<script src="{{ mix('js/admin.js') }}"></script>--}}
 {{--<script src="{{ mix('js/main.js') }}"></script>--}}
@@ -191,7 +219,79 @@
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" defer></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js" defer></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1557232134/toasty.js"></script>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.switch').change(function (e) {
+            var id = $(this).attr("id");
+            var _token = $('input[name="_token"]').val();
+            var switch_button = document.getElementsByClassName("switch");
+            var options = {
+            autoClose: true,
+            progressBar: true,
+            enableSounds: true,
+            sounds: {
+
+            info: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233294/info.mp3",
+            // path to sound for successfull message:
+            success: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233524/success.mp3",
+            // path to sound for warn message:
+            warning: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233563/warning.mp3",
+            // path to sound for error message:
+            error: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233574/error.mp3",
+            },
+            };
+
+            var toast = new Toasty(options);
+            toast.configure(options);
+
+            if ($(this).is(":checked"))
+            {
+                var status = 1; //checked
+                $.ajax({
+                    url: "{{route('is_active')}}",
+                    method: "POST",
+                    data: 
+                    {
+                        id: id,
+                        status: status,
+                        _token
+                    },
+                    success: function (result) 
+                    {
+                        if(result == 'true')
+                        {
+                            toast.success("Showtime is Active.");
+                        }
+                    }
+                })
+            }
+            else
+            {
+                var status = 0; //checked
+                $.ajax({
+                    url: "{{route('not_active')}}",
+                    method: "POST",
+                    data: 
+                    {
+                        id: id,
+                        status: status,
+                        _token
+                    },
+                    success: function (result) 
+                    {
+                        if(result == 'false')
+                        {
+                            toast.info("Showtime is Inactive.");
+                        }
+                    }
+                })
+            }
+        });
+    });
+</script>
 <script type="text/javascript">
     function show_password() {
         var x = document.getElementById("new_password");

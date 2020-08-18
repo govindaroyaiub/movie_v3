@@ -213,6 +213,7 @@ class GliController extends Controller
                                 'show_location_static.long',
                                 'show_location_static.lat')
                             ->where('movie_showtimes.movie_id', '=', $movie_details['id'])
+                            ->where('movie_showtimes.is_active', '=', 1)
                             ->orderBy('show_location_static.name', 'ASC')
                             ->get();
                                 
