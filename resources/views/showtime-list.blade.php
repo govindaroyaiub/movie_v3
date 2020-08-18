@@ -43,7 +43,7 @@
                                     @endif
                                     </td>
                                     <td>
-                                        <input type="checkbox" class="switch" id="{{ $row->id }}" @if($row->is_active == 1) checked @else ' ' @endif data-toggle="toggle">
+                                        <input type="checkbox" class="switch" id="{{ $row->id }}" @if($row->is_active == 1) checked @else ' ' @endif data-toggle="toggle" data-onstyle="primary" data-offstyle="secondary">
                                     </td>
                                     <td>
                                         <a href="/showtimes/edit/{{$row->id}}"><button class="btn btn-primary text-white custom">Edit</button></a><br>
