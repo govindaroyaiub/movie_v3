@@ -105,6 +105,7 @@ class HomeController extends Controller
             'date' => $request->start_date,
             'end_date' => $request->end_date,
             'url' => $request->url,
+            'is_active' => 1,
             'movie_id' => $id
         ];
         Showtime::insert($data);
@@ -219,6 +220,7 @@ class HomeController extends Controller
                             'end_date' => $end_date,
                             'time' => " ",
                             'url' => $url,
+                            'is_active' => 1,
                             'movie_id' => $movie_id
                         ];
                         array_push($showtime_list, $showtime);
