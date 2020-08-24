@@ -143,26 +143,32 @@
                                         <div class="row">
                                             <div class="col">
                                                 <label for="primary_light">Color: Border Around City</label>
-                                                <input type="color" class="form-control" value="{{ $movie_details['primary_light'] }}"
-                                                    name="primary_light" id="primary_light" required>
+                                                <input type="color" class="form-control"
+                                                    value="{{ $movie_details['primary_light'] }}" name="primary_light"
+                                                    id="primary_light" required>
                                             </div>
                                             <div class="col">
                                                 <label for="primary_dark">Color: HASHTAG and Submit Button</label>
-                                                <input type="color" class="form-control" value="{{ $movie_details['primary_dark'] }}"
-                                                    name="primary_dark" id="primary_dark" required>
+                                                <input type="color" class="form-control"
+                                                    value="{{ $movie_details['primary_dark'] }}" name="primary_dark"
+                                                    id="primary_dark" required>
                                             </div>
                                         </div>
                                         <br>
                                         <div class="row">
                                             <div class="col">
-                                                <label for="secondary_light">Color: Movie-header, City BG, Review Area</label>
-                                                <input type="color" class="form-control" value="{{ $movie_details['secondary_light'] }}"
+                                                <label for="secondary_light">Color: Movie-header, City BG, Review
+                                                    Area</label>
+                                                <input type="color" class="form-control"
+                                                    value="{{ $movie_details['secondary_light'] }}"
                                                     name="secondary_light" id="secondary_light" required>
                                             </div>
                                             <div class="col">
-                                                <label for="secondary_dark">Movie Content (dont touch if possible)</label>
-                                                <input type="color" class="form-control" value="{{ $movie_details['secondary_dark'] }}"
-                                                    name="secondary_dark" id="secondary_dark" required>
+                                                <label for="secondary_dark">Movie Content (dont touch if
+                                                    possible)</label>
+                                                <input type="color" class="form-control"
+                                                    value="{{ $movie_details['secondary_dark'] }}" name="secondary_dark"
+                                                    id="secondary_dark" required>
                                             </div>
                                         </div>
                                         <br>
@@ -192,17 +198,17 @@
                                         {{ csrf_field() }}
                                         <div class="form-group">
                                             <label for="tagline_en">Tagline</label>
-                                            <input type="text" class="form-control" name="tagline_en"
-                                                id="tagline_en"
-                                                value="{{ $movie_details['tagline_en'] }}" maxlength="500" required>
+                                            <textarea class="form-control" name="tagline_en" id="tagline_en"
+                                                maxlength="500" rows="6" cols="50" required>{{ $movie_details['tagline_en'] }}
+                                            </textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="movie_description_short">Movie Description Short</label>
-                                            <input type="text" class="form-control" name="movie_description_short"
-                                                id="movie_description_short"
-                                                value="{{ $movie_details['movie_description_short'] }}" required>
+                                            <textarea class="form-control" name="movie_description_short"
+                                                id="movie_description_short" maxlength="500" rows="6" cols="50"
+                                                required>{{ $movie_details['movie_description_short'] }}
+                                            </textarea>
                                         </div>
-
                                         <div class="form-group">
                                             <label for="movie_description_long">Movie Description Long</label>
                                             <textarea name="movie_description_long" id="movie_description_long"
@@ -267,15 +273,16 @@
                                         {{ csrf_field() }}
                                         <div class="form-group">
                                             <label for="tagline_nl">Tagline</label>
-                                            <input type="text" class="form-control" name="tagline_nl"
-                                                id="tagline_nl"
-                                                value="{{ $movie_details['tagline_nl'] }}" maxlength="500" required>
+                                            <textarea class="form-control" name="tagline_nl" id="tagline_nl"
+                                                maxlength="500" rows="6" cols="50" required>{{ $movie_details['tagline_nl'] }}
+                                            </textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="movie_description_short_nl">Movie Description Short</label>
-                                            <input type="text" class="form-control" name="movie_description_short_nl"
-                                                id="movie_description_short_nl"
-                                                value="{{ $movie_details['movie_description_short_nl'] }}" required>
+                                            <textarea class="form-control" name="movie_description_short_nl"
+                                                id="movie_description_short_nl" maxlength="500" rows="6" cols="50"
+                                                required>{{ $movie_details['movie_description_short_nl'] }}
+                                            </textarea>
                                         </div>
 
                                         <div class="form-group">
