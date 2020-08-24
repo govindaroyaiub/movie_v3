@@ -72,6 +72,14 @@
             color: var(--gray1) !important;
         }
 
+        .city-accordion-js {
+            font-family: 'Thasadith', sans-serif !important;
+        }
+
+        .movie-menu a {
+            font-family: 'Thasadith', sans-serif !important;
+        }
+
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
