@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short }}, with {{ $movie_details->actors }}. In cinemas {{ $first_release_date }}.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short }}</title>
+    <title>{{ $movie_details->movie_title }} - {{ $movie_details->tagline_en }}</title>
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <style>
@@ -88,7 +88,7 @@
 <section id="root" class="mvoie-body">
     <header class="movie-header sibyl-header position-relative text-white py-3">
         <h1 class="text-center m-0">{{ $movie_details->movie_title }}
-            - {{ $movie_details->movie_description_short }}</h1>
+            - {{ $movie_details->tagline_en }}</h1>
 
         <div class="flags">
             <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-none" alt="">

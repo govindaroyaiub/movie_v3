@@ -191,6 +191,12 @@
                                     <form method="post" action="/movielist/edit/en/{{$id}}">
                                         {{ csrf_field() }}
                                         <div class="form-group">
+                                            <label for="tagline_en">Tagline</label>
+                                            <input type="text" class="form-control" name="tagline_en"
+                                                id="tagline_en"
+                                                value="{{ $movie_details['tagline_en'] }}" maxlength="500" required>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="movie_description_short">Movie Description Short</label>
                                             <input type="text" class="form-control" name="movie_description_short"
                                                 id="movie_description_short"
@@ -259,6 +265,12 @@
                                 <div class="card-body">
                                     <form method="post" action="/movielist/edit/nl/{{$id}}">
                                         {{ csrf_field() }}
+                                        <div class="form-group">
+                                            <label for="tagline_nl">Tagline</label>
+                                            <input type="text" class="form-control" name="tagline_nl"
+                                                id="tagline_nl"
+                                                value="{{ $movie_details['tagline_nl'] }}" maxlength="500" required>
+                                        </div>
                                         <div class="form-group">
                                             <label for="movie_description_short_nl">Movie Description Short</label>
                                             <input type="text" class="form-control" name="movie_description_short_nl"

@@ -374,6 +374,7 @@ class AdminController extends Controller
     {
         $en_details = [
             'movie_description_short' => $request->movie_description_short,
+            'tagline_en' => $request->tagline_en,
             'movie_description_long' => $request->movie_description_long,
             'buy_tickets' => $request->buy_tickets,
             'cookies' => $request->cookies_en,
@@ -390,6 +391,7 @@ class AdminController extends Controller
     {
         $nl_details = [
             'movie_description_short_nl' => $request->movie_description_short_nl,
+            'tagline_nl' => $request->tagline_nl,
             'movie_description_long_nl' => $request->movie_description_long_nl,
             'buy_tickets_nl' => $request->buy_tickets_nl,
             'cookies_nl' => $request->cookies_nl,

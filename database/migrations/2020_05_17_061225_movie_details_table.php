@@ -21,6 +21,8 @@ class MovieDetailsTable extends Migration
             $table->longText('buy_tickets')->nullable();
             $table->longText('movie_description_short_nl')->nullable();
             $table->longText('movie_description_long_nl')->nullable();
+            $table->longText('tagline_nl')->nullable();
+            $table->longText('tagline_en')->nullable();
             $table->longText('buy_tickets_nl')->nullable();
             $table->date('cinema_date')->nullable();
             $table->string('director')->nullable();
