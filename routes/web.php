@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route; 
+use Illuminate\Support\Facades\Route;
 
 //if domain is movie.planetnine.com
 Route::domain('movie.planetnine.com')->group(function(){

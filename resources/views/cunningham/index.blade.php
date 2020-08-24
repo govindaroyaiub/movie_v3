@@ -9,11 +9,7 @@
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Recursive');
-
-        @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
 
         :root {
             --primary-light: {{ $primary_light }};
@@ -31,7 +27,7 @@
             padding: 3rem 0;
             background: var(--secondary-light);
             color: #fff;
-            font-family: 'Recursive', sans-serif;
+            font-family: 'Thasadith', sans-serif;
         }
 
         .sibyl-header {
@@ -41,14 +37,14 @@
 
         .sibyl-header h1 {
             color: inherit !important;
-            font-family: 'Prata', serif;
-            font-weight: bold !important;
+            font-family: 'Thasadith', sans-serif;
+            font-weight: 400 !important;
         }
 
 
         .sibyl-review-slider {
             background-color: #f1e8d6 !important;
-            font-family: 'Prata', serif;
+            font-family: 'Thasadith', sans-serif;
         }
 
         .sibyl-review-area {
@@ -91,7 +87,9 @@
 <section id="root" class="mvoie-body">
     <header class="movie-header sibyl-header position-relative text-white py-3">
         <h1 class="text-center m-0">{{ $movie_details->movie_title }}
-            - {{ $movie_details->tagline_nl }}</h1>
+            -
+            <span class="movie-tagline">{{ $movie_details->tagline_nl }}</span>
+        </h1>
 
         <div class="flags">
             <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-block" alt="">
