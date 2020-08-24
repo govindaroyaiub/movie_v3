@@ -195,6 +195,47 @@ class HomeController extends Controller
 
             $movie_details = Movie::where('id', '=', $movie_id)->first();
 
+            if($worksheet1)
+            {
+                $highestRow = $worksheet1->getHighestDataRow();
+                $highestColumn = $worksheet1->getHighestDataColumn();
+                $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn);
+                for ($row = 2; $row <= $highestRow; ++$row) {
+                    $name = $worksheet1->getCellByColumnAndRow(2, $row)->getValue();
+                    $address = $worksheet1->getCellByColumnAndRow(4, $row)->getValue();
+                    $zip = $worksheet1->getCellByColumnAndRow(5, $row)->getValue();
+                    $city = $worksheet1->getCellByColumnAndRow(6, $row)->getValue();
+                    $phone = $worksheet1->getCellByColumnAndRow(7, $row)->getValue();
+                    $lat = $worksheet1->getCellByColumnAndRow(8, $row)->getValue();
+                    $long = $worksheet1->getCellByColumnAndRow(9, $row)->getValue();
+                    $website = $worksheet1->getCellByColumnAndRow(10, $row)->getValue();
+
+                    if($name != NULL)
+                    {
+                        $location = [
+                            'name' => $name,
+                            'address' => $address,
+                            'zip' => $zip,
+                            'city' => $city,
+                            'phone' => $phone,
+                            'long' => $long,
+                            'lat' => $lat,
+                            'website' => $website
+                        ];
+                        array_push($location_list, $location);
+                    }
+                }
+                if($check_location_data == NULL)
+                {
+                    Location::insert($location_list);
+                }
+                else
+                {
+                    Location::truncate();
+                    Location::insert($location_list);
+                }
+            }
+
             if($worksheet2)
             {   
                 $movie_details = Movie::where('id', '=', $movie_id)->first();
@@ -212,6 +253,16 @@ class HomeController extends Controller
                     
                     $cinema_id = explode(" ", $cinema_details);
 
+                    if($url == NULL)
+                    {
+                        $theatre_details = Location::where('id', '=', $cinema_id[0])->first();
+                        $website = $theatre_details['website'];
+                    }
+                    else
+                    {
+                        $website = $url;
+                    }
+
                     if($cinema_details != NULL)
                     {
                         $showtime = [
@@ -219,7 +270,7 @@ class HomeController extends Controller
                             'date' => $start_date,
                             'end_date' => $end_date,
                             'time' => " ",
-                            'url' => $url,
+                            'url' => $website,
                             'is_active' => 1,
                             'movie_id' => $movie_id
                         ];
@@ -249,44 +300,7 @@ class HomeController extends Controller
                 }
             }
 
-            if($worksheet1)
-            {
-                $highestRow = $worksheet1->getHighestDataRow();
-                $highestColumn = $worksheet1->getHighestDataColumn();
-                $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn);
-                for ($row = 2; $row <= $highestRow; ++$row) {
-                    $name = $worksheet1->getCellByColumnAndRow(2, $row)->getValue();
-                    $address = $worksheet1->getCellByColumnAndRow(4, $row)->getValue();
-                    $zip = $worksheet1->getCellByColumnAndRow(5, $row)->getValue();
-                    $city = $worksheet1->getCellByColumnAndRow(6, $row)->getValue();
-                    $phone = $worksheet1->getCellByColumnAndRow(7, $row)->getValue();
-                    $lat = $worksheet1->getCellByColumnAndRow(8, $row)->getValue();
-                    $long = $worksheet1->getCellByColumnAndRow(9, $row)->getValue();
-
-                    if($name != NULL)
-                    {
-                        $location = [
-                            'name' => $name,
-                            'address' => $address,
-                            'zip' => $zip,
-                            'city' => $city,
-                            'phone' => $phone,
-                            'long' => $long,
-                            'lat' => $lat
-                        ];
-                        array_push($location_list, $location);
-                    }
-                }
-                if($check_location_data == NULL)
-                {
-                    Location::insert($location_list);
-                }
-                else
-                {
-                    Location::truncate();
-                    Location::insert($location_list);
-                }
-            }
+            
             return back()->with('success', 'File Uploaded!');
         }
     }

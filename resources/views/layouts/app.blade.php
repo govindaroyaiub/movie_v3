@@ -250,45 +250,36 @@
             if ($(this).is(":checked"))
             {
                 var status = 1; //checked
-                $.ajax({
-                    url: "{{route('is_active')}}",
-                    method: "POST",
-                    data: 
-                    {
-                        id: id,
-                        status: status,
-                        _token
-                    },
-                    success: function (result) 
-                    {
-                        if(result == 'true')
-                        {
-                            toast.success("Showtime is Active.");
-                        }
-                    }
-                })
             }
             else
             {
                 var status = 0; //checked
-                $.ajax({
-                    url: "{{route('not_active')}}",
-                    method: "POST",
-                    data: 
-                    {
-                        id: id,
-                        status: status,
-                        _token
-                    },
-                    success: function (result) 
-                    {
-                        if(result == 'false')
-                        {
-                            toast.info("Showtime is Inactive.");
-                        }
-                    }
-                })
             }
+            $.ajax({
+                url: "{{route('is_active')}}",
+                method: "POST",
+                data: 
+                {
+                    id: id,
+                    status: status,
+                    _token
+                },
+                success: function (result) 
+                {
+                    if(result == 'true')
+                    {
+                        toast.success("Showtime is Active.");
+                    }
+                    else if(result == 'false')
+                    {
+                        toast.info("Showtime is Inactive.");
+                    }
+                    else
+                    {
+                        toast.error("Something Went Wrong!");
+                    }
+                }
+            })
         });
     });
 </script>

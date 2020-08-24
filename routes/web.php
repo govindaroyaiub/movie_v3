@@ -138,6 +138,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/manual', 'AdminController@user_manual');
 
     Route::post('/is_active', 'AdminController@is_active')->name('is_active');
-    Route::post('/not_active', 'AdminController@not_active')->name('not_active');
 
 });

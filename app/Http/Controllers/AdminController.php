@@ -410,8 +410,6 @@ class AdminController extends Controller
 
     public function theater_create(Request $request)
     {
-        // dd('Function will be available soon');
-
         $request->validate([
             'name' => 'unique:show_location_static',
             'phone' => 'unique:show_location_static',
@@ -426,6 +424,7 @@ class AdminController extends Controller
         $phone = $request->phone;
         $long = $request->long;
         $lat = $request->lat;
+        $website = $request->website;
 
         $theater_details = [
             'name' => $name,
@@ -434,11 +433,11 @@ class AdminController extends Controller
             'city' => $city,
             'phone' => $phone,
             'long' => $long,
-            'lat' => $lat
+            'lat' => $lat,
+            'website' => $website
         ];
         Location::insert($theater_details);
         return back()->with('info', 'Theater: '. $name. ' has been created');
-
     }
 
     public function theater_delete($id)
@@ -463,7 +462,8 @@ class AdminController extends Controller
             'city' => $request->city,
             'phone' => $request->phone,
             'long' => $request->long,
-            'lat' => $request->lat
+            'lat' => $request->lat,
+            'website' => $request->website
         ];
         Location::where('id', $id)->update($theater_details);
         return back()->with('info', 'Theater '.$name. ' has been updated!');
@@ -666,17 +666,19 @@ class AdminController extends Controller
     {
         $id = $request->id;
         $status = $request->status;
-
-        Showtime::where('id', '=', $id)->update(['is_active' => 1]);
-        return 'true';
-    }
-
-    public function not_active(Request $request)
-    {
-        $id = $request->id;
-        $status = $request->status;  
-
-        Showtime::where('id', '=', $id)->update(['is_active' => 0]);
-        return 'false';
+        if($status == 1)
+        {
+            Showtime::where('id', '=', $id)->update(['is_active' => 1]);
+            return 'true';
+        }
+        elseif($status == 0)
+        {
+            Showtime::where('id', '=', $id)->update(['is_active' => 0]);
+            return 'false';
+        }
+        else
+        {
+            return 'error';
+        }
     }
 }

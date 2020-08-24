@@ -56,6 +56,21 @@
                             </div>
                         </div>
                         <br>
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" value="https://" style="width:40%;"
+                                        readonly>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" name="website" id="website"
+                                        value="{{ $theater_details->website }}" required
+                                        style="position: absolute; left:-60%; width:156%;">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                         <div class="modal-footer">
                             <button type="submit" class="form-control-user btn btn-primary">Update</button>
                             <a href="/theaterlist"><button type="button" class="btn btn-secondary">Back</button></a>
