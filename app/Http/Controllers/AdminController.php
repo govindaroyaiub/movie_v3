@@ -683,4 +683,44 @@ class AdminController extends Controller
             return 'error';
         }
     }
+
+    public function is_two_d(Request $request)
+    {
+        $id = $request->id;
+        $status = $request->status;
+        if($status == 1)
+        {
+            Showtime::where('id', '=', $id)->update(['two_d' => 1]);
+            return 'true';
+        }
+        elseif($status == 0)
+        {
+            Showtime::where('id', '=', $id)->update(['two_d' => 0]);
+            return 'false';
+        }
+        else
+        {
+            return 'error';
+        }
+    }
+
+    public function is_three_d(Request $request)
+    {
+        $id = $request->id;
+        $status = $request->status;
+        if($status == 1)
+        {
+            Showtime::where('id', '=', $id)->update(['three_d' => 1]);
+            return 'true';
+        }
+        elseif($status == 0)
+        {
+            Showtime::where('id', '=', $id)->update(['three_d' => 0]);
+            return 'false';
+        }
+        else
+        {
+            return 'error';
+        }
+    }
 }

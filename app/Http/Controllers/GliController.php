@@ -210,6 +210,8 @@ class GliController extends Controller
                                 'show_location_static.city',
                                 'show_location_static.zip',
                                 'movie_showtimes.url',
+                                'movie_showtimes.two_d',
+                                'movie_showtimes.three_d',
                                 'show_location_static.long',
                                 'show_location_static.lat')
                             ->where('movie_showtimes.movie_id', '=', $movie_details['id'])

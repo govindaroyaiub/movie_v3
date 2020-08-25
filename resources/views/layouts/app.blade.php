@@ -284,6 +284,128 @@
     });
 </script>
 <script type="text/javascript">
+    $(document).ready(function () {
+        $('.2d_switch').change(function (e) {
+            var id = $(this).attr("id");
+            var _token = $('input[name="_token"]').val();
+            var switch_button = document.getElementsByClassName("2d_switch");
+            var options = {
+            autoClose: true,
+            progressBar: true,
+            enableSounds: true,
+            sounds: {
+
+            info: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233294/info.mp3",
+            // path to sound for successfull message:
+            success: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233524/success.mp3",
+            // path to sound for warn message:
+            warning: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233563/warning.mp3",
+            // path to sound for error message:
+            error: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233574/error.mp3",
+            },
+            };
+
+            var toast = new Toasty(options);
+            toast.configure(options);
+
+            if ($(this).is(":checked"))
+            {
+                var status = 1; //checked
+            }
+            else
+            {
+                var status = 0; //checked
+            }
+            $.ajax({
+                url: "{{route('is_two_d')}}",
+                method: "POST",
+                data: 
+                {
+                    id: id,
+                    status: status,
+                    _token
+                },
+                success: function (result) 
+                {
+                    if(result == 'true')
+                    {
+                        toast.success("2D is Active.");
+                    }
+                    else if(result == 'false')
+                    {
+                        toast.info("2D is Inactive.");
+                    }
+                    else
+                    {
+                        toast.error("Something Went Wrong!");
+                    }
+                }
+            })
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.3d_switch').change(function (e) {
+            var id = $(this).attr("id");
+            var _token = $('input[name="_token"]').val();
+            var switch_button = document.getElementsByClassName("3d_switch");
+            var options = {
+            autoClose: true,
+            progressBar: true,
+            enableSounds: true,
+            sounds: {
+
+            info: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233294/info.mp3",
+            // path to sound for successfull message:
+            success: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233524/success.mp3",
+            // path to sound for warn message:
+            warning: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233563/warning.mp3",
+            // path to sound for error message:
+            error: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233574/error.mp3",
+            },
+            };
+
+            var toast = new Toasty(options);
+            toast.configure(options);
+
+            if ($(this).is(":checked"))
+            {
+                var status = 1; //checked
+            }
+            else
+            {
+                var status = 0; //checked
+            }
+            $.ajax({
+                url: "{{route('is_three_d')}}",
+                method: "POST",
+                data: 
+                {
+                    id: id,
+                    status: status,
+                    _token
+                },
+                success: function (result) 
+                {
+                    if(result == 'true')
+                    {
+                        toast.success("3D is Active.");
+                    }
+                    else if(result == 'false')
+                    {
+                        toast.info("3D is Inactive.");
+                    }
+                    else
+                    {
+                        toast.error("Something Went Wrong!");
+                    }
+                }
+            })
+        });
+    });
+</script>
+<script type="text/javascript">
     function show_password() {
         var x = document.getElementById("new_password");
         var y = document.getElementById("repeat_password");

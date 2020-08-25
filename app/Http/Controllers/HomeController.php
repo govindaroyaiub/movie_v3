@@ -89,7 +89,9 @@ class HomeController extends Controller
                             'show_location_static.zip',
                             'show_location_static.phone',
                             'show_location_static.city',
-                            'movie_showtimes.is_active')
+                            'movie_showtimes.is_active',
+                            'movie_showtimes.two_d',
+                            'movie_showtimes.three_d')
                         ->where('movie_showtimes.movie_id', '=', $id)
                         ->orderBy('movie_showtimes.url', 'ASC')
                         ->get();
@@ -106,6 +108,8 @@ class HomeController extends Controller
             'end_date' => $request->end_date,
             'url' => $request->url,
             'is_active' => 1,
+            'two_d' => 0,
+            'three_d' => 0,
             'movie_id' => $id
         ];
         Showtime::insert($data);
@@ -249,6 +253,8 @@ class HomeController extends Controller
                     $start_date = $request->start_date;
                     $end_date = $request->end_date;
                     $url = $worksheet2->getCellByColumnAndRow(3, $row)->getValue();
+                    $two_d = $worksheet2->getCellByColumnAndRow(4, $row)->getValue();
+                    $three_d = $worksheet2->getCellByColumnAndRow(5, $row)->getValue();
                     $movie_id = $movie_details['id'];
                     
                     $cinema_id = explode(" ", $cinema_details);
@@ -263,6 +269,38 @@ class HomeController extends Controller
                         $website = $url;
                     }
 
+                    if($two_d == NULL)
+                    {
+                        $two_d = 0;
+                    }
+                    elseif($two_d != NULL)
+                    {
+                        if($two_d == 'YES' || $two_d == 'yes' || $two_d == 'Yes')
+                        {
+                            $two_d = 1;
+                        }
+                        else
+                        {
+                            $two_d = 0;
+                        }
+                    }
+
+                    if($three_d == NULL)
+                    {
+                        $three_d = 0;
+                    }
+                    elseif($three_d != NULL)
+                    {
+                        if($three_d == 'YES' || $three_d == 'yes' || $three_d == 'Yes')
+                        {
+                            $three_d = 1;
+                        }
+                        else
+                        {
+                            $three_d = 0;
+                        }
+                    }
+
                     if($cinema_details != NULL)
                     {
                         $showtime = [
@@ -272,6 +310,8 @@ class HomeController extends Controller
                             'time' => " ",
                             'url' => $website,
                             'is_active' => 1,
+                            'two_d' => $two_d,
+                            'three_d' => $three_d,
                             'movie_id' => $movie_id
                         ];
                         array_push($showtime_list, $showtime);
@@ -285,7 +325,7 @@ class HomeController extends Controller
                 {
                     //if data exists on the table, check for other data which is not matched with the current one. First save them and insert all together
                     Showtime::where('movie_id', $movie_details['id'])->delete();
-                    $other_showtime_data = Showtime::select('cinema_id', 'date', 'url', 'end_date', 'time', 'movie_id')->get()->toArray();
+                    $other_showtime_data = Showtime::select('cinema_id', 'date', 'url', 'end_date', 'time', 'movie_id', 'two_d', 'three_d')->get()->toArray();
                     if($other_showtime_data != NULL)
                     {
                         Showtime::truncate();

@@ -23,6 +23,8 @@
                                     <th>URL</th>
                                     <th>Date</th>
                                     <th>Status</th>
+                                    <th>2D</th>
+                                    <th>3D</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -47,6 +49,16 @@
                                     </td>
                                     <td>
                                         <input type="checkbox" class="switch" id="{{ $row->id }}" @if($row->is_active ==
+                                        1) checked @else ' ' @endif data-toggle="toggle" data-onstyle="primary"
+                                        data-offstyle="secondary">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="2d_switch" id="{{ $row->id }}" @if($row->two_d ==
+                                        1) checked @else ' ' @endif data-toggle="toggle" data-onstyle="primary"
+                                        data-offstyle="secondary">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="3d_switch" id="{{ $row->id }}" @if($row->three_d ==
                                         1) checked @else ' ' @endif data-toggle="toggle" data-onstyle="primary"
                                         data-offstyle="secondary">
                                     </td>
