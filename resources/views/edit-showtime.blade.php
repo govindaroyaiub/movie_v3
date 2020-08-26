@@ -22,12 +22,7 @@
                                 <label for="start_date">Start Date</label>
                                 <input type="date" class="form-control" name="start_date" value="{{ $ms['date'] }}" id="url" required>
                             </div>
-
-                            <div class="form-group">
-                                <label for="end_date">End Date</label>
-                                <input type="date" class="form-control" name="end_date" value="{{ $ms['end_date'] }}" id="url" required>
-                            </div>
-                            
+                                                      
                             <div class="modal-footer">
                                 <button type="submit" class="form-control-user btn btn-primary">Update</button>
                                 <button type="button" class="btn btn-secondary" onclick="window.history.back();">Back</button>

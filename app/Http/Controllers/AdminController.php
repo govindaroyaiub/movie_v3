@@ -723,4 +723,12 @@ class AdminController extends Controller
             return 'error';
         }
     }
+
+    public function gettheatreurl(Request $request)
+    {
+        $id = $request->id;
+        $td = Location::where('id', '=', $id)->first();
+        $theatre_url = $td['website'];
+        return $theatre_url;
+    }
 }

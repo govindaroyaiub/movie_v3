@@ -17,10 +17,9 @@ class MovieShowtimesTable extends Migration
             $table->id();
             $table->integer('cinema_id')->nullable();
             $table->date('date')->nullable();
-            $table->date('end_date')->nullable();
             $table->string('time')->nullable();
             $table->string('url')->nullable();
-            $table->integer('is_active')->nullable();
+            $table->integer('is_active')->default(0);
             $table->integer('2d')->default(0);
             $table->integer('3d')->default(0);
             $table->bigInteger('movie_id')->nullable();
