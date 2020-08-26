@@ -205,7 +205,6 @@ class CunninghamController extends Controller
                                 'movie_showtimes.id',
                                 'movie_showtimes.cinema_id',
                                 'movie_showtimes.date',
-                                'movie_showtimes.end_date',
                                 'movie_showtimes.time',
                                 'show_location_static.name',
                                 'show_location_static.address',

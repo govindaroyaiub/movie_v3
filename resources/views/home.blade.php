@@ -30,14 +30,11 @@
                                 <input type="date" class="form-control" name="start_date" id="start_date" required>
                             </div>
                             <div class="col">
-                                <label for="end_date">End Date</label>
-                                <input type="date" class="form-control" name="end_date" id="end_date" required>
+                                <label for="file">Select File</label>
+                                <input type="file" name="file" required>
                             </div>
                         </div>
                         <br>
-                        <div class="form-group">
-                            <input type="file" name="file" required>
-                        </div>
                         <div class="form-group float-right">
                             <button type="submit" class="btn btn-primary text-white">Upload file</button>
                             <button type="button" class="btn btn-secondary" onclick="window.history.back();">Back</button>

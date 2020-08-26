@@ -140,5 +140,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/is_active', 'AdminController@is_active')->name('is_active');
     Route::post('/is_two_d', 'AdminController@is_two_d')->name('is_two_d');
     Route::post('/is_three_d', 'AdminController@is_three_d')->name('is_three_d');
+    Route::post('/gettheatreurl', 'AdminController@gettheatreurl')->name('gettheatreurl');
 
 });

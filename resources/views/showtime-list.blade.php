@@ -40,12 +40,6 @@
                                     <td style="width:90px;"><a href="https://{{$row->url}}"
                                             target="_blank">{{$row->url}}</a></td>
                                     <td style="width:120px;"><b>Start Date:</b><br>{{$row->date}}
-                                        <hr>
-                                        @if($row->end_date == NULL)
-                                        <b style="color:red">No End Date!</b>
-                                        @else
-                                        <b>End Date:</b><br>{{$row->end_date}}
-                                        @endif
                                     </td>
                                     <td>
                                         <input type="checkbox" class="switch" id="{{ $row->id }}" @if($row->is_active ==
@@ -91,15 +85,11 @@
             <div class="modal-body">
                 <form method="post" action="/showtimes/update/{{$id}}">
                     {{ csrf_field() }}
-                    <div class="row">
-                        <div class="col">
-                            <label for="start_date">Start Date</label>
-                            <input type="date" class="form-control" name="start_date" id="start_date" required>
-                        </div>
-                        <div class="col">
-                            <label for="end_date">End Date</label>
-                            <input type="date" class="form-control" name="end_date" id="end_date" required>
-                        </div>
+                   <b style="color: red">Use this method to update all the showtimes listed on the table by one single submit</b>
+                   <hr>
+                    <div class="form-group">
+                        <label for="start_date">Start Date</label>
+                        <input type="date" class="form-control" name="start_date" id="start_date" required>
                     </div>
                     <br>
                     <div class="modal-footer">
@@ -125,7 +115,7 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="theatre_id">Theatre List</label>
-                        <select class="form-control select2" id="theatre_id" name="theatre_id" style="width: 100%;"
+                        <select class="form-control select2" id="theatre_id[]" name="theatre_id" style="width: 100%;"
                             required>
                             <option value="">Select Theatre</option>
                             @foreach($theatre_list as $row)
@@ -136,17 +126,11 @@
                     </div>
                     <div class="form-group">
                         <label for="url">Theatre URL <b style="color:red;">(No http or https required)</b></label>
-                        <input type="text" class="form-control" name="url" id="url" required>
+                        <input type="text" class="form-control" name="url" id="theatre_url" required>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="start_date">Start Date</label>
-                            <input type="date" class="form-control" name="start_date" id="start_date" required>
-                        </div>
-                        <div class="col">
-                            <label for="end_date">End Date</label>
-                            <input type="date" class="form-control" name="end_date" id="end_date" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="start_date">Start Date</label>
+                        <input type="date" class="form-control" name="start_date" id="start_date" required>
                     </div>
                     <br>
                     <div class="modal-footer">

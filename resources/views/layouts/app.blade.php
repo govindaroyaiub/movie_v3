@@ -224,11 +224,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.switch').change(function (e) {
-            var id = $(this).attr("id");
-            var _token = $('input[name="_token"]').val();
-            var switch_button = document.getElementsByClassName("switch");
-            var options = {
+        var options = {
             autoClose: true,
             progressBar: true,
             enableSounds: true,
@@ -244,8 +240,13 @@
             },
             };
 
-            var toast = new Toasty(options);
-            toast.configure(options);
+        var toast = new Toasty(options);
+        toast.configure(options);
+
+        $('.switch').change(function (e) {
+            var id = $(this).attr("id");
+            var _token = $('input[name="_token"]').val();
+            var switch_button = document.getElementsByClassName("switch");
 
             if ($(this).is(":checked"))
             {
@@ -281,32 +282,11 @@
                 }
             })
         });
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function () {
+
         $('.2d_switch').change(function (e) {
             var id = $(this).attr("id");
             var _token = $('input[name="_token"]').val();
             var switch_button = document.getElementsByClassName("2d_switch");
-            var options = {
-            autoClose: true,
-            progressBar: true,
-            enableSounds: true,
-            sounds: {
-
-            info: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233294/info.mp3",
-            // path to sound for successfull message:
-            success: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233524/success.mp3",
-            // path to sound for warn message:
-            warning: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233563/warning.mp3",
-            // path to sound for error message:
-            error: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233574/error.mp3",
-            },
-            };
-
-            var toast = new Toasty(options);
-            toast.configure(options);
 
             if ($(this).is(":checked"))
             {
@@ -342,33 +322,12 @@
                 }
             })
         });
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function () {
+
         $('.3d_switch').change(function (e) {
             var id = $(this).attr("id");
             var _token = $('input[name="_token"]').val();
             var switch_button = document.getElementsByClassName("3d_switch");
-            var options = {
-            autoClose: true,
-            progressBar: true,
-            enableSounds: true,
-            sounds: {
-
-            info: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233294/info.mp3",
-            // path to sound for successfull message:
-            success: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233524/success.mp3",
-            // path to sound for warn message:
-            warning: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233563/warning.mp3",
-            // path to sound for error message:
-            error: "https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233574/error.mp3",
-            },
-            };
-
-            var toast = new Toasty(options);
-            toast.configure(options);
-
+        
             if ($(this).is(":checked"))
             {
                 var status = 1; //checked
@@ -403,30 +362,26 @@
                 }
             })
         });
-    });
-</script>
-<script type="text/javascript">
-    function show_password() {
-        var x = document.getElementById("new_password");
-        var y = document.getElementById("repeat_password");
-        if (x.value == '' || y.value == '') {
-            alert('Enter Password First!!');
-            $('.sp').prop('checked', false);
-        } else {
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
-            }
-            if (y.type === "password") {
-                y.type = "text";
-            } else {
-                y.type = "password";
-            }
-        }
-    }
 
-    $(document).ready(function () {
+        $("select[id='theatre_id[]']").change(function (e) {
+            var id = $(this).val();
+            var _token = $('input[name="_token"]').val();
+
+            $.ajax({
+                url: "{{route('gettheatreurl')}}",
+                method: "POST",
+                data: 
+                {
+                    id: id,
+                    _token
+                },
+                success: function (result) 
+                {
+                    document.getElementById("theatre_url").value = result;
+                }
+            })
+        });
+
         $('#userlist').DataTable({
             responsive: true,
             "lengthMenu": [
@@ -485,32 +440,53 @@
 
         $('.select2').select2();
     });
-</script>
-<script>
-function change_d_logo(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#d_logo')
-                .attr('src', e.target.result);
-        };
-
-        reader.readAsDataURL(input.files[0]);
+    
+    function show_password() {
+        var x = document.getElementById("new_password");
+        var y = document.getElementById("repeat_password");
+        if (x.value == '' || y.value == '') {
+            alert('Enter Password First!!');
+            $('.sp').prop('checked', false);
+        } else {
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            if (y.type === "password") {
+                y.type = "text";
+            } else {
+                y.type = "password";
+            }
+        }
     }
-}
-function change_mp_logo(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
 
-        reader.onload = function (e) {
-            $('#mp_logo')
-                .attr('src', e.target.result);
-        };
+    function change_d_logo(input) 
+    {
+        if (input.files && input.files[0]) 
+        {
+            var reader = new FileReader();
 
-        reader.readAsDataURL(input.files[0]);
+            reader.onload = function (e) {
+                $('#d_logo')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
     }
-}
+    function change_mp_logo(input)
+    {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#mp_logo')
+                    .attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
 </body>
 </html>

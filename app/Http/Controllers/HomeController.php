@@ -82,7 +82,6 @@ class HomeController extends Controller
                         ->select(
                             'movie_showtimes.id', 
                             'movie_showtimes.date',
-                            'movie_showtimes.end_date',
                             'movie_showtimes.url', 
                             'show_location_static.name', 
                             'show_location_static.address',
@@ -93,7 +92,7 @@ class HomeController extends Controller
                             'movie_showtimes.two_d',
                             'movie_showtimes.three_d')
                         ->where('movie_showtimes.movie_id', '=', $id)
-                        ->orderBy('movie_showtimes.url', 'ASC')
+                        ->orderBy('show_location_static.name', 'ASC')
                         ->get();
 
         $theatre_list = Location::orderBy('name', 'ASC')->get();
@@ -105,9 +104,8 @@ class HomeController extends Controller
         $data = [
             'cinema_id' => $request->theatre_id,
             'date' => $request->start_date,
-            'end_date' => $request->end_date,
             'url' => $request->url,
-            'is_active' => 1,
+            'is_active' => 0,
             'two_d' => 0,
             'three_d' => 0,
             'movie_id' => $id
@@ -122,7 +120,6 @@ class HomeController extends Controller
                         ->select(
                             'movie_showtimes.id', 
                             'movie_showtimes.date',
-                            'movie_showtimes.end_date',
                             'movie_showtimes.url', 
                             'show_location_static.name', 
                             'show_location_static.address',
@@ -138,13 +135,11 @@ class HomeController extends Controller
     {
         $movie_id = Showtime::select('movie_id')->where('id', '=', $id)->first();
         $start_date = $request->start_date;
-        $end_date = $request->end_date;
         $url = $request->url;
 
         $sd = [
             'url' => $url,
-            'date' => $start_date,
-            'end_date' => $end_date
+            'date' => $start_date
         ];
         Showtime::where('id', '=', $id)->update($sd);
         return redirect('/showtimes/'.$movie_id['movie_id']);
@@ -159,8 +154,7 @@ class HomeController extends Controller
     public function showtimes_update(Request $request, $id)
     {
         $data = [
-            'date' => $request->start_date,
-            'end_date' => $request->end_date
+            'date' => $request->start_date
         ];
         Showtime::where('movie_id', '=', $id)->update($data);
         return back()->with('info', 'Updated!');
@@ -251,7 +245,6 @@ class HomeController extends Controller
                 for ($row = 2; $row <= $highestRow; ++$row) {
                     $cinema_details = $worksheet2->getCellByColumnAndRow(2, $row)->getValue();
                     $start_date = $request->start_date;
-                    $end_date = $request->end_date;
                     $url = $worksheet2->getCellByColumnAndRow(3, $row)->getValue();
                     $two_d = $worksheet2->getCellByColumnAndRow(4, $row)->getValue();
                     $three_d = $worksheet2->getCellByColumnAndRow(5, $row)->getValue();
@@ -306,10 +299,9 @@ class HomeController extends Controller
                         $showtime = [
                             'cinema_id' => $cinema_id[0],
                             'date' => $start_date,
-                            'end_date' => $end_date,
                             'time' => " ",
                             'url' => $website,
-                            'is_active' => 1,
+                            'is_active' => 0,
                             'two_d' => $two_d,
                             'three_d' => $three_d,
                             'movie_id' => $movie_id
@@ -325,7 +317,7 @@ class HomeController extends Controller
                 {
                     //if data exists on the table, check for other data which is not matched with the current one. First save them and insert all together
                     Showtime::where('movie_id', $movie_details['id'])->delete();
-                    $other_showtime_data = Showtime::select('cinema_id', 'date', 'url', 'end_date', 'time', 'movie_id', 'two_d', 'three_d')->get()->toArray();
+                    $other_showtime_data = Showtime::select('cinema_id', 'date', 'url', 'time', 'movie_id', 'two_d', 'three_d')->get()->toArray();
                     if($other_showtime_data != NULL)
                     {
                         Showtime::truncate();
