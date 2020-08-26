@@ -211,10 +211,10 @@ function buildLocationList(data) {
 
                 // <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
 
-                var logic1 = current_date < api_date && current_date < end_date;
-                var logic2 = current_date >= api_date && current_date <= end_date;
+                var logic1 = current_date < api_date;
+                var logic2 = current_date >= api_date;
 
-                if (current_date < api_date && current_date < end_date) {
+                if (current_date < api_date) {
                     var dateTime;
 
                     if (isUrlNl) {
@@ -232,6 +232,12 @@ function buildLocationList(data) {
                     }
                 }
 
+                // check 2D / 3D
+                var twod_threed = m.two_d === 1 && m.three_d === 1;
+                var two_d = m.two_d === 1 && m.three_d === 0;
+                var three_d = m.two_d === 0 && m.three_d === 1;
+                var nothing_d = m.two_d === 0 && m.three_d === 0;
+
 
                 return `
                 <div class="city-accordion-js">
@@ -245,6 +251,10 @@ function buildLocationList(data) {
 
                         <p class="m-timestamp">
                         ${logic1 ? st1 : '' || logic2 ? st2 : ''}
+                        ${twod_threed ? '2D & 3D' : '' }
+                        ${two_d ? '2D' : '' }
+                        ${three_d ? '3D' : '' }
+                        ${nothing_d ? '' : '' }
                         </p>
                       </div>
                       <div class="m-wrap-footer">
@@ -327,10 +337,10 @@ function buildLocationList(data) {
 
                 // <p class="m-timestamp">${isUrlNl ? moment(m.date).locale('en').format("LL") : moment(m.date).locale('nl').format("LL")}</p>
 
-                var logic1 = current_date < api_date && current_date < end_date;
-                var logic2 = current_date >= api_date && current_date <= end_date;
+                var logic1 = current_date < api_date;
+                var logic2 = current_date >= api_date;
 
-                if (current_date < api_date && current_date < end_date) {
+                if (current_date < api_date) {
                     var dateTime;
 
                     if (isUrlNl) {
@@ -348,6 +358,12 @@ function buildLocationList(data) {
                     }
                 }
 
+                // check 2D / 3D
+                var twod_threed = m.two_d === 1 && m.three_d === 1;
+                var two_d = m.two_d === 1 && m.three_d === 0;
+                var three_d = m.two_d === 0 && m.three_d === 1;
+                var nothing_d = m.two_d === 0 && m.three_d === 0;
+
                 return `
                        <div class="city-accordion-js">
                     <div class="m-wrapper">
@@ -358,7 +374,11 @@ function buildLocationList(data) {
                       <div class="m-wrap-meta">
                         <p class="m-address">${m.address}, ${m.city}</p>
                         <p class="m-timestamp">
-                              ${logic1 ? st1 : '' || logic2 ? st2 : ''}
+                         ${logic1 ? st1 : '' || logic2 ? st2 : ''}
+                         ${twod_threed ? '2D & 3D' : '' }
+                        ${two_d ? '2D' : '' }
+                        ${three_d ? '3D' : '' }
+                        ${nothing_d ? '' : '' }
                         </p>
                       </div>
                       <div class="m-wrap-footer">
