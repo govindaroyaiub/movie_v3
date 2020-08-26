@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('/exp', function () {
+    return view('exp');
+});
+
 //if domain is movie.planetnine.com
 Route::domain('movie.planetnine.com')->group(function(){
     Route::get('/', 'DataController@index');
