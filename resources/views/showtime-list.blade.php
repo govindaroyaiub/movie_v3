@@ -20,6 +20,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Theatre</th>
+                                    <th>City</th>
                                     <th>URL</th>
                                     <th>Date</th>
                                     <th>Status</th>
@@ -34,9 +35,13 @@
                                 @foreach($ms as $row)
                                 <tr>
                                     <td>{{$i++}}</td>
-                                    <td>{{$row->name}}
-                                        <hr>{{$row->address}}, {{$row->zip}}, {{$row->city}} <br> <b>Phone:</b>
-                                        {{$row->phone}}</td>
+                                    <td>
+                                        {{$row->name}}
+                                        <hr>
+                                        {{$row->address}}, {{$row->zip}} <br> <b>Phone:</b> <br> {{$row->phone}}
+                                    </td>
+                                    <td>{{$row->city}}
+                                    </td>
                                     <td style="width:90px;"><a href="https://{{$row->url}}"
                                             target="_blank">{{$row->url}}</a></td>
                                     <td style="width:120px;"><b>Start Date:</b><br>{{$row->date}}

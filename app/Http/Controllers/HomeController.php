@@ -92,7 +92,7 @@ class HomeController extends Controller
                             'movie_showtimes.two_d',
                             'movie_showtimes.three_d')
                         ->where('movie_showtimes.movie_id', '=', $id)
-                        ->orderBy('show_location_static.name', 'ASC')
+                        ->orderBy('show_location_static.city', 'ASC')
                         ->get();
 
         $theatre_list = Location::orderBy('name', 'ASC')->get();
