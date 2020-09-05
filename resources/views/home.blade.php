@@ -13,7 +13,7 @@
                     <form method="post" action="/upload_sheet/{{$id}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <h2>Upload showtimes for movie: {{$movie_details['movie_title']}}</h2l>
+                            <h2>Upload showtimes for movie: <b style="color:red;">{{$movie_details['movie_title']}}</b></h2l>
                         </div>
                         <div id="infos">
                             <label>&#8226; Please use the Google Sheet from <a href="{{$movie_details['google_sheet']}}" target="_blank">here.</a></label>

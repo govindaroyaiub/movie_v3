@@ -17,8 +17,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Address & Phone</th>
-                                    <th>Long & Lat</th>
+                                    <th>Details</th>
+                                    <th>Position</th>
                                     <th>Homepage</th>
                                     <th style="text-align: center">Action</th>
                                 </tr>
@@ -34,13 +34,15 @@
                                         <hr> <b>Phone: </b>{{$row->phone}}</td>
                                     <td><b>Long: </b>{{$row->long}}
                                         <hr> <b>Lat: </b>{{$row->lat}}</td>
-                                    <td><a href="https://{{ $row->website }}" target="_blank">{{ $row->website }}</a>
+                                    <td><a href="https://{{ $row->website }}" target="_blank"
+                                            style="line-break: anywhere;">{{ $row->website }}</a>
                                     </td>
                                     <td>
                                         <a href="/theaterlist/edit/{{$row->id}}"><button
                                                 class="btn btn-primary text-white custom">Edit</button></a>
-                                        <a href="/theaterlist/delete/{{$row->id}}"><button
-                                            class="btn btn-danger text-white custom">Delete</button></a>
+                                        <a href="/theaterlist/delete/{{$row->id}}"
+                                            onclick="return confirm('Are sure want to delete this theatre?');"><button
+                                                class="btn btn-danger text-white custom">Delete</button></a>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Reviews of {{$movie_details['movie_title']}} <a href="" style="position:absolute; text-decoration: underline; right:2%;" data-toggle="modal" data-target="#create_user_modal">Create Review +</a></div>
+                <div class="card-header">Reviews of <b style="color:red">{{$movie_details['movie_title']}}</b> <a href="" style="position:absolute; text-decoration: underline; right:2%;" data-toggle="modal" data-target="#create_user_modal">Create Review +</a></div>
 
                 <div class="card-body">
                     @include('alert')
@@ -14,11 +14,10 @@
                             <thead style="text-align:center;">
                                 <tr>
                                     <th>#</th>
-                                    <th>Movie</th>
                                     <th>Review</th>
-                                    <th>Lanuage</th>
                                     <th>Source</th>
                                     <th>Source Link</th>
+                                    <th>Lanuage</th>
                                     <th>Ratings</th>
                                     <th style="text-align: center">Action</th>
                                 </tr>
@@ -29,21 +28,26 @@
                                 @foreach($reviews as $row)
                                 <tr>
                                     <td>{{$i++}}</td>
-                                    <td>{{$row->movie_title}}</td>
                                     <td>{{$row->review_text}}</td>
+                                    <td><b>{{$row->source}}</b></td>
+                                    <td><a href="{{$row->source_link}}" target="_blank">{{$row->source_link}}</a></td>
                                     <td>
                                     @if($row->language == 'nl') 
-                                    NL
+                                    <b>NL</b>
                                     @else
-                                    EN
+                                    <b>EN</b>
                                     @endif
                                     </td>
-                                    <td>{{$row->source}}</td>
-                                    <td><a href="{{$row->source_link}}" target="_blank">{{$row->source_link}}</a></td>
-                                    <td>{{$row->ratings}}</td>
+                                    <td>
+                                    @if($row->ratings == 0)
+                                    <b style="color:green;">None</b>
+                                    @else
+                                    {{$row->ratings}}
+                                    @endif
+                                    </td>
                                     <td>
                                         <a href="/reviews/edit/{{$row->id}}"><button class="btn btn-primary text-white custom">Edit</button></a>
-                                        <a href="/reviews/delete/{{$row->id}}"><button class="btn btn-danger text-white custom">Delete</button></a>
+                                        <a href="/reviews/delete/{{$row->id}}" onclick="return confirm('Are sure want to delete this review?');"><button class="btn btn-danger text-white custom">Delete</button></a>
                                     </td>
                                 </tr>
                                 @endforeach

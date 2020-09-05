@@ -22,8 +22,8 @@
                                     <th>Theatre</th>
                                     <th>City</th>
                                     <th>URL</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
+                                    <th>Start Date</th>
+                                    <th>Activity</th>
                                     <th>2D</th>
                                     <th>3D</th>
                                     <th>Action</th>
@@ -42,9 +42,9 @@
                                     </td>
                                     <td>{{$row->city}}
                                     </td>
-                                    <td style="width:90px;"><a href="https://{{$row->url}}"
-                                            target="_blank">{{$row->url}}</a></td>
-                                    <td style="width:120px;"><b>Start Date:</b><br>{{$row->date}}
+                                    <td><a href="https://{{$row->url}}" target="_blank"
+                                            style="line-break: anywhere;">{{$row->url}}</a></td>
+                                    <td>{{$row->date}}
                                     </td>
                                     <td>
                                         <input type="checkbox" class="switch" id="{{ $row->id }}" @if($row->is_active ==
@@ -57,14 +57,16 @@
                                         data-offstyle="secondary">
                                     </td>
                                     <td>
-                                        <input type="checkbox" class="3d_switch" id="{{ $row->id }}" @if($row->three_d ==
+                                        <input type="checkbox" class="3d_switch" id="{{ $row->id }}" @if($row->three_d
+                                        ==
                                         1) checked @else ' ' @endif data-toggle="toggle" data-onstyle="primary"
                                         data-offstyle="secondary">
                                     </td>
                                     <td>
                                         <a href="/showtimes/edit/{{$row->id}}"><button
                                                 class="btn btn-primary text-white custom">Edit</button></a><br>
-                                        <a href="/showtimes/delete/{{$row->id}}"><button
+                                        <a href="/showtimes/delete/{{$row->id}}"
+                                            onclick="return confirm('Are sure want to delete this showtime?');"><button
                                                 class="btn btn-danger text-white custom">Delete</button></a><br>
                                     </td>
                                 </tr>
@@ -90,8 +92,9 @@
             <div class="modal-body">
                 <form method="post" action="/showtimes/update/{{$id}}">
                     {{ csrf_field() }}
-                   <b style="color: red">Use this method to update all the showtimes listed on the table by one single submit</b>
-                   <hr>
+                    <b style="color: red">Use this method to update all the showtimes listed on the table by one single
+                        submit</b>
+                    <hr>
                     <div class="form-group">
                         <label for="start_date">Start Date</label>
                         <input type="date" class="form-control" name="start_date" id="start_date" required>

@@ -21,7 +21,7 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            
+
                             <tbody style="text-align:center;">
                                 <?php $i = 1; ?>
                                 @foreach($d_list as $row)
@@ -33,8 +33,11 @@
                                         <img src="/distributors/{{$row->logo}}" width="150px">
                                     </td>
                                     <td>
-                                        <a href="/partnerlist/distributor/edit/{{$row->id}}"><button class="btn btn-primary text-white custom">Edit</button></a>
-                                        <a href="/partnerlist/distributor/delete/{{$row->id}}"><button class="btn btn-danger text-white custom">Delete</button></a>
+                                        <a href="/partnerlist/distributor/edit/{{$row->id}}"><button
+                                                class="btn btn-primary text-white custom">Edit</button></a>
+                                        <a href="/partnerlist/distributor/delete/{{$row->id}}"
+                                            onclick="return confirm('Are sure want to delete this distributor?');"><button
+                                                class="btn btn-danger text-white custom">Delete</button></a>
                                     </td>
                                 </tr>
                                 @endforeach

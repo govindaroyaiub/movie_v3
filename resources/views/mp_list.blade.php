@@ -32,13 +32,16 @@
                                         <img src="/media_partners/{{$row->logo}}" width="150px">
                                     </td>
                                     <td>
-                                        <a href="/partnerlist/media_partner/edit/{{$row->id}}"><button class="btn btn-primary text-white custom">Edit</button></a>
-                                        <a href="/partnerlist/media_partner/delete/{{$row->id}}"><button class="btn btn-danger text-white custom">Delete</button></a>
+                                        <a href="/partnerlist/media_partner/edit/{{$row->id}}"><button
+                                                class="btn btn-primary text-white custom">Edit</button></a>
+                                        <a href="/partnerlist/media_partner/delete/{{$row->id}}"
+                                            onclick="return confirm('Are sure want to delete this media partner?');"><button
+                                                class="btn btn-danger text-white custom">Delete</button></a>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
-                            
+
                         </table>
                     </div>
                 </div>
