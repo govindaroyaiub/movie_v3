@@ -63,6 +63,18 @@ Route::domain('cunningham-defilm.nl')->group(function(){
     Route::get('/api/shows', 'CunninghamController@showsApi');
 });
 
+Route::domain('www.lara-defilm.nl')->group(function(){
+    Route::get('/', 'LaraController@nl_landing');
+    Route::get('/_en', 'LaraController@en_landing');
+    Route::get('/api/shows', 'LaraController@showsApi');
+});
+
+Route::domain('lara-defilm.nl')->group(function(){
+    Route::get('/', 'LaraController@nl_landing');
+    Route::get('/_en', 'LaraController@en_landing');
+    Route::get('/api/shows', 'LaraController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -82,6 +94,10 @@ Route::get('/Sibyl/api/shows', 'SibylController@showsApi');
 Route::get('/cunningham', 'CunninghamController@nl_landing');
 Route::get('/cunningham_en', 'CunninghamController@en_landing');
 Route::get('/cunningham/api/shows', 'CunninghamController@showsApi');
+
+Route::get('/lara', 'LaraController@nl_landing');
+Route::get('/lara_en', 'LaraController@en_landing');
+Route::get('/lara/api/shows', 'LaraController@showsApi');
 
 Auth::routes(['register' => false]);
 
