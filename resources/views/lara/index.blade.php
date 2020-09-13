@@ -9,7 +9,7 @@
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
         :root {
             --primary-light: {{ $primary_light }};
@@ -27,7 +27,7 @@
             padding: 3rem 0;
             background: var(--secondary-light);
             color: #fff;
-            font-family: 'Thasadith', sans-serif;
+            font-family: 'Archivo Black', sans-serif;
         }
 
         .sibyl-header {
@@ -37,14 +37,14 @@
 
         .sibyl-header h1 {
             color: inherit !important;
-            font-family: 'Thasadith', sans-serif;
+            font-family: 'Archivo Black', sans-serif;
             font-weight: 400 !important;
         }
 
 
         .sibyl-review-slider {
             background-color: #f1e8d6 !important;
-            font-family: 'Thasadith', sans-serif;
+            font-family: 'Archivo Black', sans-serif;
         }
 
         .sibyl-review-area {
@@ -73,11 +73,11 @@
         }
 
         .city-accordion-js {
-            font-family: 'Thasadith', sans-serif !important;
+            font-family: 'Archivo Black', sans-serif !important;
         }
 
         .movie-menu a {
-            font-family: 'Thasadith', sans-serif !important;
+            font-family: 'Archivo Black', sans-serif !important;
         }
 
     </style>
