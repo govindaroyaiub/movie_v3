@@ -126,7 +126,13 @@
             color: #fff !important;
         }
 
+
         .p9-btn {
+            color: #8D351C !important;
+        }
+
+        .movie-footer .nav-tabs a,
+        .sibyl-copy-text {
             color: #000 !important;
         }
 
