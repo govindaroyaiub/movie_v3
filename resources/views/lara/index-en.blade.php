@@ -125,13 +125,23 @@
             color: #fff !important;
         }
 
+        .m-wrapper {
+            background-color: #8D351C !important;
+        }
+
         .p9-btn {
-            color: #8D351C !important;
+            color: #000 !important;
         }
 
         .movie-footer .nav-tabs a,
-        .sibyl-copy-text {
+        .sibyl-copy-text,
+        .tab-content p {
             color: #000 !important;
+        }
+
+        .movie-footer .nav-tabs a.active,
+        .movie-footer .nav-tabs a:hover {
+            color: #8D351C !important;
         }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>

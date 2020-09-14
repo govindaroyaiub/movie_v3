@@ -126,16 +126,24 @@
             color: #fff !important;
         }
 
-
-        .p9-btn {
-            color: #8D351C !important;
+        .m-wrapper {
+            background-color: #8D351C !important;
         }
 
-        .movie-footer .nav-tabs a,
-        .sibyl-copy-text {
+        .p9-btn {
             color: #000 !important;
         }
 
+        .movie-footer .nav-tabs a,
+        .sibyl-copy-text,
+        .tab-content p {
+            color: #000 !important;
+        }
+
+        .movie-footer .nav-tabs a.active,
+        .movie-footer .nav-tabs a:hover {
+            color: #8D351C !important;
+        }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">

@@ -230,7 +230,7 @@ img {
 .movie-footer .nav-tabs a:hover {
     background-color: transparent;
     border-color: transparent;
-    color: #fff !important;
+    /*color: #fff !important;*/
 }
 
 .yt-iframe {
