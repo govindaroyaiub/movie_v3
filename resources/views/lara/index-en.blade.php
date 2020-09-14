@@ -79,6 +79,55 @@
         .movie-menu a {
             font-family: 'Archivo Black', sans-serif !important;
         }
+
+        /* start here */
+
+        .movie-header,
+        .movie-footer {
+            background-color: #F2EEE2 !important;
+        }
+
+        .movie-header h1 {
+            color: #000 !important;
+        }
+
+        .movie-menu {
+            background-color: #8D351C !important;
+        }
+
+        .movie-content,
+        .review-area {
+            background-color: #5E717C !important;
+        }
+
+        .hastag {
+            color: #F2EEE2 !important;
+        }
+
+        .search-button {
+            background-color: #8D351C !important;
+        }
+
+        .city-map-js li {
+            background: #F2EEE2 !important;
+            border: solid 1px #F2EEE2 !important;
+        }
+
+        .city-link {
+            color: #000 !important;
+        }
+
+        .city-map-js li:hover {
+            background-color: #8D351C !important;
+        }
+
+        .city-map-js li:hover .city-link {
+            color: #fff !important;
+        }
+
+        .p9-btn {
+            color: #000 !important;
+        }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
