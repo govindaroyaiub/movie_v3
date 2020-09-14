@@ -134,6 +134,7 @@
             background-color: #fff !important;
             color: #000 !important;
         }
+
         .movie-footer .nav-tabs a,
         .sibyl-copy-text,
         .tab-content p {
@@ -142,6 +143,10 @@
 
         .movie-footer .nav-tabs a.active,
         .movie-footer .nav-tabs a:hover {
+            color: #8D351C !important;
+        }
+
+        .synopsis-meta span {
             color: #8D351C !important;
         }
     </style>
