@@ -148,7 +148,8 @@
         }
 
         .synopsis-meta span {
-            color: #F2EEE2 !important;
+            color: #8D351C !important;
+            font-weight: 900;
         }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
