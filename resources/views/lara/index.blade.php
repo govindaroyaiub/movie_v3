@@ -23,6 +23,8 @@
             --gray1: #f1e8d6;
         }
 
+
+
         .review-area {
             padding: 3rem 0;
             background: var(--secondary-light);

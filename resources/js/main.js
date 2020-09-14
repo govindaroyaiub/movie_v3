@@ -111,6 +111,8 @@ if (location.pathname === '/' || location.pathname === '/_en') {
     endpoint = `/Sibyl/api/shows`;
 } else if (location.pathname === '/cunningham' || location.pathname === '/cunningham_en') {
     endpoint = `/cunningham/api/shows`;
+} else if (location.pathname === '/lara' || location.pathname === '/lara_en') {
+    endpoint = `/lara/api/shows`;
 }
 
 
