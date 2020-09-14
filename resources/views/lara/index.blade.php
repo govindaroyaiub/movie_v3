@@ -130,7 +130,9 @@
             background-color: #8D351C !important;
         }
 
-        .p9-btn {
+        .p9-btn,
+        #book-button {
+            background-color: #fff !important;
             color: #000 !important;
         }
 
