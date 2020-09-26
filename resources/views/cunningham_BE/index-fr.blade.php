@@ -115,9 +115,9 @@
                     <a href="javascript:void(0)" class="closebtn">&times;</a>
                     <nav class="nav-menu">
                         <ul>
-                            <li><a href="#" class="menu-link tablink" onclick="openPage('bp', this)" id="defaultOpen">Cinemas</a>
+                            <li><a href="#" class="menu-link tablink" onclick="openPage('bp', this)" id="defaultOpen">Cinémas</a>
                             </li>
-                            <li><a href="#" class="menu-link tablink" onclick="openPage('vdo', this)">Videos</a></li>
+                            <li><a href="#" class="menu-link tablink" onclick="openPage('vdo', this)">Vidéos</a></li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('sy', this)">Synopsis</a></li>
                             <!-- <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
                                         class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li> -->
@@ -155,8 +155,8 @@
                         </form>
 
                         <div class="search-meta text-center my-2">
-                            <p>ENTER YOUR LOCATION ABOVE OR SELECT YOUR THEATER BELOW</p>
-                            <p>MORE SHOWTIMES FOUND IN THE CITIES BELOW</p>
+                            <p>ENTRER LIEU CI-DESSUS OU SÉLECTIONNER LE THÉÂTRE CI-DESSOUS</p>
+                            <p>PLUS DE SÉANCES TROUVÉES DANS LES VILLES CI-DESSOUS</p>
 
                             <div class="main-accordion accordion d-none" id="mainAccordionId"></div>
                             <div class="city-accordion accordion d-none" id="cityAccordionId"></div>
@@ -224,11 +224,11 @@
                 <div class="col-md-6">
                     <div class="synopsis">
                         <div class="synopsis-meta mt-2">
-                            <p><span>Directed by:</span> {{ $movie_details->director }}</p>
-                            <p><span>Written by:</span> {{ $movie_details->writer }}</p>
-                            <p><span>Produced by:</span> {{ $movie_details->producer }}</p>
-                            <p><span>Casts:</span> {{ $movie_details->actors }}</p>
-                            <p><span>Duration:</span> {{ $movie_details->duration }}</p>
+                            <p><span>Réalisé par:</span> {{ $movie_details->director }}</p>
+                            <p><span>Écrit par:</span> {{ $movie_details->writer }}</p>
+                            <p><span>Produit par:</span> {{ $movie_details->producer }}</p>
+                            <p><span>Moulages:</span> {{ $movie_details->actors }}</p>
+                            <p><span>Durée:</span> {{ $movie_details->duration }}</p>
                             @if($rating >= 6)
                             <p><span>Ratings:</span> {{ $rating }}</p>
                             @else
@@ -295,13 +295,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab"
-                               href="#Gebruiksvoorwaarden">Terms of Use</a>
+                               href="#Gebruiksvoorwaarden">Conditions d'utilisation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#privacy-policy">Privacy Policy</a>
+                            <a class="nav-link" data-toggle="tab" href="#privacy-policy">Politique de confidentialité</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#credits">Credits</a>
+                            <a class="nav-link" data-toggle="tab" href="#credits">Crédits</a>
                         </li>
                     </ul>
                     <hr class="bg-secondary">
@@ -347,7 +347,7 @@
 
                     <hr class="bg-secondary">
                     <div class="d-flex justify-content-between align-items-center">
-                        <p class="sibyl-copy-text">&copy; All rights reserved {{$d_details['name']}}, Planetnine - <?= Date('Y') ?></p>
+                        <p class="sibyl-copy-text">&copy; Tous les droits sont réservés {{$d_details['name']}}, Planetnine - <?= Date('Y') ?></p>
                         <ul class="footer-social">
                             <li class="mr-2"><a target="_blank" href="{{ $movie_details->fb_link }}">
                                     <img src="{{ asset('images/facebook.svg') }}" alt="">
