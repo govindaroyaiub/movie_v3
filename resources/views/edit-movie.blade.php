@@ -187,7 +187,7 @@
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
                                         data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        EN Version
+                                        English Contents
                                     </button>
                                 </h5>
                             </div>
@@ -262,7 +262,7 @@
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
                                         data-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                        NL Version
+                                        Dutch Contents
                                     </button>
                                 </h5>
                             </div>
@@ -334,6 +334,86 @@
                                 </div>
                             </div>
                         </div>
+                        @if($movie_details['id'] == 8)
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        French Contents
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <form method="post" action="/movielist/edit/fr/{{$id}}">
+                                        {{ csrf_field() }}
+                                        <div class="form-group">
+                                            <label for="tagline_fr">Tagline</label>
+                                            <textarea class="form-control" name="tagline_fr" id="tagline_fr"
+                                                maxlength="500" rows="6" cols="50" required>{{ $movie_details['tagline_fr'] }}
+                                            </textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="movie_description_short_fr">Movie Description Short</label>
+                                            <textarea class="form-control" name="movie_description_short_fr"
+                                                id="movie_description_short_fr" maxlength="500" rows="6" cols="50"
+                                                required>{{ $movie_details['movie_description_short_fr'] }}
+                                            </textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="movie_description_long_fr">Movie Description Long</label>
+                                            <textarea name="movie_description_long_fr" id="movie_description_long_fr"
+                                                class="form-control" rows="6"
+                                                cols="50">{{ $movie_details['movie_description_long_fr'] }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="buy_tickets_fr">Buy Tickets Text</label>
+                                            <input type="text" class="form-control" name="buy_tickets_fr"
+                                                id="buy_tickets_fr" value="{{ $movie_details['buy_tickets_fr'] }}"
+                                                required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="cookies_fr">Cookies</label>
+                                            <textarea name="cookies_fr" id="cookies_fr" class="form-control" rows="6"
+                                                cols="50">{{ $movie_details['cookies_fr'] }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="terms_of_use_fr">Terms Of Use</label>
+                                            <textarea name="terms_of_use_fr" id="terms_of_use_fr" class="form-control"
+                                                rows="6" cols="50">{{ $movie_details['terms_of_use_fr'] }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="privacy_policy_fr">Privacy Policy</label>
+                                            <textarea name="privacy_policy_fr" id="privacy_policy_fr"
+                                                class="form-control" rows="6"
+                                                cols="50">{{ $movie_details['privacy_policy_fr'] }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="credits_fr">Credits</label>
+                                            <textarea name="credits_fr" id="credits_fr" class="form-control" rows="6"
+                                                cols="50">{{ $movie_details['credits_fr'] }}</textarea>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="submit"
+                                                class="form-control-user btn btn-primary">Update</button>
+                                            <a href="/movielist"><button type="button"
+                                                    class="btn btn-secondary">Back</button></a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

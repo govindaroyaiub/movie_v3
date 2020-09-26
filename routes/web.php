@@ -95,6 +95,11 @@ Route::get('/cunningham', 'CunninghamController@nl_landing');
 Route::get('/cunningham_en', 'CunninghamController@en_landing');
 Route::get('/cunningham/api/shows', 'CunninghamController@showsApi');
 
+Route::get('/cunninghamBE', 'CunninghamBEController@nl_landing');
+Route::get('/cunninghamBE_en', 'CunninghamBEController@en_landing');
+Route::get('/cunninghamBE_fr', 'CunninghamBEController@fr_landing');
+Route::get('/cunninghamBE/api/shows', 'CunninghamBEController@showsApi');
+
 Route::get('/lara', 'LaraController@nl_landing');
 Route::get('/lara_en', 'LaraController@en_landing');
 Route::get('/lara/api/shows', 'LaraController@showsApi');
@@ -132,6 +137,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/movielist/edit/tmd/{id}', 'AdminController@tmd_edit');
     Route::post('/movielist/edit/en/{id}', 'AdminController@en_edit');
     Route::post('/movielist/edit/nl/{id}', 'AdminController@nl_edit');
+    Route::post('/movielist/edit/fr/{id}', 'AdminController@fr_edit');
     Route::get('/movielist/delete/{id}', 'AdminController@movie_delete');
 
     Route::get('/reviews/{id}', 'AdminController@reviews_list');

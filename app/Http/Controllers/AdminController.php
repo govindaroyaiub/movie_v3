@@ -384,7 +384,7 @@ class AdminController extends Controller
         ];
 
         Movie::where('id', $id)->update($en_details);
-        return redirect('/movielist/edit/'.$id)->with('info', 'EN Details has been updated!');
+        return redirect('/movielist/edit/'.$id)->with('info', 'English Contents has been updated!');
     }
 
     public function nl_edit(Request $request, $id)
@@ -401,7 +401,24 @@ class AdminController extends Controller
         ];
 
         Movie::where('id', $id)->update($nl_details);
-        return redirect('/movielist/edit/'.$id)->with('info', 'NL Details has been updated!');
+        return redirect('/movielist/edit/'.$id)->with('info', 'Dutch Contents has been updated!');
+    }
+
+    public function fr_edit(Request $request, $id)
+    {
+        $fr_details = [
+            'movie_description_short_fr' => $request->movie_description_short_fr,
+            'tagline_fr' => $request->tagline_fr,
+            'movie_description_long_fr' => $request->movie_description_long_fr,
+            'buy_tickets_fr' => $request->buy_tickets_fr,
+            'cookies_fr' => $request->cookies_fr,
+            'terms_of_use_fr' => $request->terms_of_use_fr,
+            'privacy_policy_fr' => $request->privacy_policy_fr,
+            'credits_fr' => $request->credits_fr
+        ];
+
+        Movie::where('id', $id)->update($fr_details);
+        return redirect('/movielist/edit/'.$id)->with('info', 'French Contents has been updated!');
     }
     
     public function theaterlist()
