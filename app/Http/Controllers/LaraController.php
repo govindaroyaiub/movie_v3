@@ -14,7 +14,8 @@ class LaraController extends Controller
     public function nl_landing()
     {   
         $title = new \Imdb\Title(7275830);
-        $rating = $title->rating();
+        // $rating = $title->rating();
+        $rating = 7.2;
         
         $app_url = 'https://movie.planetnine.com/lara';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
@@ -113,7 +114,8 @@ class LaraController extends Controller
     public function en_landing()
     {
         $title = new \Imdb\Title(7275830);
-        $rating = $title->rating();
+        // $rating = $title->rating();
+        $rating = 7.2;
         
         $app_url = 'https://movie.planetnine.com/lara';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();

@@ -165,7 +165,7 @@
 
 <section id="root" class="mvoie-body">
     <header class="movie-header sibyl-header position-relative text-white py-3">
-        <h1 class="text-center m-0">{{ $movie_details->movie_title }}
+        <h1 class="text-center m-0 w-100">{{ $movie_details->movie_title }}
             -
             <span class="movie-tagline">{{ $movie_details->tagline_nl }}</span>
         </h1>
