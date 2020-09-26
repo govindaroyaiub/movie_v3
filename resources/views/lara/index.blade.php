@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short_nl }}, met {{ $movie_details->actors }}. In de bioscoop {{ $first_release_date }}.">
+    <meta name="description"
+          content="{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short_nl }}, met {{ $movie_details->actors }}. In de bioscoop {{ $first_release_date }}.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $movie_details->movie_title }} - {{ $movie_details->tagline_nl }}</title>
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
@@ -194,7 +195,7 @@
                             </li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('vdo', this)">Videos</a></li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('sy', this)">Synopsis</a></li>
-                            <!--  <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
+                        <!--  <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
                                         class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li> -->
                             <li class="hastag">{{ $movie_details->hashtag }}</li>
                         </ul>
@@ -306,7 +307,7 @@
                             <p><span>Acteurs:</span> {{ $movie_details->actors }}</p>
                             <p><span>Speeltijd:</span> {{ $movie_details->duration }}</p>
                             @if($rating >= 6)
-                            <p><span>Ratings:</span> {{ $rating }}</p>
+                                <p><span>Ratings:</span> {{ $rating }}</p>
                             @else
 
                             @endif
@@ -317,49 +318,50 @@
         </div>
 
         @if(count($reviews) > 0)
-        <section class="sibyl-review-area review-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 mx-auto">
-                        <div class="reviews-slider sibyl-review-slider">
-                            <div class="slider single-item">
-                                @foreach($reviews as $review)
-                                    <div class="text-center">
-                                        @php $rating = $review->ratings; @endphp
-                                        @if($rating > 0)
-                                            @foreach(range(1, 5) as $i)
-                                                <span class="fa-stack">
+            <section class="sibyl-review-area review-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 mx-auto">
+                            <div class="reviews-slider sibyl-review-slider">
+                                <div class="slider single-item">
+                                    @foreach($reviews as $review)
+                                        <div class="text-center">
+                                            @php $rating = $review->ratings; @endphp
+                                            @if($rating > 0)
+                                                @foreach(range(1, 5) as $i)
+                                                    <span class="fa-stack">
                                             <i class="far fa-star fa-stack-1x"></i>
                                         @if($rating >0)
-                                                        @if($rating >0.5)
-                                                            <i class="fas fa-star fa-stack-1x"></i>
-                                                        @else
-                                                            <i class="fas fa-star-half fa-stack-1x"></i>
+                                                            @if($rating >0.5)
+                                                                <i class="fas fa-star fa-stack-1x"></i>
+                                                            @else
+                                                                <i class="fas fa-star-half fa-stack-1x"></i>
+                                                            @endif
                                                         @endif
-                                                    @endif
-                                                    @php $rating--; @endphp
+                                                        @php $rating--; @endphp
                                         </span>
-                                            @endforeach
-                                        @else
+                                                @endforeach
+                                            @else
 
-                                        @endif
+                                            @endif
 
-                                        {{-- <small>({{ $review->ratings }})</small>--}}
+                                            {{-- <small>({{ $review->ratings }})</small>--}}
 
-                                        <h3><i class="fa fa-quote-left"></i> {{ $review->review_text }} <i
-                                                class="fa fa-quote-right"></i></h3>
+                                            <h3><i class="fa fa-quote-left"></i> {{ $review->review_text }} <i
+                                                    class="fa fa-quote-right"></i></h3>
 
-                                        <p><a href="{{$review->source_link}}" target="_blank">{{ $review->source }}</a>
-                                        </p>
+                                            <p><a href="{{$review->source_link}}"
+                                                  target="_blank">{{ $review->source }}</a>
+                                            </p>
 
-                                    </div>
-                                @endforeach
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
         @endif
 
         <footer class="movie-footer sibyl-movie-footer text-white text-center">
@@ -409,7 +411,6 @@
                         </div>
 
 
-
                         <div class="footer-dist-logos d-flex justify-content-between align-items-center">
                             <a href="{{ $d_details['email'] }}" target="_blank"><img
                                     src="/distributors/{{ $d_details['logo'] }}" alt="{{ $d_details['name'] }}"></a>
@@ -417,18 +418,18 @@
                                     src="{{ asset('images/p9.png') }}"
                                     alt="planetnine.com"></a>
                             @if($mp_details != NULL)
-                            <a href="{{ $mp_details['email'] }}" target="_blank"><img
-                                    src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
+                                <a href="{{ $mp_details['email'] }}" target="_blank"><img
+                                        src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
                             @else
 
                             @endif
                         </div>
 
 
-
                         <hr class="bg-secondary">
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="sibyl-copy-text">&copy; Alle rechten voorbehouden {{$d_details['name']}}, Planetnine - <?= Date('Y') ?></p>
+                            <p class="sibyl-copy-text">&copy; Alle rechten voorbehouden {{$d_details['name']}},
+                                Planetnine - <?= Date('Y') ?></p>
                             <ul class="footer-social">
                                 <li class="mr-2"><a target="_blank" href="{{ $movie_details->fb_link }}">
                                         <img src="{{ asset('images/facebook.svg') }}" alt="">

@@ -80,6 +80,17 @@
             font-family: 'Thasadith', sans-serif !important;
         }
 
+        .cunningham-header {
+            padding: 0 25px;
+        }
+
+        [data-lang='cunningham_fr'] {
+            position: absolute;
+            top: 8px;
+            right: 60px;
+            cursor: pointer;
+        }
+
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
@@ -93,7 +104,7 @@
 <a class="trailer-video d-none" href="{{ $youtube_url }}?autoplay=1&mute=1"></a>
 
 <section id="root" class="mvoie-body">
-    <header class="movie-header sibyl-header position-relative text-white py-3">
+    <header class="movie-header sibyl-header position-relative text-white py-3 cunningham-header">
         <h1 class="text-center m-0">{{ $movie_details->movie_title }}
             -
             <span class="movie-tagline">{{ $movie_details->tagline_nl }}</span>
@@ -101,6 +112,7 @@
 
         <div class="flags">
             <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-block" alt="">
+            <img data-lang="cunningham_fr" src="{{ asset('images/fr.svg') }}" class="d-block" alt="">
             <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-none" alt="">
         </div>
 

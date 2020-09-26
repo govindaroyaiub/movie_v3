@@ -65,6 +65,10 @@ if (isUrlNl) {
     en.addEventListener('click', () => location.href = urlEn);
 }
 
+
+// localisation redirection
+document.querySelector('[data-lang="cunningham_fr"]').addEventListener('click', () => location.href = '/cunninghamBE_fr');
+
 //
 const mapDiv = document.querySelector('.map');
 const mapmarker = document.querySelector('.mapmarker');
@@ -109,13 +113,11 @@ if (location.pathname === '/' || location.pathname === '/_en') {
     endpoint = `/GliAnniPiuBelli/api/shows`;
 } else if (location.pathname === '/Sibyl' || location.pathname === '/Sibyl_en') {
     endpoint = `/Sibyl/api/shows`;
-} else if (location.pathname === '/cunningham' || location.pathname === '/cunningham_en') {
+} else if (location.pathname === '/cunningham' || location.pathname === '/cunningham_en' || location.pathname === '/cunninghamBE') {
     endpoint = `/cunningham/api/shows`;
 } else if (location.pathname === '/lara' || location.pathname === '/lara_en') {
     endpoint = `/lara/api/shows`;
 }
-
-
 
 
 axios.get(endpoint)
@@ -253,10 +255,10 @@ function buildLocationList(data) {
 
                         <p class="m-timestamp">
                         ${logic1 ? st1 : '' || logic2 ? st2 : ''}
-                        ${twod_threed ? '2D & 3D' : '' }
-                        ${two_d ? '2D' : '' }
-                        ${three_d ? '3D' : '' }
-                        ${nothing_d ? '' : '' }
+                        ${twod_threed ? '2D & 3D' : ''}
+                        ${two_d ? '2D' : ''}
+                        ${three_d ? '3D' : ''}
+                        ${nothing_d ? '' : ''}
                         </p>
                       </div>
                       <div class="m-wrap-footer">
@@ -377,10 +379,10 @@ function buildLocationList(data) {
                         <p class="m-address">${m.address}, ${m.city}</p>
                         <p class="m-timestamp">
                          ${logic1 ? st1 : '' || logic2 ? st2 : ''}
-                         ${twod_threed ? '2D & 3D' : '' }
-                        ${two_d ? '2D' : '' }
-                        ${three_d ? '3D' : '' }
-                        ${nothing_d ? '' : '' }
+                         ${twod_threed ? '2D & 3D' : ''}
+                        ${two_d ? '2D' : ''}
+                        ${three_d ? '3D' : ''}
+                        ${nothing_d ? '' : ''}
                         </p>
                       </div>
                       <div class="m-wrap-footer">
