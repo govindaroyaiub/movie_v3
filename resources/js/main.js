@@ -67,7 +67,10 @@ if (isUrlNl) {
 
 
 // localisation redirection
-document.querySelector('[data-lang="cunningham_fr"]').addEventListener('click', () => location.href = '/cunninghamBE_fr');
+const c_fr = document.querySelector('[data-lang="cunningham_fr"]');
+if (c_fr) {
+    c_fr.addEventListener('click', () => location.href = '/cunninghamBE_fr');
+}
 
 //
 const mapDiv = document.querySelector('.map');
@@ -113,7 +116,11 @@ if (location.pathname === '/' || location.pathname === '/_en') {
     endpoint = `/GliAnniPiuBelli/api/shows`;
 } else if (location.pathname === '/Sibyl' || location.pathname === '/Sibyl_en') {
     endpoint = `/Sibyl/api/shows`;
-} else if (location.pathname === '/cunningham' || location.pathname === '/cunningham_en' || location.pathname === '/cunninghamBE') {
+} else if (
+    location.pathname === '/cunninghamBE_fr' ||
+    location.pathname === '/cunningham' ||
+    location.pathname === '/cunningham_en' ||
+    location.pathname === '/cunninghamBE') {
     endpoint = `/cunningham/api/shows`;
 } else if (location.pathname === '/lara' || location.pathname === '/lara_en') {
     endpoint = `/lara/api/shows`;
