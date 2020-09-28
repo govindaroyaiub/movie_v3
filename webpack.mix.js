@@ -40,3 +40,9 @@ mix.js([
     'public/movie/js/jquery.magnific-popup.js',
 ], 'public/js/main.js')
     .version();
+
+
+mix.js([
+    'resources/js/mainBE.js',
+], 'public/js/mainBE.js')
+    .version();

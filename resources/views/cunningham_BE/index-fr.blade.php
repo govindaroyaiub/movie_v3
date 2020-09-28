@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short }}, with {{ $movie_details->actors }}. In cinemas {{ $first_release_date }}.">
+    <meta name="description"
+          content="{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short }}, with {{ $movie_details->actors }}. In cinemas {{ $first_release_date }}.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $movie_details->movie_title }} - {{ $movie_details->tagline_fr }}</title>
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
@@ -119,7 +120,7 @@
                             </li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('vdo', this)">Vidéos</a></li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('sy', this)">Synopsis</a></li>
-                            <!-- <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
+                        <!-- <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
                                         class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li> -->
                             <li class="hastag">{{ $movie_details->hashtag }}</li>
                         </ul>
@@ -230,7 +231,7 @@
                             <p><span>Moulages:</span> {{ $movie_details->actors }}</p>
                             <p><span>Durée:</span> {{ $movie_details->duration }}</p>
                             @if($rating >= 6)
-                            <p><span>Ratings:</span> {{ $rating }}</p>
+                                <p><span>Ratings:</span> {{ $rating }}</p>
                             @else
 
                             @endif
@@ -242,47 +243,47 @@
     </div>
 
     @if(count($reviews) > 0)
-    <section class="review-area sibyl-review-area">
-        <div class="container">
-            <div class="col-md-10 mx-auto">
-                <div class="reviews-slider sibyl-review-slider">
-                    <div class="slider single-item">
-                        @foreach($reviews as $review)
-                            <div class="text-center">
-                                @php $rating = $review->ratings; @endphp
-                                @if($rating > 0)
-                                    @foreach(range(1, 5) as $i)
-                                        <span class="fa-stack">
+        <section class="review-area sibyl-review-area">
+            <div class="container">
+                <div class="col-md-10 mx-auto">
+                    <div class="reviews-slider sibyl-review-slider">
+                        <div class="slider single-item">
+                            @foreach($reviews as $review)
+                                <div class="text-center">
+                                    @php $rating = $review->ratings; @endphp
+                                    @if($rating > 0)
+                                        @foreach(range(1, 5) as $i)
+                                            <span class="fa-stack">
                                             <i class="far fa-star fa-stack-1x"></i>
                                         @if($rating >0)
-                                                @if($rating >0.5)
-                                                    <i class="fas fa-star fa-stack-1x"></i>
-                                                @else
-                                                    <i class="fas fa-star-half fa-stack-1x"></i>
+                                                    @if($rating >0.5)
+                                                        <i class="fas fa-star fa-stack-1x"></i>
+                                                    @else
+                                                        <i class="fas fa-star-half fa-stack-1x"></i>
+                                                    @endif
                                                 @endif
-                                            @endif
-                                            @php $rating--; @endphp
+                                                @php $rating--; @endphp
                                         </span>
-                                    @endforeach
-                                @else
+                                        @endforeach
+                                    @else
 
-                                @endif
+                                    @endif
 
-                                {{-- <small>({{ $review->ratings }})</small>--}}
+                                    {{-- <small>({{ $review->ratings }})</small>--}}
 
-                                <h3><i class="fa fa-quote-left"></i> {{ $review->review_text }} <i
-                                        class="fa fa-quote-right"></i></h3>
+                                    <h3><i class="fa fa-quote-left"></i> {{ $review->review_text }} <i
+                                            class="fa fa-quote-right"></i></h3>
 
-                                <p><a href="{{$review->source_link}}" target="_blank">{{ $review->source }}</a>
-                                </p>
+                                    <p><a href="{{$review->source_link}}" target="_blank">{{ $review->source }}</a>
+                                    </p>
 
-                            </div>
-                        @endforeach
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     @endif
 
     <footer class="movie-footer sibyl-movie-footer text-white text-center">
@@ -298,7 +299,8 @@
                                href="#Gebruiksvoorwaarden">Conditions d'utilisation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#privacy-policy">Politique de confidentialité</a>
+                            <a class="nav-link" data-toggle="tab" href="#privacy-policy">Politique de
+                                confidentialité</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#credits">Crédits</a>
@@ -336,9 +338,9 @@
                         <a href="https://www.planetnine.com/" target="_blank"><img
                                 src="{{ asset('images/p9.png') }}"
                                 alt="planetnine.com"></a>
-                                @if($mp_details != NULL)
-                        <a href="{{ $mp_details['email'] }}" target="_blank"><img
-                                src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
+                        @if($mp_details != NULL)
+                            <a href="{{ $mp_details['email'] }}" target="_blank"><img
+                                    src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
                         @else
 
                         @endif
@@ -347,7 +349,8 @@
 
                     <hr class="bg-secondary">
                     <div class="d-flex justify-content-between align-items-center">
-                        <p class="sibyl-copy-text">&copy; Tous les droits sont réservés {{$d_details['name']}}, Planetnine - <?= Date('Y') ?></p>
+                        <p class="sibyl-copy-text">&copy; Tous les droits sont réservés {{$d_details['name']}},
+                            Planetnine - <?= Date('Y') ?></p>
                         <ul class="footer-social">
                             <li class="mr-2"><a target="_blank" href="{{ $movie_details->fb_link }}">
                                     <img src="{{ asset('images/facebook.svg') }}" alt="">
@@ -365,37 +368,37 @@
 
 </section>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone.min.js"></script>
-    <script src='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
-    <script src="{{ mix('js/main.js') }}"></script>
-    <script>
-        document.querySelectorAll('.tablink').forEach(navTabLink => navTabLink.addEventListener('click', e => e.preventDefault()));
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone.min.js"></script>
+<script src='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+<script src="{{ mix('js/mainBE.js') }}"></script>
+<script>
+    document.querySelectorAll('.tablink').forEach(navTabLink => navTabLink.addEventListener('click', e => e.preventDefault()));
 
-        function openPage(pageName, element) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            document.getElementById(pageName).style.display = "block";
+    function openPage(pageName, element) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
         }
+        tablinks = document.getElementsByClassName("tablink");
+        document.getElementById(pageName).style.display = "block";
+    }
 
-        document.getElementById("defaultOpen").click();
+    document.getElementById("defaultOpen").click();
 
-        $(document).ready(function () {
-            $('.single-item').slick({
-                dots: false,
-                infinite: false,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                speed: 300,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-            });
+    $(document).ready(function () {
+        $('.single-item').slick({
+            dots: false,
+            infinite: false,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
         });
-    </script>
+    });
+</script>
 
 
 </body>
