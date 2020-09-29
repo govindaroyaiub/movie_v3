@@ -8,6 +8,8 @@
     <title>{{ $movie_details->movie_title }} - {{ $movie_details->tagline_nl }}</title>
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
 
@@ -91,6 +93,16 @@
             cursor: pointer;
         }
 
+
+        .footer-tab button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+        }
+
+        .footer-tab button:focus {
+            outline: none;
+        }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
@@ -309,47 +321,31 @@
                 <div class="row">
                     <div class="col-md-8 mx-auto">
 
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#cookies">Cookies</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab"
-                                   href="#Gebruiksvoorwaarden">Gebruiksvoorwaarden</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#privacy-policy">Privacy Policy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#credits">Credits</a>
-                            </li>
-                        </ul>
-                        <hr class="bg-secondary">
+                        <!-- Tab goes here -->
+                        <div class="footer-tab" x-data="{ tab: '' }">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button :class="{ 'active': tab === 'cookies' }" @click="tab = 'cookies'">Cookies</button>
+                                <button :class="{ 'active': tab === 'gebruiksvoorwaarden' }" @click="tab = 'gebruiksvoorwaarden'">Gebruiksvoorwaarden</button>
+                                <button :class="{ 'active': tab === 'privacyPolicy' }" @click="tab = 'privacyPolicy'">Privacy Policy</button>
+                                <button :class="{ 'active': tab === 'credits' }" @click="tab = 'credits'">Credits</button>
+                            </div>
 
-                        <div class="tab-content pt-3" style="color:black;">
-                            <div id="cookies" class="container tab-pane">
-                                <p>
-                                    {{ $movie_details->cookies_nl }}
-                                </p>
+                            <hr class="bg-secondary">
+
+                            <div x-show="tab === 'cookies'">
+                                {{ $movie_details->cookies_nl }}
                             </div>
-                            <div id="Gebruiksvoorwaarden" class="container tab-pane fade">
-                                <p>
-                                    {{ $movie_details->terms_of_use_nl }}
-                                </p>
+                            <div x-show="tab === 'gebruiksvoorwaarden'">
+                                {{ $movie_details->terms_of_use_nl }}
                             </div>
-                            <div id="privacy-policy" class="container tab-pane fade">
-                                <p>
-                                    {{ $movie_details->privacy_policy_nl }}
-                                </p>
+                            <div x-show="tab === 'privacyPolicy'">
+                                {{ $movie_details->privacy_policy_nl }}
                             </div>
-                            <div id="credits" class="container tab-pane fade">
-                                <p>
-                                    {{ $movie_details->credits_nl }}
-                                </p>
+                            <div x-show="tab === 'credits'">
+                                {{ $movie_details->credits_nl }}
                             </div>
                         </div>
-
-
+                        <!-- end of Tab here -->
 
                         <div class="footer-dist-logos d-flex justify-content-between align-items-center">
                             <a href="{{ $d_details['email'] }}" target="_blank"><img
@@ -389,6 +385,7 @@
 
 </section>
 
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone.min.js"></script>
 <script src='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
