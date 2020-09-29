@@ -16,7 +16,7 @@ class CunninghamBEController extends Controller
         $title = new \Imdb\Title(8574836);
         $rating = $title->rating();
         
-        $app_url = 'https://movie.planetnine.com/cunningham-be';
+        $app_url = 'https://movie.planetnine.com/cunninghamBE';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         if ($movie_details == NULL) {
@@ -116,7 +116,7 @@ class CunninghamBEController extends Controller
         $title = new \Imdb\Title(8574836);
         $rating = $title->rating();
         
-        $app_url = 'https://movie.planetnine.com/cunningham-be';
+        $app_url = 'https://movie.planetnine.com/cunninghamBE';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         if ($movie_details == NULL) {
@@ -201,7 +201,7 @@ class CunninghamBEController extends Controller
         $title = new \Imdb\Title(8574836);
         $rating = $title->rating();
         
-        $app_url = 'https://movie.planetnine.com/cunningham-be';
+        $app_url = 'https://movie.planetnine.com/cunninghamBE';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         if ($movie_details == NULL) {
@@ -298,7 +298,7 @@ class CunninghamBEController extends Controller
     
     public function showsApi()
     {
-        $app_url = 'https://movie.planetnine.com/cunningham-be';
+        $app_url = 'https://movie.planetnine.com/cunninghamBE';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         $showtime = Showtime::join('show_location_static', 'movie_showtimes.cinema_id', 'show_location_static.id')
