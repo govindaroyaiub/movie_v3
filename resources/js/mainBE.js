@@ -3,7 +3,7 @@ window.$ = window.jQuery = require('jquery');
 window.axios = require('axios');
 
 
-$(document).ready(function () {
+$(document).ready(function ($) {
     setTimeout(function () {
         $('.trailer-video').trigger('click');
     }, 0);
