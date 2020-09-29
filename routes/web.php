@@ -75,6 +75,21 @@ Route::domain('lara-defilm.nl')->group(function(){
     Route::get('/api/shows', 'LaraController@showsApi');
 });
 
+//cunningham-film.be
+Route::domain('cunningham-film.be')->group(function(){
+    Route::get('/', 'CunninghamBEController@nl_landing');
+    Route::get('/_en', 'CunninghamBEController@en_landing');
+    Route::get('/_fr', 'CunninghamBEController@fr_landing');
+    Route::get('/api/shows', 'CunninghamBEController@showsApi');
+});
+
+Route::domain('www.cunningham-film.be')->group(function(){
+    Route::get('/', 'CunninghamBEController@nl_landing');
+    Route::get('/_en', 'CunninghamBEController@en_landing');
+    Route::get('/_fr', 'CunninghamBEController@fr_landing');
+    Route::get('/api/shows', 'CunninghamBEController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
