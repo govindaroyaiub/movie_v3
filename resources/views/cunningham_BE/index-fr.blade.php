@@ -308,7 +308,7 @@
                     <div class="footer-tab" x-data="{ tab: '' }">
                         <div class="d-flex justify-content-between align-items-center">
                             <button :class="{ 'active': tab === 'cookies' }" @click="tab = 'cookies'">Cookies</button>
-                            <button :class="{ 'active': tab === 'gebruiksvoorwaarden' }" @click="tab = 'gebruiksvoorwaarden'">Gebruiksvoorwaarden</button>
+                            <button :class="{ 'active': tab === 'gebruiksvoorwaarden' }" @click="tab = 'gebruiksvoorwaarden'">Conditions d'utilisation</button>
                             <button :class="{ 'active': tab === 'privacyPolicy' }" @click="tab = 'privacyPolicy'">Privacy Policy</button>
                             <button :class="{ 'active': tab === 'credits' }" @click="tab = 'credits'">Credits</button>
                         </div>
