@@ -88,8 +88,8 @@
 
         [data-lang='cunningham_fr'] {
             position: absolute;
-            top: 8px;
-            right: 60px;
+            top: 13px;
+            right: 15px;
             cursor: pointer;
         }
 
@@ -116,14 +116,14 @@
 <a class="trailer-video d-none" href="{{ $youtube_url }}?autoplay=1&mute=1"></a>
 
 <section id="root" class="mvoie-body">
-    <header class="movie-header sibyl-header position-relative text-white py-3 cunningham-header">
+    <header class="movie-header sibyl-header position-relative text-white py-3 text-center cunningham-header">
         <h1 class="text-center m-0">{{ $movie_details->movie_title }}
             -
             <span class="movie-tagline">{{ $movie_details->tagline_nl }}</span>
         </h1>
 
         <div class="flags">
-            <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-block" alt="">
+            <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-none" alt="">
             <img data-lang="cunningham_fr" src="{{ asset('images/fr.svg') }}" class="d-block" alt="">
             <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-none" alt="">
         </div>
