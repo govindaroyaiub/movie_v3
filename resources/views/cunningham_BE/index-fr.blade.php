@@ -308,7 +308,7 @@
                     <div class="footer-tab" x-data="{ tab: '' }">
                         <div class="d-flex justify-content-between align-items-center">
                             <button :class="{ 'active': tab === 'cookies' }" @click="tab = 'cookies'">Cookies</button>
-                            <button :class="{ 'active': tab === 'gebruiksvoorwaarden' }" @click="tab = 'gebruiksvoorwaarden'">Gebruiksvoorwaarden</button>
+                            <button :class="{ 'active': tab === 'gebruiksvoorwaarden' }" @click="tab = 'gebruiksvoorwaarden'">Conditions d'utilisation</button>
                             <button :class="{ 'active': tab === 'privacyPolicy' }" @click="tab = 'privacyPolicy'">Privacy Policy</button>
                             <button :class="{ 'active': tab === 'credits' }" @click="tab = 'credits'">Credits</button>
                         </div>
@@ -316,16 +316,16 @@
                         <hr class="bg-secondary">
 
                         <div x-show="tab === 'cookies'">
-                            {{ $movie_details->cookies_nl }}
+                            {{ $movie_details->cookies_fr }}
                         </div>
                         <div x-show="tab === 'gebruiksvoorwaarden'">
-                            {{ $movie_details->terms_of_use_nl }}
+                            {{ $movie_details->terms_of_use_fr }}
                         </div>
                         <div x-show="tab === 'privacyPolicy'">
-                            {{ $movie_details->privacy_policy_nl }}
+                            {{ $movie_details->privacy_policy_fr }}
                         </div>
                         <div x-show="tab === 'credits'">
-                            {{ $movie_details->credits_nl }}
+                            {{ $movie_details->credits_fr }}
                         </div>
                     </div>
                     <!-- end of Tab here -->
