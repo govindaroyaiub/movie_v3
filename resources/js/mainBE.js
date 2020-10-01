@@ -220,7 +220,7 @@ function buildLocationList(data) {
                     var dateTime;
 
                     if (isUrlNl) {
-                        dateTime = 'From ' + moment(m.date).locale('en').format("LL");
+                        dateTime = 'à partir du ' + moment(m.date).locale('fr').format("LL");
                     } else {
                         dateTime = 'Vanaf ' + moment(m.date).locale('nl').format("LL");
                     }
@@ -260,8 +260,8 @@ function buildLocationList(data) {
                         </p>
                       </div>
                       <div class="m-wrap-footer">
-                         <a id="book-button" class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'Au Théâtre' : 'To Theatre'}</a>
-                        <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Voir Les Lieux' : 'Show On Map' }</a>
+                         <a id="book-button" class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'Au Théâtre' : 'Naar theater'}</a>
+                        <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Voir Les Lieux' : 'Bekijk kaart' }</a>
                       </div>
                     </div>
                    </div>
@@ -346,7 +346,7 @@ function buildLocationList(data) {
                     var dateTime;
 
                     if (isUrlNl) {
-                        dateTime = 'From ' + moment(m.date).locale('en').format("LL");
+                        dateTime = 'à partir du ' + moment(m.date).locale('fr').format("LL");
                     } else {
                         dateTime = 'Vanaf ' + moment(m.date).locale('nl').format("LL");
                     }
@@ -384,8 +384,8 @@ function buildLocationList(data) {
                         </p>
                       </div>
                       <div class="m-wrap-footer">
-                        <a id="book-button" class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'Au Théâtre' : 'To Theatre'}</a>
-                        <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Voir Les Lieux' : 'Show On Map' }</a>
+                        <a id="book-button" class="m-book-btn p9-btn" target="_blank" href="http://${m.url}">${isUrlNl ? 'Au Théâtre' : 'Naar theater'}</a>
+                        <a class="m-map-btn title" id="link-${m.id}" href="#">${isUrlNl ? 'Voir Les Lieux' : 'Bekijk kaart' }</a>
                       </div>
                     </div>
                     </div>
