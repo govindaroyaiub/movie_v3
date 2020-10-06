@@ -101,6 +101,7 @@
             right: 20px;
             text-align: right;
             border-radius: 4px;
+            z-index: 200;
         }
 
         .localisation-dropdown ul {
