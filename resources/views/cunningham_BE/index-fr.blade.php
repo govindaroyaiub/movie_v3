@@ -163,7 +163,7 @@
                     <div class="showtimes">
                         <form class="search-form">
                             <input class="search-input map-search" type="text" name="search"
-                                   placeholder="Search.."
+                                   placeholder="Chercher.."
                                    autocomplete="off">
                             <button class="search-button" type="submit">&times;</button>
                         </form>
@@ -189,7 +189,7 @@
                             </p>
                         </div>
 
-                        <p class="text-center my-2">WATCH THE TRAILER</p>
+                        <p class="text-center my-2">DÉCOUVREZ LA BANDE-ANNONCE</p>
 
                         <div class="youtube-trailer">
                             <div class="iframe-container mb-2">
@@ -309,7 +309,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <button :class="{ 'active': tab === 'cookies' }" @click="tab = 'cookies'">Cookies</button>
                             <button :class="{ 'active': tab === 'gebruiksvoorwaarden' }" @click="tab = 'gebruiksvoorwaarden'">Conditions d'utilisation</button>
-                            <button :class="{ 'active': tab === 'privacyPolicy' }" @click="tab = 'privacyPolicy'">Privacy Policy</button>
+                            <button :class="{ 'active': tab === 'privacyPolicy' }" @click="tab = 'privacyPolicy'">Protection Des Données</button>
                             <button :class="{ 'active': tab === 'credits' }" @click="tab = 'credits'">Credits</button>
                         </div>
 
