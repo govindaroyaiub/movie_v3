@@ -50,21 +50,21 @@ const urlEn = `${location.pathname}_en`;
 const urlFr = `${location.pathname}_fr`;
 const isUrlNl = urlNl.includes('_');
 
-
-if (isUrlNl) {
-    let slicedUrl = urlEn.substr(0, urlEn.indexOf(('_')));
-    nl.addEventListener('click', () => location.href = slicedUrl);
-} else {
-    en && en.addEventListener('click', () => location.href = urlEn);
-}
-
-
-// localisation redirection
-const c_fr = document.querySelector('[data-lang="cunningham_fr"]');
-
-if (c_fr) {
-    c_fr.addEventListener('click', () => location.href = '/cunninghamBE_fr');
-}
+//
+// if (isUrlNl) {
+//     let slicedUrl = urlEn.substr(0, urlEn.indexOf(('_')));
+//     nl.addEventListener('click', () => location.href = slicedUrl);
+// } else {
+//     en && en.addEventListener('click', () => location.href = urlEn);
+// }
+//
+//
+// // localisation redirection
+// const c_fr = document.querySelector('[data-lang="cunningham_fr"]');
+//
+// if (c_fr) {
+//     c_fr.addEventListener('click', () => location.href = '/cunninghamBE_fr');
+// }
 
 //
 const mapDiv = document.querySelector('.map');
