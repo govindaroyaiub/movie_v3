@@ -167,7 +167,8 @@
 
 
         <div class="localisation-dropdown" x-data="{ open: false }">
-            <ul @click="open = !open">
+            <ul @mouseenter="open = true"
+                @mouseleave="open = false">
                 <li><a href="javascript:void(0)">NL</a></li>
                 <li x-show="open"><a href="{{ URL::to('/') }}/cunninghamBE_fr">FR</a></li>
             </ul>

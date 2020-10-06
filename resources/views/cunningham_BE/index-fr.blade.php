@@ -10,7 +10,8 @@
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+            defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
 
@@ -145,13 +146,16 @@
         <h1 class="text-center m-0">{{ $movie_details->movie_title }}
             - {{ $movie_details->tagline_fr }}</h1>
 
-{{--        <div class="flags">--}}
-{{--            <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-none" alt="">--}}
-{{--            <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-block" alt="">--}}
-{{--        </div>--}}
+        {{--        <div class="flags">--}}
+        {{--            <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-none" alt="">--}}
+        {{--            <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-block" alt="">--}}
+        {{--        </div>--}}
 
         <div class="localisation-dropdown" x-data="{ open: false }">
-            <ul @click="open = !open">
+            <ul
+                @mouseenter="open = true"
+                @mouseleave="open = false"
+            >
                 <li><a href="javascript:void(0)">FR</a></li>
                 <li x-show="open"><a href=" {{ URL::to('/') }}/cunninghamBE">NL</a></li>
             </ul>
@@ -352,8 +356,12 @@
                     <div class="footer-tab" x-data="{ tab: '' }">
                         <div class="d-flex justify-content-between align-items-center">
                             <button :class="{ 'active': tab === 'cookies' }" @click="tab = 'cookies'">Cookies</button>
-                            <button :class="{ 'active': tab === 'gebruiksvoorwaarden' }" @click="tab = 'gebruiksvoorwaarden'">Conditions d'utilisation</button>
-                            <button :class="{ 'active': tab === 'privacyPolicy' }" @click="tab = 'privacyPolicy'">Protection Des Données</button>
+                            <button :class="{ 'active': tab === 'gebruiksvoorwaarden' }"
+                                    @click="tab = 'gebruiksvoorwaarden'">Conditions d'utilisation
+                            </button>
+                            <button :class="{ 'active': tab === 'privacyPolicy' }" @click="tab = 'privacyPolicy'">
+                                Protection Des Données
+                            </button>
                             <button :class="{ 'active': tab === 'credits' }" @click="tab = 'credits'">Credits</button>
                         </div>
 
