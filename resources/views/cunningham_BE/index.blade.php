@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short_nl }}, met {{ $movie_details->actors }}. In de bioscoop {{ $first_release_date }}.">
+    <meta name="description"
+          content="{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short_nl }}, met {{ $movie_details->actors }}. In de bioscoop {{ $first_release_date }}.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $movie_details->movie_title }} - {{ $movie_details->tagline_nl }}</title>
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+            defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
 
@@ -103,6 +105,41 @@
         .footer-tab button:focus {
             outline: none;
         }
+
+        .localisation-dropdown {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            text-align: right;
+            border-radius: 4px;
+        }
+
+        .localisation-dropdown ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background-color: transparent;
+            border: solid 1px #fff;
+            color: #fff;
+        }
+
+        .localisation-dropdown li:not(:first-child) {
+            border-top: solid 1px #fff;
+        }
+
+        .localisation-dropdown a {
+            display: inline-block;
+            color: inherit;
+            font-weight: 600;
+            transition: all .2s;
+            padding: 4px 8px;
+        }
+
+        .localisation-dropdown a:focus,
+        .localisation-dropdown a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
@@ -122,10 +159,18 @@
             <span class="movie-tagline">{{ $movie_details->tagline_nl }}</span>
         </h1>
 
-        <div class="flags">
-            <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-none" alt="">
-            <img data-lang="cunningham_fr" src="{{ asset('images/fr.svg') }}" class="d-block" alt="">
-            <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-none" alt="">
+        {{--        <div class="flags">--}}
+        {{--            <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-none" alt="">--}}
+        {{--            <img data-lang="cunningham_fr" src="{{ asset('images/fr.svg') }}" class="d-block" alt="">--}}
+        {{--            <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-none" alt="">--}}
+        {{--        </div>--}}
+
+
+        <div class="localisation-dropdown" x-data="{ open: false }">
+            <ul @click="open = !open">
+                <li><a href="javascript:void(0)">NL</a></li>
+                <li x-show="open"><a href="{{ URL::to('/') }}/cunninghamBE_fr">FR</a></li>
+            </ul>
         </div>
 
     </header>
@@ -147,7 +192,7 @@
                             </li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('vdo', this)">Videos</a></li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('sy', this)">Synopsis</a></li>
-                            <!--  <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
+                        <!--  <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
                                         class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li> -->
                             <li class="hastag">{{ $movie_details->hashtag }}</li>
                         </ul>
@@ -259,7 +304,7 @@
                             <p><span>Acteurs:</span> {{ $movie_details->actors }}</p>
                             <p><span>Speeltijd:</span> {{ $movie_details->duration }}</p>
                             @if($rating >= 6)
-                            <p><span>Ratings:</span> {{ $rating }}</p>
+                                <p><span>Ratings:</span> {{ $rating }}</p>
                             @else
 
                             @endif
@@ -270,49 +315,50 @@
         </div>
 
         @if(count($reviews) > 0)
-        <section class="sibyl-review-area review-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 mx-auto">
-                        <div class="reviews-slider sibyl-review-slider">
-                            <div class="slider single-item">
-                                @foreach($reviews as $review)
-                                    <div class="text-center">
-                                        @php $rating = $review->ratings; @endphp
-                                        @if($rating > 0)
-                                            @foreach(range(1, 5) as $i)
-                                                <span class="fa-stack">
+            <section class="sibyl-review-area review-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 mx-auto">
+                            <div class="reviews-slider sibyl-review-slider">
+                                <div class="slider single-item">
+                                    @foreach($reviews as $review)
+                                        <div class="text-center">
+                                            @php $rating = $review->ratings; @endphp
+                                            @if($rating > 0)
+                                                @foreach(range(1, 5) as $i)
+                                                    <span class="fa-stack">
                                             <i class="far fa-star fa-stack-1x"></i>
                                         @if($rating >0)
-                                                        @if($rating >0.5)
-                                                            <i class="fas fa-star fa-stack-1x"></i>
-                                                        @else
-                                                            <i class="fas fa-star-half fa-stack-1x"></i>
+                                                            @if($rating >0.5)
+                                                                <i class="fas fa-star fa-stack-1x"></i>
+                                                            @else
+                                                                <i class="fas fa-star-half fa-stack-1x"></i>
+                                                            @endif
                                                         @endif
-                                                    @endif
-                                                    @php $rating--; @endphp
+                                                        @php $rating--; @endphp
                                         </span>
-                                            @endforeach
-                                        @else
+                                                @endforeach
+                                            @else
 
-                                        @endif
+                                            @endif
 
-                                        {{-- <small>({{ $review->ratings }})</small>--}}
+                                            {{-- <small>({{ $review->ratings }})</small>--}}
 
-                                        <h3><i class="fa fa-quote-left"></i> {{ $review->review_text }} <i
-                                                class="fa fa-quote-right"></i></h3>
+                                            <h3><i class="fa fa-quote-left"></i> {{ $review->review_text }} <i
+                                                    class="fa fa-quote-right"></i></h3>
 
-                                        <p><a href="{{$review->source_link}}" target="_blank">{{ $review->source }}</a>
-                                        </p>
+                                            <p><a href="{{$review->source_link}}"
+                                                  target="_blank">{{ $review->source }}</a>
+                                            </p>
 
-                                    </div>
-                                @endforeach
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
         @endif
 
         <footer class="movie-footer sibyl-movie-footer text-white text-center">
@@ -324,10 +370,16 @@
                         <!-- Tab goes here -->
                         <div class="footer-tab" x-data="{ tab: '' }">
                             <div class="d-flex justify-content-between align-items-center">
-                                <button :class="{ 'active': tab === 'cookies' }" @click="tab = 'cookies'">Cookies</button>
-                                <button :class="{ 'active': tab === 'gebruiksvoorwaarden' }" @click="tab = 'gebruiksvoorwaarden'">Gebruiksvoorwaarden</button>
-                                <button :class="{ 'active': tab === 'privacyPolicy' }" @click="tab = 'privacyPolicy'">Privacy Policy</button>
-                                <button :class="{ 'active': tab === 'credits' }" @click="tab = 'credits'">Credits</button>
+                                <button :class="{ 'active': tab === 'cookies' }" @click="tab = 'cookies'">Cookies
+                                </button>
+                                <button :class="{ 'active': tab === 'gebruiksvoorwaarden' }"
+                                        @click="tab = 'gebruiksvoorwaarden'">Gebruiksvoorwaarden
+                                </button>
+                                <button :class="{ 'active': tab === 'privacyPolicy' }" @click="tab = 'privacyPolicy'">
+                                    Privacy Policy
+                                </button>
+                                <button :class="{ 'active': tab === 'credits' }" @click="tab = 'credits'">Credits
+                                </button>
                             </div>
 
                             <hr class="bg-secondary">
@@ -354,18 +406,18 @@
                                     src="{{ asset('images/p9.png') }}"
                                     alt="planetnine.com"></a>
                             @if($mp_details != NULL)
-                            <a href="{{ $mp_details['email'] }}" target="_blank"><img
-                                    src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
+                                <a href="{{ $mp_details['email'] }}" target="_blank"><img
+                                        src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
                             @else
 
                             @endif
                         </div>
 
 
-
                         <hr class="bg-secondary">
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="sibyl-copy-text">&copy; Alle rechten voorbehouden {{$d_details['name']}}, Planetnine - <?= Date('Y') ?></p>
+                            <p class="sibyl-copy-text">&copy; Alle rechten voorbehouden {{$d_details['name']}},
+                                Planetnine - <?= Date('Y') ?></p>
                             <ul class="footer-social">
                                 <li class="mr-2"><a target="_blank" href="{{ $movie_details->fb_link }}">
                                         <img src="{{ asset('images/facebook.svg') }}" alt="">

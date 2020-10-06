@@ -93,6 +93,41 @@
         .footer-tab button:focus {
             outline: none;
         }
+
+        .localisation-dropdown {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            text-align: right;
+            border-radius: 4px;
+        }
+
+        .localisation-dropdown ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background-color: transparent;
+            border: solid 1px #fff;
+            color: #fff;
+        }
+
+        .localisation-dropdown li:not(:first-child) {
+            border-top: solid 1px #fff;
+        }
+
+        .localisation-dropdown a {
+            display: inline-block;
+            color: inherit;
+            font-weight: 600;
+            transition: all .2s;
+            padding: 4px 8px;
+        }
+
+        .localisation-dropdown a:focus,
+        .localisation-dropdown a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
@@ -106,14 +141,23 @@
 <a class="trailer-video d-none" href="{{ $youtube_url }}?autoplay=1&mute=1"></a>
 
 <section id="root" class="mvoie-body">
-    <header class="movie-header sibyl-header position-relative text-white py-3">
+    <header class="movie-header sibyl-header position-relative text-white text-center py-3">
         <h1 class="text-center m-0">{{ $movie_details->movie_title }}
             - {{ $movie_details->tagline_fr }}</h1>
 
-        <div class="flags">
-            <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-none" alt="">
-            <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-block" alt="">
+{{--        <div class="flags">--}}
+{{--            <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-none" alt="">--}}
+{{--            <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-block" alt="">--}}
+{{--        </div>--}}
+
+        <div class="localisation-dropdown" x-data="{ open: false }">
+            <ul @click="open = !open">
+                <li><a href="javascript:void(0)">FR</a></li>
+                <li x-show="open"><a href=" {{ URL::to('/') }}/cunninghamBE">NL</a></li>
+            </ul>
         </div>
+
+
     </header>
 
     <div class="menu-toggler">

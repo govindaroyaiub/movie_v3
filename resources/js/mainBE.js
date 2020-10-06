@@ -55,12 +55,13 @@ if (isUrlNl) {
     let slicedUrl = urlEn.substr(0, urlEn.indexOf(('_')));
     nl.addEventListener('click', () => location.href = slicedUrl);
 } else {
-    en.addEventListener('click', () => location.href = urlEn);
+    en && en.addEventListener('click', () => location.href = urlEn);
 }
 
 
 // localisation redirection
 const c_fr = document.querySelector('[data-lang="cunningham_fr"]');
+
 if (c_fr) {
     c_fr.addEventListener('click', () => location.href = '/cunninghamBE_fr');
 }
