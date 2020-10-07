@@ -233,7 +233,7 @@
                             <h3 class="text-center mb-2 my-3" style="text-decoration: none">
                                 {{ $movie_details->movie_description_short_fr }}
                             </h3>
-                            <p>
+                            <p style="white-space: pre-line;">
                                 {{ $movie_details->movie_description_long_fr }}
                             </p>
                         </div>

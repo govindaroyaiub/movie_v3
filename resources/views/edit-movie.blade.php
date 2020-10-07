@@ -212,7 +212,7 @@
                                         <div class="form-group">
                                             <label for="movie_description_long">Movie Description Long</label>
                                             <textarea name="movie_description_long" id="movie_description_long"
-                                                class="form-control" rows="6"
+                                                class="form-control" rows="20"
                                                 cols="50">{{ $movie_details['movie_description_long'] }}</textarea>
                                         </div>
 
@@ -288,8 +288,9 @@
                                         <div class="form-group">
                                             <label for="movie_description_long_nl">Movie Description Long</label>
                                             <textarea name="movie_description_long_nl" id="movie_description_long_nl"
-                                                class="form-control" rows="6"
-                                                cols="50">{{ $movie_details['movie_description_long_nl'] }}</textarea>
+                                                class="form-control" rows="20"
+                                                cols="50">{{ $movie_details['movie_description_long_nl'] }}
+                                            </textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -367,8 +368,9 @@
                                         <div class="form-group">
                                             <label for="movie_description_long_fr">Movie Description Long</label>
                                             <textarea name="movie_description_long_fr" id="movie_description_long_fr"
-                                                class="form-control" rows="6"
-                                                cols="50">{{ $movie_details['movie_description_long_fr'] }}</textarea>
+                                                class="form-control" rows="20"
+                                                cols="50">{{ $movie_details['movie_description_long_fr'] }}
+                                            </textarea>
                                         </div>
 
                                         <div class="form-group">
