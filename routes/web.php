@@ -90,6 +90,18 @@ Route::domain('www.cunningham-film.be')->group(function(){
     Route::get('/api/shows', 'CunninghamBEController@showsApi');
 });
 
+Route::domain('police-defilm.nl')->group(function(){
+    Route::get('/', 'PoliceController@nl_landing');
+    Route::get('/_en', 'PoliceController@en_landing');
+    Route::get('/api/shows', 'PoliceController@showsApi');
+});
+
+Route::domain('www.police-defilm.nl')->group(function(){
+    Route::get('/', 'PoliceController@nl_landing');
+    Route::get('/_en', 'PoliceController@en_landing');
+    Route::get('/api/shows', 'PoliceController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -118,6 +130,10 @@ Route::get('/cunninghamBE/api/shows', 'CunninghamBEController@showsApi');
 Route::get('/lara', 'LaraController@nl_landing');
 Route::get('/lara_en', 'LaraController@en_landing');
 Route::get('/lara/api/shows', 'LaraController@showsApi');
+
+Route::get('/police', 'PoliceController@nl_landing');
+Route::get('/police_en', 'PoliceController@en_landing');
+Route::get('/police/api/shows', 'PoliceController@showsApi');
 
 Auth::routes(['register' => false]);
 

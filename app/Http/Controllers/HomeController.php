@@ -255,7 +255,10 @@ class HomeController extends Controller
                     if($url == NULL)
                     {
                         $theatre_details = Location::where('id', '=', $cinema_id[0])->first();
-                        $website = $theatre_details['website'];
+                        if(isset($theatre_details['website']))
+                        {
+                            $website = $theatre_details['website'];
+                        }
                     }
                     else
                     {
