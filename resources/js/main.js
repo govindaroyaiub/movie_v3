@@ -124,6 +124,8 @@ if (location.pathname === '/' || location.pathname === '/_en') {
     endpoint = `/cunningham/api/shows`;
 } else if (location.pathname === '/lara' || location.pathname === '/lara_en') {
     endpoint = `/lara/api/shows`;
+} else if (location.pathname === '/police' || location.pathname === '/police_en') {
+    endpoint = `/police/api/shows`;
 }
 
 
