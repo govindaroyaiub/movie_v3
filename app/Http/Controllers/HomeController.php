@@ -97,9 +97,8 @@ class HomeController extends Controller
                         ->orderBy('show_location_static.city', 'ASC')
                         ->get();
 
-        $theatre_list = Location::orderBy('name', 'ASC')->get();
         $country_list = Location::select('country')->distinct('country')->get();
-        return view('showtime-list', compact('md', 'ms', 'id', 'theatre_list', 'country_list'));
+        return view('showtime-list', compact('md', 'ms', 'id', 'country_list'));
     }
 
     public function showtimes_add(Request $request, $id)

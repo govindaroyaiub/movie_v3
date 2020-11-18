@@ -752,8 +752,8 @@ class AdminController extends Controller
     public function gettheaters(Request $request)
     {
         $country_name = $request->country_name;
-        
-        if($country_name = 'all')
+
+        if($country_name == 'all')
         {
             $theaters = Location::orderBy('name', 'ASC')->get();
         }
