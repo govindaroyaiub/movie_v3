@@ -386,6 +386,7 @@
         $("select[id='country_id']").change(function (e) {
             var country_name = $(this).val();
             var _token = $('input[name="_token"]').val();
+            document.getElementById("theatre_url").value = '';
 
             $.ajax({
                 url: "{{route('gettheaters')}}",
@@ -400,6 +401,8 @@
                     var len = result.length;
 
                     $("select[id='theatre_id[]").empty();
+                    $("select[id='theatre_id[]").append("<option value=''>"+'Select Theater'+"</option>");
+
                     for( var i = 0; i<len; i++)
                     {
                         var id = result[i]['id'];
@@ -409,7 +412,8 @@
                         var city = result[i]['city'];
                         var country = result[i]['country'];
                         var space = " ,";
-                    
+
+                        
                         $("select[id='theatre_id[]").append("<option value='"+id+"'>"+name+space+address+space+zip+space+city+space+country+"</option>");
                     }
                 }

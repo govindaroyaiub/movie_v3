@@ -136,7 +136,7 @@
                         <label for="theatre_id">Theatre List</label>
                         <select class="form-control select2" id="theatre_id[]" name="theatre_id" style="width: 100%;"
                             required>
-                            <option value="">Select Theatre</option>
+                            
                             
                         </select>
                     </div>
