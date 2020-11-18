@@ -88,6 +88,8 @@ class HomeController extends Controller
                             'show_location_static.zip',
                             'show_location_static.phone',
                             'show_location_static.city',
+                            'show_location_static.region',
+                            'show_location_static.country',
                             'movie_showtimes.is_active',
                             'movie_showtimes.two_d',
                             'movie_showtimes.three_d')
@@ -96,7 +98,8 @@ class HomeController extends Controller
                         ->get();
 
         $theatre_list = Location::orderBy('name', 'ASC')->get();
-        return view('showtime-list', compact('md', 'ms', 'id', 'theatre_list'));
+        $country_list = Location::select('country')->distinct('country')->get();
+        return view('showtime-list', compact('md', 'ms', 'id', 'theatre_list', 'country_list'));
     }
 
     public function showtimes_add(Request $request, $id)
@@ -207,6 +210,8 @@ class HomeController extends Controller
                     $lat = $worksheet1->getCellByColumnAndRow(8, $row)->getValue();
                     $long = $worksheet1->getCellByColumnAndRow(9, $row)->getValue();
                     $website = $worksheet1->getCellByColumnAndRow(10, $row)->getValue();
+                    $region = $worksheet1->getCellByColumnAndRow(11, $row)->getValue();
+                    $country = $worksheet1->getCellByColumnAndRow(12, $row)->getValue();
 
                     if($name != NULL)
                     {
@@ -218,7 +223,9 @@ class HomeController extends Controller
                             'phone' => $phone,
                             'long' => $long,
                             'lat' => $lat,
-                            'website' => $website
+                            'website' => $website,
+                            'region' => $region,
+                            'country' => $country
                         ];
                         array_push($location_list, $location);
                     }

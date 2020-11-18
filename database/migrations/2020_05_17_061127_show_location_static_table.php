@@ -23,6 +23,8 @@ class ShowLocationStaticTable extends Migration
             $table->string('long')->nullable();
             $table->string('lat')->nullable();
             $table->string('website')->nullable();
+            $table->string('region')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
         });
     }

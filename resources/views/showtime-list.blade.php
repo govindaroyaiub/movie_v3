@@ -20,7 +20,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Theatre</th>
-                                    <th>City</th>
+                                    <th>Area</th>
                                     <th>URL</th>
                                     <th>Start Date</th>
                                     <th>Activity</th>
@@ -40,7 +40,7 @@
                                         <hr>
                                         {{$row->address}}, {{$row->zip}} <br> <b>Phone:</b> <br> {{$row->phone}}
                                     </td>
-                                    <td>{{$row->city}}
+                                    <td>{{$row->city}} <br> <b>{{$row->country}}</b>
                                     </td>
                                     <td><a href="https://{{$row->url}}" target="_blank"
                                             style="line-break: anywhere;">{{$row->url}}</a></td>
@@ -122,14 +122,22 @@
                 <form method="post" action="/showtimes/add/{{$id}}">
                     {{ csrf_field() }}
                     <div class="form-group">
+                        <label for="theatre_id">Country List</label>
+                        <select class="form-control select2" id="country_id" name="country_id" style="width: 100%;"
+                            required>
+                            <option value="">Select Country</option>
+                            @foreach($country_list as $row)
+                            <option value="{{$row->country}}">{{$row->country}}</option>
+                            @endforeach
+                            <option value="all">All Theaters</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="theatre_id">Theatre List</label>
                         <select class="form-control select2" id="theatre_id[]" name="theatre_id" style="width: 100%;"
                             required>
                             <option value="">Select Theatre</option>
-                            @foreach($theatre_list as $row)
-                            <option value="{{$row->id}}">{{$row->name}} ({{$row->address}}, {{$row->zip}},
-                                {{$row->city}})</option>
-                            @endforeach
+                            
                         </select>
                     </div>
                     <div class="form-group">

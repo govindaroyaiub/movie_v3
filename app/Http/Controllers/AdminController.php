@@ -748,4 +748,19 @@ class AdminController extends Controller
         $theatre_url = $td['website'];
         return $theatre_url;
     }
+
+    public function gettheaters(Request $request)
+    {
+        $country_name = $request->country_name;
+        
+        if($country_name = 'all')
+        {
+            $theaters = Location::orderBy('name', 'ASC')->get();
+        }
+        else
+        {
+            $theaters = Location::where('country', '=', $country_name)->orderBy('name', 'ASC')->get();
+        }
+        return $theaters;
+    }
 }

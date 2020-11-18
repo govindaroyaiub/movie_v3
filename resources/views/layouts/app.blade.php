@@ -383,6 +383,39 @@
             })
         });
 
+        $("select[id='country_id']").change(function (e) {
+            var country_name = $(this).val();
+            var _token = $('input[name="_token"]').val();
+
+            $.ajax({
+                url: "{{route('gettheaters')}}",
+                method: "POST",
+                data: 
+                {
+                    country_name: country_name,
+                    _token
+                },
+                success: function (result) 
+                {
+                    var len = result.length;
+
+                    $("select[id='theatre_id[]").empty();
+                    for( var i = 0; i<len; i++)
+                    {
+                        var id = result[i]['id'];
+                        var name = result[i]['name'];
+                        var address = result[i]['address'];
+                        var zip = result[i]['zip'];
+                        var city = result[i]['city'];
+                        var country = result[i]['country'];
+                        var space = " ,";
+                    
+                        $("select[id='theatre_id[]").append("<option value='"+id+"'>"+name+space+address+space+zip+space+city+space+country+"</option>");
+                    }
+                }
+            })
+        });
+
         $('#userlist').DataTable({
             responsive: true,
             "lengthMenu": [

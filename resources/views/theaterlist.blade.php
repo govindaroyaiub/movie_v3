@@ -19,6 +19,8 @@
                                     <th>Name</th>
                                     <th>Details</th>
                                     <th>Position</th>
+                                    <th>Region</th>
+                                    <th>Country</th>
                                     <th>Homepage</th>
                                     <th style="text-align: center">Action</th>
                                 </tr>
@@ -36,6 +38,10 @@
                                         <hr> <b>Lat: </b>{{$row->lat}}</td>
                                     <td><a href="https://{{ $row->website }}" target="_blank"
                                             style="line-break: anywhere;">{{ $row->website }}</a>
+                                    </td>
+                                    <td>{{$row->region}}</a>
+                                    </td>
+                                    <td>{{$row->country}}</a>
                                     </td>
                                     <td>
                                         <a href="/theaterlist/edit/{{$row->id}}"><button
