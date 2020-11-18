@@ -19,9 +19,9 @@
                                     <th>Name</th>
                                     <th>Details</th>
                                     <th>Position</th>
+                                    <th>Homepage</th>
                                     <th>Region</th>
                                     <th>Country</th>
-                                    <th>Homepage</th>
                                     <th style="text-align: center">Action</th>
                                 </tr>
                             </thead>
