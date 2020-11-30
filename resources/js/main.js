@@ -126,7 +126,12 @@ if (location.pathname === '/' || location.pathname === '/_en') {
     endpoint = `/lara/api/shows`;
 } else if (location.pathname === '/police' || location.pathname === '/police_en') {
     endpoint = `/police/api/shows`;
-}
+} else if (
+           location.pathname === "/Undine" ||
+           location.pathname === "/Undine_en"
+       ) {
+           endpoint = `/Undine/api/shows`;
+       }
 
 
 axios.get(endpoint)
@@ -445,6 +450,3 @@ function createPopUp(currentFeature) {
         .setHTML(`<h3 class="text-center">${currentFeature.properties.name}</h3><h4>${currentFeature.properties.address}, ${currentFeature.properties.zip}, ${currentFeature.properties.city}</h4>`)
         .addTo(map);
 }
-
-
-
