@@ -102,6 +102,18 @@ Route::domain('www.police-defilm.nl')->group(function(){
     Route::get('/api/shows', 'PoliceController@showsApi');
 });
 
+Route::domain('undine-defilm.nl')->group(function(){
+    Route::get('/', 'UndineController@nl_landing');
+    Route::get('/_en', 'UndineController@en_landing');
+    Route::get('/api/shows', 'UndineController@showsApi');
+});
+
+Route::domain('www.undine-defilm.nl')->group(function(){
+    Route::get('/', 'UndineController@nl_landing');
+    Route::get('/_en', 'UndineController@en_landing');
+    Route::get('/api/shows', 'UndineController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -134,6 +146,10 @@ Route::get('/lara/api/shows', 'LaraController@showsApi');
 Route::get('/police', 'PoliceController@nl_landing');
 Route::get('/police_en', 'PoliceController@en_landing');
 Route::get('/police/api/shows', 'PoliceController@showsApi');
+
+Route::get('/Undine', 'UndineController@nl_landing');
+Route::get('/Undine_en', 'UndineController@en_landing');
+Route::get('/Undine/api/shows', 'UndineController@showsApi');
 
 Auth::routes(['register' => false]);
 
