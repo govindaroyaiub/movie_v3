@@ -56,6 +56,19 @@
                             </div>
                         </div>
                         <br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="region">Region</label>
+                                <input type="text" class="form-control" name="region" id="region"
+                                    value="{{ $theater_details->region }}" required>
+                            </div>
+                            <div class="col">
+                                <label for="country">Country</label>
+                                <input type="text" class="form-control" name="country" id="country"
+                                    value="{{ $theater_details->country }}" required>
+                            </div>
+                        </div>
+                        <br>
                         <div class="form-group">
                             <label for="website">Website</label>
                             <div class="row">

@@ -94,6 +94,14 @@
                         <input type="text" class="form-control" name="phone" id="phone" required>
                     </div>
                     <div class="form-group">
+                        <label for="region">Region (ex: Netherlands/België)</label>
+                        <input type="text" class="form-control" name="region" id="region" required placeholder="EX: Netherlands/België">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country (ex: Netherlands/Belgium)</label>
+                        <input type="text" class="form-control" name="country" id="country" required placeholder="EX: Netherlands/Belgium">
+                    </div>
+                    <div class="form-group">
                         <label for="long">Long</label>
                         <input type="text" class="form-control" name="long" id="long" required>
                     </div>

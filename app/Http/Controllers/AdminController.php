@@ -441,6 +441,8 @@ class AdminController extends Controller
         $zip = $request->zip;
         $city = $request->city;
         $phone = $request->phone;
+        $region = $request->region;
+        $country = $request->country;
         $long = $request->long;
         $lat = $request->lat;
         $website = $request->website;
@@ -451,6 +453,8 @@ class AdminController extends Controller
             'zip' => $zip,
             'city' => $city,
             'phone' => $phone,
+            'region' => $region,
+            'country' => $country,
             'long' => $long,
             'lat' => $lat,
             'website' => $website
@@ -480,6 +484,8 @@ class AdminController extends Controller
             'zip' => $request->zip,
             'city' => $request->city,
             'phone' => $request->phone,
+            'country' => $request->country,
+            'region' => $request->region,
             'long' => $request->long,
             'lat' => $request->lat,
             'website' => $request->website
