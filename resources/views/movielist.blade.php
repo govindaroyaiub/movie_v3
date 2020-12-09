@@ -84,15 +84,15 @@
                     </div>
                     <div class="form-group">
                         <label for="actors">Actors</label>
-                        <input type="text" class="form-control" name="actors" id="actors" required>
+                        <input type="text" class="form-control" name="actors" id="actors">
                     </div>
                     <div class="form-group">
                         <label for="writer">Writer</label>
-                        <input type="text" class="form-control" name="writer" id="writer" required>
+                        <input type="text" class="form-control" name="writer" id="writer">
                     </div>
                     <div class="form-group">
                         <label for="producer">Producer</label>
-                        <input type="text" class="form-control" name="producer" id="producer" required>
+                        <input type="text" class="form-control" name="producer" id="producer">
                     </div>
                     <div class="form-group">
                         <label for="base_url">Base URL</label>

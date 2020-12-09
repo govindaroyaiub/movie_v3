@@ -40,7 +40,7 @@
                                         <div class="form-group">
                                             <label for="producer">Producer</label>
                                             <input type="text" class="form-control" name="producer" id="producer"
-                                                value="{{ $movie_details['producer'] }}" required>
+                                                value="{{ $movie_details['producer'] }}">
                                         </div>
 
                                         <div class="form-group">
@@ -52,7 +52,7 @@
                                         <div class="form-group">
                                             <label for="actors">Actors</label>
                                             <input type="text" class="form-control" name="actors" id="actors"
-                                                value="{{ $movie_details['actors'] }}" required>
+                                                value="{{ $movie_details['actors'] }}">
                                         </div>
 
                                         <div class="form-group">
@@ -82,7 +82,7 @@
                                         <div class="form-group">
                                             <label for="fb_link">Facebook Link</label>
                                             <input type="text" class="form-control" name="fb_link" id="fb_link"
-                                                value="{{ $movie_details['fb_link'] }}" required>
+                                                value="{{ $movie_details['fb_link'] }}">
                                         </div>
 
                                         <div class="form-group">
@@ -199,14 +199,13 @@
                                         <div class="form-group">
                                             <label for="tagline_en">Tagline</label>
                                             <textarea class="form-control" name="tagline_en" id="tagline_en"
-                                                maxlength="500" rows="6" cols="50" required>{{ $movie_details['tagline_en'] }}
+                                                maxlength="500" rows="6" cols="50">{{ $movie_details['tagline_en'] }}
                                             </textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="movie_description_short">Movie Description Short</label>
                                             <textarea class="form-control" name="movie_description_short"
-                                                id="movie_description_short" maxlength="500" rows="6" cols="50"
-                                                required>{{ $movie_details['movie_description_short'] }}
+                                                id="movie_description_short" maxlength="500" rows="6" cols="50">{{ $movie_details['movie_description_short'] }}
                                             </textarea>
                                         </div>
                                         <div class="form-group">
@@ -274,22 +273,20 @@
                                         <div class="form-group">
                                             <label for="tagline_nl">Tagline</label>
                                             <textarea class="form-control" name="tagline_nl" id="tagline_nl"
-                                                maxlength="500" rows="6" cols="50" required>{{ $movie_details['tagline_nl'] }}
+                                                maxlength="500" rows="6" cols="50">{{ $movie_details['tagline_nl'] }}
                                             </textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="movie_description_short_nl">Movie Description Short</label>
                                             <textarea class="form-control" name="movie_description_short_nl"
-                                                id="movie_description_short_nl" maxlength="500" rows="6" cols="50"
-                                                required>{{ $movie_details['movie_description_short_nl'] }}
+                                                id="movie_description_short_nl" maxlength="500" rows="6" cols="50">{{ $movie_details['movie_description_short_nl'] }}
                                             </textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="movie_description_long_nl">Movie Description Long</label>
                                             <textarea name="movie_description_long_nl" id="movie_description_long_nl"
-                                                class="form-control" rows="20"
-                                                cols="50">{{ $movie_details['movie_description_long_nl'] }}
+                                                class="form-control" rows="20" cols="50">{{ $movie_details['movie_description_long_nl'] }}
                                             </textarea>
                                         </div>
 
@@ -340,8 +337,7 @@
                             <div class="card-header" id="headingFour">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
-                                        data-target="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour">
+                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                         French Contents
                                     </button>
                                 </h5>
@@ -368,8 +364,7 @@
                                         <div class="form-group">
                                             <label for="movie_description_long_fr">Movie Description Long</label>
                                             <textarea name="movie_description_long_fr" id="movie_description_long_fr"
-                                                class="form-control" rows="20"
-                                                cols="50">{{ $movie_details['movie_description_long_fr'] }}
+                                                class="form-control" rows="20" cols="50">{{ $movie_details['movie_description_long_fr'] }}
                                             </textarea>
                                         </div>
 
