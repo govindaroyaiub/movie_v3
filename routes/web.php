@@ -114,6 +114,18 @@ Route::domain('www.undine-defilm.nl')->group(function(){
     Route::get('/api/shows', 'UndineController@showsApi');
 });
 
+Route::domain('100up-defilm.nl')->group(function(){
+    Route::get('/', 'HundredUpController@nl_landing');
+    Route::get('/_en', 'HundredUpController@en_landing');
+    Route::get('/api/shows', 'HundredUpController@showsApi');
+});
+
+Route::domain('www.100up-defilm.nl')->group(function(){
+    Route::get('/', 'HundredUpController@nl_landing');
+    Route::get('/_en', 'HundredUpController@en_landing');
+    Route::get('/api/shows', 'HundredUpController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -150,6 +162,10 @@ Route::get('/police/api/shows', 'PoliceController@showsApi');
 Route::get('/Undine', 'UndineController@nl_landing');
 Route::get('/Undine_en', 'UndineController@en_landing');
 Route::get('/Undine/api/shows', 'UndineController@showsApi');
+
+Route::get('/100UP', 'HundredUpController@nl_landing');
+Route::get('/100UP_en', 'HundredUpController@en_landing');
+Route::get('/100UP/api/shows', 'HundredUpController@showsApi');
 
 Auth::routes(['register' => false]);
 
