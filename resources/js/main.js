@@ -126,12 +126,11 @@ if (location.pathname === '/' || location.pathname === '/_en') {
     endpoint = `/lara/api/shows`;
 } else if (location.pathname === '/police' || location.pathname === '/police_en') {
     endpoint = `/police/api/shows`;
-} else if (
-           location.pathname === "/Undine" ||
-           location.pathname === "/Undine_en"
-       ) {
+} else if ( location.pathname === "/Undine" || location.pathname === "/Undine_en") {
            endpoint = `/Undine/api/shows`;
-       }
+} else if ( location.pathname === "/100UP" || location.pathname === "/100UP_en") {
+    endpoint = `/100UP/api/shows`;
+}
 
 
 axios.get(endpoint)
