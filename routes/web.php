@@ -114,13 +114,13 @@ Route::domain('www.undine-defilm.nl')->group(function(){
     Route::get('/api/shows', 'UndineController@showsApi');
 });
 
-Route::domain('100up-defilm.nl')->group(function(){
+Route::domain('100up.nl')->group(function(){
     Route::get('/', 'HundredUpController@nl_landing');
     Route::get('/_en', 'HundredUpController@en_landing');
     Route::get('/api/shows', 'HundredUpController@showsApi');
 });
 
-Route::domain('www.100up-defilm.nl')->group(function(){
+Route::domain('www.100up.nl')->group(function(){
     Route::get('/', 'HundredUpController@nl_landing');
     Route::get('/_en', 'HundredUpController@en_landing');
     Route::get('/api/shows', 'HundredUpController@showsApi');
