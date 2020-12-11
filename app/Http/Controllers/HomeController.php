@@ -48,6 +48,7 @@ class HomeController extends Controller
                                 )
                                 ->where('movie_details.is_delete', '0')
                                 ->where('movie_details.uploaded_by', Auth::user()->id)
+                                ->orderBy('movie_details.id', 'desc')
                                 ->get();
         }
         else
@@ -62,6 +63,7 @@ class HomeController extends Controller
                                     'movie_details.base_url'
                                 )
                                 ->where('movie_details.is_delete', '0')
+                                ->orderBy('movie_details.id', 'desc')
                                 ->get();
 
         }

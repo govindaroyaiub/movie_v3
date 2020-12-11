@@ -104,7 +104,7 @@ class AdminController extends Controller
                                 )
                                 ->where('movie_details.is_delete', '0')
                                 ->where('movie_details.uploaded_by', Auth::user()->id)
-                                ->orderBy('movie_details.id', 'DESC')
+                                ->orderBy('movie_details.id', 'desc')
                                 ->get();
         }
         else
@@ -119,7 +119,7 @@ class AdminController extends Controller
                                     'movie_details.base_url'
                                 )
                                 ->where('movie_details.is_delete', '0')
-                                ->orderBy('movie_details.id', 'DESC')
+                                ->orderBy('movie_details.id', 'desc')
                                 ->get();
 
         }
@@ -252,7 +252,7 @@ class AdminController extends Controller
             ];
             Movie::insert($movie_details);
         }
-        return redirect('/movielist')->with('success', $movie_title.' has been created!');
+        return redirect('/home')->with('success', $movie_title.' has been created!');
     }
 
     public function movie_delete($id)
