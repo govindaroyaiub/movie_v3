@@ -7,8 +7,6 @@
             <div class="card">
                 <div class="card-header">Movie List
                     @if(Auth::user()->is_admin == 1)
-                    {{-- <a href="" style="position:absolute; text-decoration: underline; right:2%;" data-toggle="modal"
-                        data-target="#create_movie_modal">Create Movie +</a> --}}
                         <a href="/movie/create" style="position:absolute; text-decoration: underline; right:2%;">Create Movie +</a>
                     @endif
                 </div>
@@ -61,23 +59,4 @@
         </div>
     </div>
 </div>
-@if(Auth::user()->is_admin == 1)
-<div class="modal fade" id="create_movie_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create Movie</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-@endif
 @endsection
