@@ -104,6 +104,7 @@ class AdminController extends Controller
                                 )
                                 ->where('movie_details.is_delete', '0')
                                 ->where('movie_details.uploaded_by', Auth::user()->id)
+                                ->orderBy('movie_details.id', 'DESC')
                                 ->get();
         }
         else
@@ -118,6 +119,7 @@ class AdminController extends Controller
                                     'movie_details.base_url'
                                 )
                                 ->where('movie_details.is_delete', '0')
+                                ->orderBy('movie_details.id', 'DESC')
                                 ->get();
 
         }
@@ -125,12 +127,26 @@ class AdminController extends Controller
         return view('movielist', compact('movie_list', 'user_list', 'd_list', 'mp_list'));
     }
 
+    public function movie_create_view()
+    {
+        $d_list = Distributor::get();
+        $mp_list = MediaPartner::get();
+        $user_list = User::where('is_admin', 0)->where('is_delete', 1)->get();
+        $movie_list = Movie::join('users', 'users.id', 'movie_details.uploaded_by')
+                            ->select(
+                                'movie_details.id',
+                                'users.name',
+                                'users.is_admin',
+                                'movie_details.movie_title',
+                                'movie_details.base_url'
+                            )
+                            ->where('movie_details.is_delete', '0')
+                            ->get();
+        return view('create-movie', compact('movie_list', 'user_list', 'd_list', 'mp_list'));
+    }
+
     public function movie_create(Request $request)  
     {
-        $distributor = Distributor::where('id', '=', $request->d_id)->select('name')->first();
-        $media_partner = MediaPartner::where('id', '=', $request->mp_id)->select('name')->first();
-        $d_name = $distributor['name'];
-        $mp_name = $media_partner['name'];
         $movie_title = $request->movie_title;
 
         if($request->d_id == 0 && $request->mp_id == 0)
@@ -155,10 +171,12 @@ class AdminController extends Controller
                 'is_delete' => 0
             ];
             Movie::insert($movie_details);
-            return back()->with('success', $movie_title.' has been created!');
         }
         elseif($request->d_id != 0 && $request->mp_id == 0)
         {
+            $distributor = Distributor::where('id', '=', $request->d_id)->select('name')->first();
+            $d_name = $distributor['name'];
+
             $movie_details = [
                 'movie_title' => $request->movie_title,
                 'base_url' => 'https://movie.planetnine.com/'.$request->base_url,
@@ -178,11 +196,13 @@ class AdminController extends Controller
                 'mp_id' => $request->mp_id,
                 'is_delete' => 0
             ];
-            Movie::insert($movie_details);
-            return back()->with('success', $movie_title.' has been created!');
+            Movie::insert($movie_details); 
         }
         elseif($request->d_id == 0 && $request->mp_id != 0)
         {
+            $media_partner = MediaPartner::where('id', '=', $request->mp_id)->select('name')->first();
+            $mp_name = $media_partner['name'];
+
             $movie_details = [
                 'movie_title' => $request->movie_title,
                 'base_url' => 'https://movie.planetnine.com/'.$request->base_url,
@@ -203,10 +223,14 @@ class AdminController extends Controller
                 'is_delete' => 0
             ];
             Movie::insert($movie_details);
-            return back()->with('success', $movie_title.' has been created!');
         }
         else
         {
+            $distributor = Distributor::where('id', '=', $request->d_id)->select('name')->first();
+            $media_partner = MediaPartner::where('id', '=', $request->mp_id)->select('name')->first();
+            $d_name = $distributor['name'];
+            $mp_name = $media_partner['name'];
+
             $movie_details = [
                 'movie_title' => $request->movie_title,
                 'base_url' => 'https://movie.planetnine.com/'.$request->base_url,
@@ -227,8 +251,8 @@ class AdminController extends Controller
                 'is_delete' => 0
             ];
             Movie::insert($movie_details);
-            return back()->with('success', $movie_title.' has been created!');
         }
+        return redirect('/movielist')->with('success', $movie_title.' has been created!');
     }
 
     public function movie_delete($id)

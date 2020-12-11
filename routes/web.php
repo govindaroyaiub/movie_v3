@@ -195,6 +195,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/theaterlist/delete/{id}', 'AdminController@theater_delete');
 
     Route::get('/movielist', 'AdminController@movielist');
+    Route::get('/movie/create', 'AdminController@movie_create_view');
     Route::post('/movielist/create', 'AdminController@movie_create');
     Route::get('/movielist/edit/{id}', 'AdminController@movie_edit');
     Route::post('/movielist/edit/tmd/{id}', 'AdminController@tmd_edit');
