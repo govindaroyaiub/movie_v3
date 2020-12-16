@@ -362,6 +362,13 @@
 
                         <hr class="bg-secondary">
                         <div class="d-flex justify-content-between align-items-center">
+                            <p class="sibyl-copy-text">de website is mede mogelijk gemaakt door</p>
+                            <a target="_blank" href="https://www.lifeunlimited.nl/">
+                                <img src="{{ asset('images/lifeunlimited.png') }}" alt="lifeunlimited" style="width: 145px; height: 56px;">
+                            </a>
+                        </div>
+                        <br>
+                        <div class="d-flex justify-content-between align-items-center">
                             <p class="sibyl-copy-text">&copy; Alle rechten voorbehouden {{$d_details['name']}}, Planetnine - <?= Date('Y') ?></p>
                             <ul class="footer-social">
                                 <li class="mr-2"><a target="_blank" href="{{ $movie_details->fb_link }}">
