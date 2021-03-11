@@ -167,6 +167,11 @@ Route::get('/100UP', 'HundredUpController@nl_landing');
 Route::get('/100UP_en', 'HundredUpController@en_landing');
 Route::get('/100UP/api/shows', 'HundredUpController@showsApi');
 
+Route::get('/dummy', 'DumbController@nl_landing');
+Route::get('/dummy_en', 'DumbController@en_landing');
+Route::get('/dummy/api/shows', 'DumbController@showsApi');
+
+
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
