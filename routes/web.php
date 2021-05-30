@@ -163,9 +163,17 @@ Route::get('/Undine', 'UndineController@nl_landing');
 Route::get('/Undine_en', 'UndineController@en_landing');
 Route::get('/Undine/api/shows', 'UndineController@showsApi');
 
+Route::get('/undine', 'UndineController@nl_landing');
+Route::get('/undine_en', 'UndineController@en_landing');
+Route::get('/undine/api/shows', 'UndineController@showsApi');
+
 Route::get('/100UP', 'HundredUpController@nl_landing');
 Route::get('/100UP_en', 'HundredUpController@en_landing');
 Route::get('/100UP/api/shows', 'HundredUpController@showsApi');
+
+Route::get('/100up', 'HundredUpController@nl_landing');
+Route::get('/100up_en', 'HundredUpController@en_landing');
+Route::get('/100up/api/shows', 'HundredUpController@showsApi');
 
 Route::get('/dummy', 'DumbController@nl_landing');
 Route::get('/dummy_en', 'DumbController@en_landing');
