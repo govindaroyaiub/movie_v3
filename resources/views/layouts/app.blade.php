@@ -420,59 +420,14 @@
             })
         });
 
-        $('#userlist').DataTable({
+        $('#datatable').DataTable({
+            dom: "<'row'<'col-sm-3'l><'col-sm-3'f><'col-sm-6'p>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
             responsive: true,
             "lengthMenu": [
                 [10, 25, 50, -1],
                 [10, 25, 50, "All"]
-            ]
-        });
-
-        $('#movielist').DataTable({
-            responsive: true,
-            "lengthMenu": [
-                [10, 25, 50, -1],
-                [10, 25, 50, "All"]
-            ]
-        });
-
-        $('#distributorlist').DataTable({
-            responsive: true,
-            "lengthMenu": [
-                [10, 25, 50, -1],
-                [10, 25, 50, "All"]
-            ]
-        });
-
-        $('#media_partner_list').DataTable({
-            responsive: true,
-            "lengthMenu": [
-                [10, 25, 50, -1],
-                [10, 25, 50, "All"]
-            ]
-        });
-
-        $('#reviews_list').DataTable({
-            responsive: true,
-            "lengthMenu": [
-                [10, 25, 50, -1],
-                [10, 25, 50, "All"]
-            ]
-        });
-
-        $('#showtime_list').DataTable({
-            responsive: true,
-            "lengthMenu": [
-                [25, 50, -1],
-                [25, 50, "All"]
-            ]
-        });
-
-        $('#manual_list').DataTable({
-            responsive: true,
-            "lengthMenu": [
-                [25, 50, -1],
-                [25, 50, "All"]
             ]
         });
 

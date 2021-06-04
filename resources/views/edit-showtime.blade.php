@@ -25,7 +25,7 @@
                                                       
                             <div class="modal-footer">
                                 <button type="submit" class="form-control-user btn btn-primary">Update</button>
-                                <button type="button" class="btn btn-secondary" onclick="window.history.back();">Back</button>
+                                <button type="button" class="btn btn-secondary" onclick="window.location='/showtimes/'+{{$movie_id}};">Back</button>
                             </div>
                         </form>
                 </div>

@@ -11,7 +11,7 @@
                 <div class="card-body">
                     @include('alert')
                     <div class="table-responsive">
-                        <table id="media_partner_list" class="table-bordered" width="100%" cellspacing="0">
+                        <table id="datatable" class="table-bordered" width="100%" cellspacing="0">
                             <thead style="text-align:center;">
                                 <tr>
                                     <th>#</th>

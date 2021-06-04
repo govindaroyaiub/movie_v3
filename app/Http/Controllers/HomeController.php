@@ -114,6 +114,34 @@ class HomeController extends Controller
             'three_d' => 0,
             'movie_id' => $id
         ];
+
+        $word = 'https://';
+        if(strpos($data['url'], $word) !== false)
+        {
+            // dd('word found');
+            $data = [
+                'cinema_id' => $request->theatre_id,
+                'date' => $request->start_date,
+                'url' => $request->url,
+                'is_active' => 0,
+                'two_d' => 0,
+                'three_d' => 0,
+                'movie_id' => $id
+            ];
+        }
+        else
+        {
+            $data = [
+                'cinema_id' => $request->theatre_id,
+                'date' => $request->start_date,
+                'url' => 'https://'.$request->url,
+                'is_active' => 0,
+                'two_d' => 0,
+                'three_d' => 0,
+                'movie_id' => $id
+            ];
+        }
+
         Showtime::insert($data);
         return redirect('/showtimes/'.$id)->with('success', 'Theatre Added!');
     }
@@ -122,7 +150,8 @@ class HomeController extends Controller
     {
         $ms = Showtime::join('show_location_static', 'show_location_static.id', 'movie_showtimes.cinema_id')
                         ->select(
-                            'movie_showtimes.id', 
+                            'movie_showtimes.id',
+                            'movie_showtimes.movie_id', 
                             'movie_showtimes.date',
                             'movie_showtimes.url', 
                             'show_location_static.name', 
@@ -132,7 +161,9 @@ class HomeController extends Controller
                             'show_location_static.city')
                         ->where('movie_showtimes.id', '=', $id)
                         ->first();
-        return view('edit-showtime', compact('ms', 'id'));
+        $movie_id = $ms['movie_id'];
+
+        return view('edit-showtime', compact('ms', 'id', 'movie_id'));
     }
 
     public function showtimes_edit_post(Request $request, $id)
@@ -145,8 +176,25 @@ class HomeController extends Controller
             'url' => $url,
             'date' => $start_date
         ];
+
+        $word = 'https://';
+        if(strpos($sd['url'], $word) !== false)
+        {
+            // dd('word found');
+            $sd = [
+                'url' => $url,
+                'date' => $start_date
+            ];
+        }
+        else
+        {
+            $sd = [
+                'url' => 'https://'.$url,
+                'date' => $start_date
+            ];
+        }
         Showtime::where('id', '=', $id)->update($sd);
-        return redirect('/showtimes/'.$movie_id['movie_id']);
+        return redirect('/showtimes/edit/'.$id);
     }
 
     public function showtimes_delete($id)
