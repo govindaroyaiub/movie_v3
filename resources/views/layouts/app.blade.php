@@ -6,12 +6,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin</title>
     <link rel="shortcut icon" href="https://www.planetnine.com/wp-content/uploads/2020/06/cropped-favicon-32x32.png" type="image/x-icon">
-    <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
-    <link href="{{ mix('css/main.css') }}" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css" rel="stylesheet">
-    <link href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1557232134/toasty.css" rel="stylesheet" />
+    <link href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1557232134/toasty.css" rel="stylesheet">
+    <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/main.css') }}" rel="stylesheet">
     <style>
     .custom {
         width: 98px !important;
