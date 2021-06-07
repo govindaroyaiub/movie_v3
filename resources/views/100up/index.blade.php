@@ -154,14 +154,14 @@
                     <div class="showtimes">
                         <form class="search-form">
                             <input class="search-input map-search" type="text" name="search"
-                                   placeholder="Zoek.."
+                                   placeholder="Zoek je stad"
                                    autocomplete="off">
                             <button class="search-button" type="submit">&times;</button>
                         </form>
 
                         <div class="search-meta text-center my-2">
-                            <p>KIES UW STAD OF LOCATIE</p>
-                            <p>MEER VERTONINGEN IN DEZE STEDEN</p>
+                            <!-- <p>KIES UW STAD OF LOCATIE</p>
+                            <p>MEER VERTONINGEN IN DEZE STEDEN</p> -->
 
                             <div class="main-accordion accordion d-none" id="mainAccordionId"></div>
                             <div class="city-accordion accordion d-none" id="cityAccordionId"></div>

@@ -95,6 +95,7 @@ var map = new mapboxgl.Map({
     scrollZoom: false
 });
 
+
 var showtime = [];
 
 var stores = {
@@ -499,3 +500,9 @@ function createPopUp(currentFeature) {
         )
         .addTo(map);
 }
+
+
+var nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'top-right');
+
+
