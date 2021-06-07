@@ -151,15 +151,12 @@
                     <div class="showtimes">
                         <form class="search-form">
                             <input class="search-input map-search" type="text" name="search"
-                                   placeholder="Search.."
+                                   placeholder="Search your city"
                                    autocomplete="off">
                             <button class="search-button" type="submit">&times;</button>
                         </form>
 
                         <div class="search-meta text-center my-2">
-                            <p>ENTER YOUR LOCATION ABOVE OR SELECT YOUR THEATER BELOW</p>
-                            <p>MORE SHOWTIMES FOUND IN THE CITIES BELOW</p>
-
                             <div class="main-accordion accordion d-none" id="mainAccordionId"></div>
                             <div class="city-accordion accordion d-none" id="cityAccordionId"></div>
 
