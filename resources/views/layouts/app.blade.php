@@ -383,7 +383,7 @@
                 },
                 success: function (result) 
                 {
-                    document.getElementById("theatre_url").value = result;
+                    document.getElementById("theatre_url").value = 'https://' + result;
                 }
             })
         });

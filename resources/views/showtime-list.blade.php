@@ -42,7 +42,7 @@
                                     </td>
                                     <td>{{$row->city}} <br> <b>{{$row->country}}</b>
                                     </td>
-                                    <td><a href="https://{{$row->url}}" target="_blank"
+                                    <td><a href="{{$row->url}}" target="_blank"
                                             style="line-break: anywhere;">{{$row->url}}</a></td>
                                     <td>{{$row->date}}
                                     </td>
@@ -136,19 +136,44 @@
                         <label for="theatre_id">Theatre List</label>
                         <select class="form-control select2" id="theatre_id[]" name="theatre_id" style="width: 100%;"
                             required>
-                            
-                            
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="url">Theatre URL <b style="color:red;">(No http or https required)</b></label>
+                        <label for="url">Theatre URL</label>
                         <input type="text" class="form-control" name="url" id="theatre_url" required>
                     </div>
                     <div class="form-group">
                         <label for="start_date">Start Date</label>
-                        <input type="date" class="form-control" name="start_date" id="start_date" required>
+                        <input type="date" class="form-control" name="start_date" id="start_date">
                     </div>
-                    <br>
+                    <hr>
+                    <div class="form-group">
+                        <label for="is_active">Is Active?</label>
+                        <select class="form-control select2" id="is_active" name="is_active" style="width: 100%;"
+                            required>
+                            <option value="">Select Option</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="two_d">Is 2D?</label>
+                        <select class="form-control select2" id="two_d" name="two_d" style="width: 100%;"
+                            required>
+                            <option value="">Select Option</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="three_d">Is 3D?</label>
+                        <select class="form-control select2" id="three_d" name="three_d" style="width: 100%;"
+                            required>
+                            <option value="">Select Option</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
                     <div class="modal-footer">
                         <button type="submit" class="form-control-user btn btn-primary">Add</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

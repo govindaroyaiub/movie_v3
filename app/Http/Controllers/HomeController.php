@@ -109,38 +109,11 @@ class HomeController extends Controller
             'cinema_id' => $request->theatre_id,
             'date' => $request->start_date,
             'url' => $request->url,
-            'is_active' => 0,
-            'two_d' => 0,
-            'three_d' => 0,
+            'is_active' => $request->is_active,
+            'two_d' => $request->two_d,
+            'three_d' => $request->three_d,
             'movie_id' => $id
         ];
-
-        $word = 'https://';
-        if(strpos($data['url'], $word) !== false)
-        {
-            // dd('word found');
-            $data = [
-                'cinema_id' => $request->theatre_id,
-                'date' => $request->start_date,
-                'url' => $request->url,
-                'is_active' => 0,
-                'two_d' => 0,
-                'three_d' => 0,
-                'movie_id' => $id
-            ];
-        }
-        else
-        {
-            $data = [
-                'cinema_id' => $request->theatre_id,
-                'date' => $request->start_date,
-                'url' => 'https://'.$request->url,
-                'is_active' => 0,
-                'two_d' => 0,
-                'three_d' => 0,
-                'movie_id' => $id
-            ];
-        }
 
         Showtime::insert($data);
         return redirect('/showtimes/'.$id)->with('success', 'Theatre Added!');
@@ -177,10 +150,11 @@ class HomeController extends Controller
             'date' => $start_date
         ];
 
-        $word = 'https://';
-        if(strpos($sd['url'], $word) !== false)
+        $https = 'https://';
+        $http = 'http://';
+        if(strpos($sd['url'], $https) !== false || strpos($sd['url'], $http) !== false)
         {
-            // dd('word found');
+            //if http/https found then do nothing
             $sd = [
                 'url' => $url,
                 'date' => $start_date
@@ -188,8 +162,9 @@ class HomeController extends Controller
         }
         else
         {
+            // if http/https not found then add http with the url
             $sd = [
-                'url' => 'https://'.$url,
+                'url' => 'http://'.$url,
                 'date' => $start_date
             ];
         }
