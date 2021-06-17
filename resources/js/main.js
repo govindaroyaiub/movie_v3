@@ -1,12 +1,3 @@
-// window.Vue = require('vue');
-//
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-//
-// new Vue({
-//     el: '#root',
-// });
-
 window.Popper = require("popper.js").default;
 window.$ = window.jQuery = require("jquery");
 window.axios = require("axios");
@@ -243,6 +234,10 @@ function buildLocationList(data) {
                 const api_date = m.date;
                 const end_date = m.end_date;
 
+                console.log('DATEEEEE', api_date);
+
+                
+
                 var st1;
                 var st2;
 
@@ -252,7 +247,14 @@ function buildLocationList(data) {
                 var logic2 = current_date >= api_date;
 
 
-                if (current_date < api_date) {
+                if (api_date === '1971-01-01') {
+                    if (isUrlNl) {
+                        st2 = "start date unknown";
+                    } else {
+                        st2 = "startdatum nog niet bekend";
+                    }
+                } else {
+if (current_date < api_date) {
                     var dateTime;
 
                     if (isUrlNl) {
@@ -276,13 +278,11 @@ function buildLocationList(data) {
                     } else {
                         st2 = "In de bioscoop";
                     }
-                } else if (api_date === '1971-01-01') {
-                    if (isUrlNl) {
-                        st2 = "start date unknown";
-                    } else {
-                        st2 = "startdatum nog niet bekend";
-                    }
+                } 
                 }
+
+
+                
 
                 // check 2D / 3D
                 var twod_threed = m.two_d === 1 && m.three_d === 1;
@@ -400,6 +400,17 @@ function buildLocationList(data) {
                     var logic1 = current_date < api_date;
                     var logic2 = current_date >= api_date;
 
+                    if (api_date === '1971-01-01') {
+                    if (isUrlNl) {
+                        st2 = "start date unknown";
+                    } else {
+                        st2 = "startdatum nog niet bekend";
+                    } 
+
+                } else {
+
+            
+
                     if (current_date < api_date) {
                         var dateTime;
 
@@ -424,13 +435,10 @@ function buildLocationList(data) {
                         } else {
                             st2 = "In de bioscoop";
                         }
-                    } else if (api_date === '1971-01-01') {
-                    if (isUrlNl) {
-                        st2 = "start date unknown";
-                    } else {
-                        st2 = "startdatum nog niet bekend";
-                    }
+                    } 
                 }
+
+
 
                     // check 2D / 3D
                     var twod_threed = m.two_d === 1 && m.three_d === 1;
