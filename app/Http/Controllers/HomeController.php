@@ -105,9 +105,17 @@ class HomeController extends Controller
 
     public function showtimes_add(Request $request, $id)
     {
+        if($request->start_date == NULL)
+        {
+            $date = date('1971-01-01');
+        }
+        else
+        {
+            $date = $request->start_date;
+        }
         $data = [
             'cinema_id' => $request->theatre_id,
-            'date' => $request->start_date,
+            'date' => $date,
             'url' => $request->url,
             'is_active' => $request->is_active,
             'two_d' => $request->two_d,

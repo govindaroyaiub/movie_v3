@@ -44,7 +44,12 @@
                                     </td>
                                     <td><a href="{{$row->url}}" target="_blank"
                                             style="line-break: anywhere;">{{$row->url}}</a></td>
-                                    <td>{{$row->date}}
+                                    <td>
+                                        @if($row->date == date('1971-01-01'))
+                                        <label style="color: red;">Date Unknown</label>
+                                        @else
+                                        {{$row->date}}
+                                        @endif
                                     </td>
                                     <td>
                                         <input type="checkbox" class="switch" id="{{ $row->id }}" @if($row->is_active ==
