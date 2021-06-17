@@ -251,6 +251,7 @@ function buildLocationList(data) {
                 var logic1 = current_date < api_date;
                 var logic2 = current_date >= api_date;
 
+
                 if (current_date < api_date) {
                     var dateTime;
 
@@ -274,6 +275,12 @@ function buildLocationList(data) {
                         st2 = "Now Showing In Theatre";
                     } else {
                         st2 = "In de bioscoop";
+                    }
+                } else if (api_date === null) {
+                    if (isUrlNl) {
+                        st2 = "start date unknown";
+                    } else {
+                        st2 = "startdatum nog niet bekend";
                     }
                 }
 
@@ -302,7 +309,7 @@ function buildLocationList(data) {
                         </p>
                       </div>
                       <div class="m-wrap-footer">
-                        <a id="book-button" class="m-book-btn p9-btn" target="_blank" href="http://${
+                        <a id="book-button" class="m-book-btn p9-btn" target="_blank" href="${
                             m.url
                         }">${isUrlNl ? "To Theatre" : "Naar theater"}</a>
                         <a class="m-map-btn title" id="link-${m.id}" href="#">${
@@ -417,7 +424,13 @@ function buildLocationList(data) {
                         } else {
                             st2 = "In de bioscoop";
                         }
+                    } else if (api_date === null) {
+                    if (isUrlNl) {
+                        st2 = "start date unknown";
+                    } else {
+                        st2 = "startdatum nog niet bekend";
                     }
+                }
 
                     // check 2D / 3D
                     var twod_threed = m.two_d === 1 && m.three_d === 1;
@@ -443,7 +456,7 @@ function buildLocationList(data) {
                         </p>
                       </div>
                       <div class="m-wrap-footer">
-                        <a id="book-button" class="m-book-btn p9-btn" target="_blank" href="http://${
+                        <a id="book-button" class="m-book-btn p9-btn" target="_blank" href="${
                             m.url
                         }">${isUrlNl ? "To Theatre" : "Naar theater"}</a>
                         <a class="m-map-btn title" id="link-${m.id}" href="#">${
