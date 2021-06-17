@@ -18,10 +18,17 @@
                                 <input type="text" class="form-control" name="url" value="{{ $ms['url'] }}" id="url" required>
                             </div>
 
+                            @if($ms['date'] == '1971-01-01')
+                            <div class="form-group">
+                                <label for="start_date">Start Date</label>
+                                <input type="date" class="form-control" name="start_date" id="url" required>
+                            </div>
+                            @else
                             <div class="form-group">
                                 <label for="start_date">Start Date</label>
                                 <input type="date" class="form-control" name="start_date" value="{{ $ms['date'] }}" id="url" required>
                             </div>
+                            @endif
                                                       
                             <div class="modal-footer">
                                 <button type="submit" class="form-control-user btn btn-primary">Update</button>
