@@ -276,7 +276,7 @@ function buildLocationList(data) {
                     } else {
                         st2 = "In de bioscoop";
                     }
-                } else if (api_date === null) {
+                } else if (api_date === '1971-01-01') {
                     if (isUrlNl) {
                         st2 = "start date unknown";
                     } else {
@@ -424,7 +424,7 @@ function buildLocationList(data) {
                         } else {
                             st2 = "In de bioscoop";
                         }
-                    } else if (api_date === null) {
+                    } else if (api_date === '1971-01-01') {
                     if (isUrlNl) {
                         st2 = "start date unknown";
                     } else {
