@@ -126,6 +126,18 @@ Route::domain('www.100up.nl')->group(function(){
     Route::get('/api/shows', 'HundredUpController@showsApi');
 });
 
+Route::domain('sorellemacaluso.nl')->group(function(){
+    Route::get('/', 'LaSorelleController@nl_landing');
+    Route::get('/_en', 'LaSorelleController@en_landing');
+    Route::get('/api/shows', 'LaSorelleController@showsApi');
+});
+
+Route::domain('www.sorellemacaluso.nl')->group(function(){
+    Route::get('/', 'LaSorelleController@nl_landing');
+    Route::get('/_en', 'LaSorelleController@en_landing');
+    Route::get('/api/shows', 'LaSorelleController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
