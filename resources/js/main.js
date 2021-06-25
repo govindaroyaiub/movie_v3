@@ -143,6 +143,11 @@ if (location.pathname === "/" || location.pathname === "/_en") {
     location.pathname === "/dummy_en"
 ) {
     endpoint = `/dummy/api/shows`;
+} else if (
+    location.pathname === "/le_sorelle_macaluso" ||
+    location.pathname === "/le_sorelle_macaluso_en"
+) {
+    endpoint = `/le_sorelle_macaluso/api/shows`;
 }
 
 axios
