@@ -179,6 +179,10 @@ Route::get('/dummy', 'DumbController@nl_landing');
 Route::get('/dummy_en', 'DumbController@en_landing');
 Route::get('/dummy/api/shows', 'DumbController@showsApi');
 
+Route::get('/le_sorelle_macaluso', 'LaSorelleController@nl_landing');
+Route::get('/le_sorelle_macaluso_en', 'LaSorelleController@en_landing');
+Route::get('/le_sorelle_macaluso/api/shows', 'LaSorelleController@showsApi');
+
 
 Auth::routes(['register' => false]);
 
