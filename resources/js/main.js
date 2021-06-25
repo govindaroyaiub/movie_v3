@@ -2,6 +2,7 @@ window.Popper = require("popper.js").default;
 window.$ = window.jQuery = require("jquery");
 window.axios = require("axios");
 
+
 $(document).ready(function() {
     setTimeout(function() {
         $(".trailer-video").trigger("click");
@@ -149,6 +150,21 @@ if (location.pathname === "/" || location.pathname === "/_en") {
 ) {
     endpoint = `/le_sorelle_macaluso/api/shows`;
 }
+
+
+// FLAGS REDIRECTS:
+// const domain = 'http://movie_v3.test/'; // @if it's local (valet) mac url
+
+const domain = 'https://movie.planetnine.com/';
+const movies = [
+    { id: 'le_sorelle_macaluso', enUrl: 'le_sorelle_macaluso_en', nlUrl: 'le_sorelle_macaluso' }
+];
+
+const englishFlag = document.querySelector("[data-lang='en']");
+const dutchFlag = document.querySelector("[data-lang='nl']");
+
+englishFlag.addEventListener('click', () => movies.forEach((movie) => window.location.href = `${domain}${movie.enUrl}`));
+dutchFlag.addEventListener('click', () => movies.forEach((movie) => window.location.href = `${domain}${movie.nlUrl}`));
 
 axios
     .get(endpoint)
