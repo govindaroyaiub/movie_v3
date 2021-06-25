@@ -150,12 +150,20 @@ class HomeController extends Controller
     public function showtimes_edit_post(Request $request, $id)
     {
         $movie_id = Showtime::select('movie_id')->where('id', '=', $id)->first();
-        $start_date = $request->start_date;
         $url = $request->url;
+
+        if($request->start_date == NULL)
+        {
+            $date = date('1971-01-01');
+        }
+        else
+        {
+            $date = $request->start_date;
+        }
 
         $sd = [
             'url' => $url,
-            'date' => $start_date
+            'date' => $date
         ];
 
         $https = 'https://';
@@ -165,7 +173,7 @@ class HomeController extends Controller
             //if http/https found then do nothing
             $sd = [
                 'url' => $url,
-                'date' => $start_date
+                'date' => $date
             ];
         }
         else
@@ -173,7 +181,7 @@ class HomeController extends Controller
             // if http/https not found then add http with the url
             $sd = [
                 'url' => 'http://'.$url,
-                'date' => $start_date
+                'date' => $date
             ];
         }
         Showtime::where('id', '=', $id)->update($sd);

@@ -14,14 +14,14 @@
                             {{ csrf_field() }}
                         
                             <div class="form-group">
-                                <label for="url">URL <b style="color:red;">(wihtout http/https)</b></label>
+                                <label for="url">URL</label>
                                 <input type="text" class="form-control" name="url" value="{{ $ms['url'] }}" id="url" required>
                             </div>
 
                             @if($ms['date'] == '1971-01-01')
                             <div class="form-group">
                                 <label for="start_date">Start Date</label>
-                                <input type="date" class="form-control" name="start_date" id="url" required>
+                                <input type="date" class="form-control" name="start_date" id="url">
                             </div>
                             @else
                             <div class="form-group">
