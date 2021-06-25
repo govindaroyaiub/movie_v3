@@ -155,16 +155,16 @@ if (location.pathname === "/" || location.pathname === "/_en") {
 // FLAGS REDIRECTS:
 // const domain = 'http://movie_v3.test/'; // @if it's local (valet) mac url
 
-const domain = 'https://movie.planetnine.com/';
-const movies = [
-    { id: 'le_sorelle_macaluso', enUrl: 'le_sorelle_macaluso_en', nlUrl: 'le_sorelle_macaluso' }
-];
+// const domain = 'https://movie.planetnine.com/';
+// const movies = [
+//     { id: 'le_sorelle_macaluso', enUrl: 'le_sorelle_macaluso_en', nlUrl: 'le_sorelle_macaluso' }
+// ];
 
-const englishFlag = document.querySelector("[data-lang='en']");
-const dutchFlag = document.querySelector("[data-lang='nl']");
+// const englishFlag = document.querySelector("[data-lang='en']");
+// const dutchFlag = document.querySelector("[data-lang='nl']");
 
-englishFlag.addEventListener('click', () => movies.forEach((movie) => window.location.href = `${domain}${movie.enUrl}`));
-dutchFlag.addEventListener('click', () => movies.forEach((movie) => window.location.href = `${domain}${movie.nlUrl}`));
+// englishFlag.addEventListener('click', () => movies.forEach((movie) => window.location.href = `${domain}${movie.enUrl}`));
+// dutchFlag.addEventListener('click', () => movies.forEach((movie) => window.location.href = `${domain}${movie.nlUrl}`));
 
 axios
     .get(endpoint)
