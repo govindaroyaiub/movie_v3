@@ -195,6 +195,9 @@ Route::get('/lesorellemacaluso', 'LaSorelleController@nl_landing');
 Route::get('/lesorellemacaluso_en', 'LaSorelleController@en_landing');
 Route::get('/lesorellemacaluso/api/shows', 'LaSorelleController@showsApi');
 
+Route::get('/dearcomrades', 'DearComradeController@nl_landing');
+Route::get('/dearcomrades', 'DearComradeController@en_landing');
+Route::get('/dearcomrades/api/shows', 'DearComradeController@showsApi');
 
 Auth::routes(['register' => false]);
 
