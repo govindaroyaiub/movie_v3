@@ -138,6 +138,18 @@ Route::domain('www.sorellemacaluso.nl')->group(function(){
     Route::get('/api/shows', 'LaSorelleController@showsApi');
 });
 
+Route::domain('dearcomrades-defilm.nl')->group(function(){
+    Route::get('/', 'DearComradeController@nl_landing');
+    Route::get('/_en', 'DearComradeController@en_landing');
+    Route::get('/api/shows', 'DearComradeController@showsApi');
+});
+
+Route::domain('www.dearcomrades-defilm.nl')->group(function(){
+    Route::get('/', 'DearComradeController@nl_landing');
+    Route::get('/_en', 'DearComradeController@en_landing');
+    Route::get('/api/shows', 'DearComradeController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
