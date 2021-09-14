@@ -10,7 +10,7 @@
                         data-target="#date_modal">Update Date Altogether +</a>
                     <label style="position:absolute; right:11%;">/</label>
                     <a href="" style="position:absolute; text-decoration: underline; right:2%;" data-toggle="modal"
-                        data-target="#add_theatre_modal" onclick="changeCountry()">Add Theatre +</a>
+                        data-target="#add_theatre_modal">Add Theatre +</a>
                 </div>
                 <div class="card-body">
                     @include('alert')
