@@ -228,6 +228,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
 <script type="text/javascript">
+
     $(document).ready(function () {
         var options = {
             autoClose: true,
@@ -367,6 +368,44 @@
                 }
             })
         });
+
+        var country_name = $('#country_id option:selected').val();
+        if(country_name == 'Netherlands'){
+            var country_name = country_name;
+            var _token = $('input[name="_token"]').val();
+            document.getElementById("theatre_url").value = '';
+
+            $.ajax({
+                url: "{{route('gettheaters')}}",
+                method: "POST",
+                data: 
+                {
+                    country_name: country_name,
+                    _token
+                },
+                success: function (result) 
+                {
+                    var len = result.length;
+
+                    $("select[id='theatre_id[]").empty();
+                    $("select[id='theatre_id[]").append("<option value=''>"+'Select Theater'+"</option>");
+
+                    for( var i = 0; i<len; i++)
+                    {
+                        var id = result[i]['id'];
+                        var name = result[i]['name'];
+                        var address = result[i]['address'];
+                        var zip = result[i]['zip'];
+                        var city = result[i]['city'];
+                        var country = result[i]['country'];
+                        var space = " ,";
+
+                        
+                        $("select[id='theatre_id[]").append("<option value='"+id+"'>"+name+space+address+space+zip+space+city+space+country+"</option>");
+                    }
+                }
+            })
+        }
 
         $("select[id='theatre_id[]']").change(function (e) {
             var id = $(this).val();

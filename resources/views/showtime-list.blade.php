@@ -10,7 +10,7 @@
                         data-target="#date_modal">Update Date Altogether +</a>
                     <label style="position:absolute; right:11%;">/</label>
                     <a href="" style="position:absolute; text-decoration: underline; right:2%;" data-toggle="modal"
-                        data-target="#add_theatre_modal">Add Theatre +</a>
+                        data-target="#add_theatre_modal" onclick="changeCountry()">Add Theatre +</a>
                 </div>
                 <div class="card-body">
                     @include('alert')
@@ -131,9 +131,8 @@
                         <select class="form-control select2" id="country_id" name="country_id" style="width: 100%;"
                             required>
                             <option value="">Select Country</option>
-                            @foreach($country_list as $row)
-                            <option value="{{$row->country}}">{{$row->country}}</option>
-                            @endforeach
+                            <option value="Netherlands" selected>Netherlands</option>
+                            <option value="Belgium">Belgium</option>
                             <option value="all">All Theaters</option>
                         </select>
                     </div>
@@ -157,7 +156,7 @@
                         <select class="form-control select2" id="is_active" name="is_active" style="width: 100%;"
                             required>
                             <option value="">Select Option</option>
-                            <option value="1">Yes</option>
+                            <option value="1" selected>Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
@@ -166,7 +165,7 @@
                         <select class="form-control select2" id="two_d" name="two_d" style="width: 100%;"
                             required>
                             <option value="">Select Option</option>
-                            <option value="1">Yes</option>
+                            <option value="1" selected>Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
