@@ -96,7 +96,7 @@ class HomeController extends Controller
                             'movie_showtimes.two_d',
                             'movie_showtimes.three_d')
                         ->where('movie_showtimes.movie_id', '=', $id)
-                        ->orderBy('show_location_static.city', 'ASC')
+                        ->orderBy('movie_showtimes.updated_at', 'desc')
                         ->get();
 
         $country_list = Location::select('country')->distinct('country')->get();
@@ -149,7 +149,12 @@ class HomeController extends Controller
 
     public function showtimes_edit_post(Request $request, $id)
     {
-        $movie_id = Showtime::select('movie_id')->where('id', '=', $id)->first();
+        $showtime_details = Showtime::where('id', '=', $id)->first();
+        $movie_id = $showtime_details['movie_id'];
+        $location_id = $showtime_details['cinema_id'];
+
+        $cinema_details = Location::where('id', $location_id)->first();
+
         $url = $request->url;
 
         if($request->start_date == NULL)
@@ -185,7 +190,7 @@ class HomeController extends Controller
             ];
         }
         Showtime::where('id', '=', $id)->update($sd);
-        return redirect('/showtimes/edit/'.$id);
+        return redirect('showtimes/'.$movie_id)->with('success', 'Showtime Updated for '.$cinema_details['name']);
     }
 
     public function showtimes_delete($id)
