@@ -260,7 +260,7 @@ class AdminController extends Controller
         $last_movie_id = $movie_list['id'];
         foreach($default_theater_list as $dl)
         {
-            $getTheaterInfo = Location::select('*')->first();
+            $getTheaterInfo = Location::select('*')->where('id', $dl)->first();
             
             $data = [
                 'cinema_id' => $dl,
