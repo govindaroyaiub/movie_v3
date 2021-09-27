@@ -148,6 +148,9 @@ class AdminController extends Controller
     public function movie_create(Request $request)  
     {
         $movie_title = $request->movie_title;
+        $release_date = $request->release_date;
+        
+        $default_theater_list = array(82, 3, 276, 262, 250, 232, 234, 224, 202, 195, 175, 167, 157, 524, 143, 137, 118, 114, 102, 99, 523, 67, 65, 61, 46, 54, 41, 38, 32, 26, 31, 24, 21, 14, 11, 20, 55, 132, 30, 20, 69, 94, 111, 213, 242, 248, 273, 246);
 
         if($request->d_id == 0 && $request->mp_id == 0)
         {
@@ -252,7 +255,26 @@ class AdminController extends Controller
             ];
             Movie::insert($movie_details);
         }
-        return redirect('/home')->with('success', $movie_title.' has been created!');
+
+        $movie_list = Movie::select('id')->orderBy('id', 'DESC')->first();
+        $last_movie_id = $movie_list['id'];
+        foreach($default_theater_list as $dl)
+        {
+            $getTheaterInfo = Location::select('*')->first();
+            
+            $data = [
+                'cinema_id' => $dl,
+                'date' => $release_date,
+                'url' => $getTheaterInfo['website'],
+                'is_active' => 1,
+                'two_d' => 1,
+                'three_d' => 0,
+                'movie_id' => $last_movie_id
+            ];
+
+            Showtime::insert($data);
+        }
+        return redirect('/home')->with('success', $movie_title.' has been created with showtimes!');
     }
 
     public function movie_delete($id)
@@ -271,11 +293,6 @@ class AdminController extends Controller
 
     public function tmd_edit(Request $request, $id)
     {
-        $distributor = Distributor::where('id', '=', $request->d_id)->select('name')->first();
-        $media_partner = MediaPartner::where('id', '=', $request->mp_id)->select('name')->first();
-        $d_name = $distributor['name'];
-        $mp_name = $media_partner['name'];
-
         if($request->d_id == 0 && $request->mp_id == 0)
         {
             $tmd_details = [
@@ -307,6 +324,8 @@ class AdminController extends Controller
         }
         elseif($request->d_id != 0 && $request->mp_id == 0)
         {
+            $distributor = Distributor::where('id', '=', $request->d_id)->select('name')->first();
+            $d_name = $distributor['name'];
             $tmd_details = [
                 'movie_title' => $request->movie_title,
                 'director' => $request->director,
@@ -336,6 +355,8 @@ class AdminController extends Controller
         }
         elseif($request->d_id == 0 && $request->mp_id != 0)
         {
+            $media_partner = MediaPartner::where('id', '=', $request->mp_id)->select('name')->first();
+            $mp_name = $media_partner['name'];
             $tmd_details = [
                 'movie_title' => $request->movie_title,
                 'director' => $request->director,
@@ -365,6 +386,10 @@ class AdminController extends Controller
         }
         else
         {
+            $distributor = Distributor::where('id', '=', $request->d_id)->select('name')->first();
+            $media_partner = MediaPartner::where('id', '=', $request->mp_id)->select('name')->first();
+            $d_name = $distributor['name'];
+            $mp_name = $media_partner['name'];
             $tmd_details = [
                 'movie_title' => $request->movie_title,
                 'director' => $request->director,

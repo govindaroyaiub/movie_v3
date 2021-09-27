@@ -46,6 +46,11 @@
                             <label for="google_sheet">Google Sheet URL</label>
                             <input type="text" class="form-control" name="google_sheet" id="google_sheet" required>
                         </div>
+
+                        <div class="form-group">
+                            <label for="release_date">Release Date</label>
+                            <input type="date" class="form-control" name="release_date" id="release_date" required>
+                        </div>
     
                         <div class="form-group">
                             <label for="google_sheet">Select Client</label>
