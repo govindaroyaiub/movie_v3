@@ -227,6 +227,10 @@ Route::get('/martinlutherking', 'MartinLutherController@nl_landing');
 Route::get('/martinlutherking_en', 'MartinLutherController@en_landing');
 Route::get('/martinlutherking/api/shows', 'MartinLutherController@showsApi');
 
+Route::get('/balladthewhitecow', 'BalladWhiteCowController@nl_landing');
+Route::get('/balladthewhitecow_en', 'BalladWhiteCowController@en_landing');
+Route::get('/balladthewhitecow/api/shows', 'BalladWhiteCowController@showsApi');
+
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
