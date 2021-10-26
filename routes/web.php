@@ -150,6 +150,18 @@ Route::domain('www.dearcomrades-defilm.nl')->group(function(){
     Route::get('/api/shows', 'DearComradeController@showsApi');
 });
 
+Route::domain('martinlutherkingvsthefbi.nl')->group(function(){
+    Route::get('/', 'MartinLutherController@nl_landing');
+    Route::get('/_en', 'MartinLutherController@en_landing');
+    Route::get('/api/shows', 'MartinLutherController@showsApi');
+});
+
+Route::domain('www.martinlutherkingvsthefbi.nl')->group(function(){
+    Route::get('/', 'MartinLutherController@nl_landing');
+    Route::get('/_en', 'MartinLutherController@en_landing');
+    Route::get('/api/shows', 'MartinLutherController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -210,6 +222,10 @@ Route::get('/lesorellemacaluso/api/shows', 'LaSorelleController@showsApi');
 Route::get('/dearcomrades', 'DearComradeController@nl_landing');
 Route::get('/dearcomrades_en', 'DearComradeController@en_landing');
 Route::get('/dearcomrades/api/shows', 'DearComradeController@showsApi');
+
+Route::get('/martinlutherking', 'MartinLutherController@nl_landing');
+Route::get('/martinlutherking_en', 'MartinLutherController@en_landing');
+Route::get('/martinlutherking/api/shows', 'MartinLutherController@showsApi');
 
 Auth::routes(['register' => false]);
 

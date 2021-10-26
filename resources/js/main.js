@@ -150,11 +150,10 @@ if (location.pathname === "/" || location.pathname === "/_en") {
     location.pathname === "/lesorellemacaluso_en"
 ) {
     endpoint = `/lesorellemacaluso/api/shows`;
-} else if (
-    location.pathname === "/dearcomrades" ||
-    location.pathname === "/dearcomrades_en"
-) {
+} else if ( location.pathname === "/dearcomrades" || location.pathname === "/dearcomrades_en") {
     endpoint = `/dearcomrades/api/shows`;
+} else if ( location.pathname === "/martinlutherking" || location.pathname === "/martinlutherking_en") {
+    endpoint = `/martinlutherking/api/shows`;
 }
 
 axios
