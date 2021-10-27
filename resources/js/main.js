@@ -154,6 +154,8 @@ if (location.pathname === "/" || location.pathname === "/_en") {
     endpoint = `/dearcomrades/api/shows`;
 } else if ( location.pathname === "/martinlutherking" || location.pathname === "/martinlutherking_en") {
     endpoint = `/martinlutherking/api/shows`;
+} else if ( location.pathname === "/balladthewhitecow" || location.pathname === "/balladthewhitecow_en") {
+    endpoint = `/balladthewhitecow/api/shows`;
 }
 
 axios
