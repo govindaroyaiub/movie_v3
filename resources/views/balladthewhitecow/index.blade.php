@@ -10,7 +10,7 @@
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 
         :root {
             --primary-light: {{ $primary_light }};
@@ -28,7 +28,7 @@
             padding: 3rem 0;
             background: var(--secondary-light);
             color: #fff;
-            font-family: 'Anton', sans-serif;
+            font-family: 'Open Sans Condensed', sans-serif;
         }
 
         .sibyl-header {
@@ -38,14 +38,14 @@
 
         .sibyl-header h1 {
             color: inherit !important;
-            font-family: 'Anton', sans-serif;
-            font-weight: 400 !important;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: 300 !important;
         }
 
 
         .sibyl-review-slider {
             background-color: #f1e8d6 !important;
-            font-family: 'Anton', sans-serif;
+            font-family: 'Open Sans Condensed', sans-serif;
         }
 
         .sibyl-review-area {
