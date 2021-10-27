@@ -162,6 +162,18 @@ Route::domain('www.martinlutherkingvsthefbi.nl')->group(function(){
     Route::get('/api/shows', 'MartinLutherController@showsApi');
 });
 
+Route::domain('balladofawhitecow-defilm.nl')->group(function(){
+    Route::get('/', 'BalladWhiteCowController@nl_landing');
+    Route::get('/_en', 'BalladWhiteCowController@en_landing');
+    Route::get('/api/shows', 'BalladWhiteCowController@showsApi');
+});
+
+Route::domain('www.balladofawhitecow-defilm.nl')->group(function(){
+    Route::get('/', 'BalladWhiteCowController@nl_landing');
+    Route::get('/_en', 'BalladWhiteCowController@en_landing');
+    Route::get('/api/shows', 'BalladWhiteCowController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
