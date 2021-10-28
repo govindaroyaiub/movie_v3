@@ -101,8 +101,8 @@
         </h1>
 
         <div class="flags">
-            <img data-lang="en" src="{{ asset('images/uk.png') }}" class="d-block" alt="">
-            <img data-lang="nl" src="{{ asset('images/nl.svg') }}" class="d-none" alt="">
+            <img data-lang="en" class="d-block" alt="">
+            <img data-lang="nl" class="d-none" alt="">
         </div>
 
     </header>
