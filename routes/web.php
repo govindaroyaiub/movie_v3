@@ -174,6 +174,18 @@ Route::domain('www.balladofawhitecow-defilm.nl')->group(function(){
     Route::get('/api/shows', 'BalladWhiteCowController@showsApi');
 });
 
+Route::domain('sunchildren-defilm.nl')->group(function(){
+    Route::get('/', 'SunChildrenController@nl_landing');
+    Route::get('/_en', 'SunChildrenController@en_landing');
+    Route::get('/api/shows', 'SunChildrenController@showsApi');
+});
+
+Route::domain('www.sunchildren-defilm.nl')->group(function(){
+    Route::get('/', 'SunChildrenController@nl_landing');
+    Route::get('/_en', 'SunChildrenController@en_landing');
+    Route::get('/api/shows', 'SunChildrenController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -242,6 +254,10 @@ Route::get('/martinlutherking/api/shows', 'MartinLutherController@showsApi');
 Route::get('/balladthewhitecow', 'BalladWhiteCowController@nl_landing');
 Route::get('/balladthewhitecow_en', 'BalladWhiteCowController@en_landing');
 Route::get('/balladthewhitecow/api/shows', 'BalladWhiteCowController@showsApi');
+
+Route::get('/sunchildren', 'SunChildrenController@nl_landing');
+Route::get('/sunchildren_en', 'SunChildrenController@en_landing');
+Route::get('/sunchildren/api/shows', 'SunChildrenController@showsApi');
 
 Auth::routes(['register' => false]);
 
