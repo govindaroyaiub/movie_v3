@@ -186,6 +186,18 @@ Route::domain('www.sunchildren-defilm.nl')->group(function(){
     Route::get('/api/shows', 'SunChildrenController@showsApi');
 });
 
+Route::domain('petrovsflu-defilm.nl')->group(function(){
+    Route::get('/', 'PetrovController@nl_landing');
+    Route::get('/_en', 'PetrovController@en_landing');
+    Route::get('/api/shows', 'PetrovController@showsApi');
+});
+
+Route::domain('www.petrovsflu-defilm.nl')->group(function(){
+    Route::get('/', 'PetrovController@nl_landing');
+    Route::get('/_en', 'PetrovController@en_landing');
+    Route::get('/api/shows', 'PetrovController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -258,6 +270,10 @@ Route::get('/balladthewhitecow/api/shows', 'BalladWhiteCowController@showsApi');
 Route::get('/sunchildren', 'SunChildrenController@nl_landing');
 Route::get('/sunchildren_en', 'SunChildrenController@en_landing');
 Route::get('/sunchildren/api/shows', 'SunChildrenController@showsApi');
+
+Route::get('/petrovsflu', 'PetrovController@nl_landing');
+Route::get('/petrovsflu_en', 'PetrovController@en_landing');
+Route::get('/petrovsflu/api/shows', 'PetrovController@showsApi');
 
 Auth::routes(['register' => false]);
 
