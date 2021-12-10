@@ -265,7 +265,7 @@ class AdminController extends Controller
             $data = [
                 'cinema_id' => $dl,
                 'date' => $release_date,
-                'url' => $getTheaterInfo['website'],
+                'url' => 'http://' + $getTheaterInfo['website'],
                 'is_active' => 1,
                 'two_d' => 1,
                 'three_d' => 0,
