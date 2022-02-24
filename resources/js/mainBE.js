@@ -116,6 +116,8 @@ if (location.pathname === '/' || location.pathname === '/_en') {
     endpoint = `/lara/api/shows`;
 } else if (location.pathname === '/cunninghamBE' || location.pathname === '/cunninghamBE_fr') {
     endpoint = `/cunninghamBE/api/shows`;
+} else if (location.pathname === '/cunninghamBE' || location.pathname === '/cunninghamBE_fr') {
+    endpoint = `/cunninghamBE/api/shows`;
 }
 
 

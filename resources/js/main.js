@@ -160,6 +160,8 @@ if (location.pathname === "/" || location.pathname === "/_en") {
     endpoint = `/sunchildren/api/shows`;
 } else if ( location.pathname === "/petrovsflu" || location.pathname === "/petrovsflu_en") {
     endpoint = `/petrovsflu/api/shows`;
+} else if ( location.pathname === "/thereasonijump" || location.pathname === "/thereasonijump_en") {
+    endpoint = `/thereasonijump/api/shows`;
 }
 
 axios

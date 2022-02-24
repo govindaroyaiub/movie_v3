@@ -275,6 +275,10 @@ Route::get('/petrovsflu', 'PetrovController@nl_landing');
 Route::get('/petrovsflu_en', 'PetrovController@en_landing');
 Route::get('/petrovsflu/api/shows', 'PetrovController@showsApi');
 
+Route::get('/thereasonijump', 'ReasonIJumpController@nl_landing');
+Route::get('/thereasonijump_en', 'ReasonIJumpController@en_landing');
+Route::get('/thereasonijump/api/shows', 'ReasonIJumpController@showsApi');
+
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
