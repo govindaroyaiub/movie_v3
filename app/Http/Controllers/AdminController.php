@@ -261,11 +261,16 @@ class AdminController extends Controller
         foreach($default_theater_list as $dl)
         {
             $getTheaterInfo = Location::select('*')->where('id', $dl)->first();
-            
+
+            $st1 = "https://";
+            $st2 = $getTheaterInfo['website'];
+
+            $st1 .= $st2;
+  
             $data = [
                 'cinema_id' => $dl,
                 'date' => $release_date,
-                'url' => 'http://' + $getTheaterInfo['website'],
+                'url' => $st1,
                 'is_active' => 1,
                 'two_d' => 1,
                 'three_d' => 0,
