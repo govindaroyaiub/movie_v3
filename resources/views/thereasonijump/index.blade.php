@@ -88,7 +88,7 @@
 
         .exclusives label{
             line-height: 1.6;
-            font-size: 28px;
+            font-size: 25px;
             margin: auto;
             padding: 10px;
         }
@@ -110,7 +110,7 @@
         /* this will cover your all mobile/cellphone widths */
             .exclusives label{
                 line-height: 1.6;
-                font-size: 15px;
+                font-size: 17px;
                 margin: auto;
                 padding: 10px;
             }
