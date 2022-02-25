@@ -81,6 +81,60 @@
             font-family: 'Thasadith', sans-serif !important;
         }
 
+        .exclusives{
+            padding-top: 1px;
+            padding-bottom: 30px;
+        }
+
+        .exclusives label{
+            line-height: 1.6;
+            font-size: 28px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .exlusive_area{
+            padding-top: 2.5px;
+            border: 2px solid white;
+            border-radius: 3px;
+            margin-top: 12px;
+            background-color: #6391a9;
+            transition: 0.32s;
+        }
+
+        .exlusive_area:hover{
+            background-color: #e4cd80;
+        }
+
+        @media only screen and (min-width: 200px) and (max-width: 767px)  {
+        /* this will cover your all mobile/cellphone widths */
+            .exclusives label{
+                line-height: 1.6;
+                font-size: 15px;
+                margin: auto;
+                padding: 10px;
+            }
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 1024px)  {
+            /* For iPad and iPad pro you have to use  */
+            .exclusives label{
+                line-height: 1.6;
+                font-size: 26px;
+                margin: auto;
+                padding: 10px;
+            }
+        }
+        @media only screen and (min-width: 200px) and (max-width: 767px) and (orientation : landscape) {
+        /* //Put your CSS here for 200px to 767px width devices (cover all mobile portrait width //      */
+            .exclusives label{
+                line-height: 1.6;
+                font-size: 23px;
+                margin: auto;
+                padding: 10px;
+            }
+        }
+
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
@@ -148,6 +202,14 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 ">
+                    <div id="events">
+                        <h1 style="text-align: center; text-decoration: underline;">PRE-PREMIERES</h1>
+                        <div class="exclusives">
+                            <div id="exclusive1" class="exlusive_area"><label for="exclusive1">Exclusive, Amsterdam XY April 4th</label></div>
+                            <div id="exclusive2" class="exlusive_area"><label for="exclusive2">Exclusive, Dhaka XY April 4th</label></div>
+                            <div id="exclusive3" class="exlusive_area"><label for="exclusive3">Exclusive, Chittagong XY April 4th</label></div>
+                        </div>
+                    </div>
                     <div class="showtimes">
                         <form class="search-form">
                             <input class="search-input map-search" type="text" name="search"
