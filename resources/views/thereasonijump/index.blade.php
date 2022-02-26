@@ -98,12 +98,13 @@
             border: 2px solid white;
             border-radius: 3px;
             margin-top: 12px;
-            background-color: #6391a9;
+            background-color: {{ $primary_dark }};
             transition: 0.32s;
         }
 
         .exlusive_area:hover{
-            background-color: #e4cd80;
+            background-color: {{ $primary_light }};
+            cursor: pointer;
         }
 
         @media only screen and (min-width: 200px) and (max-width: 767px)  {

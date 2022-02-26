@@ -88,7 +88,7 @@
 
         .exclusives label{
             line-height: 1.6;
-            font-size: 28px;
+            font-size: 25px;
             margin: auto;
             padding: 10px;
         }
@@ -98,19 +98,20 @@
             border: 2px solid white;
             border-radius: 3px;
             margin-top: 12px;
-            background-color: #6391a9;
+            background-color: {{ $primary_dark }};
             transition: 0.32s;
         }
 
         .exlusive_area:hover{
-            background-color: #e4cd80;
+            background-color: {{ $primary_light }};
+            cursor: pointer;
         }
 
         @media only screen and (min-width: 200px) and (max-width: 767px)  {
         /* this will cover your all mobile/cellphone widths */
             .exclusives label{
                 line-height: 1.6;
-                font-size: 15px;
+                font-size: 17px;
                 margin: auto;
                 padding: 10px;
             }
