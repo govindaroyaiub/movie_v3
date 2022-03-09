@@ -198,6 +198,18 @@ Route::domain('www.petrovsflu-defilm.nl')->group(function(){
     Route::get('/api/shows', 'PetrovController@showsApi');
 });
 
+Route::domain('thereasonijump-defilm.nl')->group(function(){
+    Route::get('/', 'ReasonIJumpController@nl_landing');
+    Route::get('/_en', 'ReasonIJumpController@en_landing');
+    Route::get('/api/shows', 'ReasonIJumpController@showsApi');
+});
+
+Route::domain('www.thereasonijump-defilm.nl')->group(function(){
+    Route::get('/', 'ReasonIJumpController@nl_landing');
+    Route::get('/_en', 'ReasonIJumpController@en_landing');
+    Route::get('/api/shows', 'ReasonIJumpController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
