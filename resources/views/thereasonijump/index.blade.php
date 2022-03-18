@@ -110,6 +110,16 @@
             color: whitesmoke;
         }
 
+        .city-map-js li {
+            background: {{ $primary_dark }}!important;
+            border: solid 1px white!important;
+        }
+
+        .city-map-js li:hover {
+            background: #f35b6d!important;
+            border: solid 1px white!important;
+        }
+
         @media only screen and (min-width: 200px) and (max-width: 767px)  {
         /* this will cover your all mobile/cellphone widths */
             .exclusives label{
