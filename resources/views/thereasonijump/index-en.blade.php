@@ -84,6 +84,7 @@
         .exclusives{
             padding-top: 1px;
             padding-bottom: 30px;
+            text-align: center;
         }
 
         .exclusives label{
@@ -103,8 +104,9 @@
         }
 
         .exlusive_area:hover{
-            background-color: {{ $primary_light }};
-            cursor: pointer;
+            background-color: #f35b6d;
+            /* color: {{ $primary_dark }}; */
+            color: whitesmoke;
         }
 
         @media only screen and (min-width: 200px) and (max-width: 767px)  {
@@ -204,12 +206,45 @@
                 </div>
                 <div class="col-xl-4 col-lg-6 ">
                     <div id="events">
-                        <h1 style="text-align: center; text-decoration: underline;">PRE-PREMIERES</h1>
-                        <div class="exclusives">
-                            <div id="exclusive1" class="exlusive_area"><label for="exclusive1">Exclusive, Amsterdam XY April 4th</label></div>
-                            <div id="exclusive2" class="exlusive_area"><label for="exclusive2">Exclusive, Dhaka XY April 4th</label></div>
-                            <div id="exclusive3" class="exlusive_area"><label for="exclusive3">Exclusive, Chittagong XY April 4th</label></div>
+                        <h1 style="text-align: center; text-decoration: underline;">!! SPECIALE VOORPREMIERES !!</h1>
+                        <div class="exclusives" id="exclusives">
+                            <div id="exclusive1" class="exlusive_area">
+                                <label for="exclusive1" style="text-decoration: underline;">WORLD AUTISM DAY</label>
+                                <label for="exclusive1">The following theaters are organizing a special preview on Saturday 4 April as part of <b>World Autism Day</b>:
+                                    <ul style="list-style-type: none;">
+                                        <li>
+                                            - Het Ketelhuis (Amsterdam)
+                                        </li>
+                                        <li>
+                                            - Filmhuis De Spiegel (Heerlen)
+                                        </li>
+                                        <li>
+                                            - Filmhuis Alkmaar
+                                        </li>
+                                        <li>
+                                            - Forum Groningen
+                                        </li>
+                                        <li>
+                                            - Slieker Film (Leeuwarden)
+                                        </li>
+                                        <li>
+                                            - Filmtheater Lumiere (Maastricht)
+                                        </li>
+                                        <li>
+                                            - Park Filmhuis (Alphen aan de Rijn)
+                                        </li>
+                                    </ul>
+                                    
+                                    <label style="font-size: 15px;">Click below to your theater for more information</label>
+                                
+                            </div>
                         </div>
+                        <script>
+                            document.getElementById('exclusives').onclick = function(e){
+                                e.preventDefault();
+                                window.open('https://www.autisme.nl/2020/04/02/vandaag-is-het-wereld-autisme-dag-2020/', '_blank');
+                            }
+                        </script>
                     </div>
                     <div class="showtimes">
                         <form class="search-form">
@@ -335,7 +370,7 @@
                                 <h3><i class="fa fa-quote-left"></i> {{ $review->review_text }} <i
                                         class="fa fa-quote-right"></i></h3>
 
-                                <p><a href="{{$review->source_link}}" target="_blank">{{ $review->source }}</a>
+                                <p><a href="{{$review->source_link}}" target="_blank" translate="no">{{ $review->source }}</a>
                                 </p>
 
                             </div>
