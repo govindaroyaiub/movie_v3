@@ -82,6 +82,7 @@
         }
 
         .exclusives{
+            position: relative;
             padding-top: 1px;
             padding-bottom: 30px;
             text-align: center;
@@ -99,13 +100,14 @@
             border: 2px solid white;
             border-radius: 3px;
             margin-top: 12px;
+            align-content: center;
+            justify-content: center;
             background-color: {{ $primary_dark }};
             transition: 0.32s;
         }
 
         .exlusive_area:hover{
-            cursor: pointer;
-            background-color: #f35b6d;
+            background-color: #c5aa50;
             /* color: {{ $primary_dark }}; */
             color: whitesmoke;
         }
@@ -116,39 +118,67 @@
         }
 
         .city-map-js li:hover {
-            background: #f35b6d!important;
+            background: #c5aa50!important;
             border: solid 1px white!important;
+        }
+
+        #exclusive-menu
+        {
+            margin: 0 auto;
+            display: inline;
+        }
+        #exclusive-menu ul {    
+            text-align: center;
+            font-size: large;
+        }
+        #exclusive-menu li {     
+            display: inline-block;
+        }
+
+        #exclusive-menu li a{     
+            text-decoration: underline;
+            color: whitesmoke;   
         }
 
         @media only screen and (min-width: 200px) and (max-width: 767px)  {
         /* this will cover your all mobile/cellphone widths */
             .exclusives label{
-                line-height: 1.6;
-                font-size: 17px;
                 margin: auto;
-                padding: 10px;
             }
         }
 
         @media only screen and (min-width: 768px) and (max-width: 1024px)  {
             /* For iPad and iPad pro you have to use  */
             .exclusives label{
-                line-height: 1.6;
-                font-size: 26px;
                 margin: auto;
-                padding: 10px;
             }
         }
         @media only screen and (min-width: 200px) and (max-width: 767px) and (orientation : landscape) {
         /* //Put your CSS here for 200px to 767px width devices (cover all mobile portrait width //      */
             .exclusives label{
-                line-height: 1.6;
                 font-size: 23px;
                 margin: auto;
-                padding: 10px;
             }
         }
 
+        @media (min-width:1025px) { 
+            .mfp-bg, .mfp-wrap{
+                display: none!important;
+            }
+            html{
+                overflow: visible!important;
+                margin-right: 0!important;
+            }
+        }
+        @media (min-width:1281px) {
+            .mfp-bg, .mfp-wrap{
+                display: none!important;
+            }
+            html{
+                overflow: visible!important;
+                margin-right: 0!important;
+            }
+        }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
@@ -220,48 +250,68 @@
                 </div>
                 <div class="col-xl-4 col-lg-6 ">
                     <div id="events">
-                        <h1 style="text-align: center; text-decoration: underline;">!! SPECIALE VOORPREMIERES !!</h1>
+                        <h1 style="text-align: center; text-decoration: underline;">Voorpremières in Autismeweek 2022</h1>
                         <div class="exclusives" id="exclusives">
                             <div id="exclusive1" class="exlusive_area">
-                                <label for="exclusive1" style="text-decoration: underline;">WERELD AUTISME DAG</label>
-                                <label for="exclusive1">De volgende theaters organiseren een speciale voorpremière op zaterdag
-                                    4 april in het kader van <b>Wereld Autisme Dag</b>:
-                                    <ul style="list-style-type: none;">
+                                <h4 for="exclusive1" style="text-decoration: underline;">Wereld Autismedag valt dit jaar op 2 april en is de start van Autismeweek 2022 (2 april tot en met 9 april).</h4>
+                                <label for="exclusive1">Rond Wereld Autismedag worden voorpremières van THE REASON I JUMP georganiseerd</b>:
+                                <div id="exclusive-menu">
+                                    <label for="exclusive1" style="text-decoration: underline;">Zaterdag 2 april:</label>
+                                    <ul>
                                         <li>
-                                            - Het Ketelhuis (Amsterdam)
+                                            - <a href="https://www.filmhuisalkmaar.nl/films/the-reason-i-jump-voorpremiere?tijd=22663" target="_blank">FH Alkmaar (Alkmaar)</a> 
                                         </li>
                                         <li>
-                                            - Filmhuis De Spiegel (Heerlen)
+                                            - <a href="https://www.ketelhuis.nl/artikelen/voorpremiere-van-the-reason-i-jump/" target="_blank">Het Ketelhuis (Amsterdam)</a>
                                         </li>
                                         <li>
-                                            - Filmhuis Alkmaar
+                                            - <a href="https://lievevrouw.nl/producties/film/apr-2022/the-reason-i-jump/?evcode=60273" target="_blank">De Lieve Vrouw (Amersfoort)</a>
                                         </li>
                                         <li>
-                                            - Forum Groningen
+                                            - <a href="https://www.filmhuisbussum.nl/film/22397/wereld-autismedag-voorpremiere-the-reason-i-jump" target="_blank">Filmhuis  Bussum (Bussum)</a>
                                         </li>
                                         <li>
-                                            - Slieker Film (Leeuwarden)
+                                            - <a href="https://filmhuisdespiegel.nl/wereld-autismedag-bij-filmhuis-de-spiegel/" target="_blank">Heerlen De Spiegel</a>
                                         </li>
                                         <li>
-                                            - Filmtheater Lumiere (Maastricht)
+                                            - <a href="https://forum.nl/nl/agenda/the-reason-i-jump" target="_blank">Forum Groningen (Groningen)</a>
                                         </li>
                                         <li>
-                                            - Park Filmhuis (Alphen aan de Rijn)
+                                            - <a href="https://sliekerfilm.nl/film/wereld-autisme-dag-the-reason-i-jump/" target="_blank">Leeuwarden Slieker</a>
+                                        </li>
+                                        <li>
+                                            - <a href="https://lumiere.nl/films/the-reason-i-jump" target="_blank">Maastricht Lumière</a>
+                                        </li>
+                                        <li>
+                                            - <a href="https://www.hartlooper.nl/films/the-reason-i-jump/" target="_blank">Louis Hartlooper Complex (Utrecht)</a>
                                         </li>
                                     </ul>
-                                    
-                                    <label style="font-size: 15px;">Klik hieronder door naar jouw theater voor meer informatie</label>
+                                </div>   
                                 
+                                <div id="exclusive-menu">
+                                    <label for="exclusive1" style="text-decoration: underline;">Maandag 4 april:</label>
+                                    <ul>
+                                        <li>
+                                            - <a href="https://www.de-fabriek.nl/films/857-autismeweek+the+reason+i+jump.html" target="_blank">De Fabriek (Zaandam)</a>
+                                        </li>
+                                    </ul>
+                                </div>  
+                                
+                                <label style="font-size: 15px;">Klik hieronder door naar jouw theater voor meer informatie</label>
                             </div>
                         </div>
-                        <script>
-                            document.getElementById('exclusives').onclick = function(e){
-                                e.preventDefault();
-                                window.open('https://www.autisme.nl/2020/04/02/vandaag-is-het-wereld-autisme-dag-2020/', '_blank');
-                            }
-                        </script>
                     </div>
                     <div class="showtimes">
+                        <p class="text-center my-1">BEKIJK DE TRAILER</p>
+
+                        <div class="youtube-trailer my-4">
+                            <div class="iframe-container mb-2">
+                                <iframe src="{{ $youtube_url }}" class="iframe-video"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                            </div>
+                        </div>
+
                         <form class="search-form">
                             <input class="search-input map-search" type="text" name="search"
                                    placeholder="Zoek je stad"
@@ -286,15 +336,7 @@
                             </p>
                         </div>
 
-                        <p class="text-center my-3">BEKIJK DE TRAILER</p>
-
-                        <div class="youtube-trailer">
-                            <div class="iframe-container mb-2">
-                                <iframe src="{{ $youtube_url }}" class="iframe-video"
-                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                            </div>
-                        </div>
+                        
 
                     </div>
                 </div>
