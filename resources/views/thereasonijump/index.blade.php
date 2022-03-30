@@ -160,25 +160,6 @@
                 margin: auto;
             }
         }
-
-        @media (min-width:1025px) { 
-            .mfp-bg, .mfp-wrap{
-                display: none!important;
-            }
-            html{
-                overflow: visible!important;
-                margin-right: 0!important;
-            }
-        }
-        @media (min-width:1281px) {
-            .mfp-bg, .mfp-wrap{
-                display: none!important;
-            }
-            html{
-                overflow: visible!important;
-                margin-right: 0!important;
-            }
-        }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
@@ -189,7 +170,7 @@
 </head>
 <body>
 
-<a class="trailer-video d-none" href="{{ $youtube_url }}?autoplay=1&mute=1"></a>
+{{-- <a class="trailer-video d-none" href="{{ $youtube_url }}?autoplay=1&mute=1"></a> --}}
 
 <section id="root" class="mvoie-body">
     <header class="movie-header sibyl-header position-relative text-white py-3" style="text-align: center !important;">

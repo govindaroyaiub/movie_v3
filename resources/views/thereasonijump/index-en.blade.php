@@ -129,25 +129,6 @@
             }
         }
 
-        @media only screen and (min-width: 768px) and (max-width: 1024px)  {
-            /* For iPad and iPad pro you have to use  */
-            .exclusives label{
-                line-height: 1.6;
-                font-size: 26px;
-                margin: auto;
-                padding: 10px;
-            }
-        }
-        @media only screen and (min-width: 200px) and (max-width: 767px) and (orientation : landscape) {
-        /* //Put your CSS here for 200px to 767px width devices (cover all mobile portrait width //      */
-            .exclusives label{
-                line-height: 1.6;
-                font-size: 23px;
-                margin: auto;
-                padding: 10px;
-            }
-        }
-
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
@@ -158,7 +139,7 @@
 </head>
 <body>
 
-<a class="trailer-video d-none" href="{{ $youtube_url }}?autoplay=1&mute=1"></a>
+{{-- <a class="trailer-video d-none" href="{{ $youtube_url }}?autoplay=1&mute=1"></a> --}}
 
 <section id="root" class="mvoie-body">
     <header class="movie-header sibyl-header position-relative text-white py-3" style="text-align: center !important;">
