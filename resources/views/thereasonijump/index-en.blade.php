@@ -82,6 +82,7 @@
         }
 
         .exclusives{
+            position: relative;
             padding-top: 1px;
             padding-bottom: 30px;
             text-align: center;
@@ -99,12 +100,14 @@
             border: 2px solid white;
             border-radius: 3px;
             margin-top: 12px;
+            align-content: center;
+            justify-content: center;
             background-color: {{ $primary_dark }};
             transition: 0.32s;
         }
 
         .exlusive_area:hover{
-            background-color: #f35b6d;
+            background-color: #c5aa50;
             /* color: {{ $primary_dark }}; */
             color: whitesmoke;
         }
@@ -115,20 +118,48 @@
         }
 
         .city-map-js li:hover {
-            background: #f35b6d!important;
+            background: #c5aa50!important;
             border: solid 1px white!important;
+        }
+
+        #exclusive-menu
+        {
+            margin: 0 auto;
+            display: inline;
+        }
+        #exclusive-menu ul {    
+            text-align: center;
+            font-size: large;
+        }
+        #exclusive-menu li {     
+            display: inline-block;
+        }
+
+        #exclusive-menu li a{     
+            text-decoration: underline;
+            color: whitesmoke;   
         }
 
         @media only screen and (min-width: 200px) and (max-width: 767px)  {
         /* this will cover your all mobile/cellphone widths */
             .exclusives label{
-                line-height: 1.6;
-                font-size: 17px;
                 margin: auto;
-                padding: 10px;
             }
         }
 
+        @media only screen and (min-width: 768px) and (max-width: 1024px)  {
+            /* For iPad and iPad pro you have to use  */
+            .exclusives label{
+                margin: auto;
+            }
+        }
+        @media only screen and (min-width: 200px) and (max-width: 767px) and (orientation : landscape) {
+        /* //Put your CSS here for 200px to 767px width devices (cover all mobile portrait width //      */
+            .exclusives label{
+                font-size: 23px;
+                margin: auto;
+            }
+        }
     </style>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
@@ -167,6 +198,11 @@
                         <ul>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('bp', this)" id="defaultOpen">Cinemas</a>
                             </li>
+                            <li>
+                                <a href="https://picl.nl/films/the-reason-i-jump/" target="_blank" class="menu-link">
+                                    <svg class="menu-logo" viewBox="0 0 1200 873" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#FF8C74" d="M0 310.192V873l1200-310.172V.02L0 310.193"></path><path d="M193.918 588.74c-47.91 0-96.58-38.024-97.34-105.705v-4.563c0-69.202 48.67-106.465 97.34-106.465 54.753 0 97.34 41.826 97.34 107.986S247.91 588.74 193.917 588.74zm20.532-309.51c-65.4 0-101.14 28.9-122.434 60.077l-6.77-51.15L0 310.193V873l98.86-25.553V630.564c19.772 28.138 60.076 50.95 115.59 50.95 103.423 0 179.47-88.212 179.47-201.52 0-113.31-76.047-200.763-179.47-200.763zm249.313-88.91c6.964 25.128 30.058 42.523 57.91 42.523 32.7 0 60.077-25.095 60.077-58.556 0-4.843-.615-9.53-1.744-14.012L463.763 190.32m8.48 482.83h98.86V287.596h-98.86M847.146 591.02c-56.274 0-95.818-46.388-95.818-110.267 0-65.4 40.304-111.787 93.536-111.787 38.784 0 68.442 19.772 79.85 54.753h95.816c-14.45-97.34-87.452-144.49-177.947-144.49-112.55 0-193.158 85.173-193.158 201.523 0 95.145 51.192 166.143 128.944 191.057l208.044-53.775c17.096-21.567 29.466-48.584 35.636-81.007h-96.577c-9.125 31.18-38.784 53.992-78.327 53.992M1101.14 25.574V588.38l98.86-25.55V.02l-98.86 25.554" fill="#000"></path></g></svg>
+                                </a>
+                            </li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('vdo', this)">Videos</a></li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('sy', this)">Synopsis</a></li>
                             <!-- <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
@@ -197,47 +233,78 @@
                 </div>
                 <div class="col-xl-4 col-lg-6 ">
                     <div id="events">
-                        <h1 style="text-align: center; text-decoration: underline;">!! SPECIALE VOORPREMIERES !!</h1>
+                        <h1 style="text-align: center; text-decoration: underline;">Premieres in Autism Week 2022</h1>
                         <div class="exclusives" id="exclusives">
                             <div id="exclusive1" class="exlusive_area">
-                                <label for="exclusive1" style="text-decoration: underline;">WORLD AUTISM DAY</label>
-                                <label for="exclusive1">The following theaters are organizing a special preview on Saturday 4 April as part of <b>World Autism Day</b>:
-                                    <ul style="list-style-type: none;">
+                                <h4 for="exclusive1">April 2 is World Autism Day and this year is the start of Autism Week (April 2 to 9), which is annually organized by the <a href="https://www.autisme.nl /" target="_blank" style="text-decoration: underline; color: whitesmoke;" >Dutch Association for Autism</a> will be organised.</h4>
+                                <label for="exclusive1">The previews of THE REASON I JUMP are organized around World Autism Day</b>:
+                                <div id="exclusive-menu">
+                                    <label for="exclusive1" style="text-decoration: underline;">Saturday April 2nd:</label>
+                                    <ul>
                                         <li>
-                                            - Het Ketelhuis (Amsterdam)
+                                            - <a href="https://www.filmhuisalkmaar.nl/films/the-reason-i-jump-voorpremiere?tijd=22663" target="_blank">FH Alkmaar (Alkmaar)</a> 
                                         </li>
                                         <li>
-                                            - Filmhuis De Spiegel (Heerlen)
+                                            - <a href="https://www.ketelhuis.nl/artikelen/voorpremiere-van-the-reason-i-jump/" target="_blank">Het Ketelhuis (Amsterdam)</a>
                                         </li>
                                         <li>
-                                            - Filmhuis Alkmaar
+                                            - <a href="https://lievevrouw.nl/producties/film/apr-2022/the-reason-i-jump/?evcode=60273" target="_blank">De Lieve Vrouw (Amersfoort)</a>
                                         </li>
                                         <li>
-                                            - Forum Groningen
+                                            - <a href="https://www.filmhuisbussum.nl/film/22397/wereld-autismedag-voorpremiere-the-reason-i-jump" target="_blank">Filmhuis  Bussum (Bussum)</a>
                                         </li>
                                         <li>
-                                            - Slieker Film (Leeuwarden)
+                                            - <a href="https://filmhuisdespiegel.nl/wereld-autismedag-bij-filmhuis-de-spiegel/" target="_blank">Heerlen De Spiegel</a>
                                         </li>
                                         <li>
-                                            - Filmtheater Lumiere (Maastricht)
+                                            - <a href="https://forum.nl/nl/agenda/the-reason-i-jump" target="_blank">Forum Groningen (Groningen)</a>
                                         </li>
                                         <li>
-                                            - Park Filmhuis (Alphen aan de Rijn)
+                                            - <a href="https://sliekerfilm.nl/film/wereld-autisme-dag-the-reason-i-jump/" target="_blank">Leeuwarden Slieker</a>
+                                        </li>
+                                        <li>
+                                            - <a href="https://lumiere.nl/films/the-reason-i-jump" target="_blank">Maastricht Lumière</a>
+                                        </li>
+                                        <li>
+                                            - <a href="https://www.hartlooper.nl/films/the-reason-i-jump/" target="_blank">Louis Hartlooper Complex (Utrecht)</a>
                                         </li>
                                     </ul>
-                                    
-                                    <label style="font-size: 15px;">Click below to your theater for more information</label>
+                                </div>   
                                 
+                                <div id="exclusive-menu">
+                                    <label for="exclusive1" style="text-decoration: underline;">Monday April 4:</label>
+                                    <ul>
+                                        <li>
+                                            - <a href="https://www.de-fabriek.nl/films/857-autismeweek+the+reason+i+jump.html" target="_blank">De Fabriek (Zaandam)</a>
+                                        </li>
+                                    </ul>
+                                </div>  
+                                
+                                <label style="font-size: 15px;">Click below to your theater for more information.</label>
                             </div>
                         </div>
-                        <script>
-                            document.getElementById('exclusives').onclick = function(e){
-                                e.preventDefault();
-                                window.open('https://www.autisme.nl/2020/04/02/vandaag-is-het-wereld-autisme-dag-2020/', '_blank');
-                            }
-                        </script>
                     </div>
                     <div class="showtimes">
+                        <p class="text-center my-1">BEKIJK DE TRAILER</p>
+
+                        <div class="youtube-trailer my-4">
+                            <div class="iframe-container mb-2">
+                                <iframe src="{{ $youtube_url }}" class="iframe-video"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="picl-logo" style="position: relative; margin-left: 40%; padding-bottom: 25px;">
+                            <a href="https://picl.nl/films/the-reason-i-jump/" target="_blank">
+                                <svg viewBox="0 0 1200 873" xmlns="http://www.w3.org/2000/svg" width="100">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path fill="#FF8C74" d="M0 310.192V873l1200-310.172V.02L0 310.193"></path>
+                                        <path d="M193.918 588.74c-47.91 0-96.58-38.024-97.34-105.705v-4.563c0-69.202 48.67-106.465 97.34-106.465 54.753 0 97.34 41.826 97.34 107.986S247.91 588.74 193.917 588.74zm20.532-309.51c-65.4 0-101.14 28.9-122.434 60.077l-6.77-51.15L0 310.193V873l98.86-25.553V630.564c19.772 28.138 60.076 50.95 115.59 50.95 103.423 0 179.47-88.212 179.47-201.52 0-113.31-76.047-200.763-179.47-200.763zm249.313-88.91c6.964 25.128 30.058 42.523 57.91 42.523 32.7 0 60.077-25.095 60.077-58.556 0-4.843-.615-9.53-1.744-14.012L463.763 190.32m8.48 482.83h98.86V287.596h-98.86M847.146 591.02c-56.274 0-95.818-46.388-95.818-110.267 0-65.4 40.304-111.787 93.536-111.787 38.784 0 68.442 19.772 79.85 54.753h95.816c-14.45-97.34-87.452-144.49-177.947-144.49-112.55 0-193.158 85.173-193.158 201.523 0 95.145 51.192 166.143 128.944 191.057l208.044-53.775c17.096-21.567 29.466-48.584 35.636-81.007h-96.577c-9.125 31.18-38.784 53.992-78.327 53.992M1101.14 25.574V588.38l98.86-25.55V.02l-98.86 25.554" fill="#000"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+
                         <form class="search-form">
                             <input class="search-input map-search" type="text" name="search"
                                    placeholder="Search your city"
@@ -265,13 +332,13 @@
 
                         <p class="text-center my-2">WATCH THE TRAILER</p>
 
-                        <div class="youtube-trailer">
+                        {{-- <div class="youtube-trailer">
                             <div class="iframe-container mb-2">
                                 <iframe src="{{ $youtube_url }}" class="iframe-video"
                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen></iframe>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 ">

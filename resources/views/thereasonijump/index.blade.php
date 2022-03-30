@@ -201,10 +201,14 @@
                         <ul>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('bp', this)" id="defaultOpen">Bioscopen</a>
                             </li>
+                            <li>
+                                <a href="https://picl.nl/films/the-reason-i-jump/" target="_blank" class="menu-link">
+                                    <svg class="menu-logo" viewBox="0 0 1200 873" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#FF8C74" d="M0 310.192V873l1200-310.172V.02L0 310.193"></path><path d="M193.918 588.74c-47.91 0-96.58-38.024-97.34-105.705v-4.563c0-69.202 48.67-106.465 97.34-106.465 54.753 0 97.34 41.826 97.34 107.986S247.91 588.74 193.917 588.74zm20.532-309.51c-65.4 0-101.14 28.9-122.434 60.077l-6.77-51.15L0 310.193V873l98.86-25.553V630.564c19.772 28.138 60.076 50.95 115.59 50.95 103.423 0 179.47-88.212 179.47-201.52 0-113.31-76.047-200.763-179.47-200.763zm249.313-88.91c6.964 25.128 30.058 42.523 57.91 42.523 32.7 0 60.077-25.095 60.077-58.556 0-4.843-.615-9.53-1.744-14.012L463.763 190.32m8.48 482.83h98.86V287.596h-98.86M847.146 591.02c-56.274 0-95.818-46.388-95.818-110.267 0-65.4 40.304-111.787 93.536-111.787 38.784 0 68.442 19.772 79.85 54.753h95.816c-14.45-97.34-87.452-144.49-177.947-144.49-112.55 0-193.158 85.173-193.158 201.523 0 95.145 51.192 166.143 128.944 191.057l208.044-53.775c17.096-21.567 29.466-48.584 35.636-81.007h-96.577c-9.125 31.18-38.784 53.992-78.327 53.992M1101.14 25.574V588.38l98.86-25.55V.02l-98.86 25.554" fill="#000"></path></g></svg>
+                                </a>
+                            </li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('vdo', this)">Videos</a></li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('sy', this)">Synopsis</a></li>
-                            <!--  <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
-                                        class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li> -->
+                            
                             <li class="hastag">{{ $movie_details->hashtag }}</li>
                         </ul>
                     </nav>
@@ -234,10 +238,10 @@
                         <h1 style="text-align: center; text-decoration: underline;">Voorpremières in Autismeweek 2022</h1>
                         <div class="exclusives" id="exclusives">
                             <div id="exclusive1" class="exlusive_area">
-                                <h4 for="exclusive1" style="text-decoration: underline;">Wereld Autismedag valt dit jaar op 2 april en is de start van Autismeweek 2022 (2 april tot en met 9 april).</h4>
+                                <h4 for="exclusive1">Op 2 april is het Wereld Autismedag en is dit jaar de start van de Autismeweek  (2 t/m 9 april) die jaarlijks door de <a href="https://www.autisme.nl/" target="_blank" style="text-decoration: underline; color: whitesmoke;" >Nederlandse Vereniging voor Autisme</a> georganiseerd wordt.</h4>
                                 <label for="exclusive1">Rond Wereld Autismedag worden voorpremières van THE REASON I JUMP georganiseerd</b>:
                                 <div id="exclusive-menu">
-                                    <label for="exclusive1" style="text-decoration: underline;">Zaterdag 2 april:</label>
+                                    <label for="exclusive1" style="text-decoration: underline;">Zaterdag 2 April:</label>
                                     <ul>
                                         <li>
                                             - <a href="https://www.filmhuisalkmaar.nl/films/the-reason-i-jump-voorpremiere?tijd=22663" target="_blank">FH Alkmaar (Alkmaar)</a> 
@@ -270,7 +274,7 @@
                                 </div>   
                                 
                                 <div id="exclusive-menu">
-                                    <label for="exclusive1" style="text-decoration: underline;">Maandag 4 april:</label>
+                                    <label for="exclusive1" style="text-decoration: underline;">Maandag 4 April:</label>
                                     <ul>
                                         <li>
                                             - <a href="https://www.de-fabriek.nl/films/857-autismeweek+the+reason+i+jump.html" target="_blank">De Fabriek (Zaandam)</a>
@@ -278,7 +282,7 @@
                                     </ul>
                                 </div>  
                                 
-                                <label style="font-size: 15px;">Klik hieronder door naar jouw theater voor meer informatie</label>
+                                <label style="font-size: 15px;">Klik hieronder door naar jouw theater voor meer informatie.</label>
                             </div>
                         </div>
                     </div>
@@ -292,7 +296,17 @@
                                         allowfullscreen></iframe>
                             </div>
                         </div>
-
+                        <div class="picl-logo" style="position: relative; margin-left: 40%; padding-bottom: 25px;">
+                            <a href="https://picl.nl/films/the-reason-i-jump/" target="_blank">
+                                <svg viewBox="0 0 1200 873" xmlns="http://www.w3.org/2000/svg" width="100">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path fill="#FF8C74" d="M0 310.192V873l1200-310.172V.02L0 310.193"></path>
+                                        <path d="M193.918 588.74c-47.91 0-96.58-38.024-97.34-105.705v-4.563c0-69.202 48.67-106.465 97.34-106.465 54.753 0 97.34 41.826 97.34 107.986S247.91 588.74 193.917 588.74zm20.532-309.51c-65.4 0-101.14 28.9-122.434 60.077l-6.77-51.15L0 310.193V873l98.86-25.553V630.564c19.772 28.138 60.076 50.95 115.59 50.95 103.423 0 179.47-88.212 179.47-201.52 0-113.31-76.047-200.763-179.47-200.763zm249.313-88.91c6.964 25.128 30.058 42.523 57.91 42.523 32.7 0 60.077-25.095 60.077-58.556 0-4.843-.615-9.53-1.744-14.012L463.763 190.32m8.48 482.83h98.86V287.596h-98.86M847.146 591.02c-56.274 0-95.818-46.388-95.818-110.267 0-65.4 40.304-111.787 93.536-111.787 38.784 0 68.442 19.772 79.85 54.753h95.816c-14.45-97.34-87.452-144.49-177.947-144.49-112.55 0-193.158 85.173-193.158 201.523 0 95.145 51.192 166.143 128.944 191.057l208.044-53.775c17.096-21.567 29.466-48.584 35.636-81.007h-96.577c-9.125 31.18-38.784 53.992-78.327 53.992M1101.14 25.574V588.38l98.86-25.55V.02l-98.86 25.554" fill="#000"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        
                         <form class="search-form">
                             <input class="search-input map-search" type="text" name="search"
                                    placeholder="Zoek je stad"
