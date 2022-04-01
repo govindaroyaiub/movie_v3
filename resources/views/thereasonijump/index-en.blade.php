@@ -268,6 +268,15 @@
                                         <li>
                                             - <a href="https://www.hartlooper.nl/films/the-reason-i-jump/" target="_blank">Louis Hartlooper Complex (Utrecht)</a>
                                         </li>
+                                        <li>
+                                            - <a href="https://www.gigant.nl/film/the-reason-i-jump/" target="_blank">Gigant (Apeldoorn)</a>
+                                        </li>
+                                        <li>
+                                            - <a href="https://filmhuisdenhaag.nl/films/the-reason-i-jump" target="_blank">Filmhuis Den Haag (Den Haag)</a>
+                                        </li>
+                                        <li>
+                                            - <a href="https://www.parkvilla.nl/filmhuis/3969/VOORPREMIERE_The_Reason_I_Jump_%7C_Wereld_Autisme_Dag/" target="_blank">Cultuurcentrum Parkvilla (Alpen ad Rijn)</a>
+                                        </li>
                                     </ul>
                                 </div>   
                                 
