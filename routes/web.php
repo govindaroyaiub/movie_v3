@@ -210,6 +210,18 @@ Route::domain('www.thereasonijump-defilm.nl')->group(function(){
     Route::get('/api/shows', 'ReasonIJumpController@showsApi');
 });
 
+Route::domain('ninjababy-defilm.nl')->group(function(){
+    Route::get('/', 'NinjaBabyController@nl_landing');
+    Route::get('/_en', 'NinjaBabyController@en_landing');
+    Route::get('/api/shows', 'NinjaBabyController@showsApi');
+});
+
+Route::domain('www.ninjababy-defilm.nl')->group(function(){
+    Route::get('/', 'NinjaBabyController@nl_landing');
+    Route::get('/_en', 'NinjaBabyController@en_landing');
+    Route::get('/api/shows', 'NinjaBabyController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -290,6 +302,10 @@ Route::get('/petrovsflu/api/shows', 'PetrovController@showsApi');
 Route::get('/thereasonijump', 'ReasonIJumpController@nl_landing');
 Route::get('/thereasonijump_en', 'ReasonIJumpController@en_landing');
 Route::get('/thereasonijump/api/shows', 'ReasonIJumpController@showsApi');
+
+Route::get('/ninjababy', 'NinjaBabyController@nl_landing');
+Route::get('/ninjababy_en', 'NinjaBabyController@en_landing');
+Route::get('/ninjababy/api/shows', 'NinjaBabyController@showsApi');
 
 Auth::routes(['register' => false]);
 
