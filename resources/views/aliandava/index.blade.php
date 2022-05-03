@@ -10,7 +10,7 @@
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
         :root {
             --primary-light: {{ $primary_light }};
@@ -28,7 +28,7 @@
             padding: 3rem 0;
             background: var(--secondary-light);
             color: #fff;
-            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'Bebas Neue', cursive;
         }
 
         .sibyl-header {
@@ -38,14 +38,14 @@
 
         .sibyl-header h1 {
             color: inherit !important;
-            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'Bebas Neue', cursive;
             font-weight: 400 !important;
         }
 
 
         .sibyl-review-slider {
             background-color: #f1e8d6 !important;
-            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'Bebas Neue', cursive;
         }
 
         .sibyl-review-area {
@@ -143,7 +143,7 @@
                         <img
                             loading="lazy"
                             class="d-block mx-auto"
-                            src="{{ asset('/images/Cherry-Pickers-Ninjababy-B1-affiche.jpg') }}"
+                            src="{{ asset('/images/aliandava.jpg') }}"
                             alt="{{ $movie_details->movie_title }}.{{$movie_details->movie_description_short_nl}}">
 
                         <p class="d-md-none text-center m-0 mb-2">{{ $movie_details->movie_title }}

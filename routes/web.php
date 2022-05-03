@@ -222,6 +222,18 @@ Route::domain('www.ninjababy-defilm.nl')->group(function(){
     Route::get('/api/shows', 'NinjaBabyController@showsApi');
 });
 
+Route::domain('ali-en-ava-defilm.nl')->group(function(){
+    Route::get('/', 'NinjaBabyController@nl_landing');
+    Route::get('/_en', 'NinjaBabyController@en_landing');
+    Route::get('/api/shows', 'NinjaBabyController@showsApi');
+});
+
+Route::domain('https://ali-en-ava-defilm.nl')->group(function(){
+    Route::get('/', 'alliavaController@nl_landing');
+    Route::get('/_en', 'alliavaController@en_landing');
+    Route::get('/api/shows', 'alliavaController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
