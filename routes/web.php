@@ -307,6 +307,10 @@ Route::get('/ninjababy', 'NinjaBabyController@nl_landing');
 Route::get('/ninjababy_en', 'NinjaBabyController@en_landing');
 Route::get('/ninjababy/api/shows', 'NinjaBabyController@showsApi');
 
+Route::get('/aliandava', 'alliavaController@nl_landing');
+Route::get('/aliandava_en', 'alliavaController@en_landing');
+Route::get('/aliandava/api/shows', 'alliavaController@showsApi');
+
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
