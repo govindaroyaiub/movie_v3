@@ -154,78 +154,24 @@ class AdminController extends Controller
 
         if($request->d_id == 0 && $request->mp_id == 0)
         {
-            $movie_details = [
-                'movie_title' => $request->movie_title,
-                'base_url' => 'https://movie.planetnine.com/'.$request->base_url,
-                'google_sheet' => $request->google_sheet,
-                'uploaded_by' => $request->client_id,
-                'director' => $request->director,
-                'producer' => $request->producer,
-                'writer' => $request->writer,
-                'actors' => $request->actors,
-                'credits' => $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'.',
-                'credits_nl' => $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'.',
-                'primary_light' => "#353B48",
-                'primary_dark' => "#353B48",
-                'secondary_light' => "#353B48",
-                'secondary_dark' => "#353B48",
-                'd_id' => $request->d_id,
-                'mp_id' => $request->mp_id,
-                'is_delete' => 0
-            ];
-            Movie::insert($movie_details);
+            $credits =  $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'.';
+            $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'.';
         }
         elseif($request->d_id != 0 && $request->mp_id == 0)
         {
             $distributor = Distributor::where('id', '=', $request->d_id)->select('name')->first();
             $d_name = $distributor['name'];
 
-            $movie_details = [
-                'movie_title' => $request->movie_title,
-                'base_url' => 'https://movie.planetnine.com/'.$request->base_url,
-                'google_sheet' => $request->google_sheet,
-                'uploaded_by' => $request->client_id,
-                'director' => $request->director,
-                'producer' => $request->producer,
-                'writer' => $request->writer,
-                'actors' => $request->actors,
-                'credits' => $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Distributor '.$d_name.'.',
-                'credits_nl' => $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'.',
-                'primary_light' => "#353B48",
-                'primary_dark' => "#353B48",
-                'secondary_light' => "#353B48",
-                'secondary_dark' => "#353B48",
-                'd_id' => $request->d_id,
-                'mp_id' => $request->mp_id,
-                'is_delete' => 0
-            ];
-            Movie::insert($movie_details); 
+            $credits = $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Distributor '.$d_name.'.';
+            $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'.';
         }
         elseif($request->d_id == 0 && $request->mp_id != 0)
         {
             $media_partner = MediaPartner::where('id', '=', $request->mp_id)->select('name')->first();
             $mp_name = $media_partner['name'];
 
-            $movie_details = [
-                'movie_title' => $request->movie_title,
-                'base_url' => 'https://movie.planetnine.com/'.$request->base_url,
-                'google_sheet' => $request->google_sheet,
-                'uploaded_by' => $request->client_id,
-                'director' => $request->director,
-                'producer' => $request->producer,
-                'writer' => $request->writer,
-                'actors' => $request->actors,
-                'credits' => $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Promotion '.$mp_name.'.',
-                'credits_nl' => $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Promotie '.$mp_name.'.',
-                'primary_light' => "#353B48",
-                'primary_dark' => "#353B48",
-                'secondary_light' => "#353B48",
-                'secondary_dark' => "#353B48",
-                'd_id' => $request->d_id,
-                'mp_id' => $request->mp_id,
-                'is_delete' => 0
-            ];
-            Movie::insert($movie_details);
+            $credits = $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Promotion '.$mp_name.'.';
+            $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Promotie '.$mp_name.'.';
         }
         else
         {
@@ -234,27 +180,43 @@ class AdminController extends Controller
             $d_name = $distributor['name'];
             $mp_name = $media_partner['name'];
 
-            $movie_details = [
-                'movie_title' => $request->movie_title,
-                'base_url' => 'https://movie.planetnine.com/'.$request->base_url,
-                'google_sheet' => $request->google_sheet,
-                'uploaded_by' => $request->client_id,
-                'director' => $request->director,
-                'producer' => $request->producer,
-                'writer' => $request->writer,
-                'actors' => $request->actors,
-                'credits' => $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Distributor '.$d_name.'. Promotion '.$mp_name.'.',
-                'credits_nl' => $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'. Promotie '.$mp_name.'.',
-                'primary_light' => "#353B48",
-                'primary_dark' => "#353B48",
-                'secondary_light' => "#353B48",
-                'secondary_dark' => "#353B48",
-                'd_id' => $request->d_id,
-                'mp_id' => $request->mp_id,
-                'is_delete' => 0
-            ];
-            Movie::insert($movie_details);
+            $credits = $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Distributor '.$d_name.'. Promotion '.$mp_name.'.';
+            $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'. Promotie '.$mp_name.'.';
         }
+
+        $movie_details = [
+            'movie_title' => $request->movie_title,
+            'base_url' => 'https://movie.planetnine.com/'.$request->base_url,
+            'google_sheet' => $request->google_sheet,
+            'uploaded_by' => $request->client_id,
+            'director' => $request->director,
+            'producer' => $request->producer,
+            'writer' => $request->writer,
+            'actors' => $request->actors,
+            'buy_tickets' => "Get Tickets",
+            'cookies' => "We make use of cookies on this website. A cookie is a simple small file that is sent along with pages from this website and stored by your browser on your hard drive on your computer. You can disable these cookies via your browser [or via your profile page] but this can affect the functioning of our website. negatively affect the website.",
+            'terms_of_use' => "The use of the information on this website is free as long as you do not copy, distribute or otherwise use or misuse this information. You may only reuse the information on this website in accordance with the regulations of mandatory law.",
+            'privacy_policy' => "You have the right to request access to and correction or deletion of your data. See our contact page for this. To prevent misuse, we may ask you to identify yourself adequately. When it comes to accessing personal data linked to a cookie, you must send a copy of the cookie in question.",
+            'credits' => $credits,
+            'buy_tickets_nl' => "Naar Theater",
+            'cookies_nl' => "Wij maken op deze website gebruik van cookies. Een cookie is een eenvoudig klein bestandje dat met pagina's van deze website wordt meegestuurd en door uw browser op uw harde schrijf van uw computer wordt opgeslagen.U kunt deze cookies uitzetten via uw browser [of via uw profielpagina] maar dit kan het functioneren van onze website negatief aantasten.",
+            'terms_of_use_nl' => "Het gebruik van de informatie op deze website is gratis zolang u deze informatie niet kopieert, verspreidt of op een andere manier gebruikt of misbruikt. U mag de informatie op deze website alleen hergebruiken volgens de regelingen van het dwingend recht.",
+            'privacy_policy_nl' => "U heeft het recht om te vragen om inzage in en correctie of verwijdering van uw gegevens. Zie hiervoor onze contactpagina. Om misbruik te voorkomen kunnen wij u vragen om u adequaat te identificeren. Wanneer het gaat om inzage in persoonsgegevens gekoppeld aan een cookie, dient u een kopie van het cookie in kwestie mee te sturen.",
+            'credits_nl' => $credits_nl,
+            'buy_tickets_fr' => "Horaires dans cinéma",
+            'cookies_fr' => "Nous utilisons des cookies sur ce site Web. Un cookie est un simple petit fichier envoyé avec des pages de ce site Web et stocké par votre navigateur sur le disque dur de votre ordinateur. Vous pouvez désactiver ces cookies via votre navigateur [ou via votre page de profil], mais cela peut affecter le fonctionnement de notre site Web négativement.",
+            'terms_of_use_fr' => "L'utilisation des informations sur ce site Web est gratuite tant que vous ne copiez pas, ne distribuez pas ou n'utilisez pas ou n'utilisez pas ces informations à mauvais escient. Vous ne pouvez réutiliser les informations sur ce site Web que conformément aux dispositions de la loi impérative.",
+            'privacy_policy_fr' => "Vous avez le droit de demander l'accès, la correction ou la suppression de vos données. Consultez notre page de contact pour cela. Pour éviter les abus, nous pouvons vous demander de vous identifier de manière adéquate. Lorsqu'il s'agit d'accéder aux données personnelles liées à un cookie, vous devez envoyer une copie du cookie en question.",
+            'credits_fr' => $credits_nl,
+            'primary_light' => "#353B48",
+            'primary_dark' => "#353B48",
+            'secondary_light' => "#353B48",
+            'secondary_dark' => "#353B48",
+            'd_id' => $request->d_id,
+            'mp_id' => $request->mp_id,
+            'is_delete' => 0
+        ];
+        Movie::insert($movie_details);
 
         $movie_list = Movie::select('id')->orderBy('id', 'DESC')->first();
         $last_movie_id = $movie_list['id'];
