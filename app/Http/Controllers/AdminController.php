@@ -149,6 +149,7 @@ class AdminController extends Controller
     {
         $movie_title = $request->movie_title;
         $release_date = $request->release_date;
+        $hashTag = str_replace(' ', '_', strtoupper($movie_title));
         
         $default_theater_list = array(82, 3, 276, 262, 250, 232, 234, 224, 202, 195, 175, 167, 157, 524, 143, 137, 118, 114, 102, 99, 523, 67, 65, 61, 46, 54, 41, 38, 32, 26, 31, 24, 21, 14, 11, 20, 55, 132, 30, 20, 69, 94, 111, 213, 242, 248, 273, 246);
 
@@ -193,6 +194,7 @@ class AdminController extends Controller
             'producer' => $request->producer,
             'writer' => $request->writer,
             'actors' => $request->actors,
+            'hashtag' => $hashTag,
             'buy_tickets' => "Get Tickets",
             'cookies' => "We make use of cookies on this website. A cookie is a simple small file that is sent along with pages from this website and stored by your browser on your hard drive on your computer. You can disable these cookies via your browser [or via your profile page] but this can affect the functioning of our website. negatively affect the website.",
             'terms_of_use' => "The use of the information on this website is free as long as you do not copy, distribute or otherwise use or misuse this information. You may only reuse the information on this website in accordance with the regulations of mandatory law.",
