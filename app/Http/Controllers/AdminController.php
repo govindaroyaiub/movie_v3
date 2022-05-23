@@ -157,6 +157,7 @@ class AdminController extends Controller
         {
             $credits =  $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'.';
             $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'.';
+            $credits_fr = $request->movie_title.' est dirigé par '.$request->director.', avec des acteurs '.$request->actors.' Scénariste et Producteur '.$request->writer.', '.$request->producer.'.';
         }
         elseif($request->d_id != 0 && $request->mp_id == 0)
         {
@@ -165,6 +166,7 @@ class AdminController extends Controller
 
             $credits = $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Distributor '.$d_name.'.';
             $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'.';
+            $credits_fr = $request->movie_title.' est dirigé par '.$request->director.', avec des acteurs '.$request->actors.' Scénariste et Producteur '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'.';
         }
         elseif($request->d_id == 0 && $request->mp_id != 0)
         {
@@ -173,6 +175,7 @@ class AdminController extends Controller
 
             $credits = $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Promotion '.$mp_name.'.';
             $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Promotie '.$mp_name.'.';
+            $credits_fr = $request->movie_title.' est dirigé par '.$request->director.', avec des acteurs '.$request->actors.' Scénariste et Producteur '.$request->writer.', '.$request->producer.'. Promotion '.$mp_name.'.';
         }
         else
         {
@@ -183,6 +186,7 @@ class AdminController extends Controller
 
             $credits = $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Distributor '.$d_name.'. Promotion '.$mp_name.'.';
             $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'. Promotie '.$mp_name.'.';
+            $credits_nl = $request->movie_title.' est dirigé par '.$request->director.', avec des acteurs '.$request->actors.' Scénariste et Producteur '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'. Promotion '.$mp_name.'.';
         }
 
         $movie_details = [
