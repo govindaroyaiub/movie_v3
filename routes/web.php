@@ -228,10 +228,34 @@ Route::domain('ali-en-ava-defilm.nl')->group(function(){
     Route::get('/api/shows', 'NinjaBabyController@showsApi');
 });
 
-Route::domain('https://ali-en-ava-defilm.nl')->group(function(){
+Route::domain('www.ali-en-ava-defilm.nl')->group(function(){
     Route::get('/', 'alliavaController@nl_landing');
     Route::get('/_en', 'alliavaController@en_landing');
     Route::get('/api/shows', 'alliavaController@showsApi');
+});
+
+Route::domain('www.hittheroad-defilm.nl')->group(function(){
+    Route::get('/', 'hittheroadController@nl_landing');
+    Route::get('/_en', 'hittheroadController@en_landing');
+    Route::get('/api/shows', 'hittheroadController@showsApi');
+});
+
+Route::domain('hittheroad-defilm.nl')->group(function(){
+    Route::get('/', 'hittheroadController@nl_landing');
+    Route::get('/_en', 'hittheroadController@en_landing');
+    Route::get('/api/shows', 'hittheroadController@showsApi');
+});
+
+Route::domain('www.theinnocents-defilm.nl')->group(function(){
+    Route::get('/', 'theinnocentsController@nl_landing');
+    Route::get('/_en', 'theinnocentsController@en_landing');
+    Route::get('/api/shows', 'theinnocentsController@showsApi');
+});
+
+Route::domain('theinnocents-defilm.nl')->group(function(){
+    Route::get('/', 'theinnocentsController@nl_landing');
+    Route::get('/_en', 'theinnocentsController@en_landing');
+    Route::get('/api/shows', 'theinnocentsController@showsApi');
 });
 
 //if domain is running on localhost
@@ -322,6 +346,14 @@ Route::get('/ninjababy/api/shows', 'NinjaBabyController@showsApi');
 Route::get('/aliandava', 'alliavaController@nl_landing');
 Route::get('/aliandava_en', 'alliavaController@en_landing');
 Route::get('/aliandava/api/shows', 'alliavaController@showsApi');
+
+Route::get('/the-innocents', 'theinnocentsController@nl_landing');
+Route::get('/the-innocents_en', 'theinnocentsController@en_landing');
+Route::get('/the-innocents/api/shows', 'theinnocentsController@showsApi');
+
+Route::get('/hit_the_road', 'hittheroadController@nl_landing');
+Route::get('/hit_the_road_en', 'hittheroadController@en_landing');
+Route::get('/hit_the_road/api/shows', 'hittheroadController@showsApi');
 
 Auth::routes(['register' => false]);
 

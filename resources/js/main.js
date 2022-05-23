@@ -166,6 +166,10 @@ if (location.pathname === "/" || location.pathname === "/_en") {
     endpoint = `/ninjababy/api/shows`;
 } else if ( location.pathname === "/aliandava" || location.pathname === "/aliandava_en") {
     endpoint = `/aliandava/api/shows`;
+} else if ( location.pathname === "/the-innocents" || location.pathname === "/the-innocents_en") {
+    endpoint = `/the-innocents/api/shows`;
+} else if ( location.pathname === "/hit_the_road" || location.pathname === "/hit_the_road_en") {
+    endpoint = `/hit_the_road/api/shows`;
 }
 
 axios
