@@ -194,7 +194,7 @@ class AdminController extends Controller
             'producer' => $request->producer,
             'writer' => $request->writer,
             'actors' => $request->actors,
-            'hashtag' => $hashTag,
+            'hashtag' => '#'.$hashTag,
             'buy_tickets' => "Get Tickets",
             'cookies' => "We make use of cookies on this website. A cookie is a simple small file that is sent along with pages from this website and stored by your browser on your hard drive on your computer. You can disable these cookies via your browser [or via your profile page] but this can affect the functioning of our website. negatively affect the website.",
             'terms_of_use' => "The use of the information on this website is free as long as you do not copy, distribute or otherwise use or misuse this information. You may only reuse the information on this website in accordance with the regulations of mandatory law.",
