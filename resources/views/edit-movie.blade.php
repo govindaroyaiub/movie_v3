@@ -183,79 +183,6 @@
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        English Contents
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordion">
-                                <div class="card-body">
-                                    <form method="post" action="/movielist/edit/en/{{$id}}">
-                                        {{ csrf_field() }}
-                                        <div class="form-group">
-                                            <label for="tagline_en">Tagline</label>
-                                            <textarea class="form-control" name="tagline_en" id="tagline_en"
-                                                maxlength="500" rows="6" cols="50">{{ $movie_details['tagline_en'] }}
-                                            </textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="movie_description_short">Movie Description Short</label>
-                                            <textarea class="form-control" name="movie_description_short"
-                                                id="movie_description_short" maxlength="500" rows="6" cols="50">{{ $movie_details['movie_description_short'] }}
-                                            </textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="movie_description_long">Movie Description Long</label>
-                                            <textarea name="movie_description_long" id="movie_description_long"
-                                                class="form-control" rows="20"
-                                                cols="50">{{ $movie_details['movie_description_long'] }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="buy_tickets">Buy Tickets Text</label>
-                                            <input type="text" class="form-control" name="buy_tickets" id="buy_tickets"
-                                                value="{{ $movie_details['buy_tickets'] }}" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="cookies_en">Cookies</label>
-                                            <textarea name="cookies_en" id="cookies_en" class="form-control" rows="6"
-                                                cols="50">{{ $movie_details['cookies'] }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="terms_of_use">Terms Of Use</label>
-                                            <textarea name="terms_of_use" id="terms_of_use" class="form-control"
-                                                rows="6" cols="50">{{ $movie_details['terms_of_use'] }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="privacy_policy">Privacy Policy</label>
-                                            <textarea name="privacy_policy" id="privacy_policy" class="form-control"
-                                                rows="6" cols="50">{{ $movie_details['privacy_policy'] }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="credits">Credits</label>
-                                            <textarea name="credits" id="credits" class="form-control" rows="6"
-                                                cols="50">{{ $movie_details['credits'] }}</textarea>
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="submit"
-                                                class="form-control-user btn btn-primary">Update</button>
-                                            <a href="/movielist"><button type="button"
-                                                    class="btn btn-secondary">Back</button></a>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
                             <div class="card-header" id="headingThree">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
@@ -332,6 +259,80 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        English Contents
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <form method="post" action="/movielist/edit/en/{{$id}}">
+                                        {{ csrf_field() }}
+                                        <div class="form-group">
+                                            <label for="tagline_en">Tagline</label>
+                                            <textarea class="form-control" name="tagline_en" id="tagline_en"
+                                                maxlength="500" rows="6" cols="50">{{ $movie_details['tagline_en'] }}
+                                            </textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="movie_description_short">Movie Description Short</label>
+                                            <textarea class="form-control" name="movie_description_short"
+                                                id="movie_description_short" maxlength="500" rows="6" cols="50">{{ $movie_details['movie_description_short'] }}
+                                            </textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="movie_description_long">Movie Description Long</label>
+                                            <textarea name="movie_description_long" id="movie_description_long"
+                                                class="form-control" rows="20"
+                                                cols="50">{{ $movie_details['movie_description_long'] }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="buy_tickets">Buy Tickets Text</label>
+                                            <input type="text" class="form-control" name="buy_tickets" id="buy_tickets"
+                                                value="{{ $movie_details['buy_tickets'] }}" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="cookies_en">Cookies</label>
+                                            <textarea name="cookies_en" id="cookies_en" class="form-control" rows="6"
+                                                cols="50">{{ $movie_details['cookies'] }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="terms_of_use">Terms Of Use</label>
+                                            <textarea name="terms_of_use" id="terms_of_use" class="form-control"
+                                                rows="6" cols="50">{{ $movie_details['terms_of_use'] }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="privacy_policy">Privacy Policy</label>
+                                            <textarea name="privacy_policy" id="privacy_policy" class="form-control"
+                                                rows="6" cols="50">{{ $movie_details['privacy_policy'] }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="credits">Credits</label>
+                                            <textarea name="credits" id="credits" class="form-control" rows="6"
+                                                cols="50">{{ $movie_details['credits'] }}</textarea>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="submit"
+                                                class="form-control-user btn btn-primary">Update</button>
+                                            <a href="/movielist"><button type="button"
+                                                    class="btn btn-secondary">Back</button></a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
                         @if($movie_details['id'] == 8)
                         <div class="card">
                             <div class="card-header" id="headingFour">

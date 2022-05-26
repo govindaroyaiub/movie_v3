@@ -2,6 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('view:clear');
+    $exitCode = Artisan::call('config:clear');
+    $exitCode = Artisan::call('route:clear');
+    $exitCode = Artisan::call('config:cache');
+
+    return '<h2 style="color: red;">Cache, View, Config, Route cleared!</h2>';
+});
 
 //if domain is movie.planetnine.com
 Route::domain('movie.planetnine.com')->group(function(){

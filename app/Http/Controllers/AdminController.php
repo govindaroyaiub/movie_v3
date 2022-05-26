@@ -13,6 +13,7 @@ use App\Review;
 use App\Distributor;
 use App\MediaPartner;
 use Auth;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class AdminController extends Controller
 {
@@ -200,7 +201,7 @@ class AdminController extends Controller
             'actors' => $request->actors,
             'hashtag' => '#'.$hashTag,
             'buy_tickets' => "Get Tickets",
-            'cookies' => "We make use of cookies on this website. A cookie is a simple small file that is sent along with pages from this website and stored by your browser on your hard drive on your computer. You can disable these cookies via your browser [or via your profile page] but this can affect the functioning of our website. negatively affect the website.",
+            'cookies' => "We make use of cookies on this website. A cookie is a simple small file that is sent along with pages from this website and stored by your browser on your hard drive on your computer. You can disable these cookies via your browser [or via your profile page] but this can affect the functioning of our website. negatively affects the website.",
             'terms_of_use' => "The use of the information on this website is free as long as you do not copy, distribute or otherwise use or misuse this information. You may only reuse the information on this website in accordance with the regulations of mandatory law.",
             'privacy_policy' => "You have the right to request access to and correction or deletion of your data. See our contact page for this. To prevent misuse, we may ask you to identify yourself adequately. When it comes to accessing personal data linked to a cookie, you must send a copy of the cookie in question.",
             'credits' => $credits,
@@ -268,94 +269,24 @@ class AdminController extends Controller
     {
         if($request->d_id == 0 && $request->mp_id == 0)
         {
-            $tmd_details = [
-                'movie_title' => $request->movie_title,
-                'director' => $request->director,
-                'producer' => $request->producer,
-                'writer' => $request->writer,
-                'actors' => $request->actors,
-                'youtube_url' => $request->youtube_url,
-                'duration' => $request->duration,
-                'base_url' => $request->base_url,
-                'image1' => $request->image1,
-                'fb_link' => $request->fb_link,
-                'twitter_link' => $request->twitter_link,
-                'hashtag' => $request->hashtag,
-                'fb_pixel' => $request->fb_pixel,
-                'google_pixel' => $request->google_pixel,
-                'primary_light' => $request->primary_light,
-                'primary_dark' => $request->primary_dark,
-                'secondary_light' => $request->secondary_light,
-                'secondary_light' => $request->secondary_light,
-                'd_id' => $request->d_id,
-                'mp_id' => $request->mp_id,
-                'credits' => $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'.',
-                'credits_nl' => $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'.',
-            ];
-            Movie::where('id', $id)->update($tmd_details);
-            return redirect('/movielist/edit/'.$id)->with('info', 'The Major Details has been updated!');
+            $credits = $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'.';
+            $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'.';
         }
         elseif($request->d_id != 0 && $request->mp_id == 0)
         {
             $distributor = Distributor::where('id', '=', $request->d_id)->select('name')->first();
             $d_name = $distributor['name'];
-            $tmd_details = [
-                'movie_title' => $request->movie_title,
-                'director' => $request->director,
-                'producer' => $request->producer,
-                'writer' => $request->writer,
-                'actors' => $request->actors,
-                'youtube_url' => $request->youtube_url,
-                'duration' => $request->duration,
-                'base_url' => $request->base_url,
-                'image1' => $request->image1,
-                'fb_link' => $request->fb_link,
-                'twitter_link' => $request->twitter_link,
-                'hashtag' => $request->hashtag,
-                'fb_pixel' => $request->fb_pixel,
-                'google_pixel' => $request->google_pixel,
-                'primary_light' => $request->primary_light,
-                'primary_dark' => $request->primary_dark,
-                'secondary_light' => $request->secondary_light,
-                'secondary_light' => $request->secondary_light,
-                'd_id' => $request->d_id,
-                'mp_id' => $request->mp_id,
-                'credits' => $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Distributor '.$d_name.'.',
-                'credits_nl' => $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'.',
-            ];
-            Movie::where('id', $id)->update($tmd_details);
-            return redirect('/movielist/edit/'.$id)->with('info', 'The Major Details has been updated!');
+
+            $credits = $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Distributor '.$d_name.'.';
+            $credits_nl =  $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'.';
         }
         elseif($request->d_id == 0 && $request->mp_id != 0)
         {
             $media_partner = MediaPartner::where('id', '=', $request->mp_id)->select('name')->first();
             $mp_name = $media_partner['name'];
-            $tmd_details = [
-                'movie_title' => $request->movie_title,
-                'director' => $request->director,
-                'producer' => $request->producer,
-                'writer' => $request->writer,
-                'actors' => $request->actors,
-                'youtube_url' => $request->youtube_url,
-                'duration' => $request->duration,
-                'base_url' => $request->base_url,
-                'image1' => $request->image1,
-                'fb_link' => $request->fb_link,
-                'twitter_link' => $request->twitter_link,
-                'hashtag' => $request->hashtag,
-                'fb_pixel' => $request->fb_pixel,
-                'google_pixel' => $request->google_pixel,
-                'primary_light' => $request->primary_light,
-                'primary_dark' => $request->primary_dark,
-                'secondary_light' => $request->secondary_light,
-                'secondary_light' => $request->secondary_light,
-                'd_id' => $request->d_id,
-                'mp_id' => $request->mp_id,
-                'credits' => $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Promotion '.$mp_name.'.',
-                'credits_nl' => $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Promotie '.$mp_name.'.',
-            ];
-            Movie::where('id', $id)->update($tmd_details);
-            return redirect('/movielist/edit/'.$id)->with('info', 'The Major Details has been updated!');
+
+            $credits = $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Promotion '.$mp_name.'.';
+            $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Promotie '.$mp_name.'.';
         }
         else
         {
@@ -363,33 +294,38 @@ class AdminController extends Controller
             $media_partner = MediaPartner::where('id', '=', $request->mp_id)->select('name')->first();
             $d_name = $distributor['name'];
             $mp_name = $media_partner['name'];
-            $tmd_details = [
-                'movie_title' => $request->movie_title,
-                'director' => $request->director,
-                'producer' => $request->producer,
-                'writer' => $request->writer,
-                'actors' => $request->actors,
-                'youtube_url' => $request->youtube_url,
-                'duration' => $request->duration,
-                'base_url' => $request->base_url,
-                'image1' => $request->image1,
-                'fb_link' => $request->fb_link,
-                'twitter_link' => $request->twitter_link,
-                'hashtag' => $request->hashtag,
-                'fb_pixel' => $request->fb_pixel,
-                'google_pixel' => $request->google_pixel,
-                'primary_light' => $request->primary_light,
-                'primary_dark' => $request->primary_dark,
-                'secondary_light' => $request->secondary_light,
-                'secondary_light' => $request->secondary_light,
-                'd_id' => $request->d_id,
-                'mp_id' => $request->mp_id,
-                'credits' => $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Distributor '.$d_name.'. Promotion '.$mp_name.'.',
-                'credits_nl' => $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'. Promotie '.$mp_name.'.',
-            ];
-            Movie::where('id', $id)->update($tmd_details);
-            return redirect('/movielist/edit/'.$id)->with('info', 'The Major Details has been updated!');
+
+            $credits = $request->movie_title.' is directed by '.$request->director.', with actors '.$request->actors.' Writer and Producer '.$request->writer.', '.$request->producer.'. Distributor '.$d_name.'. Promotion '.$mp_name.'.';
+            $credits_nl = $request->movie_title.' is geregisseerd door '.$request->director.', met acteurs '.$request->actors.' Schrijvers en Regie producent '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'. Promotie '.$mp_name.'.';
         }
+
+        $tmd_details = [
+            'movie_title' => $request->movie_title,
+            'director' => $request->director,
+            'producer' => $request->producer,
+            'writer' => $request->writer,
+            'actors' => $request->actors,
+            'youtube_url' => $request->youtube_url,
+            'duration' => $request->duration,
+            'base_url' => $request->base_url,
+            'image1' => $request->image1,
+            'fb_link' => $request->fb_link,
+            'twitter_link' => $request->twitter_link,
+            'hashtag' => $request->hashtag,
+            'fb_pixel' => $request->fb_pixel,
+            'google_pixel' => $request->google_pixel,
+            'primary_light' => $request->primary_light,
+            'primary_dark' => $request->primary_dark,
+            'secondary_light' => $request->secondary_light,
+            'secondary_dark' => $request->secondary_dark,
+            'd_id' => $request->d_id,
+            'mp_id' => $request->mp_id,
+            'credits' => $credits,
+            'credits_nl' => $credits_nl,
+        ];
+
+        Movie::where('id', $id)->update($tmd_details);
+        return redirect('/movielist/edit/'.$id)->with('info', 'The Major Details has been updated!');   
     }
 
     public function en_edit(Request $request, $id)
@@ -411,7 +347,16 @@ class AdminController extends Controller
 
     public function nl_edit(Request $request, $id)
     {
-        $nl_details = [
+        $tr = new GoogleTranslate();
+        $tr->setSource('nl');
+        $tr->setSource();
+        $tr->setTarget('en');
+
+        $movie_description_short_en = $tr->translate($request->movie_description_short_nl);
+        $tagline_en = $tr->translate($request->tagline_nl);
+        $movie_description_long_en = $tr->translate($request->movie_description_long_nl);
+
+        $details = [
             'movie_description_short_nl' => $request->movie_description_short_nl,
             'tagline_nl' => $request->tagline_nl,
             'movie_description_long_nl' => $request->movie_description_long_nl,
@@ -419,10 +364,14 @@ class AdminController extends Controller
             'cookies_nl' => $request->cookies_nl,
             'terms_of_use_nl' => $request->terms_of_use_nl,
             'privacy_policy_nl' => $request->privacy_policy_nl,
-            'credits_nl' => $request->credits_nl
+            'credits_nl' => $request->credits_nl,
+            'movie_description_short' => $movie_description_short_en,
+            'tagline_en' => $tagline_en,
+            'movie_description_long' => $movie_description_long_en,
         ];
 
-        Movie::where('id', $id)->update($nl_details);
+        Movie::where('id', $id)->update($details);
+
         return redirect('/movielist/edit/'.$id)->with('info', 'Dutch Contents has been updated!');
     }
 

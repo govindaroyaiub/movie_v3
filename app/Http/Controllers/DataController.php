@@ -16,8 +16,6 @@ class DataController extends Controller
         return view('land', compact('movie_list'));
     }
 
-    
-
     public function en_index()
     {
         $movie_list = Movie::where('is_delete', '=', 0)->where('image1', '!=', NULL)->get();
