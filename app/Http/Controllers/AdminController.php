@@ -151,6 +151,10 @@ class AdminController extends Controller
         $movie_title = $request->movie_title;
         $release_date = $request->release_date;
         $hashTag = str_replace(' ', '_', strtoupper($movie_title));
+
+        $demo_tagline = "LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.";
+        $demo_short = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+        $demo_long = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,";
         
         $default_theater_list = array(82, 3, 276, 262, 250, 232, 234, 224, 202, 195, 175, 167, 157, 524, 143, 137, 118, 114, 102, 99, 523, 67, 65, 61, 46, 54, 41, 38, 32, 26, 31, 24, 21, 14, 11, 20, 55, 132, 30, 20, 69, 94, 111, 213, 242, 248, 273, 246);
 
@@ -190,10 +194,13 @@ class AdminController extends Controller
             $credits_nl = $request->movie_title.' est dirigé par '.$request->director.', avec des acteurs '.$request->actors.' Scénariste et Producteur '.$request->writer.', '.$request->producer.'. Distributeur '.$d_name.'. Promotion '.$mp_name.'.';
         }
 
+        $google_sheet = 'none';
+        // $google_sheet = $request->google_sheet;
+
         $movie_details = [
             'movie_title' => $request->movie_title,
             'base_url' => 'https://movie.planetnine.com/'.$request->base_url,
-            'google_sheet' => $request->google_sheet,
+            'google_sheet' => $google_sheet,
             'uploaded_by' => $request->client_id,
             'director' => $request->director,
             'producer' => $request->producer,
@@ -221,7 +228,19 @@ class AdminController extends Controller
             'secondary_dark' => "#353B48",
             'd_id' => $request->d_id,
             'mp_id' => $request->mp_id,
-            'is_delete' => 0
+            'is_delete' => 0,
+            'tagline_en' => $demo_tagline,
+            'movie_description_short' => $demo_short,
+            'movie_description_long' => $demo_long,
+            'tagline_en' => $demo_tagline,
+            'movie_description_short' => $demo_short,
+            'movie_description_long' => $demo_long,
+            'tagline_nl' => $demo_tagline,
+            'movie_description_short_nl' => $demo_short,
+            'movie_description_long_nl' => $demo_long,
+            'tagline_fr' => $demo_tagline,
+            'movie_description_short_fr' => $demo_short,
+            'movie_description_long_fr' => $demo_long,
         ];
         Movie::insert($movie_details);
 

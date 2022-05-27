@@ -42,10 +42,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="google_sheet">Google Sheet URL</label>
                             <input type="text" class="form-control" name="google_sheet" id="google_sheet" required>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label for="release_date">Release Date</label>
@@ -58,7 +58,7 @@
                                 required>
                                 <option value="">Select Client</option>
                                 @foreach($user_list as $row)
-                                <option value="{{$row->id}}">{{$row->name}} ({{$row->email}})</option>
+                                <option value="{{$row->id}}" @if($row->id == 2) selected @endif>{{$row->name}} ({{$row->email}})</option>
                                 @endforeach
                             </select>
                         </div>
