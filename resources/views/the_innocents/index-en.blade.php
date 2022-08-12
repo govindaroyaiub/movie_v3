@@ -166,7 +166,7 @@
 
 
                         <div class="synopsis desk-sy">
-                            <h3 class="text-center mb-2 my-3" style="text-decoration: none">
+                            <h3 class="text-center mb-2 my-3" style="text-decoration: underline;">
                                 {{ $movie_details->movie_description_short }}
                             </h3>
                             <p style="white-space: pre-line;">
