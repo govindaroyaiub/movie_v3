@@ -170,6 +170,8 @@ if (location.pathname === "/" || location.pathname === "/_en") {
     endpoint = `/the-innocents/api/shows`;
 } else if ( location.pathname === "/hit_the_road" || location.pathname === "/hit_the_road_en") {
     endpoint = `/hit_the_road/api/shows`;
+} else if ( location.pathname === "/avec-amour-et-acharnement" || location.pathname === "/avec-amour-et-acharnement_en") {
+    endpoint = `/avec-amour-et-acharnement/api/shows`;
 }
 
 axios

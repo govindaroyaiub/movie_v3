@@ -267,6 +267,18 @@ Route::domain('theinnocents-defilm.nl')->group(function(){
     Route::get('/api/shows', 'theinnocentsController@showsApi');
 });
 
+Route::domain('www.avecamouretacharnement-defilm.nl')->group(function(){
+    Route::get('/', 'AvecAmourController@nl_landing');
+    Route::get('/_en', 'AvecAmourController@en_landing');
+    Route::get('/api/shows', 'AvecAmourController@showsApi');
+});
+
+Route::domain('avecamouretacharnement-defilm.nl')->group(function(){
+    Route::get('/', 'AvecAmourController@nl_landing');
+    Route::get('/_en', 'AvecAmourController@en_landing');
+    Route::get('/api/shows', 'AvecAmourController@showsApi');
+});
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -363,6 +375,10 @@ Route::get('/the-innocents/api/shows', 'theinnocentsController@showsApi');
 Route::get('/hit_the_road', 'hittheroadController@nl_landing');
 Route::get('/hit_the_road_en', 'hittheroadController@en_landing');
 Route::get('/hit_the_road/api/shows', 'hittheroadController@showsApi');
+
+Route::get('/avec-amour-et-acharnement', 'AvecAmourController@nl_landing');
+Route::get('/avec-amour-et-acharnement_en', 'AvecAmourController@en_landing');
+Route::get('/avec-amour-et-acharnement/api/shows', 'AvecAmourController@showsApi');
 
 Auth::routes(['register' => false]);
 
