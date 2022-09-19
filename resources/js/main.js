@@ -172,6 +172,8 @@ if (location.pathname === "/" || location.pathname === "/_en") {
     endpoint = `/hit_the_road/api/shows`;
 } else if ( location.pathname === "/avec-amour-et-acharnement" || location.pathname === "/avec-amour-et-acharnement_en") {
     endpoint = `/avec-amour-et-acharnement/api/shows`;
+} else if ( location.pathname === "/cow" || location.pathname === "/cow_en") {
+    endpoint = `/cow/api/shows`;
 }
 
 axios

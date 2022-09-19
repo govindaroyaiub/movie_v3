@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');
@@ -279,6 +281,19 @@ Route::domain('avecamouretacharnement-defilm.nl')->group(function(){
     Route::get('/api/shows', 'AvecAmourController@showsApi');
 });
 
+Route::domain('www.cow-defilm.nl')->group(function(){
+    Route::get('/', 'CowController@nl_landing');
+    Route::get('/_en', 'CowController@en_landing');
+    Route::get('/api/shows', 'CowController@showsApi');
+});
+
+Route::domain('cow-defilm.nl')->group(function(){
+    Route::get('/', 'CowController@nl_landing');
+    Route::get('/_en', 'CowController@en_landing');
+    Route::get('/api/shows', 'CowController@showsApi');
+});
+
+
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
 Route::get('/en', 'DataController@en_index');
@@ -379,6 +394,11 @@ Route::get('/hit_the_road/api/shows', 'hittheroadController@showsApi');
 Route::get('/avec-amour-et-acharnement', 'AvecAmourController@nl_landing');
 Route::get('/avec-amour-et-acharnement_en', 'AvecAmourController@en_landing');
 Route::get('/avec-amour-et-acharnement/api/shows', 'AvecAmourController@showsApi');
+
+Route::get('/cow', 'CowController@nl_landing');
+Route::get('/cow_en', 'CowController@en_landing');
+Route::get('/cow/api/shows', 'CowController@showsApi');
+Route::get('/cow/poster', 'CowController@viewImage');
 
 Auth::routes(['register' => false]);
 

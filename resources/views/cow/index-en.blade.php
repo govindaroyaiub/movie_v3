@@ -10,7 +10,7 @@
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'/>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
         :root {
             --primary-light: {{ $primary_light }};
@@ -28,7 +28,7 @@
             padding: 1rem 0!important;
             background: var(--secondary-light);
             color: #fff;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Lora', serif;
         }
 
         .sibyl-header {
@@ -38,14 +38,14 @@
 
         .sibyl-header h1 {
             color: inherit !important;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Lora', serif;
             font-weight: 400 !important;
         }
 
 
         .sibyl-review-slider {
             background-color: #f1e8d6 !important;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Lora', serif;
         }
 
         .sibyl-review-area {
@@ -144,50 +144,6 @@
             </div>
         </div>
     </section>
-
-    @if(count($reviews) > 0)
-    <section class="review-area sibyl-review-area">
-        <div class="container">
-            <div class="col-md-10 mx-auto">
-                <div class="reviews-slider sibyl-review-slider">
-                    <div class="slider single-item">
-                        @foreach($reviews as $review)
-                            <div class="text-center">
-                                @php $rating = $review->ratings; @endphp
-                                @if($rating > 0)
-                                    @foreach(range(1, 5) as $i)
-                                        <span class="fa-stack">
-                                            <i class="far fa-star fa-stack-1x"></i>
-                                        @if($rating >0)
-                                                @if($rating >0.5)
-                                                    <i class="fas fa-star fa-stack-1x"></i>
-                                                @else
-                                                    <i class="fas fa-star-half fa-stack-1x"></i>
-                                                @endif
-                                            @endif
-                                            @php $rating--; @endphp
-                                        </span>
-                                    @endforeach
-                                @else
-
-                                @endif
-
-                                {{-- <small>({{ $review->ratings }})</small>--}}
-
-                                <h3><i class="fa fa-quote-left"></i> {{ $review->review_text }} <i
-                                        class="fa fa-quote-right"></i></h3>
-
-                                <p><a href="{{$review->source_link}}" target="_blank">{{ $review->source }}</a>
-                                </p>
-
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    @endif
 
 
     <div class="movie-content sib text-white">
@@ -297,6 +253,50 @@
             </div>
         </div>
     </div>
+
+    @if(count($reviews) > 0)
+    <section class="review-area sibyl-review-area">
+        <div class="container">
+            <div class="col-md-10 mx-auto">
+                <div class="reviews-slider sibyl-review-slider">
+                    <div class="slider single-item">
+                        @foreach($reviews as $review)
+                            <div class="text-center">
+                                @php $rating = $review->ratings; @endphp
+                                @if($rating > 0)
+                                    @foreach(range(1, 5) as $i)
+                                        <span class="fa-stack">
+                                            <i class="far fa-star fa-stack-1x"></i>
+                                        @if($rating >0)
+                                                @if($rating >0.5)
+                                                    <i class="fas fa-star fa-stack-1x"></i>
+                                                @else
+                                                    <i class="fas fa-star-half fa-stack-1x"></i>
+                                                @endif
+                                            @endif
+                                            @php $rating--; @endphp
+                                        </span>
+                                    @endforeach
+                                @else
+
+                                @endif
+
+                                {{-- <small>({{ $review->ratings }})</small>--}}
+
+                                <h3><i class="fa fa-quote-left"></i> {{ $review->review_text }} <i
+                                        class="fa fa-quote-right"></i></h3>
+
+                                <p><a href="{{$review->source_link}}" target="_blank">{{ $review->source }}</a>
+                                </p>
+
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
 
     <footer class="movie-footer sibyl-movie-footer text-white text-center">
         <div class="container">
