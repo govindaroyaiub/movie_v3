@@ -194,7 +194,6 @@
         </section>
     @endif
 
-
     <div class="movie-content text-white">
         <div id="bp" class="tabcontent container-fluid">
             <div class="row">

@@ -269,13 +269,13 @@ Route::domain('theinnocents-defilm.nl')->group(function(){
     Route::get('/api/shows', 'theinnocentsController@showsApi');
 });
 
-Route::domain('www.avecamouretacharnement-defilm.nl')->group(function(){
+Route::domain('www.avecamour-defilm.nl')->group(function(){
     Route::get('/', 'AvecAmourController@nl_landing');
     Route::get('/_en', 'AvecAmourController@en_landing');
     Route::get('/api/shows', 'AvecAmourController@showsApi');
 });
 
-Route::domain('avecamouretacharnement-defilm.nl')->group(function(){
+Route::domain('avecamour-defilm.nl')->group(function(){
     Route::get('/', 'AvecAmourController@nl_landing');
     Route::get('/_en', 'AvecAmourController@en_landing');
     Route::get('/api/shows', 'AvecAmourController@showsApi');
