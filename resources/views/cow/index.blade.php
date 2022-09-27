@@ -81,10 +81,6 @@
             font-family: 'Thasadith', sans-serif !important;
         }
 
-        .mapmarker{
-            opacity: 0;
-        }
-
         @media (min-width:320px) and (max-width:425px) {
             .slick-prev {
                 left: -26px!important;
