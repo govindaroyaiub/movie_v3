@@ -293,6 +293,18 @@ Route::domain('cow-defilm.nl')->group(function(){
     Route::get('/api/shows', 'CowController@showsApi');
 });
 
+Route::domain('www.unbeaumatin-defilm.nl')->group(function(){
+    Route::get('/', 'MMatinController@nl_landing');
+    Route::get('/_en', 'MMatinController@en_landing');
+    Route::get('/api/shows', 'MMatinController@showsApi');
+});
+
+Route::domain('unbeaumatin-defilm.nl')->group(function(){
+    Route::get('/', 'MMatinController@nl_landing');
+    Route::get('/_en', 'MMatinController@en_landing');
+    Route::get('/api/shows', 'MMatinController@showsApi');
+});
+
 
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
@@ -400,10 +412,10 @@ Route::get('/cow_en', 'CowController@en_landing');
 Route::get('/cow/api/shows', 'CowController@showsApi');
 Route::get('/cow/poster', 'CowController@viewImage');
 
-Route::get('/un_beau_matin', 'MMatinController@nl_landing');
-Route::get('/un_beau_matin_en', 'MMatinController@en_landing');
-Route::get('/un_beau_matin/api/shows', 'MMatinController@showsApi');
-Route::get('/un_beau_matin/poster', 'MMatinController@viewImage');
+Route::get('/un-beau-matin', 'MMatinController@nl_landing');
+Route::get('/un-beau-matin_en', 'MMatinController@en_landing');
+Route::get('/un-beau-matin/api/shows', 'MMatinController@showsApi');
+Route::get('/un-beau-matin/poster', 'MMatinController@viewImage');
 
 Auth::routes(['register' => false]);
 

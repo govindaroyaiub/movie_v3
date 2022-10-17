@@ -23,7 +23,7 @@ class MMatinController extends Controller
             $rating = 0;
         }
         
-        $app_url = 'https://movie.planetnine.com/un_beau_matin';
+        $app_url = 'https://movie.planetnine.com/un-beau-matin';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         if ($movie_details == NULL) {
@@ -129,7 +129,7 @@ class MMatinController extends Controller
             $rating = 0;
         }
         
-        $app_url = 'https://movie.planetnine.com/un_beau_matin';
+        $app_url = 'https://movie.planetnine.com/un-beau-matin';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         if ($movie_details == NULL) {
@@ -211,7 +211,7 @@ class MMatinController extends Controller
     
     public function showsApi()
     {
-        $app_url = 'https://movie.planetnine.com/un_beau_matin';
+        $app_url = 'https://movie.planetnine.com/un-beau-matin';
         $movie_details = Movie::where('base_url', '=', $app_url)->first();
         $current_date = date('Y-m-d');
         $showtime = Showtime::join('show_location_static', 'movie_showtimes.cinema_id', 'show_location_static.id')
