@@ -400,6 +400,11 @@ Route::get('/cow_en', 'CowController@en_landing');
 Route::get('/cow/api/shows', 'CowController@showsApi');
 Route::get('/cow/poster', 'CowController@viewImage');
 
+Route::get('/un_beau_matin', 'MMatinController@nl_landing');
+Route::get('/un_beau_matin_en', 'MMatinController@en_landing');
+Route::get('/un_beau_matin/api/shows', 'MMatinController@showsApi');
+Route::get('/un_beau_matin/poster', 'MMatinController@viewImage');
+
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
