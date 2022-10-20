@@ -347,21 +347,28 @@
 
 
 
-                        <div class="footer-dist-logos d-flex justify-content-between align-items-center">
+                        <div class="footer-dist-logos d-flex  align-items-center">
                             <a href="{{ $d_details['email'] }}" target="_blank"><img
                                     src="/distributors/{{ $d_details['logo'] }}" alt="{{ $d_details['name'] }}"></a>
-                            <a href="https://www.planetnine.com/" target="_blank"><img
-                                    src="{{ asset('images/p9.png') }}"
-                                    alt="planetnine.com"></a>
+                            
                             @if($mp_details != NULL)
                             <a href="{{ $mp_details['email'] }}" target="_blank"><img
                                     src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
                             @else
 
                             @endif
+                            
                         </div>
 
-
+                        <div class="footer-dist-logos d-flex align-items-center">
+                            <a href="https://www.europa-cinemas.org/en/activities/find-and-foster/europa-cinemas-label" target="_blank"><img
+                                src="{{ asset('images/Europa.png') }}"
+                                alt="europa_cinema_label"></a>
+                            
+                            <a href="https://www.planetnine.com/" target="_blank"><img
+                                    src="{{ asset('images/p9.png') }}"
+                                    alt="planetnine.com"></a>
+                        </div>
 
                         <hr class="bg-secondary">
                         <div class="d-flex justify-content-between align-items-center">
