@@ -305,6 +305,18 @@ Route::domain('unbeaumatin-defilm.nl')->group(function(){
     Route::get('/api/shows', 'MMatinController@showsApi');
 });
 
+Route::domain('www.rose-defilm.nl')->group(function (){
+    Route::get('/', 'RoseController@nl_landing');
+    Route::get('/_en', 'RoseController@en_landing');
+    Route::get('/api/shows', 'RoseController@showsApi');
+});
+
+Route::domain('rose-defilm.nl')->group(function (){
+    Route::get('/', 'RoseController@nl_landing');
+    Route::get('/_en', 'RoseController@en_landing');
+    Route::get('/api/shows', 'RoseController@showsApi');
+});
+
 
 //if domain is running on localhost
 Route::get('/', 'DataController@index');
@@ -416,6 +428,11 @@ Route::get('/un-beau-matin', 'MMatinController@nl_landing');
 Route::get('/un-beau-matin_en', 'MMatinController@en_landing');
 Route::get('/un-beau-matin/api/shows', 'MMatinController@showsApi');
 Route::get('/un-beau-matin/poster', 'MMatinController@viewImage');
+
+Route::get('/rose', 'RoseController@nl_landing');
+Route::get('/rose_en', 'RoseController@en_landing');
+Route::get('/rose/api/shows', 'RoseController@showsApi');
+Route::get('/rose/poster', 'RoseController@viewImage');
 
 Auth::routes(['register' => false]);
 
