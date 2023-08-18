@@ -178,6 +178,8 @@ if (location.pathname === "/" || location.pathname === "/_en") {
     endpoint = `/un-beau-matin/api/shows`;
 } else if ( location.pathname === "/rose" || location.pathname === "/rose_en") {
     endpoint = `/rose/api/shows`;
+} else if ( location.pathname === "/alsuwgatmaarlacht" || location.pathname === "/alsuwgatmaarlacht_en") {
+    endpoint = `/alsuwgatmaarlacht/api/shows`;
 }
 
 axios

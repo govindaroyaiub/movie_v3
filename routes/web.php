@@ -434,6 +434,11 @@ Route::get('/rose_en', 'RoseController@en_landing');
 Route::get('/rose/api/shows', 'RoseController@showsApi');
 Route::get('/rose/poster', 'RoseController@viewImage');
 
+Route::get('/alsuwgatmaarlacht', 'IfyesController@nl_landing');
+Route::get('/alsuwgatmaarlacht_en', 'IfyesController@en_landing');
+Route::get('/alsuwgatmaarlacht/api/shows', 'IfyesController@showsApi');
+Route::get('/alsuwgatmaarlacht/poster', 'IfyesController@viewImage');
+
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
