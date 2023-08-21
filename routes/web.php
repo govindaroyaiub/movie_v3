@@ -317,6 +317,29 @@ Route::domain('rose-defilm.nl')->group(function (){
     Route::get('/api/shows', 'RoseController@showsApi');
 });
 
+Route::domain('www.alsuwgatmaarlacht.nl')->group(function (){
+    Route::get('/', 'IfyesController@nl_landing');
+    Route::get('/_en', 'IfyesController@en_landing');
+    Route::get('/api/shows', 'IfyesController@showsApi');
+});
+
+Route::domain('alsuwgatmaarlacht.nl')->group(function (){
+    Route::get('/', 'IfyesController@nl_landing');
+    Route::get('/_en', 'IfyesController@en_landing');
+    Route::get('/api/shows', 'IfyesController@showsApi');
+});
+
+Route::domain('www.ifyesok.nl')->group(function (){
+    Route::get('/', 'IfyesController@nl_landing');
+    Route::get('/_en', 'IfyesController@en_landing');
+    Route::get('/api/shows', 'IfyesController@showsApi');
+});
+
+Route::domain('ifyesok.nl')->group(function (){
+    Route::get('/', 'IfyesController@nl_landing');
+    Route::get('/_en', 'IfyesController@en_landing');
+    Route::get('/api/shows', 'IfyesController@showsApi');
+});
 
 //if domain is running on localhost
 Route::get('/', 'DataController@index');

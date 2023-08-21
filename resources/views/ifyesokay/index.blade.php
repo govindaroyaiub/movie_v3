@@ -86,11 +86,11 @@
         }
 
         .movie-header, .movie-content, .movie-footer{
-            background-color: rgb(76, 60, 85)!important;
+            background-color: rgb(249, 192, 173)!important;
         }
 
         .m-wrapper{
-            background: rgb(249, 192, 173)!important;
+            background: rgb(76, 60, 85)!important;
         }
 
         .hastag{
@@ -98,30 +98,90 @@
         }
 
         .m-title, .m-address, .m-timestamp{
-            color: rgb(50, 111, 57)!important;
+            color: white!important;
         }
 
         .fa-video{
-            color: rgb(76, 60, 85)!important;
+            color: white!important;
         }
 
         .city-map-js li{
             border-radius: 5px!important;
-            border: 1px solid rgb(249, 192, 173)!important;
+            border: 1px solid rgb(76, 60, 85)!important;
         }
 
         .movie-menu a {
             font-family: 'Thasadith', sans-serif !important;
         }
 
-        @media (min-width:320px) and (max-width:425px) {
-            .slick-prev {
-                left: -26px!important;
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            .svDesk, .svTab{
+                display: none;
             }
-            
-            .slick-next {
-                right: -26px!important;
+
+            .svMobile{
+                display: block;
             }
+        }
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            .svDesk, .svTab{
+                display: none;
+            }
+
+            .svMobile{
+                display: block;
+            }
+        }
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+            .svDesk, .svMobile{
+                display: none;
+            }
+
+            .svTab{
+                display: block;
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            .svDesk, .svMobile{
+                display: none;
+            }
+
+            .svTab{
+                display: block;
+            }
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            .svTab, .svMobile{
+                display: none;
+            }
+
+            .svDesk{
+                display: block;
+            }
+        }
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) {
+            .svTab, .svMobile{
+                display: none;
+            }
+
+            .svDesk{
+                display: block;
+            }
+        }
+
+        .menu-toggler{
+            background-color: rgb(50, 111, 57)!important;
         }
 
     </style>
@@ -138,7 +198,7 @@
 
 <section id="root" class="mvoie-body">
     <header class="movie-header sibyl-header position-relative text-white py-3" style="text-align: center !important;">
-        <h1 class="text-center m-0">{{ $movie_details->movie_title }}
+        <h1 class="text-center m-0" style="color: rgb(229, 52, 34)!important;">{{ $movie_details->movie_title }}
             -
             <span class="movie-tagline">{{ $movie_details->tagline_nl }}</span>
         </h1>
@@ -188,9 +248,10 @@
                             loading="lazy"
                             class="d-block mx-auto"
                             src="{{ $movie_details->image1 }}"
+                            style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem;"
                             alt="{{ $movie_details->movie_title }}.{{$movie_details->movie_description_short_nl}}">
 
-                        <p class="d-md-none text-center m-0 mb-2">{{ $movie_details->movie_title }}
+                        <p class="d-md-none text-center m-0 mb-2" style="color: rgb(229, 52, 34);">{{ $movie_details->movie_title }}
                             - {{ $movie_details->movie_description_short_nl }}</p>
                     </div>
                 </div>
@@ -212,17 +273,17 @@
                         <ul class="city-map-js my-3"></ul>
 
                         <div class="synopsis desk-sy">
-                            <h3 class="text-center mb-2 my-3" style="text-decoration: none">
+                            <h3 class="text-center mb-2 my-3" style="text-decoration: none; color: rgb(229, 52, 34)!important;">
                                 {{ $movie_details->movie_description_short_nl }}
                             </h3>
-                            <p style="white-space: pre-line;">
+                            <p style="white-space: pre-line; color: rgb(53, 59, 72)!important;">
                                 {{ $movie_details->movie_description_long_nl }}
                             </p>
                         </div>
 
                         <br>
 
-                        <p class="text-center my-3">BEKIJK DE TRAILER</p>
+                        <p class="text-center my-3" style="color: rgb(229, 52, 34);">BEKIJK DE TRAILER</p>
 
                         <div class="youtube-trailer">
                             <div class="iframe-container mb-2">
@@ -234,15 +295,15 @@
                         <br>
 
                         <div class="synopsis">
-                            <h3 class="text-center mb-2 my-3" style="text-decoration: underline;">
+                            <h3 class="text-center mb-2 my-3" style="text-decoration: none; color: rgb(229, 52, 34)!important;">
                                 <b>Over Dick Verdult (alias Dick El Demasiado):</b>
                             </h3>
-                            <p style="white-space: pre-line;">
+                            <p style="white-space: pre-line; color: rgb(76, 60, 85);">
                                 Beeldend kunstenaar, muzikant, auteur en filmmaker Dick Verdult (Eindhoven, 1954) is een cult-personage in Latijns-Amerika, Japan, en in sommige delen van Rusland en Europa. Als de aanjager van een geheel nieuwe kijk op de folkloristische cumbia-muziek staat hij bekend als Dick El Demasiado (Demasiado = mateloos ), wat in zijn geval een goed passende samenvoeging is. <br>
                                 Daarnaast hield hij zich 20 jaar bezig met interactieve fictie (1975-1995), waardoor hij nog altijd ver blijft van de gangbare lineaire dramaturgie. Zijn laatste film was “Viva Matanzas” over een zeeslag zonder doden (2018, 50 min). Deze fictiefilm ging in première op het documentaire festival IDFA. Daarnaast dient te worden opgemerkt dat Verdult, als Dick El Demasiado, de film het bijzondere muzikale karakter heeft gegeven.
                             </p>
                             <br>
-                            <p style="white-space: pre-line;">
+                            <p style="white-space: pre-line; color: rgb(76, 60, 85);">
                                 Linken naar zijn website: <a href='https://www.dickverdult.com/' target="_blank">https://www.dickverdult.com/</a>
                             </p>
                         </div>
@@ -271,16 +332,16 @@
         <div id="sy" class="tabcontent container">
             <div class="row">
                 <div class="col-md-3 mb-5 mx-auto">
-                    <img class="d-block w-100" src="{{ $movie_details->image1 }}" alt="">
+                    <img class="d-block w-100" src="{{ $movie_details->image1 }}" alt="" style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem;">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-6">
                     <div class="synopsis">
-                        <h3 class="text-center mb-2">
+                        <h3 class="text-center mb-2" style="color: rgb(229, 52, 34);">
                             {{ $movie_details->movie_description_short_nl }}
                         </h3>
-                        <p>
+                        <p style="color: rgb(53, 59, 72);">
                             {{ $movie_details->movie_description_long_nl }}
                         </p>
                     </div>
@@ -289,7 +350,7 @@
                     <div class="synopsis">
                         <div class="synopsis-meta mt-2">
                             <p><span>Regisseur:</span> {{ $movie_details->director }}</p>
-                            <p><span>Schrijver:</span> {{ $movie_details->writer }}</p>
+                            {{-- <p><span>Schrijver:</span> {{ $movie_details->writer }}</p> --}}
                             <p><span>Producent:</span> {{ $movie_details->producer }}</p>
                             <p><span>Acteurs:</span> {{ $movie_details->actors }}</p>
                             <p><span>Speeltijd:</span> {{ $movie_details->duration }}</p>
@@ -308,51 +369,32 @@
             <div
                 style="display: flex; flex-direction: column; justify-content: center; align-content: center; align-items: center;">
 
-                <div class="synopsis"
+                <div class="svDesk"
                     style="max-width: 75%; background-color: rgb(249, 192, 173)!important; padding: 2em; border-radius: 1rem; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border: 2px solid; border-left-color:rgb(76, 60, 85); border-top-color:rgb(76, 60, 85); border-right-color: rgb(50, 111, 57); border-bottom-color:rgb(50, 111, 57);">
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
                         AMSTERDAM
                     </h3>
-                    <table style="margin-left: auto; margin-right: auto; color: rgb(76, 60, 85)!important;">
-                        <tr>
-                            <td>&#8226; Do 7 Sept</td>
-                            <td> - De Balie, Filmvertoning It’s true but not here van Luuk Bouwman over Dick
-                                Verdult.</td>
-                        </tr>
-                        <tr>
-                            <td>&#8226; Zo 17 Sept</td>
-                            <td> - De Balie, Film + concert Dick Verdult.</td>
-                        </tr>
-                        <tr>
-                            <td>&#8226; Di 19 Sept</td>
-                            <td> - Eye on Art, Film & Performance 'Ugly Poems’ Dick Verdult. Engels OT.</td>
-                        </tr>
-                    </table>
-
+                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
+                        <p><span>&#8226; Do 7 Sept</span> - De Balie, Filmvertoning It’s true but not here van Luuk Bouwman over Dick
+                            Verdult.</p>
+                        <p><span>&#8226; Zo 17 Sept</span> - De Balie, Film + concert Dick Verdult.</p>
+                        <p><span>&#8226; Di 19 Sept</span> - Eye on Art, Film & Performance 'Ugly Poems’ Dick Verdult. Engels OT.</p>
+                    </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
                         BREDA
                     </h3>
-                    <table style="margin-left: auto; margin-right: auto; color: rgb(76, 60, 85)!important;">
-                        <tr>
-                            <td>&#8226; Do 14 Sept</td>
-                            <td> - Chassé Cinema,  Film & Q&A Dick Verdult.</td>
-                        </tr>
-                        <tr>
-                            <td>&#8226; Za 16 Sept</td>
-                            <td> - Chassé Cinema, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</td>
-                        </tr>
-                    </table>
+                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
+                        <p><span>&#8226; Do 14 Sept</span> - Chassé Cinema,  Film & Q&A Dick Verdult.</p>
+                        <p><span>&#8226; Za 16 Sept</span> - Chassé Cinema, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                    </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
                         DEVENTER
                     </h3>
-                    <table style="margin-left: auto; margin-right: auto; color: rgb(76, 60, 85)!important;">
-                        <tr>
-                            <td>&#8226; Woe 27 Sept</td>
-                            <td> - Mimik, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</td>
-                        </tr>
-                    </table>
+                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
+                        <p><span>&#8226; Woe 27 Sept</span> - Mimik, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                    </div>
                     <br>
                     <div class="heads" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
                         <div class="head1" style="margin-bottom: -38px; text-align: center;">
@@ -366,47 +408,151 @@
                     </div>
                     <br>
 
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
                         EINDHOVEN
                     </h3>
-                    <table style="margin-left: auto; margin-right: auto; color: rgb(76, 60, 85)!important;">
-                        <tr>
-                            <td>&#8226; Wo 13 Sept</td>
-                            <td> - Lab-1 Première in aanwezigheid van cast + crew.</td>
-                        </tr>
-                        <tr>
-                            <td>&#8226; Vr 15 Sept</td>
-                            <td> - Lab-1 Film & Performance 'Lelijke Gedichten’ Dick Verdult.</td>
-                        </tr>
-                    </table>
+                    <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
+                        <p><span>&#8226; Wo 13 Sept</span> - Lab-1 Première in aanwezigheid van cast + crew.</p>
+                        <p><span>&#8226; Vr 15 Sept</span> - Lab-1 Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                    </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
                         TILBURG - Murf/Murw Festival
                     </h3>
-                    <table style="margin-left: auto; margin-right: auto; color: rgb(76, 60, 85)!important;">
-                        <tr>
-                            <td>&#8226; Wo 13 Sept</td>
-                            <td> - Lab-1 Première in aanwezigheid van cast + crew.</td>
-                        </tr>
-                        <tr>
-                            <td>&#8226; Do 28 Sept</td>
-                            <td> - Cinecitta Film & Performance 'Lelijke Gedichten’ Dick Verdult.</td>
-                        </tr>
-                        <tr>
-                            <td>&#8226; Za 30 Sept</td>
-                            <td> - Cinecitta Film & Performance 'Lelijke Gedichten’ Dick Verdult.</td>
-                        </tr>
-                    </table>
+                    <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
+                        <p><span>&#8226; Do 28 &  Za 30</span> - Film & Performance 'Lelijke Gedichten’ Dick Verdult</p>
+                    </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
                         Online vertoning - PICL
                     </h3>
-                    <table style="margin-left: auto; margin-right: auto; color: rgb(76, 60, 85)!important;">
-                        <tr>
-                            <td>&#8226; Vanaf 14 September</td>
-                            <td> - te zien op het online filmhuis PICL.</td>
-                        </tr>
-                    </table>
+                    <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
+                        <p><span>&#8226; Vanaf 14 September</span> - te zien op het online filmhuis PICL.</p>
+                    </div>
+                </div>
+
+                <div class="svTab"
+                    style="max-width: 100%; background-color: rgb(249, 192, 173)!important; padding: 2em; border-radius: 1rem; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border: 2px solid; border-left-color:rgb(76, 60, 85); border-top-color:rgb(76, 60, 85); border-right-color: rgb(50, 111, 57); border-bottom-color:rgb(50, 111, 57);">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                        AMSTERDAM
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
+                        <p><span>&#8226; Do 7 Sept</span> - De Balie, Filmvertoning It’s true but not here van Luuk Bouwman over Dick
+                            Verdult.</p>
+                        <p><span>&#8226; Zo 17 Sept</span> - De Balie, Film + concert Dick Verdult.</p>
+                        <p><span>&#8226; Di 19 Sept</span> - Eye on Art, Film & Performance 'Ugly Poems’ Dick Verdult. Engels OT.</p>
+                    </div>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                        BREDA
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
+                        <p><span>&#8226; Do 14 Sept</span> - Chassé Cinema,  Film & Q&A Dick Verdult.</p>
+                        <p><span>&#8226; Za 16 Sept</span> - Chassé Cinema, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                    </div>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                        DEVENTER
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
+                        <p><span>&#8226; Woe 27 Sept</span> - Mimik, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                    </div>
+                    <br>
+                    <div class="heads" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
+                        <div class="head1" style="margin-bottom: -30px; text-align: center;">
+                            <img src="{{ asset('images/Meiden los Heads-1.png') }}" alt="head1" id="head1"
+                                style="width: 30%;">
+                        </div>
+                        <div class="head2" style="text-align: center;">
+                            <img src="{{ asset('images/Meiden los Heads-2-min.png') }}" alt="head2" id="head2"
+                                style="width: 30%; transform: rotate(180deg); margin-left: 51px;">
+                        </div>
+                    </div>
+                    <br>
+
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                        EINDHOVEN
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
+                        <p><span>&#8226; Wo 13 Sept</span> - Lab-1 Première in aanwezigheid van cast + crew.</p>
+                        <p><span>&#8226; Vr 15 Sept</span> - Lab-1 Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                    </div>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                        TILBURG - Murf/Murw Festival
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
+                        <p><span>&#8226; Do 28 &  Za 30</span> - Film & Performance 'Lelijke Gedichten’ Dick Verdult</p>
+                    </div>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                        Online vertoning - PICL
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
+                        <p><span>&#8226; Vanaf 14 September</span> - te zien op het online filmhuis PICL.</p>
+                    </div>
+                </div>
+
+                <div class="svMobile"
+                    style="max-width: 100%; background-color: rgb(249, 192, 173)!important; padding: 2em; border-radius: 1rem; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border: 2px solid; border-left-color:rgb(76, 60, 85); border-top-color:rgb(76, 60, 85); border-right-color: rgb(50, 111, 57); border-bottom-color:rgb(50, 111, 57);">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                        AMSTERDAM
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
+                        <p><span>&#8226; Do 7 Sept</span> - De Balie, Filmvertoning It’s true but not here van Luuk Bouwman over Dick
+                            Verdult.</p>
+                        <p><span>&#8226; Zo 17 Sept</span> - De Balie, Film + concert Dick Verdult.</p>
+                        <p><span>&#8226; Di 19 Sept</span> - Eye on Art, Film & Performance 'Ugly Poems’ Dick Verdult. Engels OT.</p>
+                    </div>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                        BREDA
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
+                        <p><span>&#8226; Do 14 Sept</span> - Chassé Cinema,  Film & Q&A Dick Verdult.</p>
+                        <p><span>&#8226; Za 16 Sept</span> - Chassé Cinema, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                    </div>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                        DEVENTER
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
+                        <p><span>&#8226; Woe 27 Sept</span> - Mimik, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                    </div>
+                    <br>
+                    <div class="heads" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
+                        <div class="head1" style="margin-bottom: -15px; text-align: center;">
+                            <img src="{{ asset('images/Meiden los Heads-1.png') }}" alt="head1" id="head1"
+                                style="width: 30%;">
+                        </div>
+                        <div class="head2" style="text-align: center;">
+                            <img src="{{ asset('images/Meiden los Heads-2-min.png') }}" alt="head2" id="head2"
+                                style="width: 30%; transform: rotate(180deg); margin-left: 23px;">
+                        </div>
+                    </div>
+                    <br>
+
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                        EINDHOVEN
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
+                        <p><span>&#8226; Wo 13 Sept</span> - Lab-1 Première in aanwezigheid van cast + crew.</p>
+                        <p><span>&#8226; Vr 15 Sept</span> - Lab-1 Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                    </div>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                        TILBURG - Murf/Murw Festival
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
+                        <p><span>&#8226; Do 28 &  Za 30</span> - Film & Performance 'Lelijke Gedichten’ Dick Verdult</p>
+                    </div>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                        Online vertoning - PICL
+                    </h3>
+                    <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
+                        <p><span>&#8226; Vanaf 14 September</span> - te zien op het online filmhuis PICL.</p>
+                    </div>
                 </div>
 
             </div>
