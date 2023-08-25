@@ -302,9 +302,8 @@
                                 Beeldend kunstenaar, muzikant, auteur en filmmaker Dick Verdult (Eindhoven, 1954) is een cult-personage in Latijns-Amerika, Japan, en in sommige delen van Rusland en Europa. Als de aanjager van een geheel nieuwe kijk op de folkloristische cumbia-muziek staat hij bekend als Dick El Demasiado (Demasiado = mateloos ), wat in zijn geval een goed passende samenvoeging is. <br>
                                 Daarnaast hield hij zich 20 jaar bezig met interactieve fictie (1975-1995), waardoor hij nog altijd ver blijft van de gangbare lineaire dramaturgie. Zijn laatste film was “Viva Matanzas” over een zeeslag zonder doden (2018, 50 min). Deze fictiefilm ging in première op het documentaire festival IDFA. Daarnaast dient te worden opgemerkt dat Verdult, als Dick El Demasiado, de film het bijzondere muzikale karakter heeft gegeven.
                             </p>
-                            <br>
                             <p style="white-space: pre-line; color: rgb(76, 60, 85);">
-                                Linken naar zijn website: <a href='https://www.dickverdult.com/' target="_blank">https://www.dickverdult.com/</a>
+                                Zie voor meer informatie: <a href='https://www.dickverdult.com/' target="_blank">https://www.dickverdult.com/</a>
                             </p>
                         </div>
 
@@ -370,33 +369,73 @@
                 style="display: flex; flex-direction: column; justify-content: center; align-content: center; align-items: center;">
 
                 <div class="svDesk"
-                    style="max-width: 75%; background-color: rgb(249, 192, 173)!important; padding: 2em; border-radius: 1rem; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border: 2px solid; border-left-color:rgb(76, 60, 85); border-top-color:rgb(76, 60, 85); border-right-color: rgb(50, 111, 57); border-bottom-color:rgb(50, 111, 57);">
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                    style="text-align: center;
+                    max-width: 75%; 
+                    background-color: rgb(249, 192, 173)!important; 
+                    padding: 2em; 
+                    border-radius: 1rem; 
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+                    border: 2px solid; 
+                    border-left-color:rgb(76, 60, 85); 
+                    border-top-color:rgb(76, 60, 85); 
+                    border-right-color: rgb(50, 111, 57); 
+                    border-bottom-color:rgb(50, 111, 57);">
+                    <label style="color: rgb(229, 52, 34); font-size: 18px;">Naast reguliere vertoningen worden er
+                        in het hele land voorstellingen georganiseerd met een randprogramma: Q&A’s en muzikale
+                        optredens en voordracht van ‘Lelijke Gedichten’ door
+                        filmmaker Dick Verdult alias Dick El Demasiado.
+                    </label>
+                    <br>
+                    <br>
+                    <h2 style="color: rgb(53, 59, 72);
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    padding: 10px;
+                    border: 2px solid rgb(50, 111, 57);
+                    max-width: 530px;
+                    border-radius: 5px;
+                    margin: 0 auto;">Laatste versie 24 augustus</h2>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         AMSTERDAM
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Do 7 Sept</span> - De Balie, Filmvertoning It’s true but not here van Luuk Bouwman over Dick
-                            Verdult.</p>
-                        <p><span>&#8226; Zo 17 Sept</span> - De Balie, Film + concert Dick Verdult.</p>
-                        <p><span>&#8226; Di 19 Sept</span> - Eye on Art, Film & Performance 'Ugly Poems’ Dick Verdult. Engels OT.</p>
+                        <p><span>&#8226; Do 7 Sept</span> - De Balie: Documentaire It is true but not here van Luuk
+                            Bouwman over Dick Verdult. <a
+                                href="https://debalie.nl/cinema/de-balie-kijkt-it-is-true-but-not-here/"
+                                target="_blank">Met nagesprek</a></p>
+                        <p><span>&#8226; Zo 17 Sept</span> - De Balie: Film + concert Dick El Demasiado* : <a
+                                href="https://debalie.nl/cinema/de-balie-kijkt-if-yes-okay-concert-dick-verdult/"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Di 19 Sept</span> - Eye on Art: Film, Q&A + ‘Ugly Poems’ by Dick Verdult.
+                            English subtitles: <a
+                                href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Vr 22 Sept</span> - Kriterion: Film, Q&A + ‘Lelijke Gedichten’ en concert
+                            Dick El Demasiado.</p>
+                        <p><span>&#8226; Vr 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
+                            Brouwerij Oedipus.</p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         BREDA
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Do 14 Sept</span> - Chassé Cinema,  Film & Q&A Dick Verdult.</p>
-                        <p><span>&#8226; Za 16 Sept</span> - Chassé Cinema, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                        <p><span>&#8226; Za 16 Sept </span> - Chassé Cinema: Film, Q&A + 'Lelijke Gedichten’ en
+                            aansluitend concert in Club Solo door Dick El Demasiado.</p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         DEVENTER
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Woe 27 Sept</span> - Mimik, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                        <p><span>&#8226; Woe 27 Sept</span> - Mimik: Film + concert Dick El Demasiado.</p>
                     </div>
                     <br>
-                    <div class="heads" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
+                    <div class="heads" style="display: flex; 
+                flex-direction: column; 
+                justify-content: center; 
+                align-content: center;">
                         <div class="head1" style="margin-bottom: -38px; text-align: center;">
                             <img src="{{ asset('images/Meiden los Heads-1.png') }}" alt="head1" id="head1"
                                 style="width: 30%;">
@@ -408,57 +447,108 @@
                     </div>
                     <br>
 
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                         EINDHOVEN
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
-                        <p><span>&#8226; Wo 13 Sept</span> - Lab-1 Première in aanwezigheid van cast + crew.</p>
-                        <p><span>&#8226; Vr 15 Sept</span> - Lab-1 Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                        <p><span>&#8226; Wo 13 Sept</span> - Lab-1: Première in aanwezigheid van cast + crew : <a
+                                href="https://www.lab-1.nl/film/grande-premiere-als-uw-gat-maar-lacht-if-yes-okay/"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Vr 15 Sept</span> - Lab-1: Film + concert Dick El Demasiado: <a
+                                href="https://www.lab-1.nl/film/if-yes-okay-concert-dick-verdult/"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Zo 24 Sept</span> - Het Ketelhuis Strijp S: Film + concert Dick El
+                            Demasiado.</p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                         TILBURG - Murf/Murw Festival
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
-                        <p><span>&#8226; Do 28 &  Za 30</span> - Film & Performance 'Lelijke Gedichten’ Dick Verdult</p>
+                        <p><span>&#8226; Do 28 Sept</span> - Cinecitta: <a
+                                href="https://murfmurw.com/artiesten/als-uw-gat-maar-lacht-nl/"
+                                target="_blank">Film</a></p>
+                        <p><span>&#8226; Za 30 Sept</span> - Concert Dick El Demasiado: <a
+                                href="https://murfmurw.com/artiesten/dick-el-demasiado-nl/" target="_blank">Here</a>
+                        </p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
-                        Online vertoning - PICL
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
+                        ONLINE VERTONING <img src="{{ asset('images/picl2.png') }}" style="width: 55px;">
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
-                        <p><span>&#8226; Vanaf 14 September</span> - te zien op het online filmhuis PICL.</p>
+                        <p><span>&#8226; Vanaf 14 September</span> - te zien op het online filmhuis <a
+                                href="https://picl.nl/" target="_blank">PICL</a></p>
                     </div>
                 </div>
 
-                <div class="svTab"
-                    style="max-width: 100%; background-color: rgb(249, 192, 173)!important; padding: 2em; border-radius: 1rem; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border: 2px solid; border-left-color:rgb(76, 60, 85); border-top-color:rgb(76, 60, 85); border-right-color: rgb(50, 111, 57); border-bottom-color:rgb(50, 111, 57);">
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                <div class="svTab" style="text-align: center;
+                max-width: 100%; 
+                background-color: rgb(249, 192, 173)!important; 
+                padding: 2em; 
+                border-radius: 1rem; 
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+                border: 2px solid; 
+                border-left-color:rgb(76, 60, 85); 
+                border-top-color:rgb(76, 60, 85); 
+                border-right-color: rgb(50, 111, 57); 
+                border-bottom-color:rgb(50, 111, 57);">
+                    <label style="color: rgb(229, 52, 34); font-size: 18px;">Naast reguliere vertoningen worden er
+                        in het hele land voorstellingen georganiseerd met een randprogramma: Q&A’s en muzikale
+                        optredens en voordracht van ‘Lelijke Gedichten’ door
+                        filmmaker Dick Verdult alias Dick El Demasiado.
+                    </label>
+                    <br>
+                    <br>
+                    <h2 style="color: rgb(53, 59, 72);
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    padding: 10px;
+                    border: 2px solid rgb(50, 111, 57);
+                    max-width: 530px;
+                    border-radius: 5px;
+                    margin: 0 auto;">Laatste versie 24 augustus</h2>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         AMSTERDAM
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Do 7 Sept</span> - De Balie, Filmvertoning It’s true but not here van Luuk Bouwman over Dick
-                            Verdult.</p>
-                        <p><span>&#8226; Zo 17 Sept</span> - De Balie, Film + concert Dick Verdult.</p>
-                        <p><span>&#8226; Di 19 Sept</span> - Eye on Art, Film & Performance 'Ugly Poems’ Dick Verdult. Engels OT.</p>
+                        <p><span>&#8226; Do 7 Sept</span> - De Balie: Documentaire It is true but not here van Luuk
+                            Bouwman over Dick Verdult. <a
+                                href="https://debalie.nl/cinema/de-balie-kijkt-it-is-true-but-not-here/"
+                                target="_blank">Met nagesprek</a></p>
+                        <p><span>&#8226; Zo 17 Sept</span> - De Balie: Film + concert Dick El Demasiado* : <a
+                                href="https://debalie.nl/cinema/de-balie-kijkt-if-yes-okay-concert-dick-verdult/"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Di 19 Sept</span> - Eye on Art: Film, Q&A + ‘Ugly Poems’ by Dick Verdult.
+                            English subtitles: <a
+                                href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Vr 22 Sept</span> - Kriterion: Film, Q&A + ‘Lelijke Gedichten’ en concert
+                            Dick El Demasiado.</p>
+                        <p><span>&#8226; Vr 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
+                            Brouwerij Oedipus.</p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         BREDA
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Do 14 Sept</span> - Chassé Cinema,  Film & Q&A Dick Verdult.</p>
-                        <p><span>&#8226; Za 16 Sept</span> - Chassé Cinema, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                        <p><span>&#8226; Za 16 Sept </span> - Chassé Cinema: Film, Q&A + 'Lelijke Gedichten’ en
+                            aansluitend concert in Club Solo door Dick El Demasiado.</p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         DEVENTER
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Woe 27 Sept</span> - Mimik, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                        <p><span>&#8226; Woe 27 Sept</span> - Mimik: Film + concert Dick El Demasiado.</p>
                     </div>
                     <br>
-                    <div class="heads" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
+                    <div class="heads" style="display: flex; 
+                flex-direction: column; 
+                justify-content: center;
+                align-content: center;">
                         <div class="head1" style="margin-bottom: -30px; text-align: center;">
                             <img src="{{ asset('images/Meiden los Heads-1.png') }}" alt="head1" id="head1"
                                 style="width: 30%;">
@@ -470,57 +560,108 @@
                     </div>
                     <br>
 
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                         EINDHOVEN
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
-                        <p><span>&#8226; Wo 13 Sept</span> - Lab-1 Première in aanwezigheid van cast + crew.</p>
-                        <p><span>&#8226; Vr 15 Sept</span> - Lab-1 Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                        <p><span>&#8226; Wo 13 Sept</span> - Lab-1: Première in aanwezigheid van cast + crew : <a
+                                href="https://www.lab-1.nl/film/grande-premiere-als-uw-gat-maar-lacht-if-yes-okay/"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Vr 15 Sept</span> - Lab-1: Film + concert Dick El Demasiado: <a
+                                href="https://www.lab-1.nl/film/if-yes-okay-concert-dick-verdult/"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Zo 24 Sept</span> - Het Ketelhuis Strijp S: Film + concert Dick El
+                            Demasiado.</p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                         TILBURG - Murf/Murw Festival
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
-                        <p><span>&#8226; Do 28 &  Za 30</span> - Film & Performance 'Lelijke Gedichten’ Dick Verdult</p>
+                        <p><span>&#8226; Do 28 Sept</span> - Cinecitta: <a
+                                href="https://murfmurw.com/artiesten/als-uw-gat-maar-lacht-nl/"
+                                target="_blank">Film</a></p>
+                        <p><span>&#8226; Za 30 Sept</span> - Concert Dick El Demasiado: <a
+                                href="https://murfmurw.com/artiesten/dick-el-demasiado-nl/" target="_blank">Here</a>
+                        </p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
-                        Online vertoning - PICL
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
+                        ONLINE VERTONING <img src="{{ asset('images/picl2.png') }}" style="width: 55px;">
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
-                        <p><span>&#8226; Vanaf 14 September</span> - te zien op het online filmhuis PICL.</p>
+                        <p><span>&#8226; Vanaf 14 September</span> - te zien op het online filmhuis <a
+                                href="https://picl.nl/" target="_blank">PICL</a></p>
                     </div>
                 </div>
 
-                <div class="svMobile"
-                    style="max-width: 100%; background-color: rgb(249, 192, 173)!important; padding: 2em; border-radius: 1rem; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border: 2px solid; border-left-color:rgb(76, 60, 85); border-top-color:rgb(76, 60, 85); border-right-color: rgb(50, 111, 57); border-bottom-color:rgb(50, 111, 57);">
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                <div class="svMobile" style="text-align: center;
+                max-width: 100%; 
+                background-color: rgb(249, 192, 173)!important; 
+                padding: 2em; 
+                border-radius: 1rem; 
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+                border: 2px solid; 
+                border-left-color:rgb(76, 60, 85); 
+                border-top-color:rgb(76, 60, 85); 
+                border-right-color: rgb(50, 111, 57); 
+                border-bottom-color:rgb(50, 111, 57);">
+                    <label style="color: rgb(229, 52, 34); font-size: 18px;">Naast reguliere vertoningen worden er
+                        in het hele land voorstellingen georganiseerd met een randprogramma: Q&A’s en muzikale
+                        optredens en voordracht van ‘Lelijke Gedichten’ door
+                        filmmaker Dick Verdult alias Dick El Demasiado.
+                    </label>
+                    <br>
+                    <br>
+                    <h2 style="color: rgb(53, 59, 72);
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    padding: 10px;
+                    border: 2px solid rgb(50, 111, 57);
+                    max-width: 530px;
+                    border-radius: 5px;
+                    margin: 0 auto;">Laatste versie 24 augustus</h2>
+                    <br>
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         AMSTERDAM
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Do 7 Sept</span> - De Balie, Filmvertoning It’s true but not here van Luuk Bouwman over Dick
-                            Verdult.</p>
-                        <p><span>&#8226; Zo 17 Sept</span> - De Balie, Film + concert Dick Verdult.</p>
-                        <p><span>&#8226; Di 19 Sept</span> - Eye on Art, Film & Performance 'Ugly Poems’ Dick Verdult. Engels OT.</p>
+                        <p><span>&#8226; Do 7 Sept</span> - De Balie: Documentaire It is true but not here van Luuk
+                            Bouwman over Dick Verdult. <a
+                                href="https://debalie.nl/cinema/de-balie-kijkt-it-is-true-but-not-here/"
+                                target="_blank">Met nagesprek</a></p>
+                        <p><span>&#8226; Zo 17 Sept</span> - De Balie: Film + concert Dick El Demasiado* : <a
+                                href="https://debalie.nl/cinema/de-balie-kijkt-if-yes-okay-concert-dick-verdult/"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Di 19 Sept</span> - Eye on Art: Film, Q&A + ‘Ugly Poems’ by Dick Verdult.
+                            English subtitles: <a
+                                href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Vr 22 Sept</span> - Kriterion: Film, Q&A + ‘Lelijke Gedichten’ en concert
+                            Dick El Demasiado.</p>
+                        <p><span>&#8226; Vr 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
+                            Brouwerij Oedipus.</p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         BREDA
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Do 14 Sept</span> - Chassé Cinema,  Film & Q&A Dick Verdult.</p>
-                        <p><span>&#8226; Za 16 Sept</span> - Chassé Cinema, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                        <p><span>&#8226; Za 16 Sept </span> - Chassé Cinema: Film, Q&A + 'Lelijke Gedichten’ en
+                            aansluitend concert in Club Solo door Dick El Demasiado.</p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         DEVENTER
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Woe 27 Sept</span> - Mimik, Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                        <p><span>&#8226; Woe 27 Sept</span> - Mimik: Film + concert Dick El Demasiado.</p>
                     </div>
                     <br>
-                    <div class="heads" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
+                    <div class="heads" style="display: flex; 
+                flex-direction: column; 
+                justify-content: center; 
+                align-content: center;">
                         <div class="head1" style="margin-bottom: -15px; text-align: center;">
                             <img src="{{ asset('images/Meiden los Heads-1.png') }}" alt="head1" id="head1"
                                 style="width: 30%;">
@@ -531,27 +672,38 @@
                         </div>
                     </div>
                     <br>
-
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                         EINDHOVEN
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
-                        <p><span>&#8226; Wo 13 Sept</span> - Lab-1 Première in aanwezigheid van cast + crew.</p>
-                        <p><span>&#8226; Vr 15 Sept</span> - Lab-1 Film & Performance 'Lelijke Gedichten’ Dick Verdult.</p>
+                        <p><span>&#8226; Wo 13 Sept</span> - Lab-1: Première in aanwezigheid van cast + crew : <a
+                                href="https://www.lab-1.nl/film/grande-premiere-als-uw-gat-maar-lacht-if-yes-okay/"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Vr 15 Sept</span> - Lab-1: Film + concert Dick El Demasiado: <a
+                                href="https://www.lab-1.nl/film/if-yes-okay-concert-dick-verdult/"
+                                target="_blank">Here</a></p>
+                        <p><span>&#8226; Zo 24 Sept</span> - Het Ketelhuis Strijp S: Film + concert Dick El
+                            Demasiado.</p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                         TILBURG - Murf/Murw Festival
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
-                        <p><span>&#8226; Do 28 &  Za 30</span> - Film & Performance 'Lelijke Gedichten’ Dick Verdult</p>
+                        <p><span>&#8226; Do 28 Sept</span> - Cinecitta: <a
+                                href="https://murfmurw.com/artiesten/als-uw-gat-maar-lacht-nl/"
+                                target="_blank">Film</a></p>
+                        <p><span>&#8226; Za 30 Sept</span> - Concert Dick El Demasiado: <a
+                                href="https://murfmurw.com/artiesten/dick-el-demasiado-nl/" target="_blank">Here</a>
+                        </p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important; text-decoration: underline;">
-                        Online vertoning - PICL
+                    <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
+                        ONLINE VERTONING <img src="{{ asset('images/picl2.png') }}" style="width: 55px;">
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(50, 111, 57);">
-                        <p><span>&#8226; Vanaf 14 September</span> - te zien op het online filmhuis PICL.</p>
+                        <p><span>&#8226; Vanaf 14 September</span> - te zien op het online filmhuis <a
+                                href="https://picl.nl/" target="_blank">PICL</a></p>
                     </div>
                 </div>
 
