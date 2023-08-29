@@ -334,32 +334,89 @@
                     <img class="d-block w-100" src="{{ $movie_details->image1 }}" alt="" style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem;">
                 </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <div class="synopsis">
-                        <h3 class="text-center mb-2" style="color: rgb(229, 52, 34);">
-                            {{ $movie_details->movie_description_short_nl }}
-                        </h3>
-                        <p style="color: rgb(53, 59, 72);">
-                            {{ $movie_details->movie_description_long_nl }}
-                        </p>
-                    </div>
+            <div class="mb-3">
+                <div class="synopsis-meta mt-2 text-center" style="color: rgb(76, 60, 85);">
+                    <h3 style="text-decoration: underline;">CREW</h3>
+                    Directed by: Dick Verdult<br>
+                    Written by: Dick Verdult, Maria van Heeswijk<br>
+                    Production company: De Productie (NL)<br>
+                    Producer: Annemiek van Gorp, René Goossens<br>
+                    Line Producer: Annemiek van Gorp<br>
+                    Cinematographer/DoP: Luuk Bouwman<br>
+                    Gaffer: Valerie Blom<br>
+                    Production Sound: Kees de Groot<br>
+                    Set Designers: Billy Leliveld, Jan Willem van der Schoot<br>
+                    Make up and hair design: Leendert van Nimwegen <br>
+                    Wardrobe: Petra Reijnders<br>
+                    Casting: Maria van Heeswijk<br>
+                    Editor: Peter Boonstra<br>
+                    Sound Design: Jeroen Goeijers<br>
+                    Music Mix: Bob Drake<br>
+                    Composer: Dick Verdult a.k.a. Dick El Demasiado<br>
+                    Associate Producer: Harro Presser<br>
+                    Distribution Benelux: Windmill Film Distribution<br>
                 </div>
-                <div class="col-md-6">
-                    <div class="synopsis">
-                        <div class="synopsis-meta mt-2">
-                            <p><span>Regisseur:</span> {{ $movie_details->director }}</p>
-                            {{-- <p><span>Schrijver:</span> {{ $movie_details->writer }}</p> --}}
-                            <p><span>Producent:</span> {{ $movie_details->producer }}</p>
-                            <p><span>Acteurs:</span> {{ $movie_details->actors }}</p>
-                            <p><span>Speeltijd:</span> {{ $movie_details->duration }}</p>
-                            @if($rating >= 6)
-                            <p><span>Ratings:</span> {{ $rating }}</p>
-                            @else
-
-                            @endif
-                        </div>
-                    </div>
+                <br>
+                <div class="synopsis-meta mt-2 text-center" style="color: rgb(76, 60, 85);">
+                    <h3 style="text-decoration: underline;">CAST</h3>
+                    <table class="text-center" style="margin-left: auto; margin-right: auto;">
+                        <tr>
+                          <td>Lola Koppen</td>
+                          <td style="padding: 0 15px;">Amy</td>
+                        </tr>
+                        <tr>
+                          <td>Peter Fengler</td>
+                          <td style="padding: 0 15px;">Driver</td>
+                        </tr>
+                        <tr>
+                            <td>Ekaterina Levental</td>
+                            <td style="padding: 0 15px;">Mother</td>
+                        </tr>
+                        <tr>
+                            <td>Harun Bahasoean</td>
+                            <td style="padding: 0 15px;">Father</td>
+                        </tr>
+                        <tr>
+                            <td>Tim Teunissen</td>
+                            <td style="padding: 0 15px;">Barry</td>
+                        </tr>
+                        <tr>
+                            <td>Katrien van Beurden</td>
+                            <td style="padding: 0 15px;">House manager</td>
+                        </tr>
+                        <tr>
+                            <td>Chris Koolmees</td>
+                            <td style="padding: 0 15px;">Physician</td>
+                        </tr>
+                        <tr>
+                            <td>Lonne Gosling</td>
+                            <td style="padding: 0 15px;">Mildred’s older sister</td>
+                        </tr>
+                        <tr>
+                            <td>Izah Hankammer</td>
+                            <td style="padding: 0 15px;">Amy Buki</td>
+                        </tr>
+                        <tr>
+                            <td>Karlijn de Groot</td>
+                            <td style="padding: 0 15px;">Mother Buki</td>
+                        </tr>
+                        <tr>
+                            <td>Luk Sponselee</td>
+                            <td style="padding: 0 15px;">Father Buki</td>
+                        </tr>
+                        <tr>
+                            <td>Pedro Buschi</td>
+                            <td style="padding: 0 15px;">Music teacher</td>
+                        </tr>
+                        <tr>
+                            <td>Michiel Romeyn</td>
+                            <td style="padding: 0 15px;">Assasin</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <br>
+                    <p><span>Made with support of the Netherlands Film Fund and Brabant C</span></p>
+                    <p><span>© De Productie 2023</span></p>
                 </div>
             </div>
         </div>
