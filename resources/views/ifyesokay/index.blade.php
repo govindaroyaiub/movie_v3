@@ -125,6 +125,14 @@
             .svMobile{
                 display: block;
             }
+
+            .hastag{
+                display: block;
+            }
+
+            .nav-bar-menu{
+                white-space: none;
+            }
         }
 
         /* Extra small devices (phones, 600px and down) */
@@ -135,6 +143,14 @@
 
             .svMobile{
                 display: block;
+            }
+
+            .hastag{
+                display: block;
+            }
+
+            .nav-bar-menu{
+                white-space: none;
             }
         }
 
@@ -147,6 +163,14 @@
             .svTab{
                 display: block;
             }
+
+            .hastag{
+                display: none;
+            }
+
+            .nav-bar-menu{
+                white-space: none;
+            }
         }
 
         /* Medium devices (landscape tablets, 768px and up) */
@@ -157,6 +181,14 @@
 
             .svTab{
                 display: block;
+            }
+
+            .hastag{
+                display: none;
+            }
+
+            .nav-bar-menu{
+                white-space: none;
             }
         }
 
@@ -169,6 +201,14 @@
             .svDesk{
                 display: block;
             }
+
+            .hastag{
+                display: block;
+            }
+
+            .nav-bar-menu{
+                white-space: nowrap;
+            }
         }
 
         /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -179,6 +219,14 @@
 
             .svDesk{
                 display: block;
+            }
+
+            .hastag{
+                display: block;
+            }
+
+            .nav-bar-menu{
+                white-space: nowrap;
             }
         }
 
@@ -226,7 +274,7 @@
                     <div class="col-md-10 mx-auto">
                         <a href="javascript:void(0)" class="closebtn">&times;</a>
                         <nav class="nav-menu">
-                            <ul>
+                            <ul class="nav-bar-menu">
                                 <li><a href="#" class="menu-link tablink" onclick="openPage('bp', this)"
                                         id="defaultOpen">Bioscopen</a>
                                 </li>
@@ -236,17 +284,17 @@
                                 </li>
                                 <li><a href="#" class="menu-link tablink" onclick="openPage('sv', this)">Speciale
                                         Vertoningen</a></li>
-                                <li><a href="#" class="menu-link tablink" onclick="openPage('dv', this)">Over Dick <br> Verdult</a></li>
+                                <li><a href="#" class="menu-link tablink" onclick="openPage('dv', this)">Over Dick Verdult</a></li>
                                 <!--  <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
                                         class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li> -->
                                 <li class="hastag">{{ $movie_details->hashtag }}</li>
                             </ul>
                         </nav>
+                        
                     </div>
                 </div>
             </div>
         </section>
-
 
         <div class="movie-content text-white">
             <div id="bp" class="tabcontent container-fluid">
@@ -320,14 +368,14 @@
             </div>
 
             <div id="sy" class="tabcontent container">
-                {{-- <div class="row">
+                <div class="row">
                     <div class="col-md-3 mb-5 mx-auto">
                         <img class="d-block w-100" src="{{ $movie_details->image1 }}" alt="" style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem;">
                     </div>
-                </div> --}}
+                </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <img class="d-block w-50" src="{{ $movie_details->image1 }}" alt="" style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem; margin-left: auto; margin-right: auto;">
+                        {{-- <img class="d-block w-50" src="{{ $movie_details->image1 }}" alt="" style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem; margin-left: auto; margin-right: auto;"> --}}
                         <div class="synopsis">
                             <h3 class="mt-2" style="color: rgb(229, 52, 34); word-wrap: break-word;">
                                 {{ $movie_details->movie_description_short_nl }}
@@ -485,7 +533,7 @@
                         </h3>
                         <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
                             <p><span>&#8226; Za 16 Sept </span> - Chassé Cinema: Film, Q&A + 'Lelijke Gedichten’ en
-                                aansluitend concert in Club Solo door Dick El Demasiado.</p>
+                                aansluitend concert in Club Solo door Dick El Demasiado: <a href="https://www.chasse.nl/programma/8132/dick-verdult/als-uw-gat-maar-lacht-if-yes-okay-special-event" target="_blank">Here</a></p>
                         </div>
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
@@ -600,7 +648,7 @@
                         </h3>
                         <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
                             <p><span>&#8226; Za 16 Sept </span> - Chassé Cinema: Film, Q&A + 'Lelijke Gedichten’ en
-                                aansluitend concert in Club Solo door Dick El Demasiado.</p>
+                                aansluitend concert in Club Solo door Dick El Demasiado: <a href="https://www.chasse.nl/programma/8132/dick-verdult/als-uw-gat-maar-lacht-if-yes-okay-special-event" target="_blank">Here</a></p></p>
                         </div>
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
@@ -715,7 +763,7 @@
                         </h3>
                         <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
                             <p><span>&#8226; Za 16 Sept </span> - Chassé Cinema: Film, Q&A + 'Lelijke Gedichten’ en
-                                aansluitend concert in Club Solo door Dick El Demasiado.</p>
+                                aansluitend concert in Club Solo door Dick El Demasiado: <a href="https://www.chasse.nl/programma/8132/dick-verdult/als-uw-gat-maar-lacht-if-yes-okay-special-event" target="_blank">Here</a></p></p>
                         </div>
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
@@ -790,23 +838,27 @@
                 justify-content: center; 
                 align-content: center; 
                 align-items: center;">
-                <img src="{{ asset('images/dickdel.jpg') }}" alt="dickdelmasiado">
-                    <p style="white-space: pre-line; color: rgb(76, 60, 85);">
-                    Beeldend kunstenaar, muzikant, auteur en filmmaker Dick Verdult (Eindhoven, 1954) is
-                    een cult-personage in Latijns-Amerika, Japan, en in sommige delen van Rusland en
-                    Europa. Als de aanjager van een geheel nieuwe kijk op de folkloristische
-                    cumbia-muziek staat hij bekend als Dick El Demasiado (Demasiado = mateloos ), wat in
-                    zijn geval een goed passende samenvoeging is. <br>
-                    Daarnaast hield hij zich 20 jaar bezig met interactieve fictie (1975-1995), waardoor
-                    hij nog altijd ver blijft van de gangbare lineaire dramaturgie. Zijn laatste film
-                    was “Viva Matanzas” over een zeeslag zonder doden (2018, 50 min). Deze fictiefilm
-                    ging in première op het documentaire festival IDFA. Daarnaast dient te
-                    worden opgemerkt dat Verdult, als Dick El Demasiado, de film het bijzondere
-                    muzikale karakter heeft gegeven.
-
-                    Zie voor meer informatie: <a href='https://www.dickverdult.com/'
-                    target="_blank">https://www.dickverdult.com/</a>
-                    </p>
+                    <img src="{{ asset('images/dickdel.jpg') }}" alt="dickdelmasiado">
+                    <div style="max-width: 600px;">
+                        <br>
+                        <p style="color: rgb(76, 60, 85);">
+                            Beeldend kunstenaar, muzikant, auteur en filmmaker Dick Verdult (Eindhoven, 1954) is
+                            een cult-personage in Latijns-Amerika, Japan, en in sommige delen van Rusland en
+                            Europa. Als de aanjager van een geheel nieuwe kijk op de folkloristische
+                            cumbia-muziek staat hij bekend als Dick El Demasiado (Demasiado = mateloos ), wat in
+                            zijn geval een goed passende samenvoeging is. <br><br>
+                            Daarnaast hield hij zich 20 jaar bezig met interactieve fictie (1975-1995), waardoor
+                            hij nog altijd ver blijft van de gangbare lineaire dramaturgie. Zijn laatste film
+                            was “Viva Matanzas” over een zeeslag zonder doden (2018, 50 min). Deze fictiefilm
+                            ging in première op het documentaire festival IDFA. Daarnaast dient te
+                            worden opgemerkt dat Verdult, als Dick El Demasiado, de film het bijzondere
+                            muzikale karakter heeft gegeven.
+                            <br><br>
+        
+                            Zie voor meer informatie: <a href='https://www.dickverdult.com/'
+                            target="_blank">https://www.dickverdult.com/</a>
+                            </p>
+                    </div>
                 </div>
             </div>
 
