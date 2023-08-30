@@ -75,8 +75,7 @@
             background-color: var(--color2) !important;
         }
 
-        .movie-footer .tab-pane,
-        .sibyl-copy-text {
+        .movie-footer .tab-pane, .sibyl-copy-text {
             color: var(--gray1) !important;
         }
 
@@ -237,6 +236,7 @@
                                 </li>
                                 <li><a href="#" class="menu-link tablink" onclick="openPage('sv', this)">Speciale
                                         Vertoningen</a></li>
+                                <li><a href="#" class="menu-link tablink" onclick="openPage('dv', this)">Over Dick <br> Verdult</a></li>
                                 <!--  <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
                                         class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li> -->
                                 <li class="hastag">{{ $movie_details->hashtag }}</li>
@@ -299,32 +299,6 @@
                                         allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <br>
-
-                            <div class="synopsis">
-                                <h3 class="text-center mb-2 my-3"
-                                    style="text-decoration: none; color: rgb(229, 52, 34)!important;">
-                                    <b>Over Dick Verdult (alias Dick El Demasiado):</b>
-                                </h3>
-                                <p style="white-space: pre-line; color: rgb(76, 60, 85);">
-                                    Beeldend kunstenaar, muzikant, auteur en filmmaker Dick Verdult (Eindhoven, 1954) is
-                                    een cult-personage in Latijns-Amerika, Japan, en in sommige delen van Rusland en
-                                    Europa. Als de aanjager van een geheel nieuwe kijk op de folkloristische
-                                    cumbia-muziek staat hij bekend als Dick El Demasiado (Demasiado = mateloos ), wat in
-                                    zijn geval een goed passende samenvoeging is. <br>
-                                    Daarnaast hield hij zich 20 jaar bezig met interactieve fictie (1975-1995), waardoor
-                                    hij nog altijd ver blijft van de gangbare lineaire dramaturgie. Zijn laatste film
-                                    was “Viva Matanzas” over een zeeslag zonder doden (2018, 50 min). Deze fictiefilm
-                                    ging in première op het documentaire festival IDFA. Daarnaast dient te
-                                    worden opgemerkt dat Verdult, als Dick El Demasiado, de film het bijzondere
-                                    muzikale karakter heeft gegeven.
-                                </p>
-                                <p style="white-space: pre-line; color: rgb(76, 60, 85);">
-                                    Zie voor meer informatie: <a href='https://www.dickverdult.com/'
-                                        target="_blank">https://www.dickverdult.com/</a>
-                                </p>
-                            </div>
-
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-6 ">
@@ -345,99 +319,113 @@
                 </div>
             </div>
 
-
             <div id="sy" class="tabcontent container">
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-3 mb-5 mx-auto">
-                        <img class="d-block w-100" src="{{ $movie_details->image1 }}" alt=""
-                            style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem;">
+                        <img class="d-block w-100" src="{{ $movie_details->image1 }}" alt="" style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem;">
+                    </div>
+                </div> --}}
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <img class="d-block w-50" src="{{ $movie_details->image1 }}" alt="" style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem; margin-left: auto; margin-right: auto;">
+                        <div class="synopsis">
+                            <h3 class="mt-2" style="color: rgb(229, 52, 34); word-wrap: break-word;">
+                                {{ $movie_details->movie_description_short_nl }}
+                            </h3>
+                            <p class="mt-2" style="color: rgb(53, 59, 72);">
+                                {{ $movie_details->movie_description_long_nl }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="synopsis">
+                            <div class="synopsis-meta mt-2" style="color: rgb(76, 60, 85);">
+                                <h3 style="text-decoration: underline;">CREW</h3>
+                                Directed by: Dick Verdult<br>
+                                Written by: Dick Verdult, Maria van Heeswijk<br>
+                                Production company: De Productie (NL)<br>
+                                Producer: Annemiek van Gorp, René Goossens<br>
+                                Line Producer: Annemiek van Gorp<br>
+                                Cinematographer/DoP: Luuk Bouwman<br>
+                                Gaffer: Valerie Blom<br>
+                                Production Sound: Kees de Groot<br>
+                                Set Designers: Billy Leliveld, Jan Willem van der Schoot<br>
+                                Make up and hair design: Leendert van Nimwegen <br>
+                                Wardrobe: Petra Reijnders<br>
+                                Casting: Maria van Heeswijk<br>
+                                Editor: Peter Boonstra<br>
+                                Sound Design: Jeroen Goeijers<br>
+                                Music Mix: Bob Drake<br>
+                                Composer: Dick Verdult a.k.a. Dick El Demasiado<br>
+                                Associate Producer: Harro Presser<br>
+                                Distribution Benelux: Windmill Film Distribution<br>
+                            </div>
+                            <br>
+                            <div class="synopsis-meta mt-2" style="color: rgb(76, 60, 85);">
+                                <h3 style="text-decoration: underline;">CAST</h3>
+                                <table>
+                                    <tr>
+                                        <td>Lola Koppen</td>
+                                        <td style="padding: 0 15px;">Amy</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Peter Fengler</td>
+                                        <td style="padding: 0 15px;">Driver</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ekaterina Levental</td>
+                                        <td style="padding: 0 15px;">Mother</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Harun Bahasoean</td>
+                                        <td style="padding: 0 15px;">Father</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tim Teunissen</td>
+                                        <td style="padding: 0 15px;">Barry</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Katrien van Beurden</td>
+                                        <td style="padding: 0 15px;">House manager</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chris Koolmees</td>
+                                        <td style="padding: 0 15px;">Physician</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lonne Gosling</td>
+                                        <td style="padding: 0 15px;">Mildred’s older sister</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Izah Hankammer</td>
+                                        <td style="padding: 0 15px;">Amy Buki</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Karlijn de Groot</td>
+                                        <td style="padding: 0 15px;">Mother Buki</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luk Sponselee</td>
+                                        <td style="padding: 0 15px;">Father Buki</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pedro Buschi</td>
+                                        <td style="padding: 0 15px;">Music teacher</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michiel Romeyn</td>
+                                        <td style="padding: 0 15px;">Assasin</td>
+                                    </tr>
+                                </table>
+                                <br>
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <div class="synopsis-meta mt-2 text-center" style="color: rgb(76, 60, 85);">
-                        <h3 style="text-decoration: underline;">CREW</h3>
-                        Directed by: Dick Verdult<br>
-                        Written by: Dick Verdult, Maria van Heeswijk<br>
-                        Production company: De Productie (NL)<br>
-                        Producer: Annemiek van Gorp, René Goossens<br>
-                        Line Producer: Annemiek van Gorp<br>
-                        Cinematographer/DoP: Luuk Bouwman<br>
-                        Gaffer: Valerie Blom<br>
-                        Production Sound: Kees de Groot<br>
-                        Set Designers: Billy Leliveld, Jan Willem van der Schoot<br>
-                        Make up and hair design: Leendert van Nimwegen <br>
-                        Wardrobe: Petra Reijnders<br>
-                        Casting: Maria van Heeswijk<br>
-                        Editor: Peter Boonstra<br>
-                        Sound Design: Jeroen Goeijers<br>
-                        Music Mix: Bob Drake<br>
-                        Composer: Dick Verdult a.k.a. Dick El Demasiado<br>
-                        Associate Producer: Harro Presser<br>
-                        Distribution Benelux: Windmill Film Distribution<br>
-                    </div>
-                    <br>
-                    <div class="synopsis-meta mt-2 text-center" style="color: rgb(76, 60, 85);">
-                        <h3 style="text-decoration: underline;">CAST</h3>
-                        <table class="text-center" style="margin-left: auto; margin-right: auto;">
-                            <tr>
-                                <td>Lola Koppen</td>
-                                <td style="padding: 0 15px;">Amy</td>
-                            </tr>
-                            <tr>
-                                <td>Peter Fengler</td>
-                                <td style="padding: 0 15px;">Driver</td>
-                            </tr>
-                            <tr>
-                                <td>Ekaterina Levental</td>
-                                <td style="padding: 0 15px;">Mother</td>
-                            </tr>
-                            <tr>
-                                <td>Harun Bahasoean</td>
-                                <td style="padding: 0 15px;">Father</td>
-                            </tr>
-                            <tr>
-                                <td>Tim Teunissen</td>
-                                <td style="padding: 0 15px;">Barry</td>
-                            </tr>
-                            <tr>
-                                <td>Katrien van Beurden</td>
-                                <td style="padding: 0 15px;">House manager</td>
-                            </tr>
-                            <tr>
-                                <td>Chris Koolmees</td>
-                                <td style="padding: 0 15px;">Physician</td>
-                            </tr>
-                            <tr>
-                                <td>Lonne Gosling</td>
-                                <td style="padding: 0 15px;">Mildred’s older sister</td>
-                            </tr>
-                            <tr>
-                                <td>Izah Hankammer</td>
-                                <td style="padding: 0 15px;">Amy Buki</td>
-                            </tr>
-                            <tr>
-                                <td>Karlijn de Groot</td>
-                                <td style="padding: 0 15px;">Mother Buki</td>
-                            </tr>
-                            <tr>
-                                <td>Luk Sponselee</td>
-                                <td style="padding: 0 15px;">Father Buki</td>
-                            </tr>
-                            <tr>
-                                <td>Pedro Buschi</td>
-                                <td style="padding: 0 15px;">Music teacher</td>
-                            </tr>
-                            <tr>
-                                <td>Michiel Romeyn</td>
-                                <td style="padding: 0 15px;">Assasin</td>
-                            </tr>
-                        </table>
-                        <br>
-                        <br>
-                        <p><span>Made with support of the Netherlands Film Fund and Brabant C</span></p>
-                        <p><span>© De Productie 2023</span></p>
-                    </div>
-                </div>
+                <br>
+                <p class="text-center" style="color: rgb(229, 52, 34);"><span>Made with support of the Netherlands Film Fund and Brabant C</span></p>
+                <p class="text-center" style="color: rgb(229, 52, 34);"><span>© De Productie 2023</span></p>
             </div>
 
             <div id="sv" class="tabcontent container">
@@ -790,6 +778,37 @@
 
                 </div>
             </div>
+            
+            <div id="dv" class="tabcontent container">
+                <h3 class="text-center mb-2 my-3" style="text-decoration: none; color: rgb(229, 52, 34)!important;">
+                    <b>Over Dick Verdult (alias Dick El Demasiado):</b>
+                </h3>
+                <br>
+                
+                <div style="display: flex; 
+                flex-direction: column; 
+                justify-content: center; 
+                align-content: center; 
+                align-items: center;">
+                <img src="{{ asset('images/dickdel.jpg') }}" alt="dickdelmasiado">
+                    <p style="white-space: pre-line; color: rgb(76, 60, 85);">
+                    Beeldend kunstenaar, muzikant, auteur en filmmaker Dick Verdult (Eindhoven, 1954) is
+                    een cult-personage in Latijns-Amerika, Japan, en in sommige delen van Rusland en
+                    Europa. Als de aanjager van een geheel nieuwe kijk op de folkloristische
+                    cumbia-muziek staat hij bekend als Dick El Demasiado (Demasiado = mateloos ), wat in
+                    zijn geval een goed passende samenvoeging is. <br>
+                    Daarnaast hield hij zich 20 jaar bezig met interactieve fictie (1975-1995), waardoor
+                    hij nog altijd ver blijft van de gangbare lineaire dramaturgie. Zijn laatste film
+                    was “Viva Matanzas” over een zeeslag zonder doden (2018, 50 min). Deze fictiefilm
+                    ging in première op het documentaire festival IDFA. Daarnaast dient te
+                    worden opgemerkt dat Verdult, als Dick El Demasiado, de film het bijzondere
+                    muzikale karakter heeft gegeven.
+
+                    Zie voor meer informatie: <a href='https://www.dickverdult.com/'
+                    target="_blank">https://www.dickverdult.com/</a>
+                    </p>
+                </div>
+            </div>
 
             @if(count($reviews) > 0)
                 <section class="sibyl-review-area review-area">
@@ -884,22 +903,22 @@
                                 </div>
                             </div>
 
-
-
                             <div class="footer-dist-logos d-flex  align-items-center">
-                                <a href="{{ $d_details['email'] }}" target="_blank"><img
+                                <a href="" target="_blank" style="padding: 5px;"><img
+                                    src="{{ asset('images/cpivoor.png') }}"
+                                    alt="{{ $d_details['name'] }}" style="margin-left: auto; margin-right: auto;"></a>
+                                <a href="{{ $d_details['email'] }}" target="_blank" style="padding: 5px;"><img
                                         src="/distributors/{{ $d_details['logo'] }}"
-                                        alt="{{ $d_details['name'] }}"></a>
-                                <a href="https://www.planetnine.com/" target="_blank"><img
-                                        src="{{ asset('images/p9.png') }}" alt="planetnine.com"></a>
+                                        alt="{{ $d_details['name'] }}" style="margin-left: auto; margin-right: auto;"></a>
+                                <a href="https://www.planetnine.com/" target="_blank" style="padding: 5px;"><img
+                                        src="{{ asset('images/p9.png') }}" alt="planetnine.com" style="margin-left: auto; margin-right: auto;"></a>
                                 @if($mp_details != NULL)
-                                    <a href="{{ $mp_details['email'] }}" target="_blank"><img
+                                    <a href="{{ $mp_details['email'] }}" target="_blank" style="padding: 5px;"><img
                                             src="/media_partners/{{ $mp_details['logo'] }}"
-                                            alt="{{ $mp_details['name'] }}"></a>
+                                            alt="{{ $mp_details['name'] }}" style="margin-left: auto; margin-right: auto;"></a>
                                 @else
 
                                 @endif
-
                             </div>
 
                             <hr class="bg-secondary">
@@ -930,8 +949,7 @@
     <script src='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
     <script src="{{ mix('js/main.js') }}"></script>
     <script>
-        document.querySelectorAll('.tablink').forEach(navTabLink => navTabLink.addEventListener('click', e => e
-            .preventDefault()));
+        document.querySelectorAll('.tablink').forEach(navTabLink => navTabLink.addEventListener('click', e => e.preventDefault()));
 
         function openPage(pageName, element) {
             var i, tabcontent, tablinks;
@@ -956,6 +974,15 @@
                 slidesToScroll: 1,
             });
         });
+
+        $(document).ready(function() {
+            $("ul.nav-tabs a").click(function() {
+                $(".tab-content div").hide();
+                $($(this).attr("href")).show();
+            });
+        })
+
+        
 
     </script>
 </body>

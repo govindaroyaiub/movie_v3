@@ -225,6 +225,7 @@
                             <li><a href="#" class="menu-link tablink" onclick="openPage('vdo', this)">Videos</a></li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('sy', this)">Synopsis</a></li>
                             <li><a href="#" class="menu-link tablink" onclick="openPage('sv', this)">Special Telecast</a></li>
+                            <li><a href="#" class="menu-link tablink" onclick="openPage('dv', this)">Over Dick <br> Verdult</a></li>
                             <!-- <li><a href="https://picl.nl/films/bacurau/" target="_blank" class="menu-link"><img
                                         class="menu-logo" src="{{ asset('/images/picl.png') }}" alt=""></a></li> -->
                             <li class="hastag">{{ $movie_details->hashtag }}</li>
@@ -286,25 +287,7 @@
                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen></iframe>
                             </div>
-                        </div>
-
-                        <br>
-
-                        <div class="synopsis desk-sy">
-                            <h3 class="text-center mb-2 my-3" style="text-decoration: none; color: rgb(229, 52, 34)!important;">
-                                <b>Over Dick Verdult (alias Dick El Demasiado):</b>
-                            </h3>
-                            <p style="white-space: pre-line; color: rgb(76, 60, 85);">
-                                Visual artist, musician, author and filmmaker Dick Verdult (Eindhoven, 1954) is a cult character in Latin America, Japan, and in some parts of Russia and Europe. As the initiator of a whole new take on folkloric cumbia music, he is known as Dick El Demasiado (Demasiado = immeasurable), which in his case is a well-fitting portmanteau.<br>
-                                In addition, he was involved in interactive fiction for 20 years (1975-1995), which means that he still remains far from the usual linear dramaturgy. His last film was “Viva Matanzas” about a naval battle without deaths (2018, 50 min). This fiction film premiered at the IDFA documentary festival. It should also be noted that Verdult, as Dick El Demasiado, has given the film its special musical character.
-                            </p>
-
-                            <p style="white-space: pre-line; color: rgb(76, 60, 85);">
-                                For more information see:: <a href='https://www.dickverdult.com/' target="_blank">https://www.dickverdult.com/</a>
-                            </p>
-                        </div>
-
-                        
+                        </div>  
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 ">
@@ -326,38 +309,112 @@
         </div>
 
         <div id="sy" class="tabcontent container">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-3 mb-5 mx-auto">
                     <img class="d-block w-100" src="{{ $movie_details->image1 }}" alt="" style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem;">
                 </div>
-            </div>
-            <div class="row">
+            </div> --}}
+            <div class="row mb-3">
                 <div class="col-md-6">
+                    <img class="d-block w-50" src="{{ $movie_details->image1 }}" alt="" style="border: 2px solid rgb(229, 52, 34); border-radius: 1rem; margin-left: auto; margin-right: auto;">
                     <div class="synopsis">
-                        <h3 class="text-center mb-2" style="color: rgb(229, 52, 34);">
+                        <h3 class="mt-2" style="color: rgb(229, 52, 34); word-wrap: break-word;">
                             {{ $movie_details->movie_description_short }}
                         </h3>
-                        <p style="color: rgb(53, 59, 72);">
+                        <p class="mt-2" style="color: rgb(53, 59, 72);">
                             {{ $movie_details->movie_description_long }}
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="synopsis">
-                        <div class="synopsis-meta mt-2">
-                            <p><span>Directed by:</span> {{ $movie_details->director }}</p>
-                            <p><span>Produced by:</span> {{ $movie_details->producer }}</p>
-                            <p><span>Casts:</span> {{ $movie_details->actors }}</p>
-                            <p><span>Duration:</span> {{ $movie_details->duration }}</p>
-                            @if($rating >= 6)
-                            <p><span>Ratings:</span> {{ $rating }}</p>
-                            @else
-
-                            @endif
+                        <div class="synopsis-meta mt-2" style="color: rgb(76, 60, 85);">
+                            <h3 style="text-decoration: underline;">CREW</h3>
+                            Directed by: Dick Verdult<br>
+                            Written by: Dick Verdult, Maria van Heeswijk<br>
+                            Production company: De Productie (NL)<br>
+                            Producer: Annemiek van Gorp, René Goossens<br>
+                            Line Producer: Annemiek van Gorp<br>
+                            Cinematographer/DoP: Luuk Bouwman<br>
+                            Gaffer: Valerie Blom<br>
+                            Production Sound: Kees de Groot<br>
+                            Set Designers: Billy Leliveld, Jan Willem van der Schoot<br>
+                            Make up and hair design: Leendert van Nimwegen <br>
+                            Wardrobe: Petra Reijnders<br>
+                            Casting: Maria van Heeswijk<br>
+                            Editor: Peter Boonstra<br>
+                            Sound Design: Jeroen Goeijers<br>
+                            Music Mix: Bob Drake<br>
+                            Composer: Dick Verdult a.k.a. Dick El Demasiado<br>
+                            Associate Producer: Harro Presser<br>
+                            Distribution Benelux: Windmill Film Distribution<br>
+                        </div>
+                        <br>
+                        <div class="synopsis-meta mt-2" style="color: rgb(76, 60, 85);">
+                            <h3 style="text-decoration: underline;">CAST</h3>
+                            <table>
+                                <tr>
+                                    <td>Lola Koppen</td>
+                                    <td style="padding: 0 15px;">Amy</td>
+                                </tr>
+                                <tr>
+                                    <td>Peter Fengler</td>
+                                    <td style="padding: 0 15px;">Driver</td>
+                                </tr>
+                                <tr>
+                                    <td>Ekaterina Levental</td>
+                                    <td style="padding: 0 15px;">Mother</td>
+                                </tr>
+                                <tr>
+                                    <td>Harun Bahasoean</td>
+                                    <td style="padding: 0 15px;">Father</td>
+                                </tr>
+                                <tr>
+                                    <td>Tim Teunissen</td>
+                                    <td style="padding: 0 15px;">Barry</td>
+                                </tr>
+                                <tr>
+                                    <td>Katrien van Beurden</td>
+                                    <td style="padding: 0 15px;">House manager</td>
+                                </tr>
+                                <tr>
+                                    <td>Chris Koolmees</td>
+                                    <td style="padding: 0 15px;">Physician</td>
+                                </tr>
+                                <tr>
+                                    <td>Lonne Gosling</td>
+                                    <td style="padding: 0 15px;">Mildred’s older sister</td>
+                                </tr>
+                                <tr>
+                                    <td>Izah Hankammer</td>
+                                    <td style="padding: 0 15px;">Amy Buki</td>
+                                </tr>
+                                <tr>
+                                    <td>Karlijn de Groot</td>
+                                    <td style="padding: 0 15px;">Mother Buki</td>
+                                </tr>
+                                <tr>
+                                    <td>Luk Sponselee</td>
+                                    <td style="padding: 0 15px;">Father Buki</td>
+                                </tr>
+                                <tr>
+                                    <td>Pedro Buschi</td>
+                                    <td style="padding: 0 15px;">Music teacher</td>
+                                </tr>
+                                <tr>
+                                    <td>Michiel Romeyn</td>
+                                    <td style="padding: 0 15px;">Assasin</td>
+                                </tr>
+                            </table>
+                            <br>
+                            
                         </div>
                     </div>
                 </div>
             </div>
+            <br>
+            <p class="text-center" style="color: rgb(229, 52, 34);"><span>Made with support of the Netherlands Film Fund and Brabant C</span></p>
+            <p class="text-center" style="color: rgb(229, 52, 34);"><span>© De Productie 2023</span></p>
         </div>
 
         <div id="sv" class="tabcontent container">
@@ -797,20 +854,23 @@
 
 
                     <div class="footer-dist-logos d-flex  align-items-center">
-                        <a href="{{ $d_details['email'] }}" target="_blank"><img
-                                src="/distributors/{{ $d_details['logo'] }}" alt="{{ $d_details['name'] }}"></a>
-                        <a href="https://www.planetnine.com/" target="_blank"><img
-                                    src="{{ asset('images/p9.png') }}"
-                                    alt="planetnine.com"></a>
+                        <a href="" target="_blank" style="padding: 5px;"><img
+                            src="{{ asset('images/cpivoor.png') }}"
+                            alt="{{ $d_details['name'] }}" style="margin-left: auto; margin-right: auto;"></a>
+                        <a href="{{ $d_details['email'] }}" target="_blank" style="padding: 5px;"><img
+                                src="/distributors/{{ $d_details['logo'] }}"
+                                alt="{{ $d_details['name'] }}" style="margin-left: auto; margin-right: auto;"></a>
+                        <a href="https://www.planetnine.com/" target="_blank" style="padding: 5px;"><img
+                                src="{{ asset('images/p9.png') }}" alt="planetnine.com" style="margin-left: auto; margin-right: auto;"></a>
                         @if($mp_details != NULL)
-                        <a href="{{ $mp_details['email'] }}" target="_blank"><img
-                                src="/media_partners/{{ $mp_details['logo'] }}" alt="{{ $mp_details['name'] }}"></a>
+                            <a href="{{ $mp_details['email'] }}" target="_blank" style="padding: 5px;"><img
+                                    src="/media_partners/{{ $mp_details['logo'] }}"
+                                    alt="{{ $mp_details['name'] }}" style="margin-left: auto; margin-right: auto;"></a>
                         @else
 
                         @endif
-                        
-                    </div>
 
+                    </div>
 
                     <hr class="bg-secondary">
                     <div class="d-flex justify-content-between align-items-center">
@@ -862,6 +922,13 @@
                 slidesToScroll: 1,
             });
         });
+
+        $(document).ready(function() {
+            $("ul.nav-tabs a").click(function() {
+                $(".tab-content div").hide();
+                $($(this).attr("href")).show();
+            });
+        })
     </script>
 
 
