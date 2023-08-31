@@ -319,6 +319,8 @@
 
                         </div>
 
+                        <h3 style="text-align: center; color: rgb(50, 111, 57); text-decoration: underline; margin-top: 10px; margin-bottom: 10px; text-transform: uppercase;">The full list of regular broadcast available from September 11</h3>
+
                         <ul class="city-map-js my-3"></ul>
 
                         <div class="synopsis desk-sy">
@@ -491,14 +493,14 @@
                     </label>
                     <br>
                     <br>
-                    <h2 style="color: rgb(53, 59, 72);
+                    {{-- <h2 style="color: rgb(53, 59, 72);
                     font-weight: bold;
                     text-transform: uppercase;
                     padding: 10px;
                     border: 2px solid rgb(50, 111, 57);
                     max-width: 530px;
                     border-radius: 5px;
-                    margin: 0 auto;">Latest version 24 August</h2>
+                    margin: 0 auto;">Latest version 24 August</h2> --}}
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         AMSTERDAM
@@ -604,14 +606,14 @@
                     </label>
                     <br>
                     <br>
-                    <h2 style="color: rgb(53, 59, 72);
+                    {{-- <h2 style="color: rgb(53, 59, 72);
                     font-weight: bold;
                     text-transform: uppercase;
                     padding: 10px;
                     border: 2px solid rgb(50, 111, 57);
                     max-width: 530px;
                     border-radius: 5px;
-                    margin: 0 auto;">Latest version 24 august</h2>
+                    margin: 0 auto;">Latest version 24 august</h2> --}}
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         AMSTERDAM
@@ -717,14 +719,14 @@
                     </label>
                     <br>
                     <br>
-                    <h2 style="color: rgb(53, 59, 72);
+                    {{-- <h2 style="color: rgb(53, 59, 72);
                     font-weight: bold;
                     text-transform: uppercase;
                     padding: 10px;
                     border: 2px solid rgb(50, 111, 57);
                     max-width: 530px;
                     border-radius: 5px;
-                    margin: 0 auto;">latest versoion 24 august</h2>
+                    margin: 0 auto;">latest versoion 24 august</h2> --}}
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         AMSTERDAM
@@ -934,7 +936,7 @@
 
 
                     <div class="footer-dist-logos d-flex  align-items-center">
-                        <a href="" target="_blank" style="padding: 5px;"><img
+                        <a href="https://www.dickverdult.com/" target="_blank" style="padding: 5px;"><img
                             src="{{ asset('images/cpivoor.png') }}"
                             alt="{{ $d_details['name'] }}" style="margin-left: auto; margin-right: auto;"></a>
                         <a href="{{ $d_details['email'] }}" target="_blank" style="padding: 5px;"><img
