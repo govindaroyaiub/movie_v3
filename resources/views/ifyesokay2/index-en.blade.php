@@ -533,18 +533,16 @@
                             English subtitles: <a
                                 href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
                                 target="_blank">Here</a></p>
-                        <p><span>&#8226; Fri 22 Sept</span> - Kriterion: Film, Q&A + ‘Lelijke Gedichten’ en concert
-                            Dick El Demasiado.</p>
+                        <p><span>&#8226; Fri 22 Sept</span> - Kriterion: Film, Q&A.</p>
                         <p><span>&#8226; Fri 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
-                            Brouwerij Oedipus.</p>
+                            Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p>yyyyyy
                     </div>
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         BREDA
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Sat 16 Sept </span> - Chassé Cinema: Film, Q&A + 'Lelijke Gedichten’ en
-                            aansluitend concert in Club Solo door Dick El Demasiado: <a href="https://www.chasse.nl/programma/8132/dick-verdult/als-uw-gat-maar-lacht-if-yes-okay-special-event" target="_blank">Here</a></p>
+                        <p><span>&#8226; Sat 16 Sept </span> - Chassé Cinema: Film, Q&A: <a href="https://www.chasse.nl/programma/8132/dick-verdult/als-uw-gat-maar-lacht-if-yes-okay-special-event" target="_blank">Here</a></p>
                     </div>
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
@@ -579,8 +577,6 @@
                         <p><span>&#8226; Fri 15 Sept</span> - Lab-1: Film + concert Dick El Demasiado: <a
                                 href="https://www.lab-1.nl/film/if-yes-okay-concert-dick-verdult/"
                                 target="_blank">Here</a></p>
-                        <p><span>&#8226; Sun 24 Sept</span> - Het Ketelhuis Strijp S: Film + concert Dick El
-                            Demasiado.</p>
                     </div>
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
@@ -646,18 +642,16 @@
                             English subtitles: <a
                                 href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
                                 target="_blank">Here</a></p>
-                        <p><span>&#8226; Fri 22 Sept</span> - Kriterion: Film, Q&A + ‘Lelijke Gedichten’ en concert
-                            Dick El Demasiado.</p>
+                        <p><span>&#8226; Fri 22 Sept</span> - Kriterion: Film, Q&A.</p>
                         <p><span>&#8226; Fri 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
-                            Brouwerij Oedipus.</p>
+                            Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p>
                     </div>
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         BREDA
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Sat 16 Sept </span> - Chassé Cinema: Film, Q&A + 'Lelijke Gedichten’ en
-                            aansluitend concert in Club Solo door Dick El Demasiado: <a href="https://www.chasse.nl/programma/8132/dick-verdult/als-uw-gat-maar-lacht-if-yes-okay-special-event" target="_blank">Here</a></p>
+                        <p><span>&#8226; Sat 16 Sept </span> - Chassé Cinema: Film, Q&A: <a href="https://www.chasse.nl/programma/8132/dick-verdult/als-uw-gat-maar-lacht-if-yes-okay-special-event" target="_blank">Here</a></p>
                     </div>
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
@@ -692,8 +686,6 @@
                         <p><span>&#8226; Fri 15 Sept</span> - Lab-1: Film + concert Dick El Demasiado: <a
                                 href="https://www.lab-1.nl/film/if-yes-okay-concert-dick-verdult/"
                                 target="_blank">Here</a></p>
-                        <p><span>&#8226; Sun 24 Sept</span> - Het Ketelhuis Strijp S: Film + concert Dick El
-                            Demasiado.</p>
                     </div>
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
@@ -759,18 +751,16 @@
                             English subtitles: <a
                                 href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
                                 target="_blank">Here</a></p>
-                        <p><span>&#8226; Fri 22 Sept</span> - Kriterion: Film, Q&A + ‘Lelijke Gedichten’ en concert
-                            Dick El Demasiado.</p>
+                        <p><span>&#8226; Fri 22 Sept</span> - Kriterion: Film, Q&A.</p>
                         <p><span>&#8226; Fri 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
-                            Brouwerij Oedipus.</p>
+                            Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p>
                     </div>
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         BREDA
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Sat 16 Sept </span> - Chassé Cinema: Film, Q&A + 'Lelijke Gedichten’ en
-                            aansluitend concert in Club Solo door Dick El Demasiado: <a href="https://www.chasse.nl/programma/8132/dick-verdult/als-uw-gat-maar-lacht-if-yes-okay-special-event" target="_blank">Here</a></p>
+                        <p><span>&#8226; Sat 16 Sept </span> - Chassé Cinema: Film, Q&A: <a href="https://www.chasse.nl/programma/8132/dick-verdult/als-uw-gat-maar-lacht-if-yes-okay-special-event" target="_blank">Here</a></p>
                     </div>
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
@@ -804,8 +794,6 @@
                         <p><span>&#8226; Fri 15 Sept</span> - Lab-1: Film + concert Dick El Demasiado: <a
                                 href="https://www.lab-1.nl/film/if-yes-okay-concert-dick-verdult/"
                                 target="_blank">Here</a></p>
-                        <p><span>&#8226; Sun 24 Sept</span> - Het Ketelhuis Strijp S: Film + concert Dick El
-                            Demasiado.</p>
                     </div>
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
