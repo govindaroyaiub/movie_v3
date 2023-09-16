@@ -98,7 +98,7 @@ class IfyesController extends Controller
             ->where('base_url', '=', $app_url)
             ->get();
             
-            return view('ifyesokay.index', compact(
+            return view('ifyesokay2.index', compact(
                 'movie_details',
                 'youtube_url',
                 'poster', 'showtime',
@@ -191,7 +191,7 @@ class IfyesController extends Controller
             ->where('reviews.language', '=', 'en')
             ->get();
             
-            return view('ifyesokay.index-en', compact(
+            return view('ifyesokay2.index-en', compact(
                 'movie_details',
                 'youtube_url',
                 'poster', 'showtime',
