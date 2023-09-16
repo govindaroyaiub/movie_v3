@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short }}, with {{ $movie_details->actors }}. In cinemas {{ $first_release_date }}.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="og:title" content="{{ $movie_details->movie_title }}">
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ $movie_details->image1 }}">
+    <meta name="twitter:card" content="{{ $movie_details->image1 }}">
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:description" content="{{ $movie_details->movie_description_short }}">
+    <meta property="og:site_name" content="{{ $movie_details->movie_title }}">
+    <meta name="twitter:image:alt" content="{{ $movie_details->movie_description_short }}">
+    
     <title>{{ $movie_details->movie_title }} - {{ $movie_details->tagline_en }}</title>
     <link rel="shortcut icon" href="https://www.planetnine.com/wp-content/uploads/2020/06/cropped-favicon-32x32.png" type="image/x-icon">
     <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'/>

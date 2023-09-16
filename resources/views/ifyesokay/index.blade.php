@@ -7,6 +7,16 @@
     <meta name="description"
         content="{{ $movie_details->movie_title }} - {{ $movie_details->movie_description_short_nl }}, met {{ $movie_details->actors }}. In de bioscoop {{ $first_release_date }}.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="og:title" content="{{ $movie_details->movie_title }}">
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ $movie_details->image1 }}">
+    <meta name="twitter:card" content="{{ $movie_details->image1 }}">
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:description" content="{{ $movie_details->movie_description_short_nl }}">
+    <meta property="og:site_name" content="{{ $movie_details->movie_title }}">
+    <meta name="twitter:image:alt" content="{{ $movie_details->movie_description_short_nl }}">
+    
     <title>{{ $movie_details->movie_title }} - {{ $movie_details->tagline_nl }}</title>
     <link rel="shortcut icon" href="https://www.planetnine.com/wp-content/uploads/2020/06/cropped-favicon-32x32.png"
         type="image/x-icon">
