@@ -535,7 +535,7 @@
                                 target="_blank">Here</a></p>
                         <p><span>&#8226; Fri 22 Sept</span> - Kriterion: Film, Q&A.</p>
                         <p><span>&#8226; Fri 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
-                            Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p>yyyyyy
+                            Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p>
                     </div>
                     <br>
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
