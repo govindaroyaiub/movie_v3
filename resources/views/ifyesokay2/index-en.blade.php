@@ -17,6 +17,9 @@
     <!--  Non-Essential, But Recommended -->
     <meta property="og:description" content="{{ $movie_details->movie_description_short }}">
     <meta property="og:site_name" content="{{ $movie_details->movie_title }}">
+
+    <link rel="image_src" href="{{ $movie_details->image1 }}" />
+    <meta name="twitter:image" property="og:image" content="{{ $movie_details->image1 }}" />
     
     <title>{{ $movie_details->movie_title }} - {{ $movie_details->tagline_en }}</title>
     <link rel="shortcut icon" href="https://www.planetnine.com/wp-content/uploads/2020/06/cropped-favicon-32x32.png" type="image/x-icon">
