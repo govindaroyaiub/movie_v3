@@ -11,6 +11,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:image" content="{{ $movie_details->image1 }}">
     <meta name="twitter:card" content="{{ $movie_details->image1 }}">
+    <meta http-equiv="refresh" content="30">
 
     <!--  Non-Essential, But Recommended -->
     <meta property="og:description" content="{{ $movie_details->movie_description_short_nl }}">
