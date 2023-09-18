@@ -339,9 +339,7 @@
                                 <div class="city-accordion accordion d-none" id="cityAccordionId"></div>
 
                             </div>
-
-                            <h3 style="text-align: center; color: rgb(50, 111, 57); text-decoration: underline; margin-top: 10px; margin-bottom: 10px; text-transform: uppercase;">De volledige lijst reguliere vertoningen beschikbaar vanaf 11 september</h3>
-
+                            
                             <ul class="city-map-js my-3"></ul>
 
                             <div class="synopsis desk-sy">
