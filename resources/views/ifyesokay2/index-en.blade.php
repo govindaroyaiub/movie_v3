@@ -536,13 +536,13 @@
                             Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p>
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
+                    {{-- <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         BREDA
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
                         <p><span>&#8226; Sat 16 Sept </span> - Chassé Cinema: Film, Q&A: <a href="https://www.chasse.nl/programma/8132/dick-verdult/als-uw-gat-maar-lacht-if-yes-okay-special-event" target="_blank">Here</a></p>
                     </div>
-                    <br>
+                    <br> --}}
                     <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
                         DEVENTER
                     </h3>
