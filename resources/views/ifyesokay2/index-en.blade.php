@@ -335,7 +335,7 @@
 
                         </div>
 
-                        <ul class="city-map-js my-3"></ul>
+                        <ul class="city-map-js my-3" style="justify-content: center;"></ul>
 
                         <div class="synopsis desk-sy">
                             <h3 class="text-center mb-2 my-3" style="text-decoration: none; color: rgb(229, 52, 34)!important;">
