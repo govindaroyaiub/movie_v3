@@ -551,10 +551,10 @@
                         </div>
                         <br> --}}
                         <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
-                            DEVENTER
+                            BREDA
                         </h3>
                         <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                            <p><span>&#8226; Woe 27 Sept</span> - Mimik: Film + concert Dick El Demasiado.</p>
+                            <p><span>&#8226; Zo 1 Oct</span> - Filmhuis Breda - Film and Q&A with Dick Verdult: <a href="https://www.filmhuisbreda.nl/movies/271/17/als_uw_gat_maar_lacht" target="_blank">Here</a></p>
                         </div>
                         <br>
                         <div class="heads" style="display: flex; 
@@ -662,10 +662,10 @@
                         </div>
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
-                            DEVENTER
+                            BREDA
                         </h3>
                         <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                            <p><span>&#8226; Woe 27 Sept</span> - Mimik: Film + concert Dick El Demasiado.</p>
+                            <p><span>&#8226; Zo 1 Oct</span> - Filmhuis Breda - Film and Q&A with Dick Verdult: <a href="https://www.filmhuisbreda.nl/movies/271/17/als_uw_gat_maar_lacht" target="_blank">Here</a></p>
                         </div>
                         <br>
                         <div class="heads" style="display: flex; 
@@ -773,10 +773,10 @@
                         </div>
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
-                            DEVENTER
+                            BREDA
                         </h3>
                         <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                            <p><span>&#8226; Woe 27 Sept</span> - Mimik: Film + concert Dick El Demasiado.</p>
+                            <p><span>&#8226; Zo 1 Oct</span> - Filmhuis Breda - Film and Q&A with Dick Verdult: <a href="https://www.filmhuisbreda.nl/movies/271/17/als_uw_gat_maar_lacht" target="_blank">Here</a></p>
                         </div>
                         <br>
                         <div class="heads" style="display: flex; 
