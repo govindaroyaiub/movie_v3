@@ -539,8 +539,8 @@
                                     href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
                                     target="_blank">Here</a></p>
                             <p><span>&#8226; Vr 22 Sept</span> - Kriterion: Film, Q&A.</p>
-                            <p><span>&#8226; Vr 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
-                                Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p>
+                            {{-- <p><span>&#8226; Vr 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
+                                Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p> --}}
                         </div>
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
@@ -577,7 +577,7 @@
                                     href="https://www.lab-1.nl/film/if-yes-okay-concert-dick-verdult/"
                                     target="_blank">Here</a></p>
                         </div>
-                        <br>
+                        {{-- <br>
                         <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                             TILBURG - Murf/Murw Festival
                         </h3>
@@ -588,7 +588,7 @@
                             <p><span>&#8226; Za 30 Sept</span> - Concert Dick El Demasiado: <a
                                     href="https://murfmurw.com/artiesten/dick-el-demasiado-nl/" target="_blank">Here</a>
                             </p>
-                        </div>
+                        </div> --}}
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                             ONLINE VERTONING <img src="{{ asset('images/picl2.png') }}"
@@ -643,8 +643,8 @@
                                     href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
                                     target="_blank">Here</a></p>
                             <p><span>&#8226; Vr 22 Sept</span> - Kriterion: Film, Q&A.</p>
-                            <p><span>&#8226; Vr 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
-                                    Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p>
+                            {{-- <p><span>&#8226; Vr 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
+                                    Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p> --}}
                         </div>
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
@@ -681,7 +681,7 @@
                                     href="https://www.lab-1.nl/film/if-yes-okay-concert-dick-verdult/"
                                     target="_blank">Here</a></p>
                         </div>
-                        <br>
+                        {{-- <br>
                         <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                             TILBURG - Murf/Murw Festival
                         </h3>
@@ -692,7 +692,7 @@
                             <p><span>&#8226; Za 30 Sept</span> - Concert Dick El Demasiado: <a
                                     href="https://murfmurw.com/artiesten/dick-el-demasiado-nl/" target="_blank">Here</a>
                             </p>
-                        </div>
+                        </div> --}}
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                             ONLINE VERTONING <img src="{{ asset('images/picl2.png') }}"
@@ -747,8 +747,8 @@
                                     href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
                                     target="_blank">Here</a></p>
                             <p><span>&#8226; Vr 22 Sept</span> - Kriterion: Film, Q&A.</p>
-                            <p><span>&#8226; Vr 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
-                                    Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p>
+                            {{-- <p><span>&#8226; Vr 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
+                                    Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p> --}}
                         </div>
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
@@ -784,7 +784,7 @@
                                     href="https://www.lab-1.nl/film/if-yes-okay-concert-dick-verdult/"
                                     target="_blank">Here</a></p>
                         </div>
-                        <br>
+                        {{-- <br>
                         <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                             TILBURG - Murf/Murw Festival
                         </h3>
@@ -795,7 +795,7 @@
                             <p><span>&#8226; Za 30 Sept</span> - Concert Dick El Demasiado: <a
                                     href="https://murfmurw.com/artiesten/dick-el-demasiado-nl/" target="_blank">Here</a>
                             </p>
-                        </div>
+                        </div> --}}
                         <br>
                         <h3 class="text-center mb-2" style="color: rgb(50, 111, 57)!important;">
                             ONLINE VERTONING <img src="{{ asset('images/picl2.png') }}"
