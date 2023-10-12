@@ -702,13 +702,6 @@
                             Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p> --}}
                     </div>
                     <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
-                        BREDA
-                    </h3>
-                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Sun 1 Oct</span> - Filmhuis Breda - Film and Q&A with Dick Verdult: <a href="https://www.filmhuisbreda.nl/movies/271/17/als_uw_gat_maar_lacht" target="_blank">Here</a></p>
-                    </div>
-                    <br>
                     <div class="heads" style="display: flex; 
                 flex-direction: column; 
                 justify-content: center; 
