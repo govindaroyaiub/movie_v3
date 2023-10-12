@@ -520,27 +520,12 @@
                         AMSTERDAM
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Thu 7 Sept</span> - De Balie: Documentaire It is true but not here van Luuk
-                            Bouwman over Dick Verdult. <a
-                                href="https://debalie.nl/cinema/de-balie-kijkt-it-is-true-but-not-here/"
-                                target="_blank">Met nagesprek</a></p>
-                        <p><span>&#8226; Sun 17 Sept</span> - De Balie: Film + concert Dick El Demasiado* : <a
-                                href="https://debalie.nl/cinema/de-balie-kijkt-if-yes-okay-concert-dick-verdult/"
-                                target="_blank">Here</a></p>
                         <p><span>&#8226; Tue 19 Sept</span> - Eye on Art: Film, Q&A + ‘Ugly Poems’ by Dick Verdult.
                             English subtitles: <a
                                 href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
                                 target="_blank">Here</a></p>
-                        <p><span>&#8226; Fri 22 Sept</span> - Kriterion: Film, Q&A.</p>
                         {{-- <p><span>&#8226; Fri 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
                             Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p> --}}
-                    </div>
-                    <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
-                        BREDA
-                    </h3>
-                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Sun 1 Oct</span> - Filmhuis Breda - Film and Q&A with Dick Verdult: <a href="https://www.filmhuisbreda.nl/movies/271/17/als_uw_gat_maar_lacht" target="_blank">Here</a></p>
                     </div>
                     <br>
                     <div class="heads" style="display: flex; 
@@ -622,27 +607,12 @@
                         AMSTERDAM
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Thu 7 Sept</span> - De Balie: Documentaire It is true but not here van Luuk
-                            Bouwman over Dick Verdult. <a
-                                href="https://debalie.nl/cinema/de-balie-kijkt-it-is-true-but-not-here/"
-                                target="_blank">Met nagesprek</a></p>
-                        <p><span>&#8226; Sun 17 Sept</span> - De Balie: Film + concert Dick El Demasiado* : <a
-                                href="https://debalie.nl/cinema/de-balie-kijkt-if-yes-okay-concert-dick-verdult/"
-                                target="_blank">Here</a></p>
                         <p><span>&#8226; Tue 19 Sept</span> - Eye on Art: Film, Q&A + ‘Ugly Poems’ by Dick Verdult.
                             English subtitles: <a
                                 href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
                                 target="_blank">Here</a></p>
-                        <p><span>&#8226; Fri 22 Sept</span> - Kriterion: Film, Q&A.</p>
                         {{-- <p><span>&#8226; Fri 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
                             Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p> --}}
-                    </div>
-                    <br>
-                    <h3 class="text-center mb-2" style="color: rgb(76, 60, 85)!important;">
-                        BREDA
-                    </h3>
-                    <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Sun 1 Oct</span> - Filmhuis Breda - Film and Q&A with Dick Verdult: <a href="https://www.filmhuisbreda.nl/movies/271/17/als_uw_gat_maar_lacht" target="_blank">Here</a></p>
                     </div>
                     <br>
                     <div class="heads" style="display: flex; 
@@ -724,18 +694,10 @@
                         AMSTERDAM
                     </h3>
                     <div class="texts" style="text-align: center; color:rgb(76, 60, 85);">
-                        <p><span>&#8226; Thu 7 Sept</span> - De Balie: Documentaire It is true but not here van Luuk
-                            Bouwman over Dick Verdult. <a
-                                href="https://debalie.nl/cinema/de-balie-kijkt-it-is-true-but-not-here/"
-                                target="_blank">Met nagesprek</a></p>
-                        <p><span>&#8226; Sun 17 Sept</span> - De Balie: Film + concert Dick El Demasiado* : <a
-                                href="https://debalie.nl/cinema/de-balie-kijkt-if-yes-okay-concert-dick-verdult/"
-                                target="_blank">Here</a></p>
                         <p><span>&#8226; Tue 19 Sept</span> - Eye on Art: Film, Q&A + ‘Ugly Poems’ by Dick Verdult.
                             English subtitles: <a
                                 href="https://www.eyefilm.nl/en/whats-on/als-uw-gat-maar-lacht/1041857?show=1041864"
                                 target="_blank">Here</a></p>
-                        <p><span>&#8226; Fri 22 Sept</span> - Kriterion: Film, Q&A.</p>
                         {{-- <p><span>&#8226; Fri 29 Sept</span> - Fc Hyena: Film + concert Dick El Demasiado* met
                             Brouwerij Oedipus: <a href="https://fchyena.nl/films/als-uw-gat-maar-lacht-dick-el-demasiado" target="_blank">Here</a></p> --}}
                     </div>
